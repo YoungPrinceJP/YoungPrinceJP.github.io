@@ -10,6 +10,7 @@
           content="Young Prince — original stories, series, manga, music, videos and creative works.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -22,8 +23,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f4f4;
-            color: #151515;
+            background: #f8f6f2;
+            color: #17151f;
         }
 
         a {
@@ -35,12 +36,14 @@
         ========================= */
 
         header {
-            background: #111;
-            color: #fff;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(12px);
+            color: #17151f;
             padding: 18px 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #e6e0e8;
         }
 
         .header {
@@ -53,26 +56,32 @@
         }
 
         .logo {
-            color: #fff;
+            color: #241337;
             font-size: 26px;
             font-weight: 900;
             letter-spacing: 2px;
         }
 
+        .logo::after {
+            content: " ✦";
+            color: #c79a27;
+        }
+
         nav {
             display: flex;
-            gap: 22px;
+            gap: 24px;
             flex-wrap: wrap;
         }
 
         nav a {
-            color: #ccc;
+            color: #4d4655;
             font-size: 14px;
             font-weight: bold;
+            transition: .2s ease;
         }
 
         nav a:hover {
-            color: #fff;
+            color: #7b3f98;
         }
 
         /* =========================
@@ -80,32 +89,75 @@
         ========================= */
 
         .hero {
-            background: #111;
+            position: relative;
+            overflow: hidden;
             color: white;
-            padding: 100px 20px;
+            padding: 125px 20px 135px;
             text-align: center;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(199,154,39,.35), transparent 28%),
+                radial-gradient(circle at 85% 20%, rgba(44,102,150,.35), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(123,63,152,.35), transparent 40%),
+                linear-gradient(135deg,
+                    #332047 0%,
+                    #53356f 30%,
+                    #285878 65%,
+                    #8b4f72 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.07);
+            top: -220px;
+            left: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.06);
+            bottom: -190px;
+            right: -80px;
+        }
+
+        .hero small,
+        .hero h1,
+        .hero p {
+            position: relative;
+            z-index: 2;
         }
 
         .hero small {
             display: block;
-            color: #aaa;
+            color: #f4d78b;
             font-size: 13px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 9vw, 90px);
-            line-height: .95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
+            font-size: clamp(52px, 10vw, 105px);
+            line-height: .88;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+            text-shadow: 0 8px 35px rgba(0,0,0,.25);
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 680px;
             margin: auto;
-            color: #ccc;
-            font-size: 18px;
+            color: rgba(255,255,255,.88);
+            font-size: 19px;
+            line-height: 1.7;
         }
 
         /* =========================
@@ -115,24 +167,26 @@
         main {
             max-width: 1200px;
             margin: auto;
-            padding: 70px 20px;
+            padding: 85px 20px;
         }
 
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .section-heading {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .section-heading h2 {
-            font-size: 38px;
-            margin-bottom: 8px;
+            color: #241337;
+            font-size: 42px;
+            margin-bottom: 10px;
         }
 
         .section-heading p {
-            color: #777;
+            color: #756d79;
+            font-size: 16px;
         }
 
         /* =========================
@@ -146,83 +200,139 @@
         }
 
         .story-card {
-            background: #fff;
-            border-radius: 18px;
+            background: #ffffff;
+            border-radius: 22px;
             overflow: hidden;
-            border: 1px solid #ddd;
-            transition: .25s ease;
+            border: 1px solid #e7e0e8;
+            box-shadow: 0 12px 35px rgba(48,31,64,.08);
+            transition: .3s ease;
         }
 
         .story-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.12);
+            transform: translateY(-8px);
+            box-shadow: 0 22px 50px rgba(48,31,64,.15);
         }
 
         .story-cover {
-            min-height: 300px;
+            min-height: 330px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 30px;
+            padding: 35px;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
+
+        .story-cover::before {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.10);
+            top: -120px;
+            right: -80px;
+        }
+
+        .story-cover::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            bottom: -120px;
+            left: -70px;
+        }
+
+        /* PRIMORDIA */
 
         .primordia-cover {
             background:
-                radial-gradient(circle at center, #444 0%, #1a1a1a 45%, #050505 100%);
+                radial-gradient(circle at 50% 35%, rgba(191,222,135,.45), transparent 25%),
+                linear-gradient(135deg,
+                    #183c38,
+                    #246b60 45%,
+                    #477d58 75%,
+                    #8c7b39);
         }
+
+        /* BLOOD ON BROAD STREET */
 
         .blood-cover {
             background:
-                radial-gradient(circle at center, #555 0%, #222 45%, #080808 100%);
+                radial-gradient(circle at 70% 30%, rgba(230,90,80,.45), transparent 25%),
+                linear-gradient(135deg,
+                    #421d35,
+                    #702d43 42%,
+                    #9b3f42 70%,
+                    #c27b3d);
         }
 
         .story-cover h3 {
-            font-size: 40px;
+            position: relative;
+            z-index: 2;
+            font-size: 46px;
             line-height: 1.05;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 0 6px 20px rgba(0,0,0,.25);
         }
 
         .blood-cover h3 {
-            font-size: 32px;
+            font-size: 36px;
         }
 
         .story-info {
-            padding: 30px;
+            padding: 32px;
         }
 
         .category {
             font-size: 12px;
             font-weight: bold;
             letter-spacing: 2px;
-            color: #888;
+            color: #7b3f98;
             text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .story-info h3 {
-            font-size: 28px;
             margin-bottom: 12px;
         }
 
+        .story-info h3 {
+            color: #241337;
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
+
         .story-info p {
-            color: #666;
+            color: #665f6b;
+            line-height: 1.7;
             margin-bottom: 25px;
         }
 
         .button {
             display: inline-block;
-            background: #111;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 7px;
+            color: white;
+            padding: 12px 21px;
+            border-radius: 8px;
             font-size: 14px;
             font-weight: bold;
+            transition: .2s ease;
         }
 
-        .button:hover {
-            background: #333;
+        .story-card:first-child .button {
+            background: #287267;
+        }
+
+        .story-card:first-child .button:hover {
+            background: #1e5a52;
+        }
+
+        .story-card:last-child .button {
+            background: #9b3f42;
+        }
+
+        .story-card:last-child .button:hover {
+            background: #7d3035;
         }
 
         /* =========================
@@ -237,24 +347,57 @@
 
         .explore-card {
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 14px;
-            padding: 30px 20px;
+            border: 1px solid #e5dfe7;
+            border-radius: 18px;
+            padding: 32px 20px;
             text-align: center;
+            box-shadow: 0 8px 25px rgba(48,31,64,.06);
+            transition: .25s ease;
+        }
+
+        .explore-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(48,31,64,.12);
         }
 
         .explore-icon {
-            font-size: 38px;
-            margin-bottom: 15px;
+            width: 68px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 18px;
+            font-size: 32px;
+            background: #f1e9f5;
+        }
+
+        .explore-card:nth-child(1) .explore-icon {
+            background: #e5f2ef;
+        }
+
+        .explore-card:nth-child(2) .explore-icon {
+            background: #f8e7eb;
+        }
+
+        .explore-card:nth-child(3) .explore-icon {
+            background: #e7edf8;
+        }
+
+        .explore-card:nth-child(4) .explore-icon {
+            background: #f8f0d9;
         }
 
         .explore-card h3 {
-            margin-bottom: 8px;
+            color: #241337;
+            margin-bottom: 9px;
+            font-size: 19px;
         }
 
         .explore-card p {
-            color: #777;
+            color: #77707b;
             font-size: 14px;
+            line-height: 1.6;
         }
 
         /* =========================
@@ -262,23 +405,37 @@
         ========================= */
 
         .about {
-            background: #111;
+            position: relative;
+            overflow: hidden;
             color: white;
-            border-radius: 18px;
-            padding: 60px 30px;
+            border-radius: 24px;
+            padding: 75px 30px;
             text-align: center;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(199,154,39,.35), transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(39,113,103,.4), transparent 30%),
+                linear-gradient(135deg,
+                    #4a285f,
+                    #713d72,
+                    #376c70);
         }
 
         .about h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            font-size: 40px;
+            margin-bottom: 18px;
         }
 
         .about p {
-            max-width: 700px;
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
             margin: auto;
-            color: #ccc;
-            line-height: 1.8;
+            color: rgba(255,255,255,.88);
+            line-height: 1.9;
+            font-size: 17px;
         }
 
         /* =========================
@@ -286,15 +443,14 @@
         ========================= */
 
         footer {
-            background: #111;
-            color: #888;
+            background: #21172b;
+            color: #aaa0b1;
             text-align: center;
-            padding: 35px 20px;
-            border-top: 1px solid #333;
+            padding: 40px 20px;
         }
 
         footer strong {
-            color: #fff;
+            color: #f4d78b;
         }
 
         /* =========================
@@ -313,7 +469,7 @@
             }
 
             .hero {
-                padding: 75px 20px;
+                padding: 90px 20px 100px;
             }
 
             .stories {
@@ -323,27 +479,69 @@
             .explore {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            main {
+                padding-top: 65px;
+            }
         }
 
         @media (max-width: 500px) {
 
+            .logo {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 11px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
             .hero h1 {
-                font-size: 50px;
-                letter-spacing: -2px;
+                font-size: 54px;
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .story-cover {
+                min-height: 250px;
+            }
+
+            .story-cover h3 {
+                font-size: 37px;
+            }
+
+            .blood-cover h3 {
+                font-size: 29px;
             }
 
             .explore {
                 grid-template-columns: 1fr;
             }
 
-            .story-cover {
-                min-height: 240px;
+            .about {
+                padding: 55px 22px;
+            }
+
+            .about h2 {
+                font-size: 32px;
             }
         }
+
     </style>
 </head>
 
 <body>
+
 
 <!-- =========================
      HEADER
@@ -358,10 +556,15 @@
         </a>
 
         <nav>
+
             <a href="index.html">Home</a>
+
             <a href="#stories">Stories</a>
+
             <a href="#explore">Explore</a>
+
             <a href="#about">About</a>
+
         </nav>
 
     </div>
@@ -377,7 +580,10 @@
 
     <small>WELCOME TO MY CREATIVE WORLD</small>
 
-    <h1>YOUNG<br>PRINCE</h1>
+    <h1>
+        YOUNG<br>
+        PRINCE
+    </h1>
 
     <p>
         Stories, manga, drama, music, videos and imagination —
