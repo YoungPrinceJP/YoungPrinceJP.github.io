@@ -6,416 +6,796 @@
 
 <title>PRIMORDIA — Young Prince</title>
 
+<meta name="description"
+content="PRIMORDIA — An original fantasy manga by Young Prince.">
+
 <style>
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b0d0c;
-  color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3ed;
+    color: #17231f;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
+
 .navbar {
-  background: #111;
-  border-bottom: 1px solid #333;
-  padding: 16px 20px;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #dfe6df;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-container {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 2px;
+    color: #173c35;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo::after {
+    content: " ✦";
+    color: #c59b3a;
 }
 
 .nav-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-links a {
-  color: #ddd;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
+    color: #4c5954;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: .2s ease;
 }
 
 .nav-links a:hover {
-  color: #a9c875;
+    color: #237565;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  text-align: center;
-  padding: 90px 20px;
-  background: linear-gradient(135deg, #1d291d, #080908);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    padding: 105px 20px 120px;
+
+    background:
+        radial-gradient(circle at 20% 25%,
+            rgba(210,184,83,.45),
+            transparent 24%),
+
+        radial-gradient(circle at 80% 25%,
+            rgba(92,201,174,.35),
+            transparent 28%),
+
+        radial-gradient(circle at 50% 100%,
+            rgba(51,119,177,.35),
+            transparent 38%),
+
+        linear-gradient(135deg,
+            #17483e 0%,
+            #197064 38%,
+            #286d82 70%,
+            #40577b 100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    top: -220px;
+    left: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 50%;
+    bottom: -360px;
+    right: -100px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: auto;
 }
 
 .hero small {
-  color: #a9c875;
-  letter-spacing: 4px;
+    display: block;
+    color: #f0d58b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
 }
 
 .hero h1 {
-  font-size: 70px;
-  letter-spacing: 8px;
-  margin: 15px 0;
+    font-size: clamp(58px, 11vw, 105px);
+    letter-spacing: 8px;
+    line-height: .9;
+    margin-bottom: 25px;
+    text-shadow: 0 8px 30px rgba(0,0,0,.22);
 }
 
-.hero p {
-  color: #ccc;
-  font-size: 18px;
+.hero .subtitle {
+    max-width: 650px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.9);
 }
 
-/* CHAPTERS */
+.hero .ancient {
+    margin-top: 28px;
+    color: #f0d58b;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* =========================
+   MAIN
+========================= */
+
 .container {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
+    max-width: 950px;
+    margin: auto;
+    padding: 80px 20px;
 }
 
 .title {
-  text-align: center;
-  margin-bottom: 35px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.title small {
+    color: #9b7828;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .title h2 {
-  font-size: 36px;
+    color: #194d43;
+    font-size: 42px;
+    margin: 10px 0;
 }
 
 .title p {
-  color: #999;
+    color: #727b76;
+    font-size: 16px;
 }
 
+/* =========================
+   CHAPTER CARDS
+========================= */
+
 .chapter {
-  background: #151816;
-  border: 1px solid #303530;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 18px;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #dfe5df;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(32,76,65,.07);
+    transition: .3s ease;
+}
+
+.chapter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(32,76,65,.13);
+    border-color: #9fc6ba;
+}
+
+.chapter::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #eef6f1;
+    right: -55px;
+    bottom: -55px;
 }
 
 .chapter-number {
-  color: #a9c875;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 2px;
+    color: #9b7828;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .chapter h3 {
-  font-size: 25px;
-  margin: 8px 0;
+    position: relative;
+    z-index: 2;
+    color: #194d43;
+    font-size: 27px;
+    margin: 9px 0;
 }
 
 .chapter p {
-  color: #aaa;
+    position: relative;
+    z-index: 2;
+    color: #68736e;
+    line-height: 1.7;
+    max-width: 700px;
 }
 
 .read-button {
-  display: inline-block;
-  background: #a9c875;
-  color: #10120f;
-  text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 10px;
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    background: linear-gradient(135deg, #1d7665, #245b82);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 17px;
+    transition: .2s ease;
+    box-shadow: 0 7px 18px rgba(30,104,91,.18);
+}
+
+.read-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #165d50, #1e4c6c);
 }
 
 .coming {
-  color: #666 !important;
-  font-weight: bold;
+    color: #9b9f9c !important;
+    font-weight: bold;
 }
 
-/* FOOTER */
+/* =========================
+   FEATURE BANNER
+========================= */
+
+.awakening {
+    margin: 10px 0 65px;
+    border-radius: 22px;
+    padding: 55px 30px;
+    text-align: center;
+    color: white;
+
+    background:
+        radial-gradient(circle at 50% 20%,
+            rgba(212,191,91,.35),
+            transparent 25%),
+
+        linear-gradient(135deg,
+            #16483e,
+            #21796b 48%,
+            #355c7b);
+}
+
+.awakening .symbol {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.awakening h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.awakening p {
+    max-width: 650px;
+    margin: auto;
+    color: rgba(255,255,255,.86);
+    line-height: 1.7;
+}
+
+/* =========================
+   LORE SECTION
+========================= */
+
+.lore {
+    background: #eaf2ed;
+    border-top: 1px solid #d8e4dc;
+    border-bottom: 1px solid #d8e4dc;
+}
+
+.lore-inner {
+    max-width: 950px;
+    margin: auto;
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.lore-inner h2 {
+    color: #194d43;
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.lore-inner p {
+    max-width: 720px;
+    margin: auto;
+    color: #66736d;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-  text-align: center;
-  padding: 35px 20px;
-  background: #050605;
-  color: #777;
+    text-align: center;
+    padding: 40px 20px;
+    background: #17342f;
+    color: #9db0aa;
 }
 
-/* MOBILE */
-@media (max-width: 700px) {
-
-  .nav-container {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-    letter-spacing: 4px;
-  }
+footer strong {
+    color: #f0d58b;
 }
+
+footer p {
+    margin: 7px 0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 85px 20px 95px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: 4px;
+    }
+
+    .hero .subtitle {
+        font-size: 17px;
+    }
+
+    .container {
+        padding: 60px 18px;
+    }
+
+    .title h2 {
+        font-size: 34px;
+    }
+
+    .chapter {
+        padding: 25px;
+    }
+
+    .awakening {
+        padding: 45px 22px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero small {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .chapter h3 {
+        font-size: 23px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav class="navbar">
 
-  <div class="nav-container">
+    <div class="nav-container">
 
-    <a href="index.html" class="logo">
-      YOUNG PRINCE
-    </a>
+        <a href="index.html" class="logo">
+            YOUNG PRINCE
+        </a>
 
-    <div class="nav-links">
+        <div class="nav-links">
 
-      <a href="index.html">HOME</a>
+            <a href="index.html">HOME</a>
 
-      <a href="primordia.html">PRIMORDIA</a>
+            <a href="primordia.html">PRIMORDIA</a>
 
-      <a href="blood-on-broad-street.html">
-        BLOOD ON BROAD STREET
-      </a>
+            <a href="blood-on-broad-street.html">
+                BLOOD ON BROAD STREET
+            </a>
 
-      <a href="index.html#images">IMAGES</a>
+            <a href="index.html#explore">
+                EXPLORE
+            </a>
 
-      <a href="index.html#videos">VIDEOS</a>
+            <a href="index.html#about">
+                ABOUT
+            </a>
 
-      <a href="index.html#music">MUSIC</a>
-
-      <a href="index.html#about">ABOUT</a>
+        </div>
 
     </div>
-
-  </div>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-  <small>A YOUNG PRINCE ORIGINAL</small>
+    <div class="hero-content">
 
-  <h1>PRIMORDIA</h1>
+        <small>A YOUNG PRINCE ORIGINAL</small>
 
-  <p>
-    Before the world knew his name, nature knew him.
-  </p>
+        <h1>PRIMORDIA</h1>
+
+        <p class="subtitle">
+            Before the world knew his name,
+            nature knew him.
+        </p>
+
+        <div class="ancient">
+            THE BEGINNING OF AN ANCIENT JOURNEY
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- CHAPTERS -->
+<!-- =========================
+     CHAPTERS
+========================= -->
+
 <section class="container">
 
-  <div class="title">
+    <div class="title">
 
-    <h2>Chapters</h2>
+        <small>THE CHRONICLES BEGIN</small>
 
-    <p>
-      Enter the world of PRIMORDIA.
-    </p>
+        <h2>Enter Primordia</h2>
 
-  </div>
+        <p>
+            A world where nature, ancient powers and forgotten
+            mysteries are waiting to awaken.
+        </p>
 
-
-  <!-- CHAPTER 1 -->
-  <div class="chapter">
-
-    <div class="chapter-number">
-      CHAPTER 01
     </div>
 
-    <h3>The Awakening</h3>
 
-    <p>
-      Aurel discovers that something inside him
-      is connected to the natural world.
-    </p>
+    <!-- FEATURE BANNER -->
 
-    <a
-      href="primordia-chapter-1.html"
-      class="read-button">
-      Read Chapter 1 →
-    </a>
+    <div class="awakening">
 
-  </div>
+        <div class="symbol">🌿</div>
 
+        <h2>The Awakening</h2>
 
-  <!-- CHAPTER 2 -->
-  <div class="chapter">
+        <p>
+            A mysterious boy.
+            A dying tree.
+            A power that should never have awakened.
+        </p>
 
-    <div class="chapter-number">
-      CHAPTER 02
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The journey continues.
-    </p>
+    <!-- CHAPTER 1 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 01
+        </div>
 
-  <!-- CHAPTER 3 -->
-  <div class="chapter">
+        <h3>
+            The Awakening
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 03
+        <p>
+            Aurel discovers that something inside him
+            is connected to the natural world.
+            But the awakening is only the beginning.
+        </p>
+
+        <a
+            href="primordia-chapter-1.html"
+            class="read-button">
+
+            Read Chapter 1 →
+
+        </a>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The mystery deepens.
-    </p>
+    <!-- CHAPTER 2 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 02
+        </div>
 
-  <!-- CHAPTER 4 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 04
+        <p class="coming">
+            The journey continues.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The world begins to change.
-    </p>
+    <!-- CHAPTER 3 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 03
+        </div>
 
-  <!-- CHAPTER 5 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 05
+        <p class="coming">
+            The mystery deepens.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      Something ancient is awakening.
-    </p>
+    <!-- CHAPTER 4 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 04
+        </div>
 
-  <!-- CHAPTER 6 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 06
+        <p class="coming">
+            The world begins to change.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The truth draws closer.
-    </p>
+    <!-- CHAPTER 5 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 05
+        </div>
 
-  <!-- CHAPTER 7 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 07
+        <p class="coming">
+            Something ancient is awakening.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The forces of darkness move.
-    </p>
+    <!-- CHAPTER 6 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 06
+        </div>
 
-  <!-- CHAPTER 8 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 08
+        <p class="coming">
+            The truth draws closer.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The past refuses to remain buried.
-    </p>
+    <!-- CHAPTER 7 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 07
+        </div>
 
-  <!-- CHAPTER 9 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 09
+        <p class="coming">
+            The forces of darkness move.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The ancient laws begin to reveal themselves.
-    </p>
+    <!-- CHAPTER 8 -->
 
-  </div>
+    <div class="chapter">
 
+        <div class="chapter-number">
+            CHAPTER 08
+        </div>
 
-  <!-- CHAPTER 10 -->
-  <div class="chapter">
+        <h3>
+            Coming Soon
+        </h3>
 
-    <div class="chapter-number">
-      CHAPTER 10
+        <p class="coming">
+            The past refuses to remain buried.
+        </p>
+
     </div>
 
-    <h3>Coming Soon</h3>
 
-    <p class="coming">
-      The journey enters a new age.
-    </p>
+    <!-- CHAPTER 9 -->
 
-  </div>
+    <div class="chapter">
+
+        <div class="chapter-number">
+            CHAPTER 09
+        </div>
+
+        <h3>
+            Coming Soon
+        </h3>
+
+        <p class="coming">
+            The ancient laws begin to reveal themselves.
+        </p>
+
+    </div>
+
+
+    <!-- CHAPTER 10 -->
+
+    <div class="chapter">
+
+        <div class="chapter-number">
+            CHAPTER 10
+        </div>
+
+        <h3>
+            Coming Soon
+        </h3>
+
+        <p class="coming">
+            The journey enters a new age.
+        </p>
+
+    </div>
 
 </section>
 
+
+<!-- =========================
+     LORE
+========================= -->
+
+<section class="lore">
+
+    <div class="lore-inner">
+
+        <h2>
+            A World Older Than Memory
+        </h2>
+
+        <p>
+            In Primordia, the elements are not the beginning.
+            Something existed before them — something ancient,
+            something forgotten, and something that has been
+            waiting for the right moment to return.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <strong>YOUNG PRINCE</strong>
+    <p>
+        <strong>YOUNG PRINCE</strong>
+    </p>
 
-  <p>
-    Stories • Series • Images • Videos • Music
-  </p>
+    <p>
+        PRIMORDIA • Stories • Manga • Fantasy
+    </p>
 
-  <p>
-    © 2026 Young Prince. All Rights Reserved.
-  </p>
+    <p>
+        © 2026 Young Prince. All Rights Reserved.
+    </p>
 
 </footer>
+
 
 </body>
 </html>
