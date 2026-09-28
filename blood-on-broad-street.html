@@ -7,8 +7,13 @@
 <title>BLOOD ON BROAD STREET — Young Prince</title>
 
 <style>
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,148 +23,209 @@ body {
   color: #ffffff;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 .navbar {
-  background: #111;
-  border-bottom: 1px solid #333;
+  width: 100%;
+  background: #111111;
+  border-bottom: 1px solid #444;
   padding: 16px 20px;
 }
 
 .nav-container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 20px;
 }
 
 .logo {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
+
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 2px;
+
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   gap: 18px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .nav-links a {
-  color: #ddd;
+  color: #dddddd;
   text-decoration: none;
+
   font-size: 14px;
   font-weight: bold;
+
+  padding: 5px 0;
 }
 
 .nav-links a:hover {
   color: #d85b5b;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   text-align: center;
-  padding: 90px 20px;
+
+  padding: 100px 20px;
+
   background:
-    linear-gradient(135deg, #351313, #090909 70%);
+    linear-gradient(
+      135deg,
+      #351313 0%,
+      #160909 50%,
+      #080808 100%
+    );
 }
 
 .hero small {
   color: #d85b5b;
+
   letter-spacing: 4px;
   font-weight: bold;
 }
 
 .hero h1 {
   font-size: clamp(42px, 8vw, 78px);
+
   letter-spacing: 4px;
+
   margin: 18px 0;
+
   font-weight: 900;
 }
 
 .hero p {
-  color: #ccc;
+  color: #cccccc;
+
   font-size: 18px;
+
   max-width: 700px;
+
   margin: auto;
 }
 
 .tagline {
   margin-top: 22px;
+
   color: #d85b5b;
+
   font-style: italic;
+
   font-size: 19px;
 }
 
-/* EPISODES */
+
+/* =========================
+   EPISODES
+========================= */
 
 .container {
   max-width: 900px;
+
   margin: auto;
+
   padding: 60px 20px;
 }
 
 .title {
   text-align: center;
+
   margin-bottom: 35px;
 }
 
 .title h2 {
   font-size: 36px;
+
   margin-bottom: 10px;
 }
 
 .title p {
-  color: #999;
+  color: #999999;
 }
 
-/* EPISODE CARDS */
+
+/* =========================
+   EPISODE CARDS
+========================= */
 
 .episode {
   background: #151515;
-  border: 1px solid #333;
+
+  border: 1px solid #333333;
+
   border-radius: 12px;
+
   padding: 25px;
+
   margin-bottom: 18px;
+
   transition: 0.3s;
 }
 
 .episode:hover {
   transform: translateY(-3px);
+
   border-color: #8e3d3d;
 }
 
 .episode-number {
   color: #d85b5b;
+
   font-size: 13px;
+
   font-weight: bold;
+
   letter-spacing: 2px;
 }
 
 .episode h3 {
   font-size: 25px;
+
   margin: 8px 0;
 }
 
 .episode p {
-  color: #aaa;
+  color: #aaaaaa;
+
   line-height: 1.7;
 }
 
 .read-button {
   display: inline-block;
+
   background: #b64c4c;
+
   color: white;
+
   text-decoration: none;
+
   padding: 10px 18px;
+
   border-radius: 6px;
+
   font-weight: bold;
+
   margin-top: 10px;
 }
 
@@ -168,49 +234,69 @@ body {
 }
 
 .coming {
-  color: #666 !important;
+  color: #666666 !important;
+
   font-weight: bold;
 }
 
-/* STORY INTRO */
+
+/* =========================
+   STORY INTRO
+========================= */
 
 .story {
-  background: #111;
+  background: #111111;
+
   border-top: 1px solid #292929;
+
   border-bottom: 1px solid #292929;
 }
 
 .story-box {
   max-width: 800px;
+
   margin: auto;
+
   text-align: center;
 }
 
 .story-box h2 {
   font-size: 34px;
+
   margin-bottom: 20px;
 }
 
 .story-box p {
-  color: #aaa;
+  color: #aaaaaa;
+
   font-size: 17px;
+
   line-height: 1.8;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   text-align: center;
+
   padding: 35px 20px;
+
   background: #050505;
-  color: #777;
+
+  color: #777777;
 }
 
 footer strong {
   color: white;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -222,21 +308,36 @@ footer strong {
     gap: 12px;
   }
 
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 75px 20px;
+  }
+
   .hero h1 {
     font-size: 43px;
+
     letter-spacing: 2px;
   }
 
   .hero p {
     font-size: 16px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav class="navbar">
 
@@ -246,23 +347,36 @@ footer strong {
       YOUNG PRINCE
     </a>
 
+
     <div class="nav-links">
 
-      <a href="index.html">HOME</a>
+      <a href="index.html">
+        HOME
+      </a>
 
-      <a href="primordia.html">PRIMORDIA</a>
+      <a href="primordia.html">
+        PRIMORDIA
+      </a>
 
       <a href="blood-on-broad-street.html">
         BLOOD ON BROAD STREET
       </a>
 
-      <a href="index.html#images">IMAGES</a>
+      <a href="index.html#images">
+        IMAGES
+      </a>
 
-      <a href="index.html#videos">VIDEOS</a>
+      <a href="index.html#videos">
+        VIDEOS
+      </a>
 
-      <a href="index.html#music">MUSIC</a>
+      <a href="index.html#music">
+        MUSIC
+      </a>
 
-      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#about">
+        ABOUT
+      </a>
 
     </div>
 
@@ -271,13 +385,19 @@ footer strong {
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-  <small>A YOUNG PRINCE ORIGINAL</small>
+  <small>
+    A YOUNG PRINCE ORIGINAL
+  </small>
 
-  <h1>BLOOD ON BROAD STREET</h1>
+  <h1>
+    BLOOD ON BROAD STREET
+  </h1>
 
   <p>
     Before the blood, there was friendship.
@@ -291,13 +411,17 @@ footer strong {
 </section>
 
 
-<!-- EPISODES -->
+<!-- =========================
+     EPISODES
+========================= -->
 
 <section class="container">
 
   <div class="title">
 
-    <h2>Episodes</h2>
+    <h2>
+      Episodes
+    </h2>
 
     <p>
       Enter the streets of Lagos City.
@@ -314,7 +438,9 @@ footer strong {
       EPISODE 01
     </div>
 
-    <h3>The Three Boys</h3>
+    <h3>
+      The Three Boys
+    </h3>
 
     <p>
       Before the blood, there was friendship.
@@ -342,7 +468,9 @@ footer strong {
       EPISODE 02
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The story continues.
@@ -359,7 +487,9 @@ footer strong {
       EPISODE 03
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The consequences begin.
@@ -376,7 +506,9 @@ footer strong {
       EPISODE 04
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The streets reveal another secret.
@@ -393,7 +525,9 @@ footer strong {
       EPISODE 05
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       Nothing stays hidden forever.
@@ -410,7 +544,9 @@ footer strong {
       EPISODE 06
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       Trust begins to disappear.
@@ -427,7 +563,9 @@ footer strong {
       EPISODE 07
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The past comes looking for them.
@@ -444,7 +582,9 @@ footer strong {
       EPISODE 08
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The line between friend and enemy disappears.
@@ -461,7 +601,9 @@ footer strong {
       EPISODE 09
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The truth finally surfaces.
@@ -478,7 +620,9 @@ footer strong {
       EPISODE 10
     </div>
 
-    <h3>Coming Soon</h3>
+    <h3>
+      Coming Soon
+    </h3>
 
     <p class="coming">
       The streets will never be the same.
@@ -489,7 +633,9 @@ footer strong {
 </section>
 
 
-<!-- STORY INTRO -->
+<!-- =========================
+     STORY INTRO
+========================= -->
 
 <section class="story">
 
@@ -497,7 +643,9 @@ footer strong {
 
     <div class="story-box">
 
-      <h2>Lagos City</h2>
+      <h2>
+        Lagos City
+      </h2>
 
       <p>
         Three boys. One friendship.
@@ -517,7 +665,9 @@ footer strong {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -534,6 +684,7 @@ footer strong {
   </p>
 
 </footer>
+
 
 </body>
 </html>
