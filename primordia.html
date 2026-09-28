@@ -1,6 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,6 +12,10 @@
 content="PRIMORDIA — An original fantasy manga by Young Prince.">
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
 
 * {
     box-sizing: border-box;
@@ -27,15 +33,21 @@ body {
     color: #17231f;
 }
 
+a {
+    text-decoration: none;
+}
+
+
 /* =========================
    NAVIGATION
 ========================= */
 
 .navbar {
-    background: rgba(255,255,255,.94);
+    background: rgba(255,255,255,.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #dfe6df;
     padding: 16px 20px;
+
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -44,15 +56,18 @@ body {
 .nav-container {
     max-width: 1150px;
     margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 20px;
 }
 
 .logo {
     color: #173c35;
     text-decoration: none;
+
     font-size: 22px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -66,15 +81,19 @@ body {
 .nav-links {
     display: flex;
     gap: 18px;
+
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .nav-links a {
     color: #4c5954;
+
     text-decoration: none;
+
     font-size: 13px;
     font-weight: bold;
+
     transition: .2s ease;
 }
 
@@ -82,98 +101,416 @@ body {
     color: #237565;
 }
 
+
 /* =========================
-   HERO
+   PRIMORDIA FOREST HERO
 ========================= */
 
 .hero {
     position: relative;
     overflow: hidden;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
     color: white;
-    padding: 105px 20px 120px;
 
     background:
-        radial-gradient(circle at 20% 25%,
-            rgba(210,184,83,.45),
-            transparent 24%),
 
-        radial-gradient(circle at 80% 25%,
-            rgba(92,201,174,.35),
-            transparent 28%),
+        /* Golden sunlight */
+        radial-gradient(
+            ellipse at 50% 25%,
+            rgba(255, 221, 116, .78) 0%,
+            rgba(214, 177, 68, .38) 17%,
+            transparent 43%
+        ),
 
-        radial-gradient(circle at 50% 100%,
-            rgba(51,119,177,.35),
-            transparent 38%),
+        /* Emerald canopy */
+        radial-gradient(
+            ellipse at 12% 8%,
+            #102f27 0%,
+            transparent 42%
+        ),
 
-        linear-gradient(135deg,
-            #17483e 0%,
-            #197064 38%,
-            #286d82 70%,
-            #40577b 100%);
+        radial-gradient(
+            ellipse at 88% 8%,
+            #0d3329 0%,
+            transparent 42%
+        ),
+
+        /* Forest distance */
+        linear-gradient(
+            180deg,
+            #0e352d 0%,
+            #17604e 34%,
+            #39805d 62%,
+            #8b8952 100%
+        );
 }
+
+
+/* =========================
+   GIANT TREE SILHOUETTES
+========================= */
 
 .hero::before {
     content: "";
+
     position: absolute;
-    width: 420px;
-    height: 420px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 50%;
-    top: -220px;
-    left: -100px;
+    inset: 0;
+
+    background:
+
+        /* Left giant tree */
+        linear-gradient(
+            90deg,
+            #092720 0%,
+            #092720 9%,
+            transparent 9%
+        ),
+
+        /* Right giant tree */
+        linear-gradient(
+            90deg,
+            transparent 87%,
+            #092720 87%,
+            #092720 100%
+        ),
+
+        /* Distant tree trunks */
+        linear-gradient(
+            88deg,
+            transparent 0 20%,
+
+            rgba(25,70,51,.78) 20% 23%,
+
+            transparent 23% 36%,
+
+            rgba(31,78,56,.70) 36% 39%,
+
+            transparent 39% 58%,
+
+            rgba(24,69,52,.70) 58% 61%,
+
+            transparent 61% 73%,
+
+            rgba(28,72,52,.72) 73% 76%,
+
+            transparent 76%
+        );
+
+    opacity: .95;
 }
 
-.hero::after {
-    content: "";
+
+/* =========================
+   FOREST CANOPY
+========================= */
+
+.forest-canopy {
     position: absolute;
-    width: 520px;
-    height: 520px;
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: 50%;
-    bottom: -360px;
-    right: -100px;
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 3% 5%,
+            #082b24 0 12%,
+            transparent 13%
+        ),
+
+        radial-gradient(
+            circle at 15% 2%,
+            #164b38 0 16%,
+            transparent 17%
+        ),
+
+        radial-gradient(
+            circle at 30% -2%,
+            #0b382d 0 15%,
+            transparent 16%
+        ),
+
+        radial-gradient(
+            circle at 48% -5%,
+            #1a523d 0 18%,
+            transparent 19%
+        ),
+
+        radial-gradient(
+            circle at 67% 0%,
+            #103f32 0 16%,
+            transparent 17%
+        ),
+
+        radial-gradient(
+            circle at 84% 4%,
+            #092f27 0 15%,
+            transparent 16%
+        ),
+
+        radial-gradient(
+            circle at 100% 9%,
+            #103d30 0 16%,
+            transparent 17%
+        );
+
+    opacity: .98;
+
+    z-index: 2;
 }
+
+
+/* =========================
+   GOLDEN SUN RAYS
+========================= */
+
+.sun-rays {
+    position: absolute;
+
+    inset: -20%;
+
+    background:
+
+        linear-gradient(
+            112deg,
+            transparent 37%,
+            rgba(255,221,126,.15) 44%,
+            transparent 50%
+        ),
+
+        linear-gradient(
+            72deg,
+            transparent 41%,
+            rgba(255,229,145,.18) 48%,
+            transparent 55%
+        ),
+
+        linear-gradient(
+            96deg,
+            transparent 43%,
+            rgba(255,238,168,.13) 50%,
+            transparent 57%
+        );
+
+    filter: blur(2px);
+
+    animation: sunlight 8s ease-in-out infinite alternate;
+
+    z-index: 3;
+}
+
+@keyframes sunlight {
+
+    from {
+        opacity: .55;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(10px);
+    }
+}
+
+
+/* =========================
+   MYSTICAL MIST
+========================= */
+
+.forest-mist {
+    position: absolute;
+
+    left: -10%;
+    right: -10%;
+    bottom: 0;
+
+    height: 50%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(218,231,198,.08) 18%,
+            rgba(229,235,207,.25) 55%,
+            rgba(240,239,215,.48) 100%
+        );
+
+    filter: blur(8px);
+
+    z-index: 5;
+}
+
+
+/* =========================
+   FOREST FLOOR
+========================= */
+
+.forest-floor {
+    position: absolute;
+
+    bottom: -13%;
+    left: -5%;
+    right: -5%;
+
+    height: 37%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 20%,
+            #839b58,
+            #456847 48%,
+            #183d34 82%
+        );
+
+    border-radius: 50% 50% 0 0;
+
+    z-index: 4;
+}
+
+
+/* =========================
+   GLOWING PARTICLES
+========================= */
+
+.particles {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,231,126,.95) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(188,245,180,.85) 0 1.5px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,245,181,.9) 0 1px,
+            transparent 2px
+        );
+
+    background-size:
+        170px 190px,
+        230px 240px,
+        310px 280px;
+
+    background-position:
+        20px 40px,
+        90px 20px,
+        150px 100px;
+
+    animation: particles 14s linear infinite;
+
+    opacity: .7;
+
+    z-index: 7;
+}
+
+@keyframes particles {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40px);
+    }
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
 
 .hero-content {
     position: relative;
-    z-index: 2;
+
+    z-index: 10;
+
     max-width: 850px;
-    margin: auto;
+
+    padding: 30px;
 }
 
 .hero small {
     display: block;
-    color: #f0d58b;
+
+    color: #f3d879;
+
     font-size: 13px;
+
     font-weight: bold;
+
     letter-spacing: 4px;
+
     margin-bottom: 22px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.55);
 }
 
 .hero h1 {
-    font-size: clamp(58px, 11vw, 105px);
-    letter-spacing: 8px;
+    color: #fff9df;
+
+    font-size: clamp(58px, 11vw, 110px);
+
+    letter-spacing: 9px;
+
     line-height: .9;
+
     margin-bottom: 25px;
-    text-shadow: 0 8px 30px rgba(0,0,0,.22);
+
+    text-shadow:
+        0 3px 0 rgba(0,0,0,.15),
+        0 0 25px rgba(255,224,116,.30),
+        0 12px 35px rgba(0,0,0,.4);
 }
 
 .hero .subtitle {
     max-width: 650px;
+
     margin: auto;
+
+    color: rgba(255,255,255,.94);
+
     font-size: 20px;
+
     line-height: 1.7;
-    color: rgba(255,255,255,.9);
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.55);
 }
 
 .hero .ancient {
     margin-top: 28px;
-    color: #f0d58b;
-    font-size: 14px;
+
+    color: #f2d77d;
+
+    font-size: 13px;
+
     letter-spacing: 3px;
+
     font-weight: bold;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.55);
 }
+
 
 /* =========================
    MAIN
@@ -181,32 +518,99 @@ body {
 
 .container {
     max-width: 950px;
+
     margin: auto;
+
     padding: 80px 20px;
 }
 
 .title {
     text-align: center;
+
     margin-bottom: 45px;
 }
 
 .title small {
     color: #9b7828;
+
     font-size: 12px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
 }
 
 .title h2 {
     color: #194d43;
+
     font-size: 42px;
+
     margin: 10px 0;
 }
 
 .title p {
     color: #727b76;
+
     font-size: 16px;
 }
+
+
+/* =========================
+   AWAKENING BANNER
+========================= */
+
+.awakening {
+    margin: 10px 0 65px;
+
+    border-radius: 22px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(212,191,91,.35),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #16483e,
+            #21796b 48%,
+            #355c7b
+        );
+
+    box-shadow:
+        0 18px 45px rgba(27,82,69,.18);
+}
+
+.awakening .symbol {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.awakening h2 {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.awakening p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,.86);
+
+    line-height: 1.7;
+}
+
 
 /* =========================
    CHAPTER CARDS
@@ -214,150 +618,176 @@ body {
 
 .chapter {
     position: relative;
+
     background: #ffffff;
+
     border: 1px solid #dfe5df;
+
     border-radius: 18px;
+
     padding: 30px;
+
     margin-bottom: 20px;
+
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(32,76,65,.07);
+
+    box-shadow:
+        0 10px 30px rgba(32,76,65,.07);
+
     transition: .3s ease;
 }
 
 .chapter:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(32,76,65,.13);
+
+    box-shadow:
+        0 18px 40px rgba(32,76,65,.14);
+
     border-color: #9fc6ba;
 }
 
 .chapter::after {
     content: "";
+
     position: absolute;
+
     width: 130px;
     height: 130px;
+
     border-radius: 50%;
+
     background: #eef6f1;
+
     right: -55px;
     bottom: -55px;
 }
 
 .chapter-number {
     color: #9b7828;
+
     font-size: 12px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
 }
 
 .chapter h3 {
     position: relative;
+
     z-index: 2;
+
     color: #194d43;
+
     font-size: 27px;
+
     margin: 9px 0;
 }
 
 .chapter p {
     position: relative;
+
     z-index: 2;
+
     color: #68736e;
+
     line-height: 1.7;
+
     max-width: 700px;
 }
 
 .read-button {
     position: relative;
+
     z-index: 3;
+
     display: inline-block;
-    background: linear-gradient(135deg, #1d7665, #245b82);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d7665,
+            #245b82
+        );
+
     color: white;
+
     text-decoration: none;
+
     padding: 12px 20px;
+
     border-radius: 8px;
+
     font-weight: bold;
+
     margin-top: 17px;
+
     transition: .2s ease;
-    box-shadow: 0 7px 18px rgba(30,104,91,.18);
+
+    box-shadow:
+        0 7px 18px rgba(30,104,91,.18);
 }
 
 .read-button:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #165d50, #1e4c6c);
+
+    background:
+        linear-gradient(
+            135deg,
+            #165d50,
+            #1e4c6c
+        );
 }
 
 .coming {
     color: #9b9f9c !important;
+
     font-weight: bold;
 }
 
-/* =========================
-   FEATURE BANNER
-========================= */
-
-.awakening {
-    margin: 10px 0 65px;
-    border-radius: 22px;
-    padding: 55px 30px;
-    text-align: center;
-    color: white;
-
-    background:
-        radial-gradient(circle at 50% 20%,
-            rgba(212,191,91,.35),
-            transparent 25%),
-
-        linear-gradient(135deg,
-            #16483e,
-            #21796b 48%,
-            #355c7b);
-}
-
-.awakening .symbol {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.awakening h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.awakening p {
-    max-width: 650px;
-    margin: auto;
-    color: rgba(255,255,255,.86);
-    line-height: 1.7;
-}
 
 /* =========================
-   LORE SECTION
+   LORE
 ========================= */
 
 .lore {
     background: #eaf2ed;
+
     border-top: 1px solid #d8e4dc;
+
     border-bottom: 1px solid #d8e4dc;
 }
 
 .lore-inner {
     max-width: 950px;
+
     margin: auto;
+
     padding: 75px 20px;
+
     text-align: center;
 }
 
 .lore-inner h2 {
     color: #194d43;
+
     font-size: 35px;
+
     margin-bottom: 18px;
 }
 
 .lore-inner p {
     max-width: 720px;
+
     margin: auto;
+
     color: #66736d;
+
     font-size: 17px;
+
     line-height: 1.9;
 }
+
 
 /* =========================
    FOOTER
@@ -365,8 +795,11 @@ body {
 
 footer {
     text-align: center;
+
     padding: 40px 20px;
+
     background: #17342f;
+
     color: #9db0aa;
 }
 
@@ -377,6 +810,7 @@ footer strong {
 footer p {
     margin: 7px 0;
 }
+
 
 /* =========================
    MOBILE
@@ -393,16 +827,25 @@ footer p {
     }
 
     .hero {
-        padding: 85px 20px 95px;
+        min-height: 570px;
+
+        padding: 80px 20px 95px;
     }
 
     .hero h1 {
         font-size: 55px;
+
         letter-spacing: 4px;
     }
 
     .hero .subtitle {
         font-size: 17px;
+    }
+
+    .hero .ancient {
+        font-size: 10px;
+
+        letter-spacing: 2px;
     }
 
     .container {
@@ -423,18 +866,30 @@ footer p {
 
 }
 
+
+/* =========================
+   SMALL PHONES
+========================= */
+
 @media (max-width: 450px) {
 
     .nav-links a {
         font-size: 11px;
     }
 
+    .hero {
+        min-height: 540px;
+    }
+
     .hero h1 {
         font-size: 45px;
+
+        letter-spacing: 3px;
     }
 
     .hero small {
         font-size: 10px;
+
         letter-spacing: 2px;
     }
 
@@ -446,6 +901,7 @@ footer p {
 
 </style>
 </head>
+
 
 <body>
 
@@ -464,9 +920,13 @@ footer p {
 
         <div class="nav-links">
 
-            <a href="index.html">HOME</a>
+            <a href="index.html">
+                HOME
+            </a>
 
-            <a href="primordia.html">PRIMORDIA</a>
+            <a href="primordia.html">
+                PRIMORDIA
+            </a>
 
             <a href="blood-on-broad-street.html">
                 BLOOD ON BROAD STREET
@@ -488,16 +948,35 @@ footer p {
 
 
 <!-- =========================
-     HERO
+     PRIMORDIA HERO
 ========================= -->
 
 <section class="hero">
 
+    <!-- Forest layers -->
+
+    <div class="forest-canopy"></div>
+
+    <div class="sun-rays"></div>
+
+    <div class="forest-mist"></div>
+
+    <div class="forest-floor"></div>
+
+    <div class="particles"></div>
+
+
+    <!-- Hero content -->
+
     <div class="hero-content">
 
-        <small>A YOUNG PRINCE ORIGINAL</small>
+        <small>
+            A YOUNG PRINCE ORIGINAL
+        </small>
 
-        <h1>PRIMORDIA</h1>
+        <h1>
+            PRIMORDIA
+        </h1>
 
         <p class="subtitle">
             Before the world knew his name,
@@ -521,9 +1000,13 @@ footer p {
 
     <div class="title">
 
-        <small>THE CHRONICLES BEGIN</small>
+        <small>
+            THE CHRONICLES BEGIN
+        </small>
 
-        <h2>Enter Primordia</h2>
+        <h2>
+            Enter Primordia
+        </h2>
 
         <p>
             A world where nature, ancient powers and forgotten
@@ -533,13 +1016,17 @@ footer p {
     </div>
 
 
-    <!-- FEATURE BANNER -->
+    <!-- AWAKENING FEATURE -->
 
     <div class="awakening">
 
-        <div class="symbol">🌿</div>
+        <div class="symbol">
+            🌿
+        </div>
 
-        <h2>The Awakening</h2>
+        <h2>
+            The Awakening
+        </h2>
 
         <p>
             A mysterious boy.
@@ -783,7 +1270,9 @@ footer p {
 <footer>
 
     <p>
-        <strong>YOUNG PRINCE</strong>
+        <strong>
+            YOUNG PRINCE
+        </strong>
     </p>
 
     <p>
@@ -799,3 +1288,4 @@ footer p {
 
 </body>
 </html>
+```
