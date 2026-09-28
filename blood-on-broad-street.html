@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blood on Broad Street | Young Prince</title>
+
+  <meta
+    name="description"
+    content="Blood on Broad Street — a Lagos City crime drama series by Young Prince."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #171717;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e5e5e5;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #333;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      background: #111;
+      color: #fff;
+      padding: 95px 24px 85px;
+    }
+
+    .hero-inner {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #cfcfcf;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 1.1rem;
+      color: #d8d8d8;
+    }
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    .container {
+      max-width: 950px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: #5e5e5e;
+      margin-bottom: 35px;
+    }
+
+    /* =========================
+       STORY INTRO
+    ========================== */
+
+    .story-intro {
+      background: #fff;
+      border-bottom: 1px solid #e7e7e7;
+    }
+
+    .story-intro-box {
+      max-width: 800px;
+    }
+
+    .story-intro-box p {
+      margin-bottom: 18px;
+      color: #414141;
+    }
+
+    .quote {
+      margin: 28px 0;
+      padding: 22px 25px;
+      background: #f1f1ef;
+      border-left: 4px solid #111;
+      font-size: 1.15rem;
+      font-style: italic;
+    }
+
+    /* =========================
+       EPISODE NAVIGATION
+    ========================== */
+
+    .episode-nav {
+      background: #111;
+      color: #fff;
+    }
+
+    .episode-nav h2 {
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    .episode-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .episode-link {
+      display: block;
+      padding: 14px 10px;
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .episode-link:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* =========================
+       EPISODES
+    ========================== */
+
+    .episode {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 36px;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+    }
+
+    .episode-number {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .episode h2 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+
+    .scene {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid #ededed;
+    }
+
+    .scene h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .location {
+      font-size: 0.9rem;
+      color: #777;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .story-text {
+      color: #333;
+    }
+
+    .story-text p {
+      margin-bottom: 18px;
+    }
+
+    .dialogue {
+      margin: 12px 0;
+      padding-left: 18px;
+      border-left: 3px solid #ddd;
+    }
+
+    .character {
+      font-weight: 800;
+    }
+
+    .stage-direction {
+      color: #666;
+      font-style: italic;
+    }
+
+    .cliffhanger {
+      margin-top: 28px;
+      padding: 24px;
+      background: #111;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .coming-soon {
+      padding: 30px;
+      background: #f4f4f2;
+      border-radius: 10px;
+      color: #666;
+      text-align: center;
+    }
+
+    /* =========================
+       BACK LINK
+    ========================== */
+
+    .back-area {
+      padding: 0 0 70px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 13px 18px;
+      border: 1px solid #222;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 35px 24px;
+      text-align: center;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px 24px;
+        border-bottom: 1px solid #e5e5e5;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .episode-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .episode {
+        padding: 25px;
+      }
+
+      .hero {
+        padding: 75px 24px 65px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .episode-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .episode {
+        padding: 20px;
+      }
+
+      .episode h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        YOUNGPRINCE
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#stories">Stories</a>
+        <a href="index.html#series">Series</a>
+        <a href="index.html#latest">Latest</a>
+        <a href="index.html#media">Media</a>
+        <a href="index.html#about">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <span class="hero-label">
+        Crime • Drama • Lagos City
+      </span>
+
+      <h1>
+        BLOOD ON<br>
+        BROAD STREET
+      </h1>
+
+      <p>
+        Before the blood, there was friendship.
+        Three boys growing up in Lagos City never imagined
+        that one ordinary day would become the beginning
+        of a story that would change their lives forever.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       STORY INTRO
+  ========================== -->
+
+  <section class="section story-intro">
+    <div class="container">
+
+      <div class="story-intro-box">
+
+        <h2 class="section-title">
+          The Story
+        </h2>
+
+        <p>
+          <strong>BLOOD ON BROAD STREET</strong> is a Lagos City
+          crime drama about friendship, survival, loyalty,
+          betrayal and the consequences of choices made too early.
+        </p>
+
+        <p>
+          At the beginning, Tariq, Slim and Emeka are only
+          ten-year-old boys trying to enjoy childhood in the
+          middle of a busy Lagos neighborhood.
+        </p>
+
+        <p>
+          They have no money, no power and no idea what the
+          future holds.
+        </p>
+
+        <p>
+          But they have something they value more than anything:
+          <strong>each other.</strong>
+        </p>
+
+        <div class="quote">
+          "Before the blood... there was friendship."
+        </div>
+
+        <p>
+          Their story begins with something so simple that none
+          of them could possibly understand what it would eventually
+          become.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       EPISODE NAVIGATION
+  ========================== -->
+
+  <section class="section episode-nav" id="episodes">
+    <div class="container">
+
+      <h2>
+        Episodes
+      </h2>
+
+      <div class="episode-grid">
+
+        <a href="#episode-1" class="episode-link">
+          Episode 1
+        </a>
+
+        <a href="#episode-2" class="episode-link">
+          Episode 2
+        </a>
+
+        <a href="#episode-3" class="episode-link">
+          Episode 3
+        </a>
+
+        <a href="#episode-4" class="episode-link">
+          Episode 4
+        </a>
+
+        <a href="#episode-5" class="episode-link">
+          Episode 5
+        </a>
+
+        <a href="#episode-6" class="episode-link">
+          Episode 6
+        </a>
+
+        <a href="#episode-7" class="episode-link">
+          Episode 7
+        </a>
+
+        <a href="#episode-8" class="episode-link">
+          Episode 8
+        </a>
+
+        <a href="#episode-9" class="episode-link">
+          Episode 9
+        </a>
+
+        <a href="#episode-10" class="episode-link">
+          Episode 10
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       EPISODE 1
+  ========================== -->
+
+  <main class="section">
+    <div class="container">
+
+      <article class="episode" id="episode-1">
+
+        <span class="episode-number">
+          Episode 1
+        </span>
+
+        <h2>
+          The Three Boys
+        </h2>
+
+        <div class="scene">
+
+          <h3>
+            Scene 1 — Before the Blood
+          </h3>
+
+          <div class="location">
+            Lagos City — Late Afternoon
+          </div>
+
+          <div class="story-text">
+
+            <p class="stage-direction">
+              The streets are alive. Hawkers call out to passing
+              vehicles. Danfo buses move through traffic. Children
+              play nearby while adults go about their business.
+            </p>
+
+            <p>
+              Three ten-year-old boys stand together on a quiet
+              stretch near the roadside.
+            </p>
+
+            <p>
+              <strong>Tariq</strong>, <strong>Slim</strong> and
+              <strong>Emeka</strong> have been friends for as long
+              as they can remember.
+            </p>
+
+            <p>
+              They have no money.
+              They have no power.
+              They have no idea what the future will bring.
+            </p>
+
+            <p>
+              But they have each other.
+            </p>
+
+            <div class="dialogue">
+              <span class="character">Tariq:</span>
+              Look at you two. Both of you are scared already.
+            </div>
+
+            <div class="dialogue">
+              <span class="character">Slim:</span>
+              Scared of what? You?
+              Please.
+            </div>
+
+            <div class="dialogue">
+              <span class="character">Emeka:</span>
+              Both of you talk too much.
+              Just throw the stone.
+            </div>
+
+            <p class="stage-direction">
+              Tariq picks up a small stone from the ground
+              and studies it like a professional athlete.
+            </p>
+
+            <div class="dialogue">
+              <span class="character">Tariq:</span>
+              Bet you can't throw yours farther than mine.
+            </div>
+
+            <div class="dialogue">
+              <span class="character">Slim:</span>
+              That is the easiest bet you have ever made.
+            </div>
+
+            <div class="dialogue">
+              <span class="character">Emeka:</span>
+              Just don't cry when you lose.
+            </div>
+
+            <p class="stage-direction">
+              The boys laugh.
+            </p>
+
+            <p>
+              One after another, they throw their stones.
+            </p>
+
+            <p class="stage-direction">
+              The first stone flies.
+            </p>
+
+            <p class="stage-direction">
+              The second goes farther.
+            </p>
+
+            <p class="stage-direction">
+              Then Tariq takes his turn.
+            </p>
+
+            <p class="stage-direction">
+              He throws.
+            </p>
+
+            <p>
+              The stone travels through the air...
+            </p>
+
+            <p class="stage-direction">
+              SPLASH!
+            </p>
+
+            <p>
+              The boys stare toward the water.
+            </p>
+
+            <div class="dialogue">
+              <span class="character">Slim:</span>
+              Ha! I told you!
+            </div>
+
+            <div class="dialogue">
+              <span class="character">Emeka:</span>
+              You only got lucky.
+            </div>
+
+            <div class="dialogue">
+              <span class="character">Tariq:</span>
+              Lucky?
+              Say it again.
+            </div>
+
+            <p class="stage-direction">
+              They burst into laughter.
+            </p>
+
+            <p>
+              For a few minutes, they are just children.
+            </p>
+
+            <p>
+              Nothing else matters.
+            </p>
+
+            <div class="cliffhanger">
+              But none of them knows that the friendship they
+              are celebrating today will eventually be tested
+              by money, violence, secrets and blood.
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 2
+      ========================== -->
+
+      <article class="episode" id="episode-2">
+
+        <span class="episode-number">
+          Episode 2
+        </span>
+
+        <h2>
+          The Next Chapter
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            The story continues here.
+          </p>
+
+          <p>
+            Episode 2 will be added as the series is developed.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 3
+      ========================== -->
+
+      <article class="episode" id="episode-3">
+
+        <span class="episode-number">
+          Episode 3
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 3 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 4
+      ========================== -->
+
+      <article class="episode" id="episode-4">
+
+        <span class="episode-number">
+          Episode 4
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 4 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 5
+      ========================== -->
+
+      <article class="episode" id="episode-5">
+
+        <span class="episode-number">
+          Episode 5
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 5 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 6
+      ========================== -->
+
+      <article class="episode" id="episode-6">
+
+        <span class="episode-number">
+          Episode 6
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 6 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 7
+      ========================== -->
+
+      <article class="episode" id="episode-7">
+
+        <span class="episode-number">
+          Episode 7
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 7 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 8
+      ========================== -->
+
+      <article class="episode" id="episode-8">
+
+        <span class="episode-number">
+          Episode 8
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 8 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 9
+      ========================== -->
+
+      <article class="episode" id="episode-9">
+
+        <span class="episode-number">
+          Episode 9
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 9 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           EPISODE 10
+      ========================== -->
+
+      <article class="episode" id="episode-10">
+
+        <span class="episode-number">
+          Episode 10
+        </span>
+
+        <h2>
+          Coming Soon
+        </h2>
+
+        <div class="coming-soon">
+          <p>
+            Episode 10 content will be added here.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+
+  <!-- =========================
+       BACK TO WEBSITE
+  ========================== -->
+
+  <section class="back-area">
+    <div class="container">
+
+      <a href="index.html" class="back-link">
+        ← Back to Young Prince
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+    <p>
+      © 2026 <strong>Young Prince</strong>.
+      All rights reserved.
+    </p>
+
+    <p>
+      BLOOD ON BROAD STREET — Lagos City
+    </p>
+  </footer>
+
+
+  <!-- =========================
+       MOBILE MENU SCRIPT
+  ========================== -->
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+    });
+
+    const links = navLinks.querySelectorAll("a");
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
