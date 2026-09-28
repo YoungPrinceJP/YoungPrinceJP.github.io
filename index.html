@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Young Prince | Stories, Series, Music & More</title>
+    <title>Young Prince | Creative Stories & Entertainment</title>
 
-    <meta name="description" content="Young Prince — stories, series, images, videos, music and creative works.">
+    <meta name="description"
+          content="Young Prince — original stories, series, manga, music, videos and creative works.">
 
     <style>
         * {
@@ -15,88 +16,101 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f7f7;
-            color: #171717;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* HEADER */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #151515;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             background: #111;
-            color: white;
-            padding: 20px 6%;
+            color: #fff;
+            padding: 18px 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-        .header-inner {
+        .header {
             max-width: 1200px;
             margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 800;
-            text-decoration: none;
-            color: white;
-            letter-spacing: 1px;
+            color: #fff;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 22px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         nav a {
-            color: #ddd;
-            text-decoration: none;
+            color: #ccc;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: bold;
         }
 
         nav a:hover {
-            color: white;
+            color: #fff;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            background: white;
-            padding: 90px 20px;
+            background: #111;
+            color: white;
+            padding: 100px 20px;
             text-align: center;
-            border-bottom: 1px solid #ddd;
         }
 
-        .hero h1 {
-            font-size: clamp(42px, 8vw, 82px);
-            line-height: 1;
-            letter-spacing: -3px;
+        .hero small {
+            display: block;
+            color: #aaa;
+            font-size: 13px;
+            letter-spacing: 3px;
             margin-bottom: 20px;
         }
 
-        .hero h1 span {
-            font-weight: 400;
+        .hero h1 {
+            font-size: clamp(45px, 9vw, 90px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
         }
 
         .hero p {
             max-width: 650px;
             margin: auto;
-            color: #666;
+            color: #ccc;
             font-size: 18px;
         }
 
-        /* MAIN */
+        /* =========================
+           MAIN
+        ========================= */
 
         main {
             max-width: 1200px;
@@ -104,12 +118,16 @@
             padding: 70px 20px;
         }
 
+        .section {
+            margin-bottom: 80px;
+        }
+
         .section-heading {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .section-heading h2 {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 8px;
         }
 
@@ -117,7 +135,9 @@
             color: #777;
         }
 
-        /* FEATURED STORIES */
+        /* =========================
+           STORY CARDS
+        ========================= */
 
         .stories {
             display: grid;
@@ -126,110 +146,131 @@
         }
 
         .story-card {
-            background: white;
-            border-radius: 16px;
+            background: #fff;
+            border-radius: 18px;
             overflow: hidden;
             border: 1px solid #ddd;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            transition: .25s ease;
         }
 
         .story-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.12);
         }
 
-        .story-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
+        .story-cover {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            color: white;
         }
 
-        .story-content {
-            padding: 28px;
+        .primordia-cover {
+            background:
+                radial-gradient(circle at center, #444 0%, #1a1a1a 45%, #050505 100%);
         }
 
-        .story-label {
+        .blood-cover {
+            background:
+                radial-gradient(circle at center, #555 0%, #222 45%, #080808 100%);
+        }
+
+        .story-cover h3 {
+            font-size: 40px;
+            line-height: 1.05;
+            letter-spacing: 1px;
+        }
+
+        .blood-cover h3 {
+            font-size: 32px;
+        }
+
+        .story-info {
+            padding: 30px;
+        }
+
+        .category {
             font-size: 12px;
             font-weight: bold;
-            letter-spacing: 1.5px;
-            color: #777;
-            margin-bottom: 8px;
+            letter-spacing: 2px;
+            color: #888;
             text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .story-content h3 {
-            font-size: 30px;
+        .story-info h3 {
+            font-size: 28px;
             margin-bottom: 12px;
         }
 
-        .story-content p {
+        .story-info p {
             color: #666;
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
 
-        .read-link {
+        .button {
             display: inline-block;
             background: #111;
-            color: white;
-            text-decoration: none;
-            padding: 11px 18px;
+            color: #fff;
+            padding: 12px 20px;
             border-radius: 7px;
-            font-weight: bold;
             font-size: 14px;
+            font-weight: bold;
         }
 
-        .read-link:hover {
+        .button:hover {
             background: #333;
         }
 
-        /* CREATIVE SECTIONS */
+        /* =========================
+           EXPLORE
+        ========================= */
 
-        .creative-section {
-            margin-top: 80px;
-        }
-
-        .creative-grid {
+        .explore {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 18px;
         }
 
-        .creative-card {
+        .explore-card {
             background: white;
             border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 28px 20px;
+            border-radius: 14px;
+            padding: 30px 20px;
             text-align: center;
         }
 
-        .creative-card .icon {
-            font-size: 35px;
-            margin-bottom: 12px;
+        .explore-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
         }
 
-        .creative-card h3 {
-            margin-bottom: 7px;
+        .explore-card h3 {
+            margin-bottom: 8px;
         }
 
-        .creative-card p {
+        .explore-card p {
             color: #777;
             font-size: 14px;
         }
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
-            margin-top: 80px;
             background: #111;
             color: white;
-            padding: 55px 35px;
             border-radius: 18px;
+            padding: 60px 30px;
             text-align: center;
         }
 
         .about h2 {
-            font-size: 34px;
+            font-size: 36px;
             margin-bottom: 15px;
         }
 
@@ -237,67 +278,66 @@
             max-width: 700px;
             margin: auto;
             color: #ccc;
+            line-height: 1.8;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #111;
-            color: #999;
+            color: #888;
             text-align: center;
             padding: 35px 20px;
-            margin-top: 70px;
+            border-top: 1px solid #333;
         }
 
         footer strong {
-            color: white;
+            color: #fff;
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
-            .header-inner {
+            .header {
                 flex-direction: column;
             }
 
             nav {
-                gap: 12px;
+                justify-content: center;
+                gap: 14px;
             }
 
             .hero {
-                padding: 65px 20px;
+                padding: 75px 20px;
             }
 
             .stories {
                 grid-template-columns: 1fr;
             }
 
-            .creative-grid {
+            .explore {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 500px) {
 
-            .logo {
-                font-size: 24px;
-            }
-
             .hero h1 {
+                font-size: 50px;
                 letter-spacing: -2px;
             }
 
-            .creative-grid {
+            .explore {
                 grid-template-columns: 1fr;
             }
 
-            .story-image {
-                height: 220px;
-            }
-
-            .about {
-                padding: 40px 22px;
+            .story-cover {
+                min-height: 240px;
             }
         }
     </style>
@@ -305,10 +345,13 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
-    <div class="header-inner">
+
+    <div class="header">
 
         <a href="index.html" class="logo">
             YOUNG PRINCE
@@ -317,49 +360,50 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="#stories">Stories</a>
-            <a href="#series">Series</a>
-            <a href="#images">Images</a>
-            <a href="#videos">Videos</a>
-            <a href="#music">Music</a>
+            <a href="#explore">Explore</a>
             <a href="#about">About</a>
         </nav>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-    <h1>
-        <span>Welcome to</span><br>
-        Young Prince
-    </h1>
+    <small>WELCOME TO MY CREATIVE WORLD</small>
+
+    <h1>YOUNG<br>PRINCE</h1>
 
     <p>
-        Stories, series, music, images and creative worlds
-        created by Young Prince.
+        Stories, manga, drama, music, videos and imagination —
+        all in one place.
     </p>
 
 </section>
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
 
-    <!-- STORIES -->
+    <!-- FEATURED STORIES -->
 
-    <section id="stories">
+    <section class="section" id="stories">
 
         <div class="section-heading">
 
             <h2>Featured Stories</h2>
 
             <p>
-                Enter the worlds and stories created by Young Prince.
+                Discover original worlds and stories created by Young Prince.
             </p>
 
         </div>
@@ -374,33 +418,30 @@
 
                 <a href="primordia.html">
 
-                    <div class="story-image"
-                         style="background: linear-gradient(135deg, #111, #333); 
-                                display:flex; 
-                                align-items:center; 
-                                justify-content:center; 
-                                color:white; 
-                                font-size:38px; 
-                                font-weight:bold;">
-                        PRIMORDIA
+                    <div class="story-cover primordia-cover">
+
+                        <h3>PRIMORDIA</h3>
+
                     </div>
 
                 </a>
 
-                <div class="story-content">
 
-                    <div class="story-label">
-                        Manga / Fantasy
+                <div class="story-info">
+
+                    <div class="category">
+                        Manga • Fantasy
                     </div>
 
                     <h3>PRIMORDIA</h3>
 
                     <p>
-                        An ancient power awakens. A mysterious boy.
-                        A world standing on the edge of chaos.
+                        An ancient power awakens.
+                        A mysterious boy discovers that his destiny
+                        may be connected to forces older than the elements.
                     </p>
 
-                    <a href="primordia.html" class="read-link">
+                    <a href="primordia.html" class="button">
                         Read PRIMORDIA →
                     </a>
 
@@ -415,36 +456,33 @@
 
                 <a href="blood-on-broad-street.html">
 
-                    <div class="story-image"
-                         style="background: linear-gradient(135deg, #222, #555); 
-                                display:flex; 
-                                align-items:center; 
-                                justify-content:center; 
-                                color:white; 
-                                font-size:28px; 
-                                font-weight:bold; 
-                                text-align:center; 
-                                padding:20px;">
-                        BLOOD ON<br>BROAD STREET
+                    <div class="story-cover blood-cover">
+
+                        <h3>
+                            BLOOD ON<br>
+                            BROAD STREET
+                        </h3>
+
                     </div>
 
                 </a>
 
-                <div class="story-content">
 
-                    <div class="story-label">
-                        Crime Drama / Series
+                <div class="story-info">
+
+                    <div class="category">
+                        Crime • Drama • Series
                     </div>
 
                     <h3>BLOOD ON BROAD STREET</h3>
 
                     <p>
                         Before the blood, there was friendship.
-                        A Lagos City crime drama about three boys
-                        and the events that change their lives.
+                        Three boys grow up in Lagos City,
+                        unaware of the events waiting ahead.
                     </p>
 
-                    <a href="blood-on-broad-street.html" class="read-link">
+                    <a href="blood-on-broad-street.html" class="button">
                         Read Blood on Broad Street →
                     </a>
 
@@ -458,73 +496,75 @@
     </section>
 
 
-    <!-- CREATIVE AREAS -->
+    <!-- EXPLORE -->
 
-    <section class="creative-section" id="series">
+    <section class="section" id="explore">
 
         <div class="section-heading">
 
             <h2>Explore</h2>
 
             <p>
-                More creative work from Young Prince.
+                More creative work will be added here.
             </p>
 
         </div>
 
 
-        <div class="creative-grid">
+        <div class="explore">
 
-            <div class="creative-card" id="images">
 
-                <div class="icon">🖼️</div>
+            <div class="explore-card">
 
-                <h3>Images</h3>
+                <div class="explore-icon">📖</div>
+
+                <h3>Stories</h3>
 
                 <p>
-                    Visual creations, artwork and designs.
+                    Original stories and written worlds.
                 </p>
 
             </div>
 
 
-            <div class="creative-card" id="videos">
+            <div class="explore-card">
 
-                <div class="icon">🎬</div>
+                <div class="explore-icon">🎬</div>
 
                 <h3>Videos</h3>
 
                 <p>
-                    Stories and creative videos.
+                    Creative videos and future adaptations.
                 </p>
 
             </div>
 
 
-            <div class="creative-card" id="music">
+            <div class="explore-card">
 
-                <div class="icon">🎵</div>
+                <div class="explore-icon">🖼️</div>
+
+                <h3>Images</h3>
+
+                <p>
+                    Artwork, designs and visual creations.
+                </p>
+
+            </div>
+
+
+            <div class="explore-card">
+
+                <div class="explore-icon">🎵</div>
 
                 <h3>Music</h3>
 
                 <p>
-                    Songs and original music projects.
+                    Original songs and musical projects.
                 </p>
 
             </div>
 
-
-            <div class="creative-card">
-
-                <div class="icon">📚</div>
-
-                <h3>Series</h3>
-
-                <p>
-                    Follow ongoing stories and episodes.
-                </p>
-
-            </div>
 
         </div>
 
@@ -533,16 +573,21 @@
 
     <!-- ABOUT -->
 
-    <section class="about" id="about">
+    <section class="section" id="about">
 
-        <h2>About Young Prince</h2>
+        <div class="about">
 
-        <p>
-            Young Prince is a creative space for storytelling,
-            imagination and entertainment — bringing together
-            manga, drama, music, visuals and original ideas
-            in one growing world.
-        </p>
+            <h2>About Young Prince</h2>
+
+            <p>
+                Young Prince is a creative platform built around
+                storytelling, imagination and entertainment.
+                From manga and crime drama to music, videos and
+                visual art, this is a place where original ideas
+                can grow into complete worlds.
+            </p>
+
+        </div>
 
     </section>
 
@@ -550,7 +595,9 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
