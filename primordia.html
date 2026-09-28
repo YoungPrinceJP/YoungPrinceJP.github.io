@@ -1,1216 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>PRIMORDIA | Young Prince</title>
-
-  <meta
-    name="description"
-    content="PRIMORDIA — an original fantasy manga created by Young Prince."
-  >
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0c0b10;
-      color: #eeeeee;
-      line-height: 1.8;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(12, 11, 16, 0.96);
-      border-bottom: 1px solid #29252f;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .logo span {
-      color: #b56cff;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: #ccc;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    .menu-btn {
-      display: none;
-      border: none;
-      background: transparent;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at top right, #51216f 0%, transparent 35%),
-        radial-gradient(circle at bottom left, #211143 0%, transparent 35%),
-        #0c0b10;
-      padding: 90px 24px;
-    }
-
-    .hero-inner {
-      max-width: 1100px;
-      width: 100%;
-      margin: auto;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: 800;
-      color: #b56cff;
-      margin-bottom: 18px;
-      display: inline-block;
-    }
-
-    .hero h1 {
-      font-size: clamp(4rem, 10vw, 9rem);
-      line-height: 0.85;
-      letter-spacing: -5px;
-      margin-bottom: 30px;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: #b56cff;
-    }
-
-    .hero-description {
-      max-width: 720px;
-      color: #c7c7c7;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 22px;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .btn-primary {
-      background: #b56cff;
-      color: #0d0812;
-    }
-
-    .btn-secondary {
-      border: 1px solid #555;
-      color: white;
-    }
-
-    /* GENERAL */
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 24px;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: #b56cff;
-      font-size: 11px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      line-height: 1.1;
-      margin-bottom: 22px;
-    }
-
-    /* STORY */
-
-    .story-section {
-      background: #111016;
-    }
-
-    .story-content {
-      max-width: 800px;
-    }
-
-    .story-content p {
-      color: #c9c9c9;
-      margin-bottom: 20px;
-    }
-
-    .quote {
-      margin: 35px 0;
-      padding: 28px;
-      border-left: 4px solid #b56cff;
-      background: #18151d;
-      font-size: 1.25rem;
-      font-style: italic;
-      color: white;
-    }
-
-    /* WORLD */
-
-    .world-section {
-      background: #0c0b10;
-    }
-
-    .world-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .world-card {
-      padding: 28px;
-      background: #15131a;
-      border: 1px solid #28232f;
-      border-radius: 12px;
-    }
-
-    .world-card h3 {
-      margin-bottom: 12px;
-      color: white;
-    }
-
-    .world-card p {
-      color: #aaa;
-    }
-
-    /* CHAPTERS */
-
-    .chapters-section {
-      background: #111016;
-    }
-
-    .chapter-card {
-      display: block;
-      padding: 28px;
-      background: #18151e;
-      border: 1px solid #2c2635;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      transition: 0.2s ease;
-    }
-
-    .chapter-card:hover {
-      border-color: #b56cff;
-      transform: translateY(-2px);
-    }
-
-    .chapter-number {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #b56cff;
-      font-weight: 900;
-    }
-
-    .chapter-card h3 {
-      font-size: 1.35rem;
-      margin: 7px 0;
-    }
-
-    .chapter-card p {
-      color: #9f9f9f;
-    }
-
-    /* CHAPTER 1 */
-
-    .chapter-section {
-      background: #0c0b10;
-    }
-
-    .chapter-header {
-      padding-bottom: 35px;
-      border-bottom: 1px solid #29252f;
-      margin-bottom: 35px;
-    }
-
-    .chapter-header h2 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-    }
-
-    .scene {
-      margin-bottom: 55px;
-    }
-
-    .scene-title {
-      color: #b56cff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .scene-location {
-      color: #777;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .scene p {
-      color: #c8c8c8;
-      margin-bottom: 19px;
-    }
-
-    .dialogue {
-      padding-left: 20px;
-      border-left: 3px solid #332b3b;
-      margin: 17px 0;
-      color: #eee;
-    }
-
-    .character {
-      font-weight: 900;
-      color: #b56cff;
-    }
-
-    .stage-direction {
-      font-style: italic;
-      color: #888 !important;
-    }
-
-    .cliffhanger {
-      margin-top: 35px;
-      padding: 30px;
-      background: linear-gradient(135deg, #17121f, #251331);
-      border: 1px solid #53316b;
-      border-radius: 12px;
-    }
-
-    .cliffhanger p {
-      color: white;
-      font-weight: 700;
-      margin-bottom: 0;
-    }
-
-    /* CREATOR */
-
-    .creator-section {
-      background: #111016;
-      text-align: center;
-    }
-
-    .creator-section p {
-      max-width: 700px;
-      margin: auto;
-      color: #aaa;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 35px 24px;
-      text-align: center;
-      background: #08070b;
-      color: #777;
-      border-top: 1px solid #24202a;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 69px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 0;
-        background: #0c0b10;
-        border-bottom: 1px solid #29252f;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      nav a {
-        padding: 16px 24px;
-        border-bottom: 1px solid #211e26;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .world-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 520px;
-        padding: 70px 24px;
-      }
-
-      .hero h1 {
-        letter-spacing: -3px;
-      }
-    }
-
-    @media (max-width: 500px) {
-
-      section {
-        padding: 65px 0;
-      }
-
-      .hero h1 {
-        font-size: 4rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRIMORDIA | Young Prince</title>
+
+    <meta name="description"
+          content="PRIMORDIA — an original manga and fantasy series by Young Prince.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ccc;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: #111;
+            color: white;
+            text-align: center;
+
+            padding: 85px 20px;
+        }
+
+        .hero small {
+            display: block;
+
+            color: #999;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 10vw, 95px);
+
+            line-height: 1;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #ccc;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 60px 20px;
+        }
+
+        .back {
+            display: inline-block;
+
+            color: #555;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 40px;
+        }
+
+        .back:hover {
+            color: #111;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            background: white;
+
+            border: 1px solid #ddd;
+
+            border-radius: 16px;
+
+            padding: 35px;
+
+            margin-bottom: 45px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            color: #666;
+        }
+
+
+        /* =========================
+           CHAPTER LIST
+        ========================= */
+
+        .chapter-heading {
+            margin-bottom: 25px;
+        }
+
+        .chapter-heading h2 {
+            font-size: 34px;
+
+            margin-bottom: 7px;
+        }
+
+        .chapter-heading p {
+            color: #777;
+        }
+
+        .chapters {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+
+        /* =========================
+           CHAPTER ITEM
+        ========================= */
+
+        .chapter {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            background: white;
+
+            border: 1px solid #ddd;
+
+            border-radius: 12px;
+
+            padding: 22px 25px;
+
+            color: #171717;
+
+            transition: .2s ease;
+        }
+
+        .chapter:hover {
+            transform: translateX(5px);
+
+            border-color: #111;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,.08);
+        }
+
+        .chapter-number {
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            color: #888;
+
+            margin-bottom: 5px;
+        }
+
+        .chapter-title {
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 22px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           COMING SOON
+        ========================= */
+
+        .chapter.disabled {
+            cursor: default;
+
+            opacity: .55;
+        }
+
+        .chapter.disabled:hover {
+            transform: none;
+
+            box-shadow: none;
+
+            border-color: #ddd;
+        }
+
+
+        /* =========================
+           WORLD
+        ========================= */
+
+        .world {
+            margin-top: 65px;
+
+            background: #111;
+
+            color: white;
+
+            border-radius: 16px;
+
+            padding: 40px 30px;
+        }
+
+        .world h2 {
+            font-size: 28px;
+
+            margin-bottom: 12px;
+        }
+
+        .world p {
+            color: #ccc;
+
+            max-width: 700px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+
+            color: #888;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            margin-top: 40px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header-inner {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+
+                gap: 14px;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+
+                letter-spacing: 2px;
+            }
+
+            .intro {
+                padding: 25px;
+            }
+
+            .chapter {
+                padding: 19px;
+            }
+
+            .chapter-title {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
 
-  <header>
-    <div class="nav-container">
+<!-- =========================
+     HEADER
+========================= -->
 
-      <a href="index.html" class="logo">
-        YOUNG<span>PRINCE</span>
-      </a>
+<header>
 
-      <button
-        class="menu-btn"
-        onclick="toggleMenu()"
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
+    <div class="header-inner">
 
-      <nav id="mainNav">
-
-        <a href="#story" onclick="closeMenu()">
-          Story
+        <a href="index.html" class="logo">
+            YOUNG PRINCE
         </a>
 
-        <a href="#world" onclick="closeMenu()">
-          World
-        </a>
+        <nav>
 
-        <a href="#chapters" onclick="closeMenu()">
-          Chapters
-        </a>
+            <a href="index.html">
+                Home
+            </a>
 
-        <a href="index.html">
-          Home
-        </a>
+            <a href="primordia.html">
+                PRIMORDIA
+            </a>
 
-      </nav>
+            <a href="blood-on-broad-street.html">
+                Blood on Broad Street
+            </a>
+
+        </nav>
 
     </div>
-  </header>
+
+</header>
 
 
-  <!-- HERO -->
 
-  <section class="hero">
+<!-- =========================
+     HERO
+========================= -->
 
-    <div class="hero-inner">
+<section class="hero">
 
-      <span class="eyebrow">
-        Young Prince presents
-      </span>
+    <small>
+        AN ORIGINAL MANGA / FANTASY SERIES
+    </small>
 
-      <h1>
+    <h1>
         PRIMORDIA
-        <span>PRIMORDIA</span>
-      </h1>
+    </h1>
 
-      <p class="hero-description">
-        Ancient powers. Forgotten laws. A mysterious boy.
-        A world whose balance is beginning to break.
-      </p>
+    <p>
+        Before the elements, there was something older.
+        And its awakening begins with a boy.
+    </p>
 
-      <div class="hero-buttons">
-
-        <a href="#chapters" class="btn btn-primary">
-          Read the Manga
-        </a>
-
-        <a href="#story" class="btn btn-secondary">
-          Discover the World
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- STORY -->
 
-  <section class="story-section" id="story">
+<!-- =========================
+     MAIN
+========================= -->
 
-    <div class="container">
+<main>
 
-      <div class="story-content">
 
-        <div class="section-label">
-          The Beginning
-        </div>
+    <a href="index.html" class="back">
+        ← Back to Young Prince
+    </a>
+
+
+    <!-- =========================
+         INTRO
+    ========================= -->
+
+    <section class="intro">
 
         <h2>
-          A world was never meant to be perfect.
+            The World of PRIMORDIA
         </h2>
 
         <p>
-          There is a hidden world shaped by forces older than
-          kingdoms and civilizations. Nature, power and ancient
-          laws exist in a balance that has survived for ages.
+            Aurel is a twelve-year-old boy living in a hidden
+            mountain settlement, unaware of the mystery surrounding
+            his true origin. When an ancient power awakens within him,
+            his quiet life begins to collapse.
+
+            Somewhere beyond the known world, the Shadow Legion
+            has already felt the awakening.
         </p>
 
-        <p>
-          But balance does not mean peace.
-        </p>
-
-        <p>
-          In a hidden mountain settlement lives a twelve-year-old
-          boy named <strong>Aurel</strong>.
-        </p>
-
-        <p>
-          Calm, curious and strangely different from the people
-          around him, Aurel knows almost nothing about his true
-          origin.
-        </p>
-
-        <p>
-          The elderly warrior who raised him has kept the truth
-          hidden for years.
-        </p>
-
-        <p>
-          Then one day, something awakens.
-        </p>
-
-        <div class="quote">
-          "There is nothing perfect in this world.
-          They will always be chaos."
-        </div>
-
-        <p>
-          A dying tree becomes the first sign that Aurel carries
-          something the world has forgotten.
-        </p>
-
-        <p>
-          And far beyond the settlement, an ancient enemy notices.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- WORLD -->
 
-  <section class="world-section" id="world">
+    <!-- =========================
+         CHAPTERS
+    ========================= -->
 
-    <div class="container">
+    <section>
 
-      <div class="section-label">
-        The World
-      </div>
+        <div class="chapter-heading">
 
-      <h2>
-        Forgotten forces are awakening.
-      </h2>
+            <h2>
+                Chapters
+            </h2>
 
-      <div class="world-grid">
-
-        <div class="world-card">
-
-          <h3>
-            The Elements
-          </h3>
-
-          <p>
-            The natural forces that shape the world and those
-            who have learned to connect with them.
-          </p>
+            <p>
+                Follow Aurel's journey from the beginning.
+            </p>
 
         </div>
 
-        <div class="world-card">
 
-          <h3>
-            The Nine Immutable Laws
-          </h3>
+        <div class="chapters">
 
-          <p>
-            Ancient laws whose true purpose, origin and limits
-            remain hidden.
-          </p>
+
+            <!-- CHAPTER 1 -->
+
+            <a
+                href="primordia-chapter-1.html"
+                class="chapter"
+            >
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 1
+                    </div>
+
+                    <div class="chapter-title">
+                        The Awakening
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+
+            <!-- CHAPTER 2 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 2
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 3 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 3
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 4 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 4
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 5 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 5
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 6 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 6
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 7 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 7
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 8 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 8
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 9 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 9
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
+
+
+            <!-- CHAPTER 10 -->
+
+            <div class="chapter disabled">
+
+                <div>
+
+                    <div class="chapter-number">
+                        CHAPTER 10
+                    </div>
+
+                    <div class="chapter-title">
+                        Coming Soon
+                    </div>
+
+                </div>
+
+                <div class="arrow">
+                    —
+                </div>
+
+            </div>
+
 
         </div>
 
-        <div class="world-card">
-
-          <h3>
-            The Shadow Legion
-          </h3>
-
-          <p>
-            A mysterious force moving in the darkness and searching
-            for the awakening that has disturbed the old balance.
-          </p>
-
-        </div>
-
-        <div class="world-card">
-
-          <h3>
-            The Ancient Creature
-          </h3>
-
-          <p>
-            Something older than the known elements lies sealed
-            within another dimension, waiting for a path back into
-            the world.
-          </p>
-
-        </div>
-
-        <div class="world-card">
-
-          <h3>
-            The Shrine
-          </h3>
-
-          <p>
-            An ancient sacred place marked by a tree surrounded
-            by four mysterious symbols.
-          </p>
-
-        </div>
-
-        <div class="world-card">
-
-          <h3>
-            The Stone Artifact
-          </h3>
-
-          <p>
-            A small stone bearing four symbols and containing
-            a power whose history has been forgotten.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- CHAPTERS -->
 
-  <section class="chapters-section" id="chapters">
+    <!-- =========================
+         WORLD SECTION
+    ========================= -->
 
-    <div class="container">
-
-      <div class="section-label">
-        Manga
-      </div>
-
-      <h2>
-        Chapters
-      </h2>
-
-      <a href="#chapter-1" class="chapter-card">
-
-        <div class="chapter-number">
-          Chapter 1
-        </div>
-
-        <h3>
-          The Awakening
-        </h3>
-
-        <p>
-          Aurel discovers that something inside him is connected
-          to the natural world.
-        </p>
-
-      </a>
-
-      <div class="chapter-card">
-
-        <div class="chapter-number">
-          Chapter 2
-        </div>
-
-        <h3>
-          Coming Soon
-        </h3>
-
-        <p>
-          The journey continues.
-        </p>
-
-      </div>
-
-      <div class="chapter-card">
-
-        <div class="chapter-number">
-          Chapter 3
-        </div>
-
-        <h3>
-          Coming Soon
-        </h3>
-
-        <p>
-          The mystery deepens.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CHAPTER 1 -->
-
-  <section class="chapter-section" id="chapter-1">
-
-    <div class="container">
-
-      <div class="chapter-header">
-
-        <div class="section-label">
-          PRIMORDIA — Chapter 1
-        </div>
+    <section class="world">
 
         <h2>
-          The Awakening
+            The Journey Has Just Begun
         </h2>
 
         <p>
-          Before the world knew his name, nature knew him.
+            The secrets of Aurel's origin, the ancient shrine,
+            the four symbols, the Shadow Legion and the power
+            hidden beneath the world will unfold chapter by chapter.
         </p>
 
-      </div>
+    </section>
 
 
-      <!-- SCENE 1 -->
+</main>
 
-      <div class="scene">
 
-        <div class="scene-title">
-          Scene 1 — The Mountain Settlement
-        </div>
 
-        <div class="scene-location">
-          A hidden mountain settlement — Morning
-        </div>
+<!-- =========================
+     FOOTER
+========================= -->
 
-        <p class="stage-direction">
-          High among the mountains, far from the great cities,
-          a small settlement wakes beneath the morning mist.
-        </p>
-
-        <p>
-          Wooden homes stand between enormous trees.
-          Smoke rises slowly from cooking fires.
-          Children move through the narrow paths while adults
-          begin another ordinary day.
-        </p>
-
-        <p>
-          Among them is a twelve-year-old boy.
-        </p>
-
-        <p>
-          Aurel.
-        </p>
-
-        <p>
-          He watches the forest more than he watches the people.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          Father, why do the trees here never lose all their leaves?
-        </div>
-
-        <div class="dialogue">
-          <span class="character">Guardian:</span>
-          Because they have learned how to survive the mountain.
-        </div>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          Can trees learn?
-        </div>
-
-        <div class="dialogue">
-          <span class="character">Guardian:</span>
-          More than you think.
-        </div>
-
-        <p>
-          Aurel looks at him.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          You always answer my questions with another mystery.
-        </div>
-
-        <div class="dialogue">
-          <span class="character">Guardian:</span>
-          And you always ask questions you are not ready to hear
-          the answers to.
-        </div>
-
-        <p class="stage-direction">
-          Aurel smiles.
-        </p>
-
-      </div>
-
-
-      <!-- SCENE 2 -->
-
-      <div class="scene">
-
-        <div class="scene-title">
-          Scene 2 — The Dying Tree
-        </div>
-
-        <div class="scene-location">
-          Forest edge — Afternoon
-        </div>
-
-        <p>
-          Later that day, Aurel wanders deeper into the forest.
-        </p>
-
-        <p>
-          He finds an old tree lying almost lifeless against
-          the earth.
-        </p>
-
-        <p>
-          Its bark is cracked.
-          Its branches are weak.
-          Its leaves have fallen.
-        </p>
-
-        <p>
-          Aurel kneels beside it.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          Are you dying?
-        </div>
-
-        <p class="stage-direction">
-          He places one hand against the trunk.
-        </p>
-
-        <p>
-          Nothing happens.
-        </p>
-
-        <p>
-          Aurel closes his eyes.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          Please...
-        </div>
-
-        <p>
-          The wind stops.
-        </p>
-
-        <p>
-          The forest becomes strangely silent.
-        </p>
-
-        <p>
-          Then—
-        </p>
-
-        <p class="stage-direction">
-          A faint pulse moves through Aurel's hand.
-        </p>
-
-        <p>
-          Aurel opens his eyes.
-        </p>
-
-        <p class="stage-direction">
-          New leaves begin appearing along the dead branches.
-        </p>
-
-        <p>
-          The cracked bark slowly closes.
-        </p>
-
-        <p>
-          Green spreads across the tree.
-        </p>
-
-        <p>
-          Aurel pulls his hand away in shock.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          What... did I just do?
-        </div>
-
-        <p class="stage-direction">
-          Somewhere far away, something ancient stirs.
-        </p>
-
-      </div>
-
-
-      <!-- SCENE 3 -->
-
-      <div class="scene">
-
-        <div class="scene-title">
-          Scene 3 — The Shrine
-        </div>
-
-        <div class="scene-location">
-          Deep within the mountain — Evening
-        </div>
-
-        <p>
-          That evening, Aurel follows a strange feeling into
-          an ancient part of the mountain.
-        </p>
-
-        <p>
-          Hidden behind stone and roots is an old shrine.
-        </p>
-
-        <p>
-          At its center stands a massive tree.
-        </p>
-
-        <p>
-          Around it are four mysterious symbols.
-        </p>
-
-        <p class="stage-direction">
-          Aurel slowly approaches.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          I've never seen this place before.
-        </div>
-
-        <p>
-          Beneath the tree, something catches his attention.
-        </p>
-
-        <p>
-          A small stone lies partially buried beneath the roots.
-        </p>
-
-        <p>
-          Four symbols are carved into its surface.
-        </p>
-
-        <p class="stage-direction">
-          Aurel reaches toward it.
-        </p>
-
-        <p>
-          The moment his fingers touch the stone—
-        </p>
-
-        <p class="stage-direction">
-          A deep pulse shakes the shrine.
-        </p>
-
-        <p class="stage-direction">
-          Aurel immediately pulls his hand away.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Aurel:</span>
-          No...
-        </div>
-
-        <p>
-          He looks around.
-        </p>
-
-        <p>
-          Something about the object frightens him.
-        </p>
-
-        <p>
-          Aurel pushes the stone back beneath the roots.
-        </p>
-
-        <p class="stage-direction">
-          He hides it exactly where he found it.
-        </p>
-
-        <p>
-          He does not know what the artifact is.
-        </p>
-
-        <p>
-          He only knows that it should not be discovered.
-        </p>
-
-      </div>
-
-
-      <!-- SCENE 4 -->
-
-      <div class="scene">
-
-        <div class="scene-title">
-          Scene 4 — The Awakening Is Seen
-        </div>
-
-        <div class="scene-location">
-          Somewhere beyond the mountains — Night
-        </div>
-
-        <p class="stage-direction">
-          Darkness.
-        </p>
-
-        <p class="stage-direction">
-          A vast chamber lit only by faint shadows.
-        </p>
-
-        <p>
-          A figure stands before an ancient stone structure.
-        </p>
-
-        <p>
-          The atmosphere changes.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Dark Lord:</span>
-          So...
-        </div>
-
-        <p class="stage-direction">
-          Silence.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Dark Lord:</span>
-          After all these years...
-          the awakening has finally begun.
-        </div>
-
-        <p>
-          A shadow moves behind him.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Dark Lord:</span>
-          Find the boy.
-        </div>
-
-        <p>
-          No answer comes.
-        </p>
-
-        <p>
-          The Dark Lord turns toward the darkness.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Dark Lord:</span>
-          Bring him to me.
-        </div>
-
-        <p class="stage-direction">
-          His eyes narrow.
-        </p>
-
-        <div class="dialogue">
-          <span class="character">Dark Lord:</span>
-          Before the ancient one wakes.
-        </div>
-
-      </div>
-
-
-      <!-- CLIFFHANGER -->
-
-      <div class="cliffhanger">
-
-        <p>
-          Aurel thinks he has only discovered a dying tree.
-        </p>
-
-        <p>
-          He is wrong.
-        </p>
-
-        <p>
-          Something inside him has awakened.
-        </p>
-
-        <p>
-          And somewhere beyond the mountains,
-          the Shadow Legion has begun to move.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CREATOR -->
-
-  <section class="creator-section">
-
-    <div class="container">
-
-      <div class="section-label">
-        Created by
-      </div>
-
-      <h2>
-        Young Prince
-      </h2>
-
-      <p>
-        PRIMORDIA is an original manga universe created by Young Prince,
-        built around ancient powers, mystery, elemental forces,
-        immutable laws and characters whose destinies are connected
-        to a forgotten past.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
+<footer>
 
     <p>
-      © 2026 <strong>Young Prince</strong>.
-      All rights reserved.
+        © 2026 <strong>Young Prince</strong>.
+        All rights reserved.
     </p>
 
-    <p>
-      PRIMORDIA — An original manga universe.
-    </p>
+</footer>
 
-  </footer>
-
-
-  <script>
-
-    function toggleMenu() {
-      document.getElementById("mainNav").classList.toggle("active");
-    }
-
-    function closeMenu() {
-      document.getElementById("mainNav").classList.remove("active");
-    }
-
-  </script>
 
 </body>
 </html>
