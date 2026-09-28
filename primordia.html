@@ -1,260 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PRIMORDIA — Young Prince</title>
+<title>PRIMORDIA — Young Prince</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0d0c;
-      color: #f4f4f4;
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0d0c;
+  color: #ffffff;
+}
 
-    /* NAVIGATION */
+/* NAVIGATION */
+.navbar {
+  background: #111;
+  border-bottom: 1px solid #333;
+  padding: 16px 20px;
+}
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.96);
-      border-bottom: 1px solid #2d302d;
-      padding: 15px 20px;
-    }
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    .nav-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: white;
-      text-decoration: none;
-    }
+.nav-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-    .nav-links a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
+.nav-links a:hover {
+  color: #a9c875;
+}
 
-    .nav-links a:hover {
-      color: #b7d68a;
-    }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #1d291d, #080908);
+}
 
-    /* HERO */
+.hero small {
+  color: #a9c875;
+  letter-spacing: 4px;
+}
 
-    .hero {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 20px;
-      background:
-        radial-gradient(circle at center, #263326 0%, #111512 45%, #080909 100%);
-    }
+.hero h1 {
+  font-size: 70px;
+  letter-spacing: 8px;
+  margin: 15px 0;
+}
 
-    .hero-content {
-      max-width: 850px;
-    }
+.hero p {
+  color: #ccc;
+  font-size: 18px;
+}
 
-    .hero small {
-      letter-spacing: 5px;
-      color: #a8c878;
-      font-weight: bold;
-    }
+/* CHAPTERS */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    .hero h1 {
-      font-size: clamp(55px, 12vw, 110px);
-      letter-spacing: 8px;
-      margin: 15px 0;
-      font-weight: 900;
-    }
+.title {
+  text-align: center;
+  margin-bottom: 35px;
+}
 
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #cfcfcf;
-      font-size: 18px;
-    }
+.title h2 {
+  font-size: 36px;
+}
 
-    .tagline {
-      margin-top: 25px;
-      font-style: italic;
-      color: #a8c878;
-      font-size: 20px;
-    }
+.title p {
+  color: #999;
+}
 
-    /* CONTENT */
+.chapter {
+  background: #151816;
+  border: 1px solid #303530;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 18px;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 70px 20px;
-    }
+.chapter-number {
+  color: #a9c875;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.chapter h3 {
+  font-size: 25px;
+  margin: 8px 0;
+}
 
-    .section-title h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+.chapter p {
+  color: #aaa;
+}
 
-    .section-title p {
-      color: #999;
-    }
+.read-button {
+  display: inline-block;
+  background: #a9c875;
+  color: #10120f;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-    /* CHAPTER CARDS */
+.coming {
+  color: #666 !important;
+  font-weight: bold;
+}
 
-    .chapter {
-      background: #151816;
-      border: 1px solid #292d2a;
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 18px;
-      transition: 0.3s;
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  background: #050605;
+  color: #777;
+}
 
-    .chapter:hover {
-      transform: translateY(-3px);
-      border-color: #728b51;
-    }
+/* MOBILE */
+@media (max-width: 700px) {
 
-    .chapter-number {
-      color: #8fac65;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+  .nav-container {
+    flex-direction: column;
+  }
 
-    .chapter h3 {
-      font-size: 25px;
-      margin: 6px 0 10px;
-    }
+  .nav-links {
+    gap: 12px;
+  }
 
-    .chapter p {
-      color: #aaa;
-      margin-bottom: 20px;
-    }
-
-    .read-button {
-      display: inline-block;
-      background: #8fac65;
-      color: #0b0d0c;
-      padding: 10px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .read-button:hover {
-      background: #b7d68a;
-    }
-
-    .coming {
-      color: #666;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    /* WORLD SECTION */
-
-    .world {
-      background: #111411;
-      border-top: 1px solid #292d2a;
-      border-bottom: 1px solid #292d2a;
-    }
-
-    .world-box {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .world-box h2 {
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-
-    .world-box p {
-      color: #aaa;
-      font-size: 17px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #060706;
-      text-align: center;
-      padding: 35px 20px;
-      color: #777;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-      .nav-container {
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      .hero {
-        min-height: 430px;
-      }
-
-      .hero h1 {
-        letter-spacing: 4px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
+<nav class="navbar">
 
-<nav>
   <div class="nav-container">
 
     <a href="index.html" class="logo">
@@ -262,48 +182,48 @@
     </a>
 
     <div class="nav-links">
+
       <a href="index.html">HOME</a>
+
       <a href="primordia.html">PRIMORDIA</a>
-      <a href="blood-on-broad-street.html">BLOOD ON BROAD STREET</a>
+
+      <a href="blood-on-broad-street.html">
+        BLOOD ON BROAD STREET
+      </a>
+
       <a href="index.html#images">IMAGES</a>
+
       <a href="index.html#videos">VIDEOS</a>
+
       <a href="index.html#music">MUSIC</a>
+
       <a href="index.html#about">ABOUT</a>
+
     </div>
 
   </div>
+
 </nav>
 
 
 <!-- HERO -->
-
 <section class="hero">
 
-  <div class="hero-content">
+  <small>A YOUNG PRINCE ORIGINAL</small>
 
-    <small>A YOUNG PRINCE ORIGINAL</small>
+  <h1>PRIMORDIA</h1>
 
-    <h1>PRIMORDIA</h1>
-
-    <p>
-      Before the world knew his name,
-      nature knew him.
-    </p>
-
-    <div class="tagline">
-      The awakening has begun.
-    </div>
-
-  </div>
+  <p>
+    Before the world knew his name, nature knew him.
+  </p>
 
 </section>
 
 
 <!-- CHAPTERS -->
-
 <section class="container">
 
-  <div class="section-title">
+  <div class="title">
 
     <h2>Chapters</h2>
 
@@ -315,7 +235,6 @@
 
 
   <!-- CHAPTER 1 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -329,7 +248,9 @@
       is connected to the natural world.
     </p>
 
-    <a href="primordia-chapter-1.html" class="read-button">
+    <a
+      href="primordia-chapter-1.html"
+      class="read-button">
       Read Chapter 1 →
     </a>
 
@@ -337,7 +258,6 @@
 
 
   <!-- CHAPTER 2 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -354,7 +274,6 @@
 
 
   <!-- CHAPTER 3 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -371,7 +290,6 @@
 
 
   <!-- CHAPTER 4 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -388,7 +306,6 @@
 
 
   <!-- CHAPTER 5 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -405,7 +322,6 @@
 
 
   <!-- CHAPTER 6 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -422,7 +338,6 @@
 
 
   <!-- CHAPTER 7 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -439,7 +354,6 @@
 
 
   <!-- CHAPTER 8 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -456,7 +370,6 @@
 
 
   <!-- CHAPTER 9 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -473,7 +386,6 @@
 
 
   <!-- CHAPTER 10 -->
-
   <div class="chapter">
 
     <div class="chapter-number">
@@ -491,37 +403,9 @@
 </section>
 
 
-<!-- WORLD -->
-
-<section class="world">
-
-  <div class="container">
-
-    <div class="world-box">
-
-      <h2>The World of PRIMORDIA</h2>
-
-      <p>
-        A world of ancient powers, forgotten secrets,
-        elemental forces and mysteries that existed
-        long before Aurel discovered his connection
-        to nature.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
 <footer>
 
-  <p>
-    <strong>YOUNG PRINCE</strong>
-  </p>
+  <strong>YOUNG PRINCE</strong>
 
   <p>
     Stories • Series • Images • Videos • Music
