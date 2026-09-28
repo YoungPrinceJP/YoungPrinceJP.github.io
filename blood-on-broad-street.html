@@ -1,170 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood on Broad Street | Young Prince</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>BLOOD ON BROAD STREET — Young Prince</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-        }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-        .hero {
-            background: #111;
-            color: white;
-            padding: 70px 20px;
-            text-align: center;
-        }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+}
 
-        .hero h1 {
-            margin: 0;
-            font-size: 42px;
-            letter-spacing: 1px;
-        }
+/* NAVIGATION */
 
-        .hero p {
-            margin-top: 12px;
-            font-size: 18px;
-            color: #ccc;
-        }
+.navbar {
+  background: #111;
+  border-bottom: 1px solid #333;
+  padding: 16px 20px;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-        .back {
-            display: inline-block;
-            margin-bottom: 25px;
-            color: #111;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
+.nav-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-        .episode {
-            display: block;
-            background: white;
-            margin-bottom: 15px;
-            padding: 22px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #222;
-            border: 1px solid #ddd;
-            transition: 0.2s;
-        }
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-        .episode:hover {
-            transform: translateY(-2px);
-            border-color: #111;
-        }
+.nav-links a:hover {
+  color: #d85b5b;
+}
 
-        .episode-number {
-            font-size: 14px;
-            font-weight: bold;
-            color: #777;
-            margin-bottom: 6px;
-        }
+/* HERO */
 
-        .episode-title {
-            font-size: 21px;
-            font-weight: bold;
-        }
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    linear-gradient(135deg, #351313, #090909 70%);
+}
 
-        .coming {
-            opacity: 0.65;
-            cursor: default;
-        }
+.hero small {
+  color: #d85b5b;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #777;
-        }
-    </style>
+.hero h1 {
+  font-size: clamp(42px, 8vw, 78px);
+  letter-spacing: 4px;
+  margin: 18px 0;
+  font-weight: 900;
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.tagline {
+  margin-top: 22px;
+  color: #d85b5b;
+  font-style: italic;
+  font-size: 19px;
+}
+
+/* EPISODES */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.title h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.title p {
+  color: #999;
+}
+
+/* EPISODE CARDS */
+
+.episode {
+  background: #151515;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 18px;
+  transition: 0.3s;
+}
+
+.episode:hover {
+  transform: translateY(-3px);
+  border-color: #8e3d3d;
+}
+
+.episode-number {
+  color: #d85b5b;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.episode h3 {
+  font-size: 25px;
+  margin: 8px 0;
+}
+
+.episode p {
+  color: #aaa;
+  line-height: 1.7;
+}
+
+.read-button {
+  display: inline-block;
+  background: #b64c4c;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.read-button:hover {
+  background: #d85b5b;
+}
+
+.coming {
+  color: #666 !important;
+  font-weight: bold;
+}
+
+/* STORY INTRO */
+
+.story {
+  background: #111;
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+}
+
+.story-box {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.story-box h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.story-box p {
+  color: #aaa;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  background: #050505;
+  color: #777;
+}
+
+footer strong {
+  color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+    letter-spacing: 2px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <section class="hero">
-        <h1>BLOOD ON BROAD STREET</h1>
-        <p>A Lagos City Crime Drama</p>
-    </section>
+<!-- NAVIGATION -->
 
-    <main class="container">
+<nav class="navbar">
 
-        <a class="back" href="index.html">← Back to Home</a>
+  <div class="nav-container">
 
-        <h2 class="section-title">Episodes</h2>
+    <a href="index.html" class="logo">
+      YOUNG PRINCE
+    </a>
 
-        <a class="episode" href="blood-on-broad-street-episode-1.html">
-            <div class="episode-number">EPISODE 1</div>
-            <div class="episode-title">The Three Boys</div>
-        </a>
+    <div class="nav-links">
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 2</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="index.html">HOME</a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 3</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="primordia.html">PRIMORDIA</a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 4</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="blood-on-broad-street.html">
+        BLOOD ON BROAD STREET
+      </a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 5</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="index.html#images">IMAGES</a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 6</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="index.html#videos">VIDEOS</a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 7</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="index.html#music">MUSIC</a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 8</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+      <a href="index.html#about">ABOUT</a>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 9</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+    </div>
 
-        <div class="episode coming">
-            <div class="episode-number">EPISODE 10</div>
-            <div class="episode-title">Coming Soon</div>
-        </div>
+  </div>
 
-    </main>
+</nav>
 
-    <footer>
-        © Young Prince
-    </footer>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <small>A YOUNG PRINCE ORIGINAL</small>
+
+  <h1>BLOOD ON BROAD STREET</h1>
+
+  <p>
+    Before the blood, there was friendship.
+    Before the crime, there was a choice.
+  </p>
+
+  <div class="tagline">
+    Every story has a beginning.
+  </div>
+
+</section>
+
+
+<!-- EPISODES -->
+
+<section class="container">
+
+  <div class="title">
+
+    <h2>Episodes</h2>
+
+    <p>
+      Enter the streets of Lagos City.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 1 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 01
+    </div>
+
+    <h3>The Three Boys</h3>
+
+    <p>
+      Before the blood, there was friendship.
+      Three boys grow up together, unaware that
+      the streets they call home will soon change
+      their lives forever.
+    </p>
+
+    <a
+      href="blood-on-broad-street-episode-1.html"
+      class="read-button">
+
+      Read Episode 1 →
+
+    </a>
+
+  </div>
+
+
+  <!-- EPISODE 2 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 02
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The story continues.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 3 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 03
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The consequences begin.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 4 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 04
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The streets reveal another secret.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 5 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 05
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      Nothing stays hidden forever.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 6 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 06
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      Trust begins to disappear.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 7 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 07
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The past comes looking for them.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 8 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 08
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The line between friend and enemy disappears.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 9 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 09
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The truth finally surfaces.
+    </p>
+
+  </div>
+
+
+  <!-- EPISODE 10 -->
+
+  <div class="episode">
+
+    <div class="episode-number">
+      EPISODE 10
+    </div>
+
+    <h3>Coming Soon</h3>
+
+    <p class="coming">
+      The streets will never be the same.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- STORY INTRO -->
+
+<section class="story">
+
+  <div class="container">
+
+    <div class="story-box">
+
+      <h2>Lagos City</h2>
+
+      <p>
+        Three boys. One friendship.
+        One city filled with dreams, danger,
+        loyalty and betrayal.
+      </p>
+
+      <p>
+        This is the story of
+        <strong>BLOOD ON BROAD STREET.</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    <strong>YOUNG PRINCE</strong>
+  </p>
+
+  <p>
+    Stories • Series • Images • Videos • Music
+  </p>
+
+  <p>
+    © 2026 Young Prince. All Rights Reserved.
+  </p>
+
+</footer>
 
 </body>
 </html>
