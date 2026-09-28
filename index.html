@@ -1,1 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Young Prince | Stories, Series & Media</title>
+
+  <meta name="description" content="Young Prince — stories, series, images, videos and music.">
+  <meta name="author" content="Young Prince">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #eeeeee;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 74px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #ff5a36;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #ff5a36;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #f7f5ef;
+      padding: 90px 24px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ff5a36;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      color: #555555;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      border: 2px solid #171717;
+      transition: 0.2s;
+    }
+
+    .btn-dark {
+      background: #171717;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #ff5a36;
+      border-color: #ff5a36;
+    }
+
+    .btn-light {
+      background: white;
+    }
+
+    .btn-light:hover {
+      background: #eeeeee;
+    }
+
+    .hero-card {
+      min-height: 420px;
+      background: #171717;
+      color: white;
+      border-radius: 18px;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: #ff5a36;
+      right: -100px;
+      top: -100px;
+      opacity: 0.9;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #f4c542;
+      left: -70px;
+      top: 80px;
+      opacity: 0.75;
+    }
+
+    .hero-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-card small {
+      color: #bbbbbb;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero-card h2 {
+      font-size: 38px;
+      line-height: 1.05;
+      margin: 12px 0;
+    }
+
+    .hero-card p {
+      color: #cccccc;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .section-heading p {
+      max-width: 480px;
+      color: #666666;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      border: 1px solid #e7e7e7;
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-image {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      font-size: 25px;
+      font-weight: 900;
+      text-align: center;
+      color: white;
+    }
+
+    .primordia {
+      background: linear-gradient(135deg, #191919, #4a1d62);
+    }
+
+    .blood {
+      background: linear-gradient(135deg, #191919, #751c1c);
+    }
+
+    .creator-card {
+      background: linear-gradient(135deg, #ff5a36, #f4c542);
+      color: #171717;
+    }
+
+    .card-body {
+      padding: 25px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ff5a36;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666666;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .read-more {
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .read-more:hover {
+      color: #ff5a36;
+    }
+
+    /* SERIES */
+
+    .series-section {
+      background: #f7f5ef;
+    }
+
+    .series-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .series-item {
+      padding: 28px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .series-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #171717;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .series-info {
+      flex: 1;
+    }
+
+    .series-info h3 {
+      margin-bottom: 5px;
+    }
+
+    .series-info p {
+      color: #777777;
+      font-size: 14px;
+    }
+
+    /* LATEST */
+
+    .latest-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 25px;
+    }
+
+    .featured-post {
+      background: #171717;
+      color: white;
+      border-radius: 16px;
+      padding: 45px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .featured-post .tag {
+      color: #f4c542;
+    }
+
+    .featured-post h3 {
+      max-width: 700px;
+      font-size: 42px;
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .featured-post p {
+      color: #cccccc;
+      max-width: 650px;
+    }
+
+    .latest-side {
+      display: grid;
+      gap: 25px;
+    }
+
+    .small-post {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .small-post h3 {
+      margin-bottom: 8px;
+    }
+
+    .small-post p {
+      color: #666666;
+      font-size: 14px;
+    }
+
+    /* MEDIA */
+
+    .media-section {
+      background: #171717;
+      color: white;
+    }
+
+    .media-section .section-heading p {
+      color: #bbbbbb;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .media-card {
+      min-height: 250px;
+      padding: 30px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid #333333;
+    }
+
+    .media-card span {
+      font-size: 40px;
+      margin-bottom: auto;
+    }
+
+    .media-card h3 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .media-card p {
+      color: #bbbbbb;
+      font-size: 14px;
+    }
+
+    .media-images {
+      background: #263a63;
+    }
+
+    .media-videos {
+      background: #5c2638;
+    }
+
+    .media-music {
+      background: #31543c;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-logo {
+      min-height: 330px;
+      border-radius: 18px;
+      background: #f7f5ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      font-weight: 900;
+    }
+
+    .about-text h2 {
+      font-size: 45px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #5f5f5f;
+      margin-bottom: 18px;
+    }
+
+    /* SEARCH */
+
+    .search-section {
+      background: #f7f5ef;
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+
+    .search-box {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 16px 18px;
+      border: 1px solid #d8d8d8;
+      border-radius: 8px;
+      outline: none;
+      background: white;
+    }
+
+    .search-box input:focus {
+      border-color: #ff5a36;
+    }
+
+    .search-box button {
+      padding: 0 25px;
+      border: none;
+      border-radius: 8px;
+      background: #171717;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .search-result {
+      max-width: 700px;
+      margin: 18px auto 0;
+      color: #555555;
+      text-align: center;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter {
+      background: #ff5a36;
+      color: white;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    .newsletter-form {
+      max-width: 560px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      padding: 15px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #171717;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111111;
+      color: white;
+      padding: 55px 24px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 14px;
+    }
+
+    footer p,
+    footer a {
+      color: #aaaaaa;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: auto;
+      padding-top: 22px;
+      border-top: 1px solid #333333;
+      color: #777777;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px 24px;
+        border-bottom: 1px solid #eeeeee;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-container,
+      .about-grid,
+      .latest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 24px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .cards,
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .series-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 15px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .nav-container {
+        padding: 0 18px;
+      }
+
+      .hero {
+        padding: 55px 18px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero-card {
+        min-height: 330px;
+        padding: 28px;
+      }
+
+      .hero-card h2 {
+        font-size: 30px;
+      }
+
+      .featured-post {
+        padding: 30px;
+        min-height: 330px;
+      }
+
+      .featured-post h3 {
+        font-size: 32px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      .search-box {
+        flex-direction: column;
+      }
+
+      .search-box button {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="nav-container">
+
+      <a href="#home" class="logo">
+        YOUNG<span>PRINCE</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav id="mainNav">
+        <a href="#stories" onclick="closeMenu()">Stories</a>
+        <a href="#series" onclick="closeMenu()">Series</a>
+        <a href="#latest" onclick="closeMenu()">Latest</a>
+        <a href="#media" onclick="closeMenu()">Media</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-container">
+
+        <div>
+
+          <span class="eyebrow">Young Prince presents</span>
+
+          <h1>
+            Stories that deserve to be remembered.
+          </h1>
+
+          <p>
+            Welcome to the creative world of Young Prince — a home for
+            stories, drama, manga, visual ideas, videos and music.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#stories" class="btn btn-dark">
+              Explore Stories
+            </a>
+
+            <a href="#media" class="btn btn-light">
+              Enter Media
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+          <div class="hero-card-content">
+
+            <small>FEATURED WORLD</small>
+
+            <h2>PRIMORDIA</h2>
+
+            <p>
+              Ancient powers. Forgotten laws. A mysterious boy.
+              And a world waiting to awaken.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-section">
+
+      <div class="container">
+
+        <div class="search-box">
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search stories, series, media..."
+            onkeyup="searchSite()"
+          >
+
+          <button onclick="searchSite()">
+            Search
+          </button>
+
+        </div>
+
+        <div id="searchResult" class="search-result"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- STORIES -->
+
+    <section id="stories">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">Featured</span>
+            <h2>Stories</h2>
+          </div>
+
+          <p>
+            Discover original worlds, characters and stories created
+            by Young Prince.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+          <!-- PRIMORDIA -->
+
+          <article class="card searchable">
+
+            <div class="card-image primordia">
+              PRIMORDIA
+            </div>
+
+            <div class="card-body">
+
+              <span class="tag">Manga • Fantasy</span>
+
+              <h3>Primordia</h3>
+
+              <p>
+                Aurel's journey begins in a hidden mountain settlement,
+                where an ancient power is about to awaken.
+              </p>
+
+              <a href="#series" class="read-more">
+                Explore the series →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- BLOOD ON BROAD STREET -->
+
+          <article class="card searchable">
+
+            <div class="card-image blood">
+              BLOOD ON<br>BROAD STREET
+            </div>
+
+            <div class="card-body">
+
+              <span class="tag">Crime • Drama</span>
+
+              <h3>Blood on Broad Street</h3>
+
+              <p>
+                A Lagos City crime drama beginning with three young
+                friends whose lives will eventually change forever.
+              </p>
+
+              <a href="#series" class="read-more">
+                Explore the series →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- FUTURE STORY -->
+
+          <article class="card searchable">
+
+            <div class="card-image creator-card">
+              YOUR NEXT<br>STORY
+            </div>
+
+            <div class="card-body">
+
+              <span class="tag">Coming Soon</span>
+
+              <h3>More Worlds Are Coming</h3>
+
+              <p>
+                New stories, characters and creative projects will
+                continue to grow here.
+              </p>
+
+              <a href="#about" class="read-more">
+                Meet the creator →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERIES -->
+
+    <section class="series-section" id="series">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">Stories in motion</span>
+            <h2>Series</h2>
+          </div>
+
+          <p>
+            Follow each story as new chapters and episodes are released.
+          </p>
+
+        </div>
+
+
+        <div class="series-list">
+
+          <div class="series-item searchable">
+
+            <div class="series-number">01</div>
+
+            <div class="series-info">
+
+              <h3>PRIMORDIA</h3>
+
+              <p>
+                Manga / Fantasy — Chapters and volumes
+              </p>
+
+            </div>
+
+            <span>→</span>
+
+          </div>
+
+
+          <div class="series-item searchable">
+
+            <div class="series-number">02</div>
+
+            <div class="series-info">
+
+              <h3>BLOOD ON BROAD STREET</h3>
+
+              <p>
+                Lagos City Crime Drama — Episodes
+              </p>
+
+            </div>
+
+            <span>→</span>
+
+          </div>
+
+
+          <div class="series-item searchable">
+
+            <div class="series-number">03</div>
+
+            <div class="series-info">
+
+              <h3>COMING SOON</h3>
+
+              <p>
+                A new original series is being developed.
+              </p>
+
+            </div>
+
+            <span>→</span>
+
+          </div>
+
+
+          <div class="series-item searchable">
+
+            <div class="series-number">04</div>
+
+            <div class="series-info">
+
+              <h3>CREATOR'S JOURNAL</h3>
+
+              <p>
+                Behind-the-scenes ideas and creative updates.
+              </p>
+
+            </div>
+
+            <span>→</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LATEST -->
+
+    <section id="latest">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">Fresh from the studio</span>
+            <h2>Latest Posts</h2>
+          </div>
+
+          <p>
+            The newest stories, scenes and creative updates.
+          </p>
+
+        </div>
+
+
+        <div class="latest-grid">
+
+          <article class="featured-post searchable">
+
+            <span class="tag">Featured Story</span>
+
+            <h3>
+              The beginning of something extraordinary.
+            </h3>
+
+            <p>
+              Enter the worlds created by Young Prince and follow
+              the stories as they unfold.
+            </p>
+
+          </article>
+
+
+          <div class="latest-side">
+
+            <article class="small-post searchable">
+
+              <span class="tag">Manga</span>
+
+              <h3>Primordia</h3>
+
+              <p>
+                Ancient powers are beginning to stir.
+              </p>
+
+            </article>
+
+
+            <article class="small-post searchable">
+
+              <span class="tag">Drama</span>
+
+              <h3>Blood on Broad Street</h3>
+
+              <p>
+                Before the blood, there was friendship.
+              </p>
+
+            </article>
+
+
+            <article class="small-post searchable">
+
+              <span class="tag">Updates</span>
+
+              <h3>More content coming</h3>
+
+              <p>
+                Stories, images, videos and music will be added here.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MEDIA -->
+
+    <section class="media-section" id="media">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="eyebrow">Visual & audio</span>
+            <h2>Media Hub</h2>
+          </div>
+
+          <p>
+            A growing collection of images, videos and music.
+          </p>
+
+        </div>
+
+
+        <div class="media-grid">
+
+          <article class="media-card media-images searchable">
+
+            <span>▣</span>
+
+            <h3>Images</h3>
+
+            <p>
+              Character art, story artwork and creative designs.
+            </p>
+
+          </article>
+
+
+          <article class="media-card media-videos searchable">
+
+            <span>▶</span>
+
+            <h3>Videos</h3>
+
+            <p>
+              Story trailers, scenes and future animated projects.
+            </p>
+
+          </article>
+
+
+          <article class="media-card media-music searchable">
+
+            <span>♫</span>
+
+            <h3>Music</h3>
+
+            <p>
+              Original songs, soundtracks and musical creations.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-logo">
+            YP
+          </div>
+
+
+          <div class="about-text">
+
+            <span class="eyebrow">The creator</span>
+
+            <h2>
+              Welcome to the world of Young Prince.
+            </h2>
+
+            <p>
+              Young Prince is a creative space built around storytelling,
+              imagination and visual expression.
+            </p>
+
+            <p>
+              From manga and fantasy worlds to crime drama, music,
+              images and video, this website is where the ideas come
+              together.
+            </p>
+
+            <p>
+              The goal is simple: create stories people can connect
+              with, remember and eventually experience visually.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter">
+
+      <div class="container">
+
+        <h2>Stay in the story.</h2>
+
+        <p>
+          Get updates when new stories, episodes, chapters and
+          creative projects are released.
+        </p>
+
+        <form
+          class="newsletter-form"
+          onsubmit="subscribeUser(event)"
+        >
+
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Your email address"
+            required
+          >
+
+          <button type="submit">
+            Subscribe
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>YOUNG PRINCE</h3>
+
+        <p>
+          Stories. Worlds. Characters. Music. Visuals.
+          One creative universe.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Explore</h3>
+
+        <div class="footer-links">
+
+          <a href="#stories">Stories</a>
+          <a href="#series">Series</a>
+          <a href="#latest">Latest</a>
+          <a href="#media">Media</a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h3>Creator</h3>
+
+        <div class="footer-links">
+
+          <a href="#about">About Young Prince</a>
+          <a href="#home">Back to top ↑</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © <span id="year"></span> Young Prince. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const nav = document.getElementById("mainNav");
+
+      nav.classList.toggle("active");
+
+    }
+
+
+    function closeMenu() {
+
+      const nav = document.getElementById("mainNav");
+
+      nav.classList.remove("active");
+
+    }
+
+
+    function searchSite() {
+
+      const input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+      const items = document.querySelectorAll(".searchable");
+
+      const result = document.getElementById("searchResult");
+
+      if (input === "") {
+
+        items.forEach(function(item) {
+          item.style.display = "";
+        });
+
+        result.textContent = "";
+
+        return;
+      }
+
+      let found = 0;
+
+      items.forEach(function(item) {
+
+        const text = item.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+
+          item.style.display = "";
+
+          found++;
+
+        } else {
+
+          item.style.display = "none";
+
+        }
+
+      });
+
+      if (found === 0) {
+
+        result.textContent =
+          "No results found for \"" + input + "\".";
+
+      } else {
+
+        result.textContent =
+          found + " result" + (found === 1 ? "" : "s") + " found.";
+
+      }
+
+    }
+
+
+    function subscribeUser(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("emailInput").value;
+
+      alert(
+        "Thank you for subscribing, " +
+        email +
+        "! Newsletter features will be connected soon."
+      );
+
+      document.getElementById("emailInput").value = "";
+
+    }
+
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
