@@ -1,2391 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PRIMORDIA — Chapter 1: The Awakening</title>
-
-<meta name="description"
-content="PRIMORDIA Chapter 1 — The Awakening. A Young Prince original manga drama.">
+<title>PRIMORDIA — Chapter 1: The Awakening | Young Prince</title>
+<meta name="description" content="PRIMORDIA Chapter 1 — The Awakening. Read Scenes 1–9 from Young Prince's original manga drama.">
 
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#173126;
+  background:#eef5ed;
+  line-height:1.75;
+}
+a{text-decoration:none;color:inherit}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* TOP NAV */
+.topbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(7,39,28,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(225,190,83,.35);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:13px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.logo{
+  color:#f4d778;font-family:Arial,sans-serif;font-weight:900;
+  letter-spacing:2px;font-size:21px;
+}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.navlinks a{
+  color:#e8efe9;font:700 13px Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.7px;
+}
+.navlinks a:hover{color:#f4d778}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;
+  min-height:560px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:white;
+  background:
+    radial-gradient(circle at 50% 22%,rgba(247,213,111,.42),transparent 24%),
+    radial-gradient(circle at 70% 35%,rgba(71,173,116,.32),transparent 30%),
+    linear-gradient(180deg,#244f3b 0%,#102f24 52%,#071a14 100%);
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+}
+.hero:before{
+  opacity:.85;
+  background:
+    radial-gradient(ellipse at 15% 75%,#092219 0 13%,transparent 14%),
+    radial-gradient(ellipse at 30% 68%,#0c291d 0 15%,transparent 16%),
+    radial-gradient(ellipse at 78% 70%,#082016 0 17%,transparent 18%),
+    radial-gradient(ellipse at 94% 74%,#061b13 0 15%,transparent 16%);
+  filter:blur(2px);
+}
+.hero:after{
+  background:
+    radial-gradient(circle at 18% 30%,rgba(255,240,166,.8) 0 2px,transparent 3px),
+    radial-gradient(circle at 73% 24%,rgba(255,230,130,.65) 0 2px,transparent 3px),
+    radial-gradient(circle at 62% 72%,rgba(175,255,200,.5) 0 2px,transparent 3px),
+    radial-gradient(circle at 38% 46%,rgba(255,239,150,.5) 0 1px,transparent 2px);
+  background-size:170px 190px,230px 210px,190px 230px,140px 160px;
+  animation:particles 9s linear infinite;
+}
+@keyframes particles{to{transform:translateY(-18px)}}
+.hero-content{position:relative;z-index:2;padding:80px 20px}
+.eyebrow{
+  color:#f2d26c;font:700 13px Arial,sans-serif;
+  letter-spacing:4px;text-transform:uppercase;
+}
+.hero h1{
+  font:900 clamp(54px,10vw,108px)/.92 Georgia,serif;
+  letter-spacing:5px;margin:20px 0 18px;
+  text-shadow:0 7px 30px rgba(0,0,0,.45);
+}
+.hero h2{font-size:clamp(22px,4vw,34px);font-weight:normal;color:#edf6e8}
+.hero p{max-width:720px;margin:24px auto 0;color:#d7e7db;font-size:17px}
+.hero .line{
+  width:100px;height:2px;background:#e8c95e;margin:28px auto;
 }
 
-html {
-    scroll-behavior: smooth;
+/* CHAPTER BAR */
+.chapterbar{
+  background:#f4e6a8;
+  border-bottom:1px solid #d6c36c;
+  color:#3b4524;
+}
+.chapterbar-inner{
+  max-width:1200px;margin:auto;padding:18px 20px;
+  display:flex;justify-content:space-between;align-items:center;gap:15px;
+}
+.chapterbar strong{font:900 18px Arial,sans-serif;letter-spacing:1px}
+.chapterbar span{font-size:14px}
+
+/* SCENE NAV */
+.scene-nav{
+  position:sticky;top:57px;z-index:900;
+  background:rgba(238,245,237,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #cadbc9;
+}
+.scene-nav-inner{
+  max-width:1200px;margin:auto;padding:11px 20px;
+  display:flex;gap:8px;overflow-x:auto;
+}
+.scene-nav a{
+  flex:0 0 auto;
+  padding:7px 12px;border:1px solid #bdd0bf;
+  border-radius:20px;background:white;
+  color:#28543d;font:700 12px Arial,sans-serif;
+}
+.scene-nav a:hover{background:#dcebdc;border-color:#8eb49b}
+
+/* STORY */
+.story{
+  max-width:900px;margin:auto;padding:60px 20px 100px;
+}
+.scene{
+  scroll-margin-top:120px;
+  margin-bottom:70px;
+  background:rgba(255,255,255,.92);
+  border:1px solid #cbdcc9;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 14px 35px rgba(32,73,49,.08);
+}
+.scene-head{
+  padding:28px 30px;
+  background:linear-gradient(135deg,#0c3b29,#236447);
+  color:white;
+  border-bottom:4px solid #e3c65d;
+}
+.scene-number{
+  color:#f3d66f;font:700 12px Arial,sans-serif;
+  letter-spacing:3px;text-transform:uppercase;
+}
+.scene-head h2{font-size:30px;line-height:1.2;margin-top:5px}
+.scene-body{padding:34px 32px}
+.block{margin-bottom:22px}
+.stage{
+  color:#64756b;font-style:italic;
+  padding:10px 15px;border-left:3px solid #d6bd55;
+  background:#f7f8f2;border-radius:0 8px 8px 0;
+}
+.narration{
+  color:#476052;font-style:italic;
+  text-align:center;margin:28px 0;
+}
+.dialogue{margin:22px 0}
+.speaker{
+  color:#17613e;font:900 13px Arial,sans-serif;
+  letter-spacing:1.5px;margin-bottom:4px;
+}
+.speaker.dark{color:#3d3330}
+.line{font-size:17px}
+.sfx{
+  text-align:center;color:#8a6c17;font:900 14px Arial,sans-serif;
+  letter-spacing:2px;margin:20px 0;
+}
+.scene-end{
+  margin-top:35px;padding-top:20px;
+  border-top:1px dashed #c5d5c5;
+  text-align:center;color:#8a6c17;
+  font:900 12px Arial,sans-serif;letter-spacing:2px;
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #eef2e9;
-    color: #21362d;
-    line-height: 1.85;
+/* FINAL */
+.final{
+  max-width:900px;margin:0 auto 90px;padding:60px 25px;
+  text-align:center;color:white;border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(231,201,93,.35),transparent 25%),
+    linear-gradient(135deg,#123d2b,#061b13);
+  border:1px solid #b99738;
+  box-shadow:0 18px 45px rgba(8,38,25,.18);
 }
+.final h2{font-size:38px;margin-bottom:15px}
+.final p{color:#d9e8dc;max-width:650px;margin:auto}
 
-a {
-    text-decoration: none;
+/* FOOTER */
+footer{
+  background:#062018;color:#91aa9a;text-align:center;
+  padding:35px 20px;font:14px Arial,sans-serif;
 }
+footer strong{color:#f1d36b}
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.navbar {
-    background: rgba(255,255,255,.97);
-    border-bottom: 1px solid #d4dfd5;
-    padding: 16px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(12px);
+/* MOBILE */
+@media(max-width:700px){
+  .nav{flex-direction:column}
+  .navlinks{gap:10px}
+  .hero{min-height:500px}
+  .chapterbar-inner{flex-direction:column;text-align:center}
+  .scene-nav{top:101px}
+  .scene-head{padding:24px 20px}
+  .scene-head h2{font-size:25px}
+  .scene-body{padding:25px 20px}
+  .line{font-size:16px}
 }
-
-.nav-container {
-    max-width: 1150px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.logo {
-    color: #173f34;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.logo span {
-    color: #c69b35;
-}
-
-.nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-}
-
-.nav-links a {
-    color: #50615a;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    transition: .2s;
-}
-
-.nav-links a:hover {
-    color: #23765e;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-    min-height: 560px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    color: white;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 25%,
-            rgba(236,205,104,.35),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #0c332a,
-            #17634d 45%,
-            #102e2a 100%
-        );
-}
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 20%,
-            rgba(255,224,128,.22),
-            transparent 32%
-        ),
-        linear-gradient(
-            180deg,
-            transparent 40%,
-            rgba(4,25,19,.72)
-        );
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background-image:
-        radial-gradient(
-            circle,
-            rgba(255,225,116,.9) 0 2px,
-            transparent 3px
-        ),
-        radial-gradient(
-            circle,
-            rgba(183,237,190,.75) 0 1px,
-            transparent 3px
-        );
-
-    background-size:
-        170px 180px,
-        230px 250px;
-
-    opacity: .45;
-
-    animation: particles 14s linear infinite;
-}
-
-@keyframes particles {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-45px);
-    }
-}
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-
-    max-width: 900px;
-    padding: 50px 20px;
-}
-
-.hero small {
-    color: #f0d77c;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-
-    letter-spacing: 4px;
-}
-
-.hero h1 {
-    margin: 18px 0;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(48px, 9vw, 88px);
-
-    line-height: 1;
-
-    letter-spacing: 5px;
-
-    text-shadow:
-        0 0 30px rgba(244,213,112,.3),
-        0 15px 35px rgba(0,0,0,.5);
-}
-
-.hero h2 {
-    color: #f0d77c;
-
-    font-size: clamp(26px, 5vw, 42px);
-
-    font-weight: normal;
-
-    font-style: italic;
-
-    margin-bottom: 20px;
-}
-
-.hero p {
-    max-width: 680px;
-    margin: auto;
-
-    color: rgba(255,255,255,.92);
-
-    font-size: 18px;
-}
-
-
-/* =========================
-   READING AREA
-========================= */
-
-.reader {
-    max-width: 930px;
-    margin: auto;
-    padding: 75px 20px 90px;
-}
-
-
-/* =========================
-   CHAPTER INTRO
-========================= */
-
-.chapter-intro {
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-.chapter-intro small {
-    color: #a27b2b;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    letter-spacing: 4px;
-}
-
-.chapter-intro h2 {
-    color: #194d40;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 40px;
-
-    margin: 12px 0 20px;
-}
-
-.chapter-intro .quote {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: #596b63;
-
-    font-size: 21px;
-
-    font-style: italic;
-}
-
-
-/* =========================
-   SCENE CARDS
-========================= */
-
-.scene {
-    background: rgba(255,255,255,.96);
-
-    border: 1px solid #d8e2d8;
-
-    border-radius: 18px;
-
-    padding: 42px;
-
-    margin-bottom: 34px;
-
-    box-shadow:
-        0 12px 35px rgba(31,72,58,.08);
-}
-
-.scene-title {
-    border-left: 5px solid #c59a37;
-
-    padding-left: 18px;
-
-    margin-bottom: 30px;
-}
-
-.scene-title small {
-    display: block;
-
-    color: #a17b2e;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
-.scene-title h3 {
-    color: #194d40;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 29px;
-
-    margin-top: 4px;
-}
-
-.location {
-    color: #78857e;
-
-    font-style: italic;
-
-    margin-top: 3px;
-}
-
-
-/* =========================
-   STORY
-========================= */
-
-.story p {
-    color: #394b44;
-
-    font-size: 18px;
-
-    margin-bottom: 22px;
-}
-
-
-/* =========================
-   DRAMA DIRECTION
-========================= */
-
-.action {
-    margin: 25px 0;
-
-    padding: 20px 24px;
-
-    background: #edf3eb;
-
-    border-left: 4px solid #3d8069;
-
-    border-radius: 0 10px 10px 0;
-
-    color: #637069;
-
-    font-style: italic;
-}
-
-
-/* =========================
-   DIALOGUE
-========================= */
-
-.dialogue {
-    margin: 27px 0;
-
-    padding: 20px 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #edf5ef,
-            #f8f2df
-        );
-
-    border-left: 4px solid #c59a37;
-
-    border-radius: 0 12px 12px 0;
-}
-
-.dialogue p {
-    margin-bottom: 12px;
-
-    color: #33483f;
-}
-
-.dialogue p:last-child {
-    margin-bottom: 0;
-}
-
-.character {
-    color: #194d40;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-weight: 900;
-}
-
-
-/* =========================
-   CINEMATIC MOMENT
-========================= */
-
-.cinematic {
-    margin: 45px 0;
-
-    padding: 48px 30px;
-
-    text-align: center;
-
-    border-radius: 20px;
-
-    color: white;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(239,211,112,.3),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #103c30,
-            #23765d,
-            #274f69
-        );
-
-    box-shadow:
-        0 18px 45px rgba(26,78,61,.18);
-}
-
-.cinematic h3 {
-    color: #f1d77c;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 31px;
-
-    margin-bottom: 14px;
-}
-
-.cinematic p {
-    max-width: 650px;
-
-    margin: auto;
-
-    color: rgba(255,255,255,.9);
-}
-
-
-/* =========================
-   SCENE DIVIDER
-========================= */
-
-.divider {
-    text-align: center;
-
-    color: #b28a34;
-
-    font-size: 23px;
-
-    letter-spacing: 8px;
-
-    margin: 42px 0;
-}
-
-
-/* =========================
-   CHAPTER END
-========================= */
-
-.chapter-end {
-    padding: 55px 30px;
-
-    text-align: center;
-
-    border-radius: 22px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #123b30,
-            #1f6b57
-        );
-
-    margin-top: 60px;
-}
-
-.chapter-end h2 {
-    color: #f1d77c;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 34px;
-
-    margin-bottom: 16px;
-}
-
-.chapter-end p {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: rgba(255,255,255,.9);
-
-    font-size: 17px;
-}
-
-
-/* =========================
-   NAV BUTTONS
-========================= */
-
-.chapter-nav {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-top: 30px;
-}
-
-.button {
-    display: inline-block;
-
-    padding: 13px 20px;
-
-    border-radius: 8px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1e765f,
-            #285f80
-        );
-
-    color: white;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    transition: .2s;
-}
-
-.button:hover {
-    transform: translateY(-2px);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #15372f;
-
-    color: #9bb0a8;
-
-    text-align: center;
-
-    padding: 40px 20px;
-
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-footer strong {
-    color: #f1d77c;
-}
-
-footer p {
-    margin: 7px 0;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 750px) {
-
-    .nav-container {
-        flex-direction: column;
-    }
-
-    .nav-links {
-        gap: 11px;
-    }
-
-    .hero {
-        min-height: 510px;
-    }
-
-    .hero h1 {
-        font-size: 52px;
-        letter-spacing: 3px;
-    }
-
-    .hero h2 {
-        font-size: 27px;
-    }
-
-    .reader {
-        padding: 55px 15px 70px;
-    }
-
-    .scene {
-        padding: 28px 21px;
-    }
-
-    .story p {
-        font-size: 17px;
-    }
-
-    .chapter-nav {
-        flex-direction: column;
-    }
-
-    .button {
-        text-align: center;
-    }
-}
-
-@media (max-width: 450px) {
-
-    .nav-links a {
-        font-size: 10px;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-    .chapter-intro h2 {
-        font-size: 31px;
-    }
-
-    .scene-title h3 {
-        font-size: 23px;
-    }
-}
-
 </style>
-
 </head>
 
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav class="navbar">
-
-    <div class="nav-container">
-
-        <a href="index.html" class="logo">
-            YOUNG PRINCE <span>✦</span>
-        </a>
-
-        <div class="nav-links">
-
-            <a href="index.html">HOME</a>
-
-            <a href="primordia.html">PRIMORDIA</a>
-
-            <a href="blood-on-broad-street.html">
-                BLOOD ON BROAD STREET
-            </a>
-
-            <a href="index.html#explore">
-                EXPLORE
-            </a>
-
-            <a href="index.html#about">
-                ABOUT
-            </a>
-
-        </div>
-
+<header class="topbar">
+  <div class="nav">
+    <a href="index.html" class="logo">YOUNG PRINCE</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="primordia.html">Primordia</a>
+      <a href="blood-on-broad-street.html">Blood on Broad Street</a>
     </div>
-
-</nav>
-
-
-<!-- =========================
-     HERO
-========================= -->
+  </div>
+</header>
 
 <section class="hero">
-
-    <div class="hero-content">
-
-        <small>
-            PRIMORDIA • CHAPTER 01
-        </small>
-
-        <h1>
-            THE AWAKENING
-        </h1>
-
-        <h2>
-            Before the world knew his name,
-            nature knew him.
-        </h2>
-
-        <p>
-            The first chapter of Aurel's journey.
-            A hidden settlement. An ancient shrine.
-            A power that should have remained forgotten.
-        </p>
-
-    </div>
-
+  <div class="hero-content">
+    <div class="eyebrow">Young Prince Original Manga</div>
+    <h1>PRIMORDIA</h1>
+    <div class="line"></div>
+    <h2>CHAPTER 1 — THE AWAKENING</h2>
+    <p>In a forgotten mountain settlement, a boy discovers a power that should have remained hidden.</p>
+  </div>
 </section>
 
-
-<main class="reader">
-
-
-<!-- =========================
-     CHAPTER INTRO
-========================= -->
-
-<section class="chapter-intro">
-
-    <small>
-        CHAPTER 01
-    </small>
-
-    <h2>
-        The Awakening
-    </h2>
-
-    <p class="quote">
-        "There is something inside me...
-        something I don't understand."
-    </p>
-
-</section>
-
-
-<!-- =========================
-     SCENE 1
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 01</small>
-
-        <h3>
-            The Mountain Settlement
-        </h3>
-
-        <div class="location">
-            Hidden mountain settlement — Morning
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            <i>
-            High among the mountains, far from the great
-            cities, a small settlement wakes beneath the
-            morning mist.
-            </i>
-        </p>
-
-        <p>
-            Wooden homes stand between enormous trees.
-            Smoke rises slowly from cooking fires.
-            Children run through narrow paths while the
-            adults begin another ordinary day.
-        </p>
-
-        <p>
-            The mountains are peaceful.
-            The forest is quiet.
-        </p>
-
-        <p>
-            But beneath that peace, something ancient
-            is beginning to stir.
-        </p>
-
-        <p>
-            Among the children of the settlement is a
-            twelve-year-old boy.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            Aurel
-        </h3>
-
-        <p>
-            A quiet boy with curious eyes who has always
-            felt strangely connected to the forest.
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel walks beyond the houses, carrying a
-            small bundle of firewood.
-        </p>
-
-        <p>
-            He stops.
-        </p>
-
-        <p>
-            The wind moves through the trees.
-        </p>
-
-        <p>
-            Aurel looks around.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Did you hear that?"
-        </p>
-
-        <p>
-            There is no answer.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "I know you're there."
-        </p>
-
-    </div>
-
-
-    <div class="action">
-        The leaves tremble gently although there is
-        almost no wind.
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel smiles faintly.
-        </p>
-
-        <p>
-            He has felt this before.
-        </p>
-
-        <p>
-            The forest feels alive around him.
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
+<div class="chapterbar">
+  <div class="chapterbar-inner">
+    <strong>CHAPTER 1 — THE AWAKENING</strong>
+    <span>9 Scenes • Complete Chapter</span>
+  </div>
 </div>
 
-
-<!-- =========================
-     SCENE 2
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 02</small>
-
-        <h3>
-            The Dying Tree
-        </h3>
-
-        <div class="location">
-            Forest beyond the settlement — Afternoon
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel follows a narrow path deeper into
-            the forest.
-        </p>
-
-        <p>
-            The trees become larger.
-        </p>
-
-        <p>
-            The sunlight becomes thinner.
-        </p>
-
-        <p>
-            Then he sees something that makes him stop.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            The Ancient Tree
-        </h3>
-
-        <p>
-            An enormous tree stands alone.
-            Its bark is cracked.
-            Its branches are dry.
-            Almost every leaf has fallen.
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel slowly approaches.
-        </p>
-
-        <p>
-            He places his hand against the bark.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "You're dying..."
-        </p>
-
-        <p>
-            He looks at the empty branches.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Why?"
-        </p>
-
-        <p>
-            Silence.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "I don't know how to help you."
-        </p>
-
-    </div>
-
-
-    <div class="action">
-        Aurel closes his eyes.
-        He simply keeps his hand against the tree.
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Then something changes.
-        </p>
-
-        <p>
-            The forest becomes completely silent.
-        </p>
-
-        <p>
-            A warmth travels through Aurel's hand.
-        </p>
-
-        <p>
-            His eyes open.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            The Awakening
-        </h3>
-
-        <p>
-            A faint emerald light spreads beneath
-            Aurel's hand.
-        </p>
-
-        <p>
-            The light travels through the roots.
-            The branches tremble.
-            New leaves begin to form.
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel pulls his hand away.
-        </p>
-
-        <p>
-            The tree is alive again.
-        </p>
-
-        <p>
-            He stares at his own hand.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "What... was that?"
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 3
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 03</small>
-
-        <h3>
-            The Shrine
-        </h3>
-
-        <div class="location">
-            Deep within the ancient forest
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel continues deeper into the forest.
-        </p>
-
-        <p>
-            He does not know why.
-        </p>
-
-        <p>
-            Something seems to be pulling him forward.
-        </p>
-
-        <p>
-            Through the trees, he discovers stone ruins.
-        </p>
-
-        <p>
-            An ancient shrine stands hidden beneath
-            roots and moss.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            The Ancient Symbol
-        </h3>
-
-        <p>
-            At the centre of the shrine is the image
-            of a great tree surrounded by four symbols.
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel touches the stone.
-        </p>
-
-        <p>
-            A strange feeling passes through him.
-        </p>
-
-        <p>
-            Beneath the tree symbol, something catches
-            his attention.
-        </p>
-
-        <p>
-            He moves the loose stone aside.
-        </p>
-
-        <p>
-            Beneath it is a small dark stone marked
-            with four mysterious symbols.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "What is this?"
-        </p>
-
-    </div>
-
-
-    <div class="action">
-        The moment his fingers touch the artifact,
-        the four symbols briefly glow.
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel immediately pulls his hand away.
-        </p>
-
-        <p>
-            His breathing becomes faster.
-        </p>
-
-        <p>
-            He does not understand the artifact.
-        </p>
-
-        <p>
-            But something inside him tells him that
-            it must remain hidden.
-        </p>
-
-        <p>
-            He places it back beneath the stone.
-        </p>
-
-        <p>
-            Then he hears a distant sound.
-        </p>
-
-        <p>
-            Footsteps.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Who's there?"
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 4
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 04</small>
-
-        <h3>
-            Something Has Awakened
-        </h3>
-
-        <div class="location">
-            The settlement — Evening
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel returns to the settlement before nightfall.
-        </p>
-
-        <p>
-            But something feels different.
-        </p>
-
-        <p>
-            The adults are whispering.
-        </p>
-
-        <p>
-            The animals are restless.
-        </p>
-
-        <p>
-            The guardian watches Aurel from across the
-            settlement.
-        </p>
-
-        <p>
-            He notices something in the boy's eyes.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Father:</span>
-            "Where have you been?"
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "In the forest."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Alone?"
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Yes."
-        </p>
-
-        <p>
-            The guardian studies him.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Did anything happen?"
-        </p>
-
-        <p>
-            Aurel hesitates.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "I... found something."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Before Aurel can explain, a distant horn
-            echoes through the mountains.
-        </p>
-
-        <p>
-            The guardian's expression changes.
-        </p>
-
-        <p>
-            He knows that sound.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Father:</span>
-            "Aurel..."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Father?"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Go inside."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Why?"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Now."
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 5
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 05</small>
-
-        <h3>
-            The Shadow Legion
-        </h3>
-
-        <div class="location">
-            The mountain settlement — Night
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Darkness falls over the settlement.
-        </p>
-
-        <p>
-            Then the forest erupts with movement.
-        </p>
-
-        <p>
-            Figures emerge from between the trees.
-        </p>
-
-        <p>
-            Black armour.
-            Dark banners.
-            Weapons covered in strange markings.
-        </p>
-
-        <p>
-            The Shadow Legion has found them.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            THE SHADOW LEGION
-        </h3>
-
-        <p>
-            They are not here for the settlement.
-            They are searching for something that has awakened.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Shadow Soldier:</span>
-            "Search every house."
-        </p>
-
-        <p>
-            <span class="character">Another Soldier:</span>
-            "The signal came from this mountain."
-        </p>
-
-        <p>
-            <span class="character">Shadow Soldier:</span>
-            "Find the source."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel watches from inside the house.
-        </p>
-
-        <p>
-            His hands begin to tremble.
-        </p>
-
-        <p>
-            He remembers the tree.
-        </p>
-
-        <p>
-            He remembers the shrine.
-        </p>
-
-        <p>
-            The guardian enters.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Father... who are they?"
-        </p>
-
-        <p>
-            The guardian remains silent.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "You know them."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "I know what they are capable of."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Why did they come here?"
-        </p>
-
-        <p>
-            The guardian looks directly at him.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Because something has awakened."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel's eyes widen.
-        </p>
-
-        <p>
-            He suddenly understands.
-        </p>
-
-        <p>
-            They came because of him.
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 6
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 06</small>
-
-        <h3>
-            The Truth of the Guardian
-        </h3>
-
-        <div class="location">
-            The settlement — During the attack
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Outside, the settlement begins to burn.
-        </p>
-
-        <p>
-            People run through the streets.
-        </p>
-
-        <p>
-            The Shadow Legion moves from house to house.
-        </p>
-
-        <p>
-            Aurel looks at the guardian.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "You knew this would happen."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "I feared it would."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Why?"
-        </p>
-
-        <p>
-            The guardian lowers his head.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Because I have been running from my past
-            for many years."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "What past?"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "I once belonged to them."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel freezes.
-        </p>
-
-        <p>
-            Outside, another building catches fire.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "You were part of the Shadow Legion?"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Yes."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Then why did you leave?"
-        </p>
-
-        <p>
-            The guardian looks at him.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Because one day they ordered me to kill
-            an innocent child."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "I refused."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "That was the day I became their enemy."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel looks at him differently.
-        </p>
-
-        <p>
-            The guardian continues.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Father:</span>
-            "Years ago, I found you."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Found me?"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Inside an ancient shrine."
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "The shrine in the forest..."
-        </p>
-
-        <p>
-            The guardian nods.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "I didn't know who you were."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "I only knew that someone had left you there."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "So I took you with me."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel struggles to understand.
-        </p>
-
-        <p>
-            Before he can ask another question, the door
-            shakes violently.
-        </p>
-
-    </div>
-
-
-    <div class="action">
-        Someone is outside.
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 7
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 07</small>
-
-        <h3>
-            The Escape
-        </h3>
-
-        <div class="location">
-            The burning settlement
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            The door breaks apart.
-        </p>
-
-        <p>
-            A Shadow Legion soldier enters.
-        </p>
-
-        <p>
-            The guardian moves instantly.
-        </p>
-
-        <p>
-            Steel clashes against steel.
-        </p>
-
-        <p>
-            Aurel steps backward.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Father:</span>
-            "Aurel!"
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Father!"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Run!"
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "I'm not leaving you!"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "You don't understand!"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "They aren't looking for me."
-        </p>
-
-        <p>
-            He looks at Aurel.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "They're looking for you."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel's eyes widen.
-        </p>
-
-        <p>
-            The guardian grabs him and pushes him toward
-            the rear exit.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Father!"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Go!"
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "And whatever happens..."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "Don't let them take you."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel runs.
-        </p>
-
-        <p>
-            He enters the forest.
-        </p>
-
-        <p>
-            But he does not go far.
-        </p>
-
-        <p>
-            He turns back.
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 8
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 08</small>
-
-        <h3>
-            The Last Stand
-        </h3>
-
-        <div class="location">
-            Forest edge — overlooking the settlement
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel hides behind the trees.
-        </p>
-
-        <p>
-            From there, he can see the entire settlement.
-        </p>
-
-        <p>
-            Fire consumes the wooden houses.
-        </p>
-
-        <p>
-            Smoke rises into the night sky.
-        </p>
-
-        <p>
-            His Father stands alone.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            The Guardian
-        </h3>
-
-        <p>
-            The man who had protected Aurel for years
-            now stands between the Shadow Legion and
-            the boy he chose to protect.
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel grips the tree beside him.
-        </p>
-
-        <p>
-            His hand begins to glow.
-        </p>
-
-        <p>
-            The same emerald light from the ancient tree
-            appears again.
-        </p>
-
-        <p>
-            The symbols beneath his skin seem to tremble.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "What is happening to me?"
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Across the settlement, the guardian looks
-            toward the forest.
-        </p>
-
-        <p>
-            He sees Aurel.
-        </p>
-
-        <p>
-            For one brief moment, their eyes meet.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Father:</span>
-            "Aurel..."
-        </p>
-
-        <p>
-            Aurel's eyes fill with tears.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Father!"
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            The guardian turns back toward the soldiers.
-        </p>
-
-        <p>
-            He knows what he must do.
-        </p>
-
-    </div>
-
-</article>
-
-
-<div class="divider">
-    ✦ ✦ ✦
-</div>
-
-
-<!-- =========================
-     SCENE 9
-========================= -->
-
-<article class="scene">
-
-    <div class="scene-title">
-
-        <small>SCENE 09</small>
-
-        <h3>
-            The End of One Life
-        </h3>
-
-        <div class="location">
-            The burning settlement — Night
-        </div>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            The Shadow Legion surrounds the guardian.
-        </p>
-
-        <p>
-            He raises his weapon.
-        </p>
-
-        <p>
-            Even wounded, he refuses to step aside.
-        </p>
-
-        <p>
-            Aurel watches helplessly from the forest.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Shadow Soldier:</span>
-            "Where is the boy?"
-        </p>
-
-        <p>
-            The guardian says nothing.
-        </p>
-
-        <p>
-            <span class="character">Shadow Soldier:</span>
-            "Tell us where he went."
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "You'll never find him."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Another soldier approaches.
-        </p>
-
-        <p>
-            The guardian looks toward the forest one
-            final time.
-        </p>
-
-        <p>
-            He knows Aurel is still watching.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Father:</span>
-            "Aurel..."
-        </p>
-
-        <p>
-            His voice carries faintly through the smoke.
-        </p>
-
-        <p>
-            <span class="character">Father:</span>
-            "You are my son."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel freezes.
-        </p>
-
-        <p>
-            Tears run down his face.
-        </p>
-
-        <p>
-            The guardian smiles.
-        </p>
-
-        <p>
-            Then the attack comes.
-        </p>
-
-    </div>
-
-
-    <div class="cinematic">
-
-        <h3>
-            FATHER
-        </h3>
-
-        <p>
-            The guardian falls.
-        </p>
-
-        <p>
-            Aurel watches him die from the forest edge.
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            For several seconds, Aurel cannot move.
-        </p>
-
-        <p>
-            The world seems to disappear around him.
-        </p>
-
-        <p>
-            His home is burning.
-        </p>
-
-        <p>
-            His Father is dead.
-        </p>
-
-        <p>
-            And the people he knew are gone.
-        </p>
-
-        <p>
-            Aurel slowly clenches his fists.
-        </p>
-
-    </div>
-
-
-    <div class="dialogue">
-
-        <p>
-            <span class="character">Aurel:</span>
-            "Father..."
-        </p>
-
-        <p>
-            His voice breaks.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "I'm sorry."
-        </p>
-
-        <p>
-            He wipes the tears from his face.
-        </p>
-
-        <p>
-            <span class="character">Aurel:</span>
-            "I'll come back for you."
-        </p>
-
-    </div>
-
-
-    <div class="story">
-
-        <p>
-            Aurel turns away.
-        </p>
-
-        <p>
-            He runs.
-        </p>
-
-        <p>
-            Deeper into the ancient forest.
-        </p>
-
-        <p>
-            Behind him, the settlement burns.
-        </p>
-
-        <p>
-            Ahead of him lies a world he knows nothing about.
-        </p>
-
-        <p>
-            The forest closes around him.
-        </p>
-
-        <p>
-            And somewhere beneath the earth,
-            something ancient begins to awaken.
-        </p>
-
-    </div>
-
-</article>
-
-
-<!-- =========================
-     CHAPTER END
-========================= -->
-
-<section class="chapter-end">
-
-    <h2>
-        END OF CHAPTER 1
-    </h2>
-
-    <p>
-        Aurel has lost his home and the man who raised him.
-        He now carries questions about his origin,
-        the ancient shrine, the mysterious artifact,
-        and the power awakening inside him.
-    </p>
-
-    <p style="margin-top:18px;">
-        But his journey has only just begun.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<div class="chapter-nav">
-
-    <a href="primordia.html" class="button">
-        ← Back to PRIMORDIA
-    </a>
-
-    <a href="index.html" class="button">
-        HOME
-    </a>
-
-</div>
-
+<nav class="scene-nav" aria-label="Chapter scene navigation">
+  <div class="scene-nav-inner">
+    <a href="#scene1">Scene 1</a><a href="#scene2">Scene 2</a><a href="#scene3">Scene 3</a>
+    <a href="#scene4">Scene 4</a><a href="#scene5">Scene 5</a><a href="#scene6">Scene 6</a>
+    <a href="#scene7">Scene 7</a><a href="#scene8">Scene 8</a><a href="#scene9">Scene 9</a>
+  </div>
+</nav>
+
+<main class="story">
+
+<section class="scene" id="scene1">
+<div class="scene-head"><div class="scene-number">Scene 1</div><h2>The Mountain That Remembers</h2></div>
+<div class="scene-body">
+
+<div class="stage">[Early morning. Mist covers a vast mountain range. Birds fly between enormous trees. Far above the clouds, ancient mountains surround a small hidden settlement.]</div>
+<div class="narration">There are places the world has forgotten.</div>
+<div class="stage">[The settlement slowly comes alive. Smoke rises from small houses. Villagers carry baskets. Children run through the narrow paths.]</div>
+<div class="narration">And there are secrets that have remained hidden for generations.</div>
+
+<div class="stage">[A boy suddenly races through the forest, jumping over rocks and roots.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Wait!"</div></div>
+<div class="stage">[He runs faster.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Come back!"</div></div>
+<div class="stage">[A small bird flies from one branch to another. Aurel stops beneath the tree, breathing heavily.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...You!"</div></div>
+<div class="stage">[The bird tilts its head.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You made me run all the way here for nothing."</div></div>
+<div class="stage">[The bird suddenly flies away.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Hey!"</div><div class="line">"Fine. Go."</div></div>
+<div class="stage">[Aurel laughs. He looks deeper into the forest. His smile slowly fades. The trees ahead are larger, older, and covered in thick vines.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I've never been this far."</div><div class="line">"Maybe there's something interesting over there."</div></div>
+
+<div class="dialogue"><div class="speaker">VOICE</div><div class="line">"Aurel."</div></div>
+<div class="stage">[Aurel freezes.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...Oh no."</div></div>
+<div class="stage">[He slowly turns around. An elderly man stands behind him, watching silently. His face is calm, but his eyes are sharp.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"How many times have I told you not to come this far?"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Three."</div></div>
+<div class="stage">[The guardian raises an eyebrow.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...Maybe four."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Four."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Okay. Four."</div></div>
+<div class="stage">[The guardian looks toward the dark forest. His expression suddenly becomes serious.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You shouldn't be here."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Why?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Because there are things in these mountains you don't understand."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You always say that."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Because you never stop asking."</div></div>
+<div class="stage">[Aurel smiles.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Maybe one day you'll tell me the truth."</div></div>
+<div class="stage">[The guardian becomes silent. For a brief moment, his eyes reveal something painful.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Perhaps."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What does that mean?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"It means we're going home."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"But I just got here."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Aurel."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Fine."</div></div>
+<div class="stage">[They begin walking back toward the settlement.]</div>
+
+<div class="stage">[Aurel walks ahead. The guardian remains behind for a moment and looks toward the forest. His expression changes.]</div>
+<div class="stage">[A memory flashes through his mind. An ancient shrine buried deep within the mountains. Broken stone pillars surround a gigantic tree. At the center is a mysterious symbol—a tree surrounded by four symbols. A newborn child lies beneath the tree.]</div>
+<div class="dialogue"><div class="speaker">YOUNG GUARDIAN</div><div class="line">"...A child?"</div></div>
+<div class="stage">[The memory disappears. The guardian closes his eyes.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN — INNER THOUGHT</div><div class="line">Not yet.</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Are you coming?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Yes."</div></div>
+<div class="stage">[He catches up with Aurel.]</div>
+<div class="stage">[They disappear into the morning mist.]</div>
+<div class="stage">[Deep beneath the ancient mountain, inside a forgotten shrine...]</div>
+<div class="sfx">SFX: CRK...</div>
+<div class="stage">[An ancient stone develops a tiny crack. Something moves behind it. The four symbols carved into the stone glow faintly for a moment... then disappear.]</div>
+<div class="narration">For twelve years, the mountain had kept its secret.</div>
+<div class="narration">But that secret was beginning to awaken.</div>
+<div class="scene-end">END OF SCENE 1</div>
+</div></section>
+
+<section class="scene" id="scene2">
+<div class="scene-head"><div class="scene-number">Scene 2</div><h2>The Dying Tree</h2></div>
+<div class="scene-body">
+<div class="stage">[Later that morning. The mountain settlement is busy. Villagers work around their homes while children play nearby.]</div>
+<div class="stage">[Aurel sits on a wooden fence, staring toward the forest.]</div>
+<div class="stage">[His guardian is inside, repairing an old piece of equipment.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"There's definitely something out there."</div></div>
+<div class="stage">[He looks toward the house behind him.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"He won't let me go."</div><div class="line">"So I'll just have to find another way."</div></div>
+<div class="stage">[He walks toward the edge of the settlement. Aurel enters the forest again.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Just a little farther."</div></div>
+<div class="stage">[He moves between the trees. The familiar sounds of the settlement slowly disappear. No voices. No footsteps. Only the sound of wind moving through the leaves.]</div>
+<div class="sfx">SFX: WHOOSH...</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Strange."</div><div class="line">"It's too quiet."</div></div>
+<div class="sfx">SFX: CRACK...</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What was that?"</div></div>
+<div class="stage">[He follows the sound and reaches a small clearing.]</div>
+<div class="stage">[In the center stands an enormous ancient tree. Its trunk is wider than several people standing together. Its branches stretch toward the sky. But the tree is dying. Its leaves are brown. Its bark is cracked. Several branches have already fallen.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...Whoa."</div><div class="line">"How old are you?"</div></div>
+<div class="stage">[Aurel slowly approaches it and places his hand against the trunk.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You're freezing."</div><div class="line">"What happened to you?"</div></div>
+<div class="stage">[He kneels beside the roots. A small flower lies withered beneath the tree.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You're dying."</div><div class="line">"Is anyone here?"</div></div>
+<div class="stage">[No answer. He looks back at the tree.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Don't worry."</div><div class="line">"I'll help you."</div></div>
+<div class="stage">[He places both hands against the trunk. Nothing happens. Aurel waits.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...Come on."</div><div class="line">"Please."</div></div>
+<div class="stage">[Nothing. Aurel lowers his head.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I don't know how."</div><div class="line">"But I don't want you to die."</div></div>
+<div class="stage">[A long silence. Aurel closes his eyes.]</div>
+<div class="sfx">SFX: WHOOSH...</div>
+<div class="stage">[Aurel's fingers begin to glow faintly.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...What?"</div></div>
+<div class="stage">[Thin strands of light move from his hands into the tree.]</div>
+<div class="sfx">SFX: THUM...</div>
+<div class="stage">[The ground beneath Aurel's feet trembles.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What's happening?!"</div></div>
+<div class="stage">[The roots begin moving beneath the soil.]</div>
+<div class="sfx">SFX: CRRKKK...</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Wait!"</div></div>
+<div class="sfx">SFX: THUM... THUM...</div>
+<div class="stage">[The cracked bark begins repairing itself. Brown leaves fall from the branches. Tiny green leaves begin growing in their place.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...No way."</div><div class="line">"I... did that?"</div></div>
+<div class="stage">[A flower opens beside his hand. The tree suddenly releases a powerful wave of energy. Birds explode from the surrounding trees. The entire forest seems to respond.]</div>
+<div class="sfx">SFX: WHOOOOM!</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What was that?!"</div><div class="line">"What... am I?"</div></div>
+<div class="stage">[Far away. A dark figure suddenly opens its eyes.]</div>
+<div class="dialogue"><div class="speaker">VOICE</div><div class="line">"The signal..."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"Did you feel that?"</div></div>
+<div class="dialogue"><div class="speaker">VOICE</div><div class="line">"Yes."</div><div class="line">"Something has awakened."</div></div>
+<div class="stage">[Back in the forest. Aurel remains beside the now-living tree. He doesn't notice the faint symbol appearing beneath his feet—a tree surrounded by four ancient symbols.]</div>
+<div class="narration">The first awakening had begun.</div>
+<div class="scene-end">END OF SCENE 2</div>
+</div></section>
+
+<section class="scene" id="scene3">
+<div class="scene-head"><div class="scene-number">Scene 3</div><h2>The Signal</h2></div>
+<div class="scene-body">
+<div class="stage">[Deep beneath the mountain, inside an ancient chamber...]</div>
+<div class="stage">[Dust falls from enormous black stone walls. Ancient symbols begin glowing one after another.]</div>
+<div class="sfx">SFX: THUM...</div>
+<div class="stage">[A Shadow Legion warrior enters and kneels before a tall figure standing in the darkness.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"My Lord."</div></div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Rise."</div></div>
+<div class="stage">[The warrior slowly stands.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"The disturbance came from the northern mountains."</div></div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"I know."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"You felt it?"</div></div>
+<div class="stage">[The Dark Lord slowly raises his hand toward the ancient symbols.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"For twelve years..."</div></div>
+<div class="stage">[The symbols pulse.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"...the world has been silent."</div></div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Now the silence is broken."</div></div>
+<div class="sfx">SFX: THUM.</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"Could it be the one we've been searching for?"</div></div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Do not call him <em>the one</em>."</div></div>
+<div class="stage">[The warrior lowers his head.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Names belong to those who understand what they are."</div><div class="line">"We do not yet know what that child is."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"Then what are your orders?"</div></div>
+<div class="stage">[The Dark Lord looks toward the glowing symbols.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Find the child."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"And if the villagers resist?"</div></div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Then remove the obstacle."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"And the shrine?"</div></div>
+<div class="stage">[The Dark Lord pauses.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Search beneath the tree."</div><div class="line">"The artifact has slept long enough."</div></div>
+<div class="stage">[A faint smile crosses the darkness. The four symbols flare brightly.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"And when it awakens..."</div><div class="line">"...so will what lies beyond the seal."</div></div>
+<div class="stage">[The chamber falls silent.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Go."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION WARRIOR</div><div class="line">"Yes, my Lord."</div></div>
+<div class="stage">[The warrior leaves. The Dark Lord remains alone before the ancient symbols.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD — INNER THOUGHT</div><div class="line">"After all these centuries..."</div></div>
+<div class="stage">[His eyes glow within the darkness.]</div>
+<div class="dialogue"><div class="speaker">DARK LORD</div><div class="line">"Primordia is beginning to remember."</div></div>
+<div class="scene-end">END OF SCENE 3</div>
+</div></section>
+
+<section class="scene" id="scene4">
+<div class="scene-head"><div class="scene-number">Scene 4</div><h2>The Truth He Hides</h2></div>
+<div class="scene-body">
+<div class="stage">[Late afternoon. The settlement is beginning to quiet. Aurel follows his guardian into their small home. The guardian closes the door behind them. For several seconds, neither of them speaks.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father... what's wrong? You look scared."</div></div>
+<div class="stage">[The guardian stands with his back toward Aurel. His hands tremble slightly.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Tell me exactly what happened in the forest."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I found an old tree beyond the northern path. It was dying, so I tried to help it. Then something happened... light came from my hands and went into the tree. The tree started living again."</div></div>
+<div class="stage">[The guardian slowly turns toward him.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You went beyond the northern path?"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Yes. I know you told me not to, but the tree was dying. I couldn't just leave it."</div></div>
+<div class="stage">[The guardian looks away.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father... what is happening to me?"</div><div class="line">"Please. If you know something, tell me."</div></div>
+<div class="stage">[The guardian closes his eyes.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I was hoping you would never have to ask me that question."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Why?"</div></div>
+<div class="stage">[The guardian walks toward an old wooden chest and kneels beside it. He opens it slowly.]</div>
+<div class="sfx">SFX: CREAAK...</div>
+<div class="stage">[Inside are old weapons, worn clothing and a faded piece of armor.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"These... they're yours?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"They belonged to a life I left behind."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You were a warrior?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Once."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then why did you never tell me?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Because there are things about my past that should have remained buried."</div></div>
+<div class="stage">[He places the armor on the table.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Does your past have something to do with me?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Yes."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then tell me the truth."</div></div>
+<div class="stage">[A long silence.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I didn't find you in this village."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then where did you find me?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Inside an ancient shrine, deep within these mountains."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"A shrine? Why was I there?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I don't know."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Who left me there?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I don't know."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then... who are my parents?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I don't know that either."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then what do you know about me?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I know that the day I found you, there was something inside that shrine."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"A symbol."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What kind of symbol?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"A tree... surrounded by four symbols."</div></div>
+<div class="stage">[Aurel suddenly remembers the strange marking that appeared beneath his feet in the forest.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...Four symbols."</div></div>
+<div class="stage">[The guardian looks sharply at him.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You saw them?"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"There was a symbol beneath me when the tree came back to life. It looked exactly like that."</div></div>
+<div class="stage">[The guardian's face goes pale.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Then they've found you."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Who?"</div></div>
+<div class="stage">[The guardian reaches into the chest and pulls out his old weapon.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"The people I spent twelve years trying to keep away from you."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Who are they, Father?"</div></div>
+<div class="stage">[The guardian looks toward the window. Far beyond the settlement, a dark figure stands among the trees.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"The Shadow Legion."</div></div>
+<div class="sfx">SFX: BOOOOOOM...</div>
+<div class="stage">[A distant horn suddenly echoes through the mountains. Aurel freezes. The guardian grips his weapon tightly.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"They're here."</div></div>
+<div class="sfx">SFX: BOOOOOOM...</div>
+<div class="stage">[Another horn answers from the opposite side of the settlement.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"And this time... they're not leaving without you."</div></div>
+<div class="scene-end">END OF SCENE 4</div>
+</div></section>
+
+<section class="scene" id="scene5">
+<div class="scene-head"><div class="scene-number">Scene 5</div><h2>The Shadow Legion Attacks</h2></div>
+<div class="scene-body">
+<div class="sfx">SFX: BOOOOOOM...</div>
+<div class="stage">[The second horn echoes through the settlement. Villagers stop in the middle of what they are doing. Conversations die away. Children look toward the forest.]</div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"What was that?"</div></div>
+<div class="dialogue"><div class="speaker">ANOTHER VILLAGER</div><div class="line">"Those aren't hunting horns."</div></div>
+<div class="sfx">SFX: BOOOOOOM...</div>
+<div class="stage">[A third horn sounds from the eastern side. The guardian immediately grabs his old weapon.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father... what's happening?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"They've surrounded the settlement."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"The Shadow Legion?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Yes."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then let me help you."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"No. Stay inside."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"But they're here because of me."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Exactly. And that's why you must stay hidden."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I can fight."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You don't even understand the power inside you yet."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Then teach me."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"There's no time."</div></div>
+<div class="sfx">SFX: KRAAAM!</div>
+<div class="stage">[A sudden explosion shakes the settlement. Smoke rises beyond the houses.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Listen to me carefully. Whatever you hear, whatever you see, you do not leave this house."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Promise me."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...I promise."</div></div>
+<div class="stage">[The guardian places a hand on Aurel's shoulder, then turns toward the door.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Good."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father!"</div></div>
+<div class="stage">[The guardian stops.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Come back."</div></div>
+<div class="stage">[The guardian looks over his shoulder. For a moment, his warrior's expression disappears, and Aurel sees the father who raised him.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I will."</div></div>
+<div class="stage">[He steps outside and closes the door.]</div>
+<div class="stage">[Outside, panic has spread through the settlement. Villagers run between the houses. Parents pull their children indoors. Men grab farming tools and whatever weapons they can find.]</div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"They're coming from the forest!"</div></div>
+<div class="dialogue"><div class="speaker">ANOTHER VILLAGER</div><div class="line">"Get the children inside!"</div></div>
+<div class="stage">[Dark figures emerge between the trees. The Shadow Legion has arrived. Their armor is black. Their faces are concealed. Their movements are disciplined and silent.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Search every house."</div></div>
+<div class="dialogue"><div class="speaker">ANOTHER SOLDIER</div><div class="line">"The boy must be here."</div></div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"Who are you people? What do you want?"</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"We're looking for someone."</div></div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"There's no one here!"</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Don't make me ask twice."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"That's enough."</div></div>
+<div class="stage">[Everyone turns. The guardian stands in the middle of the settlement, his old weapon resting against his shoulder.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"...You."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Impossible. You're supposed to be dead."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I've been dead to your Legion for a long time."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Move aside. We're here for the boy."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Then you've come to the wrong place."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"The Dark Lord wants him alive."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Then tell your Dark Lord he can search these mountains until they crumble. He will never take Aurel."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Kill him."</div></div>
+<div class="sfx">SFX: SHING!</div>
+<div class="sfx">SFX: WHOOSH!</div>
+<div class="stage">[Several warriors rush forward. The guardian's blade strikes the first warrior and sends him crashing into the ground.]</div>
+<div class="sfx">SFX: BAAM!</div>
+<div class="stage">[Another attacks from behind. The guardian turns and blocks.]</div>
+<div class="sfx">SFX: CLANG!</div>
+<div class="stage">[He twists the attacker's weapon away and strikes him down.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"He's still this fast?!"</div></div>
+<div class="stage">[Three more warriors surround him.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You should have brought more men."</div></div>
+<div class="stage">[Inside the house, Aurel hears the battle outside.]</div>
+<div class="sfx">SFX: CLANG!</div><div class="sfx">SFX: BOOM!</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="sfx">SFX: KRAAAM!</div>
+<div class="stage">[Another explosion shakes the house. Aurel takes a step toward the door. He remembers his promise.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I promised..."</div><div class="line">"But I can't just sit here."</div><div class="line">"Father needs me."</div></div>
+<div class="stage">[Aurel opens the door. Outside, smoke fills the settlement. The guardian is surrounded by Shadow Legion warriors. Blood runs down his face. He looks toward the house.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Aurel..."</div></div>
+<div class="stage">[One of the soldiers notices his distraction.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Now!"</div></div>
+<div class="sfx">SFX: CLANG!</div>
+<div class="stage">[A blade swings toward the guardian. He blocks it at the last second. Aurel watches from behind a nearby building.]</div>
+<div class="dialogue"><div class="speaker">AUREL — INNER THOUGHT</div><div class="line">Who is my father...?</div></div>
+<div class="stage">[The guardian knocks another warrior backward. But more Shadow Legion soldiers continue advancing. The battle is only beginning.]</div>
+<div class="scene-end">END OF SCENE 5</div>
+</div></section>
+
+<section class="scene" id="scene6">
+<div class="scene-head"><div class="scene-number">Scene 6</div><h2>The Last Stand</h2></div>
+<div class="scene-body">
+<div class="stage">[Smoke drifts through the settlement. Fires burn between the houses. The Shadow Legion continues advancing. Aurel remains hidden behind a building, watching his father fight.]</div>
+<div class="dialogue"><div class="speaker">AUREL — INNER THOUGHT</div><div class="line">He's fighting all of them... alone.</div></div>
+<div class="stage">[The guardian blocks another attack and pushes the warrior back.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Stay away from my home!"</div></div>
+<div class="stage">[Two warriors attack from opposite sides. The guardian blocks one strike, then the other.]</div>
+<div class="sfx">SFX: CLANG!</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"There!"</div><div class="line">"The boy!"</div></div>
+<div class="stage">[Several warriors turn. The guardian's expression changes immediately.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Aurel, RUN!"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father!"</div></div>
+<div class="stage">[The guardian rushes toward the soldiers blocking Aurel.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Don't touch him!"</div></div>
+<div class="stage">[He strikes one warrior aside and grabs Aurel by the arm.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"What are you doing here? I told you to stay inside!"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I heard you fighting. I couldn't leave you alone."</div></div>
+<div class="stage">[The guardian looks at him for a moment.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You disobedient little fool..."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I'm sorry."</div></div>
+<div class="stage">[The guardian places a hand on his shoulder.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"There's nothing to be sorry for. Now listen carefully."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Whatever happens next, you run toward the northern forest. Do not stop."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What about you?"</div></div>
+<div class="stage">[The guardian looks toward the approaching warriors.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I'll follow."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You promise?"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I promise."</div></div>
+<div class="stage">[The guardian pushes Aurel behind him. The Shadow Legion surrounds them.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"It's over."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"No."</div><div class="line">"It ends when I say it does."</div></div>
+<div class="stage">[The soldiers charge. Aurel runs toward the northern forest. He looks back.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"RUN!"</div></div>
+<div class="stage">[Aurel turns and continues into the forest. Behind him, the battle grows louder.]</div>
+<div class="sfx">SFX: CLANG!</div><div class="sfx">SFX: BOOM!</div>
+<div class="stage">[The guardian fights desperately to keep the Shadow Legion away from the forest. One warrior manages to strike him across the side.]</div>
+<div class="sfx">SFX: SLASH!</div>
+<div class="stage">[The guardian drops to one knee. The warrior raises his weapon for the final blow. The guardian suddenly catches the weapon with his bare hand.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"What?!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I've spent twelve years protecting that boy."</div><div class="line">"I won't fail him today."</div></div>
+<div class="stage">[Blood runs down his hand. He forces the warrior backward.]</div>
+<div class="stage">[Deep inside the forest, Aurel stops running. He hears a distant cry.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div><div class="line">"I have to go back."</div></div>
+<div class="stage">[But then he remembers his father's command.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN'S VOICE — MEMORY</div><div class="line">"Do not stop."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...I'm coming back for you."</div></div>
+<div class="stage">[He runs deeper into the forest.]</div>
+<div class="stage">[Back at the settlement, the guardian stands alone. Most of the Shadow Legion warriors lie defeated. But more continue arriving from the forest.]</div>
+<div class="stage">[The guardian looks toward the direction Aurel escaped. A faint smile appears on his face.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN — INNER THOUGHT</div><div class="line">Keep running, Aurel.</div><div class="line">Live.</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Come."</div><div class="line">"I've been waiting for you."</div></div>
+<div class="scene-end">END OF SCENE 6</div>
+</div></section>
+
+<section class="scene" id="scene7">
+<div class="scene-head"><div class="scene-number">Scene 7</div><h2>Into the Unknown</h2></div>
+<div class="scene-body">
+<div class="stage">[Aurel runs through the forest as fast as he can. Branches strike his face. His breathing becomes heavier. He looks back. Nothing but trees.]</div>
+<div class="sfx">SFX: THUD! THUD! THUD!</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div><div class="line">"Please be okay."</div></div>
+<div class="stage">[Aurel trips over a root and falls hard onto the ground.]</div>
+<div class="sfx">SFX: THUD!</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I can't..."</div></div>
+<div class="stage">[He looks back toward the settlement. A faint glow from the fires can be seen through the trees.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I can't just leave him."</div></div>
+<div class="stage">[He starts to turn around. Then he remembers his father's voice.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN'S VOICE — MEMORY</div><div class="line">"Do not stop."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You promised you'd follow me."</div><div class="line">"So you better keep that promise."</div><div class="line">"I'm going to keep mine too."</div></div>
+<div class="stage">[He wipes his face and stands. Aurel continues deeper into the forest.]</div>
+<div class="stage">[The forest gradually changes. The familiar trees disappear. The path becomes narrower. Strange roots twist across the ground.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I've never been here before."</div></div>
+<div class="sfx">SFX: WHOOSH...</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Where am I?"</div></div>
+<div class="sfx">SFX: DRIP...</div>
+<div class="stage">[Aurel follows the sound and reaches a small rocky passage. Water flows down the stone. Behind the waterfall is a narrow opening.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"There's something behind there."</div></div>
+<div class="stage">[He pushes through the falling water. A hidden stone path stretches into darkness. Ancient symbols are carved into the walls.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"These symbols..."</div></div>
+<div class="stage">[The same four symbols appear again. A faint glow travels through the carving.]</div>
+<div class="sfx">SFX: THUM...</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Why do I keep seeing them?"</div></div>
+<div class="stage">[He looks deeper into the passage. Something seems to be drawing him forward.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Who built this place?"</div></div>
+<div class="stage">[No answer. Aurel takes another step. The passage opens into a massive underground chamber.]</div>
+<div class="stage">[An enormous ancient tree stands in the center of the chamber. Its roots spread across the stone floor. At its base is an ancient shrine.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...A shrine."</div></div>
+<div class="stage">[Aurel slowly approaches. He touches the stone. A sudden image flashes through his mind: a baby lying beneath the ancient tree; a younger version of his father kneeling beside him.]</div>
+<div class="dialogue"><div class="speaker">YOUNG GUARDIAN — MEMORY</div><div class="line">"Who are you?"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."<br>"What was that?"</div></div>
+<div class="stage">[He looks at the shrine again. A strange feeling pulls him toward the tree.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Was this where you found me?"</div></div>
+<div class="stage">[Silence. Aurel slowly walks around the roots. Something hard is partially buried beneath the soil.]</div>
+<div class="sfx">SFX: CLINK.</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What is that?"</div></div>
+<div class="stage">[He moves the dirt aside. A small stone is revealed. Four symbols are carved into its surface.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"The same symbols..."</div></div>
+<div class="sfx">SFX: THUM...</div>
+<div class="stage">[The stone gives off a faint dark glow. Aurel reaches toward it. His fingers stop just before touching the stone.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Why does this feel familiar?"</div></div>
+<div class="sfx">SFX: CRACK...</div>
+<div class="stage">[A sudden sound echoes from the passage behind him. Aurel turns around.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Who's there?"</div></div>
+<div class="stage">[Silence. Aurel looks back at the stone, quickly picks it up.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I'll find out what you are later."</div><div class="line">"I need to get back to Father."</div></div>
+<div class="stage">[Aurel carefully hides the stone beneath the roots again. He covers it with soil. The faint glow disappears.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Whatever this place is..."</div><div class="line">"...I'm coming back."</div></div>
+<div class="stage">[Aurel disappears into the darkness. Beneath the soil, the stone remains hidden. For a brief moment, the four symbols glow again.]</div>
+<div class="sfx">SFX: THUM...</div>
+<div class="scene-end">END OF SCENE 7</div>
+</div></section>
+
+<section class="scene" id="scene8">
+<div class="scene-head"><div class="scene-number">Scene 8</div><h2>The Return</h2></div>
+<div class="scene-body">
+<div class="stage">[Aurel moves quickly through the forest, following the path back toward the settlement. The sky has grown darker. Smoke rises above the trees in the distance.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="sfx">SFX: THUD! THUD! THUD!</div>
+<div class="stage">[Aurel reaches the edge of the forest. He stops. The settlement is burning. Several homes have been destroyed. Smoke fills the air.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"No..."<br>"What happened?"</div></div>
+<div class="dialogue"><div class="speaker">VOICE</div><div class="line">"Aurel..."</div></div>
+<div class="stage">[An injured villager crawls from behind a damaged house.]</div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"Don't... don't go back."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"What happened? Where's my father?"</div></div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"He... he was fighting them."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Where?"</div></div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"They took him toward the old temple."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"The temple?"</div></div>
+<div class="dialogue"><div class="speaker">VILLAGER</div><div class="line">"Go... before they find you."</div></div>
+<div class="stage">[Aurel looks toward the temple. His father's words return to him.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN'S VOICE — MEMORY</div><div class="line">"Whatever happens next, you run."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I can't run anymore."</div></div>
+<div class="stage">[He starts toward the temple.]</div>
+<div class="stage">[The northern side of the settlement is almost silent. Broken weapons lie scattered across the ground. Aurel follows a trail of blood through the smoke.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="stage">[A broken sword lies on the ground. Aurel recognizes it immediately.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"That's his."</div><div class="line">"No..."</div></div>
+<div class="stage">[He picks it up. His hands begin to shake. He looks around desperately.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father!"<br>"Father!"</div></div>
+<div class="sfx">SFX: CLANG.</div>
+<div class="stage">[Aurel drops the sword.]</div>
+<div class="sfx">SFX: WHOOSH!</div>
+<div class="stage">[A Shadow Legion warrior appears behind him.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Found you."</div><div class="line">"The Dark Lord will be pleased."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Stay away from me."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Come quietly, and perhaps you will live."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Where is my father?"<br>"I asked you where my father is!"</div></div>
+<div class="stage">[The warrior smiles beneath his mask.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Your father?"<br>"You still don't understand who that man really was."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Tell me."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"He betrayed the Legion."</div><div class="line">"He was one of us."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"...You're lying."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Ask him yourself."</div></div>
+<div class="stage">[The warrior lunges.]</div>
+<div class="sfx">SFX: SHING!</div>
+<div class="stage">[Aurel barely dodges. The blade strikes the ground beside him.]</div>
+<div class="sfx">SFX: CRACK!</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Ah!"</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Come with me."</div></div>
+<div class="stage">[Aurel looks at the blade. Then he remembers the tree, the light in his hands, and his father's face.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"No."</div><div class="line">"I'm not going anywhere with you."</div></div>
+<div class="stage">[Aurel's hand begins to glow. The glow becomes stronger.]</div>
+<div class="sfx">SFX: THUM...</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"What... are you?"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I don't know."</div></div>
+<div class="sfx">SFX: RUMBLE...</div>
+<div class="stage">[The ground begins to tremble. The ancient symbols beneath the settlement begin glowing.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"No..."</div></div>
+<div class="stage">[Aurel looks toward the temple. Something ancient has awakened beneath the earth.]</div>
+<div class="scene-end">END OF SCENE 8</div>
+</div></section>
+
+<section class="scene" id="scene9">
+<div class="scene-head"><div class="scene-number">Scene 9</div><h2>The Guardian's Last Stand</h2></div>
+<div class="scene-body">
+<div class="stage">[The ground trembles beneath the ruined settlement. Ancient symbols glow beneath the earth.]</div>
+<div class="sfx">SFX: RUMBLE... RUMBLE...</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"What have you awakened?"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I don't know."</div></div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Then perhaps the Dark Lord will find the answer inside you."</div></div>
+<div class="stage">[He raises his weapon. Suddenly, a sword strikes his weapon aside.]</div>
+<div class="sfx">SFX: CLANG!</div>
+<div class="stage">[Aurel looks up. His father stands between them, wounded and exhausted.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Run, Aurel!"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"But you're hurt!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Go!"</div></div>
+<div class="stage">[The guardian attacks the Shadow Legion soldier, forcing him backward. Aurel hesitates.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Don't make me say it again!"</div></div>
+<div class="stage">[Aurel turns and runs toward the forest.]</div>
+<div class="stage">[Aurel reaches the edge of the trees, then stops. He looks back. His father is surrounded by Shadow Legion warriors.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="stage">[The guardian sees him standing in the distance. Their eyes meet.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Aurel!"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I can't leave you!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"You have to!"</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"But you're my father!"</div></div>
+<div class="stage">[The guardian's expression softens.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"And you're my son."</div><div class="line">"That's why you have to live."</div></div>
+<div class="stage">[The Shadow Legion begins closing in.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Enough. Take the boy."</div></div>
+<div class="stage">[Several warriors move toward the forest. The guardian immediately steps between them and Aurel.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"No."</div><div class="line">"You'll have to go through me."</div></div>
+<div class="stage">[The warriors charge.]</div>
+<div class="sfx">SFX: CLANG! CLANG!</div>
+<div class="stage">[Aurel watches from the edge of the forest. The guardian fights desperately, keeping the warriors away from him.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div></div>
+<div class="sfx">SFX: SLASH!</div>
+<div class="stage">[One warrior strikes the guardian. He staggers but remains standing.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Stay back!"</div></div>
+<div class="sfx">SFX: CLANG!</div>
+<div class="stage">[The guardian blocks, but his strength is fading. More warriors surround him.]</div>
+<div class="dialogue"><div class="speaker">SHADOW LEGION SOLDIER</div><div class="line">"Your fight is over."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Remember what I taught you."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father... please."</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Keep moving."</div></div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I don't want to!"</div></div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"I know."</div></div>
+<div class="stage">[He turns back toward the Shadow Legion.]</div>
+<div class="dialogue"><div class="speaker">GUARDIAN</div><div class="line">"Now run."</div></div>
+<div class="stage">[Aurel remains frozen. The Shadow Legion attacks again.]</div>
+<div class="sfx">SFX: CLANG!</div><div class="sfx">SFX: CLANG!</div>
+<div class="stage">[The guardian fights with everything he has left. Then one warrior strikes from behind.]</div>
+<div class="sfx">SFX: THUD.</div>
+<div class="stage">[The guardian stops. Aurel's eyes widen. Blood spreads across the guardian's clothing. He slowly turns his head toward Aurel. Their eyes meet one final time.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"Father..."</div><div class="line">"FATHER!"</div></div>
+<div class="stage">[The guardian tries to remain standing. His strength finally leaves him.]</div>
+<div class="sfx">SFX: THUD...</div>
+<div class="stage">[He falls to the ground. Aurel stares in disbelief.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"No..."<br>"No... get up."<br>"Please..."</div></div>
+<div class="stage">[Silence. No response.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"You promised you'd come back..."</div></div>
+<div class="stage">[The Shadow Legion begins moving toward him. Aurel looks at his father one last time. His grief turns into determination.]</div>
+<div class="dialogue"><div class="speaker">AUREL</div><div class="line">"I'll come back for you."</div><div class="line">"I promise."</div></div>
+<div class="stage">[He wipes his tears and turns toward the forest. Aurel runs. Behind him, the settlement burns and the guardian remains motionless among the ruins.]</div>
+<div class="stage">[Deep beneath the ancient shrine... The small stone containing the four symbols begins to glow.]</div>
+<div class="sfx">SFX: THUM...</div>
+<div class="stage">[A dark presence stirs beyond the sealed dimension.]</div>
+<div class="dialogue"><div class="speaker">UNKNOWN VOICE</div><div class="line">"At last..."</div></div>
+<div class="stage">[The four symbols burn brighter.]</div>
+<div class="dialogue"><div class="speaker">UNKNOWN VOICE</div><div class="line">"The child has awakened."</div></div>
+<div class="scene-end">END OF CHAPTER 1</div>
+</div></section>
 
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
+<section class="final">
+  <h2>THE AWAKENING HAS BEGUN.</h2>
+  <p>Aurel has lost the person who protected him, but the mystery surrounding his origin has only begun to unfold.</p>
+</section>
 
 <footer>
-
-    <p>
-        <strong>YOUNG PRINCE</strong>
-    </p>
-
-    <p>
-        PRIMORDIA • Chapter 1 • The Awakening
-    </p>
-
-    <p>
-        © 2026 Young Prince. All Rights Reserved.
-    </p>
-
+  <p><strong>YOUNG PRINCE</strong></p>
+  <p>PRIMORDIA • Original Manga</p>
+  <p>© 2026 Young Prince. All Rights Reserved.</p>
 </footer>
 
 </body>
