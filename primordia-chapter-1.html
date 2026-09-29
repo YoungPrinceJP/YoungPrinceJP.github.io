@@ -1,0 +1,1469 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PRIMORDIA — Chapter 1: The Awakening</title>
+
+<meta name="description"
+content="PRIMORDIA Chapter 1 — The Awakening. An original fantasy manga by Young Prince.">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f3f0e7;
+    color: #1b2923;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #dce4dd;
+
+    padding: 16px 20px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    color: #173c35;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #c59b3a;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #4c5954;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: .2s ease;
+}
+
+.nav-links a:hover {
+    color: #237565;
+}
+
+
+/* =========================
+   CHAPTER HERO
+========================= */
+
+.chapter-hero {
+    position: relative;
+
+    min-height: 570px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            rgba(8,43,34,.30),
+            rgba(8,43,34,.58)
+        ),
+
+        url("primordia-forest.png")
+        center center / cover no-repeat,
+
+        linear-gradient(
+            135deg,
+            #123c31,
+            #276c54,
+            #a08b48
+        );
+}
+
+
+/* cinematic overlay */
+
+.chapter-hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,226,130,.24),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(5,25,20,.72) 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================
+   GLOWING PARTICLES
+========================= */
+
+.hero-particles {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,224,119,.95) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(192,241,186,.9) 0 1.5px,
+            transparent 3px
+        );
+
+    background-size:
+        170px 190px,
+        230px 240px;
+
+    animation:
+        floatParticles 12s linear infinite;
+
+    opacity: .65;
+}
+
+@keyframes floatParticles {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-45px);
+    }
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.chapter-hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 900px;
+
+    padding: 40px 20px;
+}
+
+.chapter-label {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #f1d879;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.6);
+}
+
+.chapter-hero h1 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #fff8df;
+
+    font-size: clamp(48px, 9vw, 92px);
+
+    line-height: 1;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 25px rgba(255,221,116,.35),
+        0 12px 30px rgba(0,0,0,.55);
+}
+
+.chapter-hero h2 {
+    color: #f1d879;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+    font-weight: normal;
+
+    font-style: italic;
+
+    margin-bottom: 22px;
+}
+
+.chapter-hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,.94);
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.6);
+}
+
+
+/* =========================
+   READING AREA
+========================= */
+
+.reader {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 75px 20px 90px;
+}
+
+
+/* =========================
+   STORY INTRO
+========================= */
+
+.story-intro {
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+.story-intro .chapter-number {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #a07c2d;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.story-intro h2 {
+    color: #194d43;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+.story-intro .opening-line {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #50625a;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SCENE
+========================= */
+
+.scene {
+    background: #ffffff;
+
+    border: 1px solid #dce5de;
+
+    border-radius: 20px;
+
+    padding: 45px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 12px 35px rgba(31,73,62,.08);
+}
+
+.scene-heading {
+    border-left: 5px solid #c59b3a;
+
+    padding-left: 18px;
+
+    margin-bottom: 30px;
+}
+
+.scene-heading small {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #a07c2d;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 5px;
+}
+
+.scene-heading h3 {
+    color: #194d43;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 28px;
+}
+
+.scene-location {
+    color: #78857f;
+
+    font-style: italic;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   STORY TEXT
+========================= */
+
+.story-text p {
+    margin-bottom: 22px;
+
+    color: #394942;
+
+    font-size: 18px;
+
+    line-height: 1.95;
+}
+
+.story-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   DIALOGUE
+========================= */
+
+.dialogue {
+    margin: 30px 0;
+
+    padding: 20px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf5ef,
+            #f7f2df
+        );
+
+    border-left: 4px solid #317865;
+
+    border-radius: 0 12px 12px 0;
+}
+
+.dialogue strong {
+    color: #194d43;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dialogue p {
+    margin-bottom: 10px;
+}
+
+.dialogue p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   NARRATION
+========================= */
+
+.narration {
+    margin: 28px 0;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #68766f;
+
+    background: #f1f4ee;
+
+    border-radius: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   IMPORTANT MOMENT
+========================= */
+
+.moment {
+    position: relative;
+
+    margin: 50px -5px;
+
+    padding: 50px 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,224,115,.32),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #143f34,
+            #217461,
+            #355b73
+        );
+
+    box-shadow:
+        0 18px 45px rgba(24,73,61,.20);
+}
+
+.moment h3 {
+    color: #f2d77d;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.moment p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,.9);
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   SCENE BREAK
+========================= */
+
+.scene-break {
+    text-align: center;
+
+    margin: 45px 0;
+
+    color: #b08a32;
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================
+   CHAPTER END
+========================= */
+
+.chapter-end {
+    margin-top: 65px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #173f35,
+            #1f6857
+        );
+}
+
+.chapter-end h2 {
+    color: #f0d47b;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.chapter-end p {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: rgba(255,255,255,.88);
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   NAVIGATION BUTTONS
+========================= */
+
+.chapter-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.chapter-button {
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d7665,
+            #245b82
+        );
+
+    box-shadow:
+        0 7px 18px rgba(30,104,91,.16);
+
+    transition: .2s ease;
+}
+
+.chapter-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 42px 20px;
+
+    background: #17342f;
+
+    color: #9db0aa;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer strong {
+    color: #f0d58b;
+}
+
+footer p {
+    margin: 7px 0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .chapter-hero {
+        min-height: 520px;
+    }
+
+    .chapter-hero h1 {
+        font-size: 52px;
+
+        letter-spacing: 3px;
+    }
+
+    .chapter-hero h2 {
+        font-size: 28px;
+    }
+
+    .chapter-hero p {
+        font-size: 17px;
+    }
+
+    .reader {
+        padding: 55px 15px 70px;
+    }
+
+    .scene {
+        padding: 28px 22px;
+    }
+
+    .story-text p {
+        font-size: 17px;
+    }
+
+    .chapter-navigation {
+        flex-direction: column;
+    }
+
+    .chapter-button {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .chapter-hero h1 {
+        font-size: 43px;
+    }
+
+    .chapter-hero h2 {
+        font-size: 24px;
+    }
+
+    .scene-heading h3 {
+        font-size: 23px;
+    }
+
+    .story-intro h2 {
+        font-size: 31px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            YOUNG PRINCE <span>✦</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="primordia.html">
+                PRIMORDIA
+            </a>
+
+            <a href="blood-on-broad-street.html">
+                BLOOD ON BROAD STREET
+            </a>
+
+            <a href="index.html#explore">
+                EXPLORE
+            </a>
+
+            <a href="index.html#about">
+                ABOUT
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     CHAPTER HERO
+========================= -->
+
+<section class="chapter-hero">
+
+    <div class="hero-particles"></div>
+
+    <div class="chapter-hero-content">
+
+        <div class="chapter-label">
+            PRIMORDIA • CHAPTER 01
+        </div>
+
+        <h1>
+            THE AWAKENING
+        </h1>
+
+        <h2>
+            Before the world knew his name,
+            nature knew him.
+        </h2>
+
+        <p>
+            The first chapter of Aurel's journey begins
+            in a hidden mountain settlement surrounded
+            by an ancient forest.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     READING AREA
+========================= -->
+
+<main class="reader">
+
+
+    <!-- INTRO -->
+
+    <section class="story-intro">
+
+        <div class="chapter-number">
+            CHAPTER 01
+        </div>
+
+        <h2>
+            The Awakening
+        </h2>
+
+        <p class="opening-line">
+            "There is something about this forest...
+            something I have always felt."
+        </p>
+
+    </section>
+
+
+    <!-- SCENE 1 -->
+
+    <article class="scene">
+
+        <div class="scene-heading">
+
+            <small>
+                SCENE 01
+            </small>
+
+            <h3>
+                The Mountain Settlement
+            </h3>
+
+            <div class="scene-location">
+                A hidden mountain settlement — Morning
+            </div>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                High among the mountains, far from the great
+                cities, a small settlement wakes beneath the
+                morning mist.
+            </p>
+
+            <p>
+                Wooden homes stand between enormous trees.
+                Smoke rises slowly from cooking fires.
+                Children move through the narrow paths while
+                adults begin another ordinary day.
+            </p>
+
+            <p>
+                The mountains seem peaceful.
+                The forest seems silent.
+                But something ancient is watching.
+            </p>
+
+        </div>
+
+
+        <div class="narration">
+
+            Among the people of the settlement lived a
+            twelve-year-old boy named Aurel.
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Aurel was different from the other children.
+                Not because he was stronger.
+                Not because he understood the world better.
+            </p>
+
+            <p>
+                He simply felt something that nobody else
+                seemed to notice.
+            </p>
+
+            <p>
+                The trees.
+                The wind.
+                The rivers hidden beneath the mountain.
+            </p>
+
+            <p>
+                Sometimes it felt as if the entire forest
+                was breathing with him.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <div class="scene-break">
+        ✦ ✦ ✦
+    </div>
+
+
+    <!-- SCENE 2 -->
+
+    <article class="scene">
+
+        <div class="scene-heading">
+
+            <small>
+                SCENE 02
+            </small>
+
+            <h3>
+                The Dying Tree
+            </h3>
+
+            <div class="scene-location">
+                Deep within the forest
+            </div>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Later that morning, Aurel wandered beyond
+                the settlement and into the forest.
+            </p>
+
+            <p>
+                He had always been drawn there.
+            </p>
+
+            <p>
+                The deeper he walked, the quieter the world
+                became.
+            </p>
+
+            <p>
+                Then he saw it.
+            </p>
+
+        </div>
+
+
+        <div class="moment">
+
+            <h3>
+                The Tree
+            </h3>
+
+            <p>
+                An enormous ancient tree stood alone
+                beneath the mist.
+                Its branches were dry.
+                Its leaves had almost completely fallen.
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Aurel stepped closer.
+            </p>
+
+            <p>
+                He placed his hand against the rough bark.
+            </p>
+
+        </div>
+
+
+        <div class="dialogue">
+
+            <p>
+                <strong>Aurel:</strong>
+                "You're dying..."
+            </p>
+
+            <p>
+                He lowered his eyes.
+            </p>
+
+            <p>
+                <strong>Aurel:</strong>
+                "I'm sorry."
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                For a moment, nothing happened.
+            </p>
+
+            <p>
+                Then the wind stopped.
+            </p>
+
+            <p>
+                A strange warmth moved through Aurel's hand.
+            </p>
+
+            <p>
+                Beneath his palm, something answered.
+            </p>
+
+        </div>
+
+
+        <div class="moment">
+
+            <h3>
+                The Awakening
+            </h3>
+
+            <p>
+                A faint green light travelled through
+                the ancient tree.
+                One branch moved.
+                Then another.
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                New leaves slowly appeared.
+            </p>
+
+            <p>
+                The dry branches became green.
+            </p>
+
+            <p>
+                Life returned to the tree.
+            </p>
+
+            <p>
+                Aurel stared in disbelief.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <div class="scene-break">
+        ✦ ✦ ✦
+    </div>
+
+
+    <!-- SCENE 3 -->
+
+    <article class="scene">
+
+        <div class="scene-heading">
+
+            <small>
+                SCENE 03
+            </small>
+
+            <h3>
+                The Ancient Shrine
+            </h3>
+
+            <div class="scene-location">
+                Beneath the mountain forest
+            </div>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                The strange event did not go unnoticed.
+            </p>
+
+            <p>
+                Something in the mountains had awakened.
+            </p>
+
+            <p>
+                That evening, Aurel followed a faint path
+                deeper into the forest and discovered an
+                ancient shrine hidden between enormous trees.
+            </p>
+
+            <p>
+                At the centre of the shrine stood a symbol
+                unlike anything he had ever seen.
+            </p>
+
+        </div>
+
+
+        <div class="moment">
+
+            <h3>
+                The Symbol
+            </h3>
+
+            <p>
+                A great tree surrounded by four mysterious
+                symbols.
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Aurel moved closer.
+            </p>
+
+            <p>
+                Beneath the ancient tree symbol, he noticed
+                something partly buried beneath the stone.
+            </p>
+
+            <p>
+                He carefully pulled it free.
+            </p>
+
+            <p>
+                It was a small stone artifact marked with
+                four symbols.
+            </p>
+
+            <p>
+                The moment he touched it, a strange cold
+                passed through his body.
+            </p>
+
+            <p>
+                Aurel looked around.
+            </p>
+
+            <p>
+                He did not understand what the artifact was.
+                But something inside him told him that it
+                should remain hidden.
+            </p>
+
+            <p>
+                He placed it back beneath the stone.
+            </p>
+
+            <p>
+                Then he heard footsteps.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <div class="scene-break">
+        ✦ ✦ ✦
+    </div>
+
+
+    <!-- SCENE 4 -->
+
+    <article class="scene">
+
+        <div class="scene-heading">
+
+            <small>
+                SCENE 04
+            </small>
+
+            <h3>
+                The Shadow Arrives
+            </h3>
+
+            <div class="scene-location">
+                The mountain settlement — Night
+            </div>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Night fell over the settlement.
+            </p>
+
+            <p>
+                Then the silence was broken.
+            </p>
+
+            <p>
+                A strange darkness moved through the trees.
+            </p>
+
+            <p>
+                The Shadow Legion had arrived.
+            </p>
+
+        </div>
+
+
+        <div class="dialogue">
+
+            <p>
+                <strong>Guardian:</strong>
+                "Aurel!"
+            </p>
+
+            <p>
+                <strong>Aurel:</strong>
+                "Father?"
+            </p>
+
+            <p>
+                <strong>Guardian:</strong>
+                "You need to leave. Now."
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Aurel had never heard that fear in his
+                guardian's voice before.
+            </p>
+
+            <p>
+                The old man knew exactly who had come.
+            </p>
+
+            <p>
+                And he knew why they were there.
+            </p>
+
+        </div>
+
+
+        <div class="moment">
+
+            <h3>
+                Run.
+            </h3>
+
+            <p>
+                The settlement that had been Aurel's home
+                was about to become a battlefield.
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                The guardian pushed Aurel toward the forest.
+            </p>
+
+            <p>
+                Aurel hesitated.
+            </p>
+
+            <p>
+                He looked back.
+            </p>
+
+            <p>
+                The first buildings were already burning.
+            </p>
+
+            <p>
+                Through the smoke, he saw his guardian
+                standing alone against the approaching
+                soldiers.
+            </p>
+
+            <p>
+                Aurel wanted to go back.
+            </p>
+
+            <p>
+                But his guardian looked toward him one last
+                time.
+            </p>
+
+        </div>
+
+
+        <div class="dialogue">
+
+            <p>
+                <strong>Guardian:</strong>
+                "LIVE, AUREL!"
+            </p>
+
+        </div>
+
+
+        <div class="story-text">
+
+            <p>
+                Aurel ran.
+            </p>
+
+            <p>
+                He ran through the trees with tears in his
+                eyes.
+            </p>
+
+            <p>
+                Behind him, the settlement disappeared
+                beneath smoke and fire.
+            </p>
+
+            <p>
+                And somewhere in the darkness, something
+                ancient had begun to awaken.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <!-- CHAPTER END -->
+
+    <section class="chapter-end">
+
+        <h2>
+            TO BE CONTINUED
+        </h2>
+
+        <p>
+            Aurel has lost his home.
+            His guardian is gone.
+            The mysterious artifact remains hidden.
+            And somewhere beyond the mountains,
+            the Shadow Legion has begun its search.
+        </p>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="chapter-navigation">
+
+        <a
+            href="primordia.html"
+            class="chapter-button">
+
+            ← Back to PRIMORDIA
+
+        </a>
+
+
+        <a
+            href="index.html"
+            class="chapter-button">
+
+            HOME
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        <strong>
+            YOUNG PRINCE
+        </strong>
+    </p>
+
+    <p>
+        PRIMORDIA • Chapter 1 • The Awakening
+    </p>
+
+    <p>
+        © 2026 Young Prince. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
+```
