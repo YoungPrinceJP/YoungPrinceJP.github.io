@@ -1,40 +1,51 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXSHPJ9YSR"></script>
 
-<script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- =========================
+         GOOGLE ANALYTICS
+    ========================= -->
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXSHPJ9YSR"></script>
 
-    gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-TXSHPJ9YSR');
-</script>
-<!-- End Google Analytics -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXSHPJ9YSR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-  gtag('config', 'G-TXSHPJ9YSR');
-</script>
+        gtag('js', new Date());
+
+        gtag('config', 'G-TXSHPJ9YSR');
+    </script>
+
+    <!-- End Google Analytics -->
+
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Young Prince | Creative Stories & Entertainment</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Young Prince — original stories, series, manga, music, videos and creative works.">
+    <title>
+        Young Prince | Creative Stories & Entertainment
+    </title>
+
+    <meta
+        name="description"
+        content="Young Prince — original stories, series, manga, music, videos and creative works."
+    >
+
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
 
         * {
             margin: 0;
@@ -50,11 +61,24 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #f8f6f2;
             color: #17151f;
+            overflow-x: hidden;
+        }
+
+        body.menu-open {
+            overflow: hidden;
         }
 
         a {
             text-decoration: none;
         }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
 
         /* =========================
            HEADER
@@ -78,6 +102,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 25px;
+            position: relative;
         }
 
         .logo {
@@ -91,6 +116,11 @@
             content: " ✦";
             color: #c79a27;
         }
+
+
+        /* =========================
+           DESKTOP NAV
+        ========================= */
 
         nav {
             display: flex;
@@ -109,6 +139,35 @@
             color: #7b3f98;
         }
 
+
+        /* =========================
+           MOBILE MENU BUTTON
+        ========================= */
+
+        .mobile-menu-button {
+            display: none;
+
+            border: none;
+            background: transparent;
+
+            color: #241337;
+
+            font-size: 30px;
+            line-height: 1;
+
+            cursor: pointer;
+
+            padding: 5px;
+
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-menu-button:focus {
+            outline: 2px solid #7b3f98;
+            outline-offset: 4px;
+        }
+
+
         /* =========================
            HERO
         ========================= */
@@ -117,38 +176,67 @@
             position: relative;
             overflow: hidden;
             color: white;
+
             padding: 125px 20px 135px;
+
             text-align: center;
 
             background:
-                radial-gradient(circle at 15% 20%, rgba(199,154,39,.35), transparent 28%),
-                radial-gradient(circle at 85% 20%, rgba(44,102,150,.35), transparent 30%),
-                radial-gradient(circle at 50% 100%, rgba(123,63,152,.35), transparent 40%),
-                linear-gradient(135deg,
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(199,154,39,.35),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(44,102,150,.35),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(123,63,152,.35),
+                    transparent 40%
+                ),
+
+                linear-gradient(
+                    135deg,
                     #332047 0%,
                     #53356f 30%,
                     #285878 65%,
-                    #8b4f72 100%);
+                    #8b4f72 100%
+                );
         }
 
         .hero::before {
             content: "";
+
             position: absolute;
+
             width: 420px;
             height: 420px;
+
             border-radius: 50%;
+
             background: rgba(255,255,255,.07);
+
             top: -220px;
             left: -100px;
         }
 
         .hero::after {
             content: "";
+
             position: absolute;
+
             width: 350px;
             height: 350px;
+
             border-radius: 50%;
+
             background: rgba(255,255,255,.06);
+
             bottom: -190px;
             right: -80px;
         }
@@ -162,28 +250,42 @@
 
         .hero small {
             display: block;
+
             color: #f4d78b;
+
             font-size: 13px;
             font-weight: bold;
+
             letter-spacing: 4px;
+
             margin-bottom: 22px;
         }
 
         .hero h1 {
             font-size: clamp(52px, 10vw, 105px);
+
             line-height: .88;
+
             letter-spacing: -5px;
+
             margin-bottom: 30px;
-            text-shadow: 0 8px 35px rgba(0,0,0,.25);
+
+            text-shadow:
+                0 8px 35px rgba(0,0,0,.25);
         }
 
         .hero p {
             max-width: 680px;
+
             margin: auto;
+
             color: rgba(255,255,255,.88);
+
             font-size: 19px;
+
             line-height: 1.7;
         }
+
 
         /* =========================
            MAIN
@@ -191,7 +293,9 @@
 
         main {
             max-width: 1200px;
+
             margin: auto;
+
             padding: 85px 20px;
         }
 
@@ -205,14 +309,18 @@
 
         .section-heading h2 {
             color: #241337;
+
             font-size: 42px;
+
             margin-bottom: 10px;
         }
 
         .section-heading p {
             color: #756d79;
+
             font-size: 16px;
         }
+
 
         /* =========================
            STORY CARDS
@@ -220,85 +328,133 @@
 
         .stories {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 30px;
         }
 
         .story-card {
             background: #ffffff;
+
             border-radius: 22px;
+
             overflow: hidden;
+
             border: 1px solid #e7e0e8;
-            box-shadow: 0 12px 35px rgba(48,31,64,.08);
+
+            box-shadow:
+                0 12px 35px rgba(48,31,64,.08);
+
             transition: .3s ease;
         }
 
         .story-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 22px 50px rgba(48,31,64,.15);
+
+            box-shadow:
+                0 22px 50px rgba(48,31,64,.15);
         }
 
         .story-cover {
             min-height: 330px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             text-align: center;
+
             padding: 35px;
+
             color: white;
+
             position: relative;
+
             overflow: hidden;
         }
 
         .story-cover::before {
             content: "";
+
             position: absolute;
+
             width: 280px;
             height: 280px;
+
             border-radius: 50%;
+
             background: rgba(255,255,255,.10);
+
             top: -120px;
             right: -80px;
         }
 
         .story-cover::after {
             content: "";
+
             position: absolute;
+
             width: 220px;
             height: 220px;
+
             border-radius: 50%;
+
             background: rgba(255,255,255,.08);
+
             bottom: -120px;
             left: -70px;
         }
 
         .primordia-cover {
             background:
-                radial-gradient(circle at 50% 35%, rgba(191,222,135,.45), transparent 25%),
-                linear-gradient(135deg,
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(191,222,135,.45),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
                     #183c38,
                     #246b60 45%,
                     #477d58 75%,
-                    #8c7b39);
+                    #8c7b39
+                );
         }
 
         .blood-cover {
             background:
-                radial-gradient(circle at 70% 30%, rgba(230,90,80,.45), transparent 25%),
-                linear-gradient(135deg,
+                radial-gradient(
+                    circle at 70% 30%,
+                    rgba(230,90,80,.45),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
                     #421d35,
                     #702d43 42%,
                     #9b3f42 70%,
-                    #c27b3d);
+                    #c27b3d
+                );
         }
 
         .story-cover h3 {
             position: relative;
+
             z-index: 2;
+
             font-size: 46px;
+
             line-height: 1.05;
+
             letter-spacing: 2px;
-            text-shadow: 0 6px 20px rgba(0,0,0,.25);
+
+            text-shadow:
+                0 6px 20px rgba(0,0,0,.25);
         }
 
         .blood-cover h3 {
@@ -311,32 +467,47 @@
 
         .category {
             font-size: 12px;
+
             font-weight: bold;
+
             letter-spacing: 2px;
+
             color: #7b3f98;
+
             text-transform: uppercase;
+
             margin-bottom: 12px;
         }
 
         .story-info h3 {
             color: #241337;
+
             font-size: 28px;
+
             margin-bottom: 14px;
         }
 
         .story-info p {
             color: #665f6b;
+
             line-height: 1.7;
+
             margin-bottom: 25px;
         }
 
         .button {
             display: inline-block;
+
             color: white;
+
             padding: 12px 21px;
+
             border-radius: 8px;
+
             font-size: 14px;
+
             font-weight: bold;
+
             transition: .2s ease;
         }
 
@@ -356,70 +527,98 @@
             background: #7d3035;
         }
 
+
         /* =========================
            EXPLORE
         ========================= */
 
         .explore {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 18px;
         }
 
         .explore-card {
             background: white;
+
             border: 1px solid #e5dfe7;
+
             border-radius: 18px;
+
             padding: 32px 20px;
+
             text-align: center;
-            box-shadow: 0 8px 25px rgba(48,31,64,.06);
+
+            box-shadow:
+                0 8px 25px rgba(48,31,64,.06);
+
             transition: .25s ease;
         }
 
         .explore-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(48,31,64,.12);
+
+            box-shadow:
+                0 15px 35px rgba(48,31,64,.12);
         }
 
         .explore-icon {
             width: 68px;
             height: 68px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             margin: 0 auto 18px;
+
             border-radius: 18px;
+
             font-size: 32px;
+
             background: #f1e9f5;
         }
 
-        .explore-card:nth-child(1) .explore-icon {
+        .explore-card:nth-child(1)
+        .explore-icon {
             background: #e5f2ef;
         }
 
-        .explore-card:nth-child(2) .explore-icon {
+        .explore-card:nth-child(2)
+        .explore-icon {
             background: #f8e7eb;
         }
 
-        .explore-card:nth-child(3) .explore-icon {
+        .explore-card:nth-child(3)
+        .explore-icon {
             background: #e7edf8;
         }
 
-        .explore-card:nth-child(4) .explore-icon {
+        .explore-card:nth-child(4)
+        .explore-icon {
             background: #f8f0d9;
         }
 
         .explore-card h3 {
             color: #241337;
+
             margin-bottom: 9px;
+
             font-size: 19px;
         }
 
         .explore-card p {
             color: #77707b;
+
             font-size: 14px;
+
             line-height: 1.6;
         }
+
 
         /* =========================
            UPLOAD CENTER
@@ -427,52 +626,81 @@
 
         .upload-section {
             background:
-                radial-gradient(circle at 10% 10%, rgba(199,154,39,.16), transparent 25%),
-                radial-gradient(circle at 90% 90%, rgba(123,63,152,.12), transparent 30%),
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(199,154,39,.16),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(123,63,152,.12),
+                    transparent 30%
+                ),
+
                 #ffffff;
 
             border: 1px solid #e5dfe7;
+
             border-radius: 28px;
+
             padding: 55px;
-            box-shadow: 0 15px 45px rgba(48,31,64,.08);
+
+            box-shadow:
+                0 15px 45px rgba(48,31,64,.08);
         }
 
         .upload-heading {
             text-align: center;
+
             margin-bottom: 35px;
         }
 
         .upload-heading .upload-icon {
             width: 78px;
             height: 78px;
+
             border-radius: 22px;
+
             background: #f1e9f5;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             font-size: 36px;
+
             margin: 0 auto 18px;
         }
 
         .upload-heading h2 {
             color: #241337;
+
             font-size: 40px;
+
             margin-bottom: 10px;
         }
 
         .upload-heading p {
             color: #756d79;
+
             line-height: 1.7;
         }
 
         .upload-form {
             max-width: 800px;
+
             margin: auto;
         }
 
         .form-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+
+            grid-template-columns:
+                1fr 1fr;
+
             gap: 18px;
         }
 
@@ -482,9 +710,13 @@
 
         .form-group label {
             display: block;
+
             color: #30243a;
+
             font-weight: bold;
+
             font-size: 14px;
+
             margin-bottom: 8px;
         }
 
@@ -492,14 +724,23 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
+
             padding: 14px 15px;
+
             border: 1px solid #ddd5e0;
+
             border-radius: 10px;
+
             background: #fbfafc;
+
             color: #241337;
+
             font-family: inherit;
+
             font-size: 14px;
+
             outline: none;
+
             transition: .2s ease;
         }
 
@@ -507,26 +748,36 @@
         .form-group select:focus,
         .form-group textarea:focus {
             border-color: #7b3f98;
-            box-shadow: 0 0 0 3px rgba(123,63,152,.08);
+
+            box-shadow:
+                0 0 0 3px rgba(123,63,152,.08);
         }
 
         .form-group textarea {
             min-height: 120px;
+
             resize: vertical;
         }
 
         .file-box {
             border: 2px dashed #d5c9da;
+
             border-radius: 15px;
+
             padding: 30px;
+
             text-align: center;
+
             background: #fcfbfd;
+
             cursor: pointer;
+
             transition: .2s ease;
         }
 
         .file-box:hover {
             border-color: #7b3f98;
+
             background: #faf7fc;
         }
 
@@ -536,60 +787,102 @@
 
         .file-box strong {
             display: block;
+
             color: #241337;
+
             margin-bottom: 7px;
         }
 
         .file-box span {
             color: #827887;
+
             font-size: 13px;
         }
 
         .file-name {
             margin-top: 12px;
+
             color: #287267;
+
             font-size: 13px;
+
             font-weight: bold;
+
+            word-break: break-word;
         }
 
         .upload-button {
             width: 100%;
+
             border: none;
+
             padding: 15px;
+
             border-radius: 10px;
-            background: linear-gradient(135deg, #7b3f98, #4d2d69);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b3f98,
+                    #4d2d69
+                );
+
             color: white;
+
             font-size: 15px;
+
             font-weight: bold;
+
             cursor: pointer;
+
             transition: .2s ease;
         }
 
         .upload-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(77,45,105,.2);
+
+            box-shadow:
+                0 10px 25px rgba(77,45,105,.2);
+        }
+
+        .upload-button:disabled {
+            opacity: .65;
+
+            cursor: not-allowed;
+
+            transform: none;
         }
 
         .upload-status {
             display: none;
+
             margin-top: 15px;
+
             padding: 13px;
+
             border-radius: 10px;
+
             text-align: center;
+
             font-size: 14px;
         }
 
         .upload-status.success {
             display: block;
+
             background: #e5f2ef;
+
             color: #21685e;
         }
 
         .upload-status.error {
             display: block;
+
             background: #f8e7eb;
+
             color: #8c303d;
         }
+
 
         /* =========================
            ABOUT
@@ -597,90 +890,174 @@
 
         .about {
             position: relative;
+
             overflow: hidden;
+
             color: white;
+
             border-radius: 24px;
+
             padding: 75px 30px;
+
             text-align: center;
 
             background:
-                radial-gradient(circle at 20% 20%, rgba(199,154,39,.35), transparent 25%),
-                radial-gradient(circle at 80% 80%, rgba(39,113,103,.4), transparent 30%),
-                linear-gradient(135deg,
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(199,154,39,.35),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(39,113,103,.4),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
                     #4a285f,
                     #713d72,
-                    #376c70);
+                    #376c70
+                );
         }
 
         .about h2 {
             position: relative;
+
             z-index: 2;
+
             font-size: 40px;
+
             margin-bottom: 18px;
         }
 
         .about p {
             position: relative;
+
             z-index: 2;
+
             max-width: 720px;
+
             margin: auto;
+
             color: rgba(255,255,255,.88);
+
             line-height: 1.9;
+
             font-size: 17px;
         }
 
+
         /* =========================
-           KAEL AI
+           KAEL AI BUTTON
         ========================= */
 
         .kael-button {
             position: fixed;
+
             right: 25px;
             bottom: 25px;
+
             width: 64px;
             height: 64px;
+
             border: none;
+
             border-radius: 50%;
-            background: linear-gradient(135deg, #7b3f98, #3e2a63);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b3f98,
+                    #3e2a63
+                );
+
             color: white;
+
             font-size: 28px;
+
             cursor: pointer;
+
             z-index: 3000;
-            box-shadow: 0 10px 35px rgba(48,31,64,.3);
+
+            box-shadow:
+                0 10px 35px rgba(48,31,64,.3);
+
             transition: .25s ease;
+
+            -webkit-tap-highlight-color: transparent;
         }
 
         .kael-button:hover {
             transform: scale(1.08);
         }
 
+        .kael-button:focus {
+            outline: 2px solid #c79a27;
+
+            outline-offset: 4px;
+        }
+
         .kael-label {
             position: fixed;
+
             right: 25px;
             bottom: 96px;
+
             background: #241337;
+
             color: white;
+
             padding: 8px 13px;
+
             border-radius: 8px;
+
             font-size: 12px;
+
             font-weight: bold;
+
             z-index: 2999;
-            box-shadow: 0 5px 20px rgba(0,0,0,.15);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,.15);
         }
+
+
+        /* =========================
+           KAEL CHAT
+        ========================= */
 
         .kael-chat {
             position: fixed;
+
             right: 25px;
+
             bottom: 100px;
+
             width: 360px;
+
             height: 500px;
+
+            max-height:
+                calc(100dvh - 120px);
+
             background: white;
+
             border-radius: 22px;
+
             overflow: hidden;
+
             z-index: 2998;
-            box-shadow: 0 25px 70px rgba(30,20,40,.25);
+
+            box-shadow:
+                0 25px 70px rgba(30,20,40,.25);
+
             border: 1px solid #e2dbe5;
+
             display: none;
+
             flex-direction: column;
         }
 
@@ -689,112 +1066,228 @@
         }
 
         .kael-header {
-            background: linear-gradient(135deg, #7b3f98, #3e2a63);
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b3f98,
+                    #3e2a63
+                );
+
             color: white;
+
             padding: 18px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
+            flex-shrink: 0;
         }
 
         .kael-title {
             display: flex;
+
             align-items: center;
+
             gap: 11px;
         }
 
         .kael-avatar {
             width: 40px;
             height: 40px;
+
             border-radius: 50%;
-            background: rgba(255,255,255,.18);
+
+            background:
+                rgba(255,255,255,.18);
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             font-size: 21px;
         }
 
         .kael-title strong {
             display: block;
+
             font-size: 15px;
         }
 
         .kael-title span {
             display: block;
+
             font-size: 11px;
+
             opacity: .8;
+
             margin-top: 3px;
         }
 
         .kael-close {
             background: none;
+
             border: none;
+
             color: white;
-            font-size: 22px;
+
+            font-size: 26px;
+
             cursor: pointer;
+
+            width: 35px;
+            height: 35px;
+
+            border-radius: 8px;
+
+            -webkit-tap-highlight-color: transparent;
         }
+
+        .kael-close:hover {
+            background: rgba(255,255,255,.12);
+        }
+
+
+        /* =========================
+           KAEL MESSAGES
+        ========================= */
 
         .kael-messages {
             flex: 1;
+
             padding: 18px;
+
             overflow-y: auto;
+
             background: #faf8fb;
+
+            overscroll-behavior: contain;
         }
 
         .kael-message {
             max-width: 85%;
+
             padding: 11px 13px;
+
             margin-bottom: 12px;
+
             border-radius: 13px;
+
             font-size: 13px;
+
             line-height: 1.55;
+
+            white-space: pre-wrap;
+
+            word-break: break-word;
         }
 
         .kael-message.bot {
             background: #eee7f2;
+
             color: #30243a;
+
             border-bottom-left-radius: 4px;
         }
 
         .kael-message.user {
             margin-left: auto;
+
             background: #7b3f98;
+
             color: white;
+
             border-bottom-right-radius: 4px;
         }
 
+
+        /* =========================
+           KAEL INPUT
+        ========================= */
+
         .kael-input-area {
             display: flex;
+
+            align-items: flex-end;
+
             gap: 8px;
+
             padding: 12px;
+
             border-top: 1px solid #e7e0e8;
+
             background: white;
+
+            flex-shrink: 0;
         }
 
         .kael-input {
             flex: 1;
+
+            min-height: 42px;
+
+            max-height: 120px;
+
+            resize: none;
+
             border: 1px solid #ddd5e0;
+
             border-radius: 10px;
+
             padding: 11px 12px;
+
             outline: none;
+
             font-family: inherit;
+
             font-size: 13px;
+
+            line-height: 1.4;
+
+            overflow-y: auto;
+        }
+
+        .kael-input:focus {
+            border-color: #7b3f98;
+
+            box-shadow:
+                0 0 0 3px rgba(123,63,152,.08);
         }
 
         .kael-send {
             width: 43px;
+            min-width: 43px;
+
+            height: 42px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #7b3f98;
+
             color: white;
+
             cursor: pointer;
+
             font-size: 17px;
+
+            transition: .2s ease;
+        }
+
+        .kael-send:hover {
+            background: #64307e;
         }
 
         .kael-send:disabled {
             opacity: .5;
+
             cursor: not-allowed;
         }
+
 
         /* =========================
            FOOTER
@@ -802,8 +1295,11 @@
 
         footer {
             background: #21172b;
+
             color: #aaa0b1;
+
             text-align: center;
+
             padding: 40px 20px;
         }
 
@@ -811,36 +1307,113 @@
             color: #f4d78b;
         }
 
+
         /* =========================
-           MOBILE
+           TABLET / MOBILE
         ========================= */
 
         @media (max-width: 800px) {
 
+            header {
+                padding:
+                    15px 5%;
+            }
+
             .header {
-                flex-direction: column;
+                flex-direction: row;
+
+                justify-content:
+                    space-between;
+            }
+
+
+            /* MOBILE MENU */
+
+            .mobile-menu-button {
+                display: block;
             }
 
             nav {
-                justify-content: center;
-                gap: 14px;
+                position: absolute;
+
+                top: calc(100% + 1px);
+
+                left: 0;
+                right: 0;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                background:
+                    rgba(255,255,255,.98);
+
+                backdrop-filter:
+                    blur(15px);
+
+                border-bottom:
+                    1px solid #e6e0e8;
+
+                box-shadow:
+                    0 15px 30px
+                    rgba(48,31,64,.12);
+
+                padding: 10px 6%;
             }
 
-            .hero {
-                padding: 90px 20px 100px;
+            nav.mobile-open {
+                display: flex;
             }
+
+            nav a {
+                display: block;
+
+                padding: 16px 5px;
+
+                font-size: 15px;
+
+                border-bottom:
+                    1px solid #eee8f0;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                padding:
+                    90px 20px 100px;
+            }
+
+
+            /* STORIES */
 
             .stories {
                 grid-template-columns: 1fr;
             }
 
+
+            /* EXPLORE */
+
             .explore {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
+
+
+            /* MAIN */
 
             main {
                 padding-top: 65px;
             }
+
+
+            /* UPLOAD */
 
             .upload-section {
                 padding: 35px 20px;
@@ -849,24 +1422,33 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
         }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
 
         @media (max-width: 500px) {
 
+            header {
+                padding:
+                    14px 18px;
+            }
+
             .logo {
                 font-size: 23px;
+
+                letter-spacing: 1.5px;
             }
 
-            nav {
-                gap: 11px;
-            }
 
-            nav a {
-                font-size: 12px;
-            }
+            /* HERO */
 
             .hero h1 {
                 font-size: 54px;
+
                 letter-spacing: -3px;
             }
 
@@ -874,9 +1456,15 @@
                 font-size: 16px;
             }
 
+
+            /* SECTIONS */
+
             .section-heading h2 {
                 font-size: 34px;
             }
+
+
+            /* STORIES */
 
             .story-cover {
                 min-height: 250px;
@@ -890,38 +1478,90 @@
                 font-size: 29px;
             }
 
+
+            /* EXPLORE */
+
             .explore {
                 grid-template-columns: 1fr;
             }
 
+
+            /* ABOUT */
+
             .about {
-                padding: 55px 22px;
+                padding:
+                    55px 22px;
             }
 
             .about h2 {
                 font-size: 32px;
             }
 
+
+            /* UPLOAD */
+
+            .upload-heading h2 {
+                font-size: 32px;
+            }
+
+            .upload-section {
+                border-radius: 20px;
+            }
+
+
+            /* KAEL */
+
             .kael-chat {
+                left: 12px;
+
                 right: 12px;
-                bottom: 90px;
-                width: calc(100% - 24px);
-                height: 70vh;
+
+                bottom: 88px;
+
+                width: auto;
+
+                height:
+                    min(70dvh, 560px);
+
+                max-height:
+                    calc(100dvh - 105px);
+
+                border-radius: 18px;
             }
 
             .kael-button {
                 right: 18px;
+
                 bottom: 18px;
+
+                width: 58px;
+                height: 58px;
             }
 
             .kael-label {
                 right: 18px;
-                bottom: 88px;
+
+                bottom: 82px;
             }
+
+            .kael-input {
+                font-size: 16px;
+            }
+
+            .kael-messages {
+                padding: 14px;
+            }
+
+            .kael-message {
+                max-width: 90%;
+            }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
@@ -934,21 +1574,50 @@
 
     <div class="header">
 
-        <a href="index.html" class="logo">
+        <a
+            href="index.html"
+            class="logo"
+        >
             YOUNG PRINCE
         </a>
 
-        <nav>
 
-            <a href="index.html">Home</a>
+        <!-- MOBILE MENU BUTTON -->
 
-            <a href="#stories">Stories</a>
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            type="button"
+        >
+            ☰
+        </button>
 
-            <a href="#explore">Explore</a>
 
-            <a href="#upload">Upload</a>
+        <!-- NAVIGATION -->
 
-            <a href="#about">About</a>
+        <nav id="mainNav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#stories">
+                Stories
+            </a>
+
+            <a href="#explore">
+                Explore
+            </a>
+
+            <a href="#upload">
+                Upload
+            </a>
+
+            <a href="#about">
+                About
+            </a>
 
         </nav>
 
@@ -963,7 +1632,9 @@
 
 <section class="hero">
 
-    <small>WELCOME TO MY CREATIVE WORLD</small>
+    <small>
+        WELCOME TO MY CREATIVE WORLD
+    </small>
 
     <h1>
         YOUNG<br>
@@ -985,13 +1656,20 @@
 <main>
 
 
-    <!-- FEATURED STORIES -->
+    <!-- =========================
+         FEATURED STORIES
+    ========================= -->
 
-    <section class="section" id="stories">
+    <section
+        class="section"
+        id="stories"
+    >
 
         <div class="section-heading">
 
-            <h2>Featured Stories</h2>
+            <h2>
+                Featured Stories
+            </h2>
 
             <p>
                 Discover original worlds and stories created by Young Prince.
@@ -1011,7 +1689,9 @@
 
                     <div class="story-cover primordia-cover">
 
-                        <h3>PRIMORDIA</h3>
+                        <h3>
+                            PRIMORDIA
+                        </h3>
 
                     </div>
 
@@ -1024,7 +1704,9 @@
                         Manga • Fantasy
                     </div>
 
-                    <h3>PRIMORDIA</h3>
+                    <h3>
+                        PRIMORDIA
+                    </h3>
 
                     <p>
                         An ancient power awakens.
@@ -1032,7 +1714,10 @@
                         may be connected to forces older than the elements.
                     </p>
 
-                    <a href="primordia.html" class="button">
+                    <a
+                        href="primordia.html"
+                        class="button"
+                    >
                         Read PRIMORDIA →
                     </a>
 
@@ -1065,7 +1750,9 @@
                         Crime • Drama • Series
                     </div>
 
-                    <h3>BLOOD ON BROAD STREET</h3>
+                    <h3>
+                        BLOOD ON BROAD STREET
+                    </h3>
 
                     <p>
                         Before the blood, there was friendship.
@@ -1073,7 +1760,10 @@
                         unaware of the events waiting ahead.
                     </p>
 
-                    <a href="blood-on-broad-street.html" class="button">
+                    <a
+                        href="blood-on-broad-street.html"
+                        class="button"
+                    >
                         Read Blood on Broad Street →
                     </a>
 
@@ -1091,11 +1781,16 @@
          EXPLORE
     ========================= -->
 
-    <section class="section" id="explore">
+    <section
+        class="section"
+        id="explore"
+    >
 
         <div class="section-heading">
 
-            <h2>Explore</h2>
+            <h2>
+                Explore
+            </h2>
 
             <p>
                 Stories, videos, artwork, music and more.
@@ -1109,9 +1804,13 @@
 
             <div class="explore-card">
 
-                <div class="explore-icon">📖</div>
+                <div class="explore-icon">
+                    📖
+                </div>
 
-                <h3>Stories</h3>
+                <h3>
+                    Stories
+                </h3>
 
                 <p>
                     Original stories and written worlds.
@@ -1122,9 +1821,13 @@
 
             <div class="explore-card">
 
-                <div class="explore-icon">🎬</div>
+                <div class="explore-icon">
+                    🎬
+                </div>
 
-                <h3>Videos</h3>
+                <h3>
+                    Videos
+                </h3>
 
                 <p>
                     Creative videos and future adaptations.
@@ -1135,9 +1838,13 @@
 
             <div class="explore-card">
 
-                <div class="explore-icon">🖼️</div>
+                <div class="explore-icon">
+                    🖼️
+                </div>
 
-                <h3>Images</h3>
+                <h3>
+                    Images
+                </h3>
 
                 <p>
                     Artwork, designs and visual creations.
@@ -1148,9 +1855,13 @@
 
             <div class="explore-card">
 
-                <div class="explore-icon">🎵</div>
+                <div class="explore-icon">
+                    🎵
+                </div>
 
-                <h3>Music</h3>
+                <h3>
+                    Music
+                </h3>
 
                 <p>
                     Original songs and musical projects.
@@ -1168,9 +1879,13 @@
          UPLOAD CENTER
     ========================= -->
 
-    <section class="section" id="upload">
+    <section
+        class="section"
+        id="upload"
+    >
 
         <div class="upload-section">
+
 
             <div class="upload-heading">
 
@@ -1178,7 +1893,9 @@
                     📤
                 </div>
 
-                <h2>Upload Your Creation</h2>
+                <h2>
+                    Upload Your Creation
+                </h2>
 
                 <p>
                     Share your artwork, stories, videos, music and
@@ -1188,10 +1905,14 @@
             </div>
 
 
-            <form class="upload-form" id="uploadForm">
+            <form
+                class="upload-form"
+                id="uploadForm"
+            >
 
 
                 <div class="form-row">
+
 
                     <div class="form-group">
 
@@ -1225,6 +1946,7 @@
                         >
 
                     </div>
+
 
                 </div>
 
@@ -1295,6 +2017,7 @@
                         File
                     </label>
 
+
                     <label class="file-box">
 
                         <input
@@ -1305,6 +2028,7 @@
                             accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
                         >
 
+
                         <strong>
                             📁 Choose a file
                         </strong>
@@ -1312,6 +2036,7 @@
                         <span>
                             Click here to select your creation
                         </span>
+
 
                         <div
                             class="file-name"
@@ -1326,6 +2051,7 @@
                 <button
                     type="submit"
                     class="upload-button"
+                    id="uploadButton"
                 >
                     📤 Submit Upload
                 </button>
@@ -1348,11 +2074,16 @@
          ABOUT
     ========================= -->
 
-    <section class="section" id="about">
+    <section
+        class="section"
+        id="about"
+    >
 
         <div class="about">
 
-            <h2>About Young Prince</h2>
+            <h2>
+                About Young Prince
+            </h2>
 
             <p>
                 Young Prince is a creative platform built around
@@ -1385,27 +2116,40 @@
 
 
 <!-- =========================
-     KAEL AI
+     KAEL AI LABEL
 ========================= -->
 
-<div class="kael-label" id="kaelLabel">
+<div
+    class="kael-label"
+    id="kaelLabel"
+>
     Ask Kael
 </div>
 
+
+<!-- =========================
+     KAEL AI BUTTON
+========================= -->
 
 <button
     class="kael-button"
     id="kaelButton"
     aria-label="Open Kael AI"
+    type="button"
 >
     ✨
 </button>
 
 
+<!-- =========================
+     KAEL CHAT
+========================= -->
+
 <div
     class="kael-chat"
     id="kaelChat"
 >
+
 
     <div class="kael-header">
 
@@ -1417,7 +2161,9 @@
 
             <div>
 
-                <strong>Kael</strong>
+                <strong>
+                    Kael
+                </strong>
 
                 <span>
                     General AI Assistant
@@ -1431,6 +2177,8 @@
         <button
             class="kael-close"
             id="kaelClose"
+            type="button"
+            aria-label="Close Kael"
         >
             ×
         </button>
@@ -1458,17 +2206,21 @@
 
     <div class="kael-input-area">
 
-        <input
-            type="text"
+        <textarea
             class="kael-input"
             id="kaelInput"
             placeholder="Ask Kael anything..."
             autocomplete="off"
-        >
+            rows="1"
+            aria-label="Message Kael"
+        ></textarea>
+
 
         <button
             class="kael-send"
             id="kaelSend"
+            type="button"
+            aria-label="Send message"
         >
             ➤
         </button>
@@ -1480,194 +2232,466 @@
 
 <script>
 
-/* =========================
-   FILE NAME DISPLAY
-========================= */
+/* =========================================================
+   API CONFIGURATION
+========================================================= */
 
-const uploadFile = document.getElementById("uploadFile");
-const fileName = document.getElementById("fileName");
+/*
+    IMPORTANT:
 
-uploadFile.addEventListener("change", function () {
+    Your GitHub Pages website cannot safely contain
+    your private AI API key.
 
-    if (this.files.length > 0) {
+    Kael and the upload system will connect to your
+    separate backend server.
 
-        fileName.textContent =
-            "Selected: " + this.files[0].name;
+    AFTER WE CREATE THE RENDER SERVER:
 
-    } else {
+    Change this:
 
-        fileName.textContent = "";
+        https://YOUR-BACKEND.onrender.com
 
-    }
+    to your real Render backend address.
 
-});
+*/
 
-
-/* =========================
-   UPLOAD SYSTEM
-========================= */
-
-const uploadForm = document.getElementById("uploadForm");
-const uploadStatus = document.getElementById("uploadStatus");
-
-uploadForm.addEventListener("submit", async function (event) {
-
-    event.preventDefault();
-
-    const file = uploadFile.files[0];
-
-    if (!file) {
-
-        showUploadStatus(
-            "Please choose a file first.",
-            "error"
-        );
-
-        return;
-
-    }
+const API_BASE_URL =
+    "https://YOUR-BACKEND.onrender.com";
 
 
-    const formData = new FormData(uploadForm);
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
+const mobileMenuButton =
+    document.getElementById(
+        "mobileMenuButton"
+    );
 
-    showUploadStatus(
-        "Uploading your creation...",
-        "success"
+const mainNav =
+    document.getElementById(
+        "mainNav"
     );
 
 
-    try {
+function closeMobileMenu() {
 
-        /*
-            IMPORTANT:
+    mainNav.classList.remove(
+        "mobile-open"
+    );
 
-            Your website needs a backend endpoint:
+    mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
 
-                POST /api/upload
+    mobileMenuButton.textContent =
+        "☰";
 
-            The backend should receive the FormData,
-            store the file in cloud storage,
-            save the metadata and return JSON.
-
-        */
-
-        const response = await fetch("/api/upload", {
-
-            method: "POST",
-
-            body: formData
-
-        });
-
-
-        if (!response.ok) {
-
-            throw new Error("Upload failed.");
-
-        }
-
-
-        const result = await response.json();
-
-
-        showUploadStatus(
-            result.message ||
-            "Your creation has been uploaded successfully!",
-            "success"
-        );
-
-
-        uploadForm.reset();
-
-        fileName.textContent = "";
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        showUploadStatus(
-            "Upload connection is not active yet. The website needs its upload server connected.",
-            "error"
-        );
-
-    }
-
-});
-
-
-function showUploadStatus(message, type) {
-
-    uploadStatus.textContent = message;
-
-    uploadStatus.className =
-        "upload-status " + type;
+    document.body.classList.remove(
+        "menu-open"
+    );
 
 }
 
 
-/* =========================
-   KAEL CHAT
-========================= */
+mobileMenuButton.addEventListener(
+    "click",
+    function () {
 
-const kaelButton =
-    document.getElementById("kaelButton");
-
-const kaelChat =
-    document.getElementById("kaelChat");
-
-const kaelClose =
-    document.getElementById("kaelClose");
-
-const kaelLabel =
-    document.getElementById("kaelLabel");
-
-const kaelInput =
-    document.getElementById("kaelInput");
-
-const kaelSend =
-    document.getElementById("kaelSend");
-
-const kaelMessages =
-    document.getElementById("kaelMessages");
+        const isOpen =
+            mainNav.classList.toggle(
+                "mobile-open"
+            );
 
 
-/* OPEN KAEL */
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
 
-kaelButton.addEventListener("click", function () {
 
-    kaelChat.classList.toggle("active");
+        mobileMenuButton.textContent =
+            isOpen ? "✕" : "☰";
 
-    if (kaelChat.classList.contains("active")) {
 
-        kaelLabel.style.display = "none";
-
-        setTimeout(() => {
-            kaelInput.focus();
-        }, 100);
-
-    } else {
-
-        kaelLabel.style.display = "block";
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
 
     }
-
-});
-
-
-/* CLOSE KAEL */
-
-kaelClose.addEventListener("click", function () {
-
-    kaelChat.classList.remove("active");
-
-    kaelLabel.style.display = "block";
-
-});
+);
 
 
-/* SEND MESSAGE */
+mainNav
+    .querySelectorAll("a")
+    .forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            closeMobileMenu
+        );
+
+    });
+
+
+/* Close menu when screen becomes desktop */
+
+window.addEventListener(
+    "resize",
+    function () {
+
+        if (window.innerWidth > 800) {
+            closeMobileMenu();
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FILE NAME DISPLAY
+========================================================= */
+
+const uploadFile =
+    document.getElementById(
+        "uploadFile"
+    );
+
+const fileName =
+    document.getElementById(
+        "fileName"
+    );
+
+
+uploadFile.addEventListener(
+    "change",
+    function () {
+
+        if (this.files.length > 0) {
+
+            const file =
+                this.files[0];
+
+            const sizeMB =
+                file.size /
+                (1024 * 1024);
+
+
+            fileName.textContent =
+                "Selected: " +
+                file.name +
+                " (" +
+                sizeMB.toFixed(2) +
+                " MB)";
+
+        } else {
+
+            fileName.textContent =
+                "";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   UPLOAD SYSTEM
+========================================================= */
+
+const uploadForm =
+    document.getElementById(
+        "uploadForm"
+    );
+
+const uploadStatus =
+    document.getElementById(
+        "uploadStatus"
+    );
+
+const uploadButton =
+    document.getElementById(
+        "uploadButton"
+    );
+
+
+uploadForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        const file =
+            uploadFile.files[0];
+
+
+        if (!file) {
+
+            showUploadStatus(
+                "Please choose a file first.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        /*
+            Frontend size warning.
+
+            The backend will also enforce
+            its own maximum upload size.
+        */
+
+        const maxSizeMB = 25;
+
+        if (
+            file.size >
+            maxSizeMB * 1024 * 1024
+        ) {
+
+            showUploadStatus(
+                "This file is larger than the 25 MB upload limit.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        const formData =
+            new FormData(
+                uploadForm
+            );
+
+
+        uploadButton.disabled =
+            true;
+
+        uploadButton.textContent =
+            "⏳ Uploading...";
+
+
+        showUploadStatus(
+            "Uploading your creation...",
+            "success"
+        );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    API_BASE_URL +
+                    "/api/upload",
+                    {
+
+                        method: "POST",
+
+                        body: formData
+
+                    }
+                );
+
+
+            let result = {};
+
+            try {
+
+                result =
+                    await response.json();
+
+            } catch {
+
+                result = {};
+
+            }
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    result.message ||
+                    "Upload failed."
+                );
+
+            }
+
+
+            showUploadStatus(
+                result.message ||
+                "Your creation has been uploaded successfully!",
+                "success"
+            );
+
+
+            uploadForm.reset();
+
+            fileName.textContent =
+                "";
+
+
+        } catch (error) {
+
+            console.error(
+                "Upload error:",
+                error
+            );
+
+
+            showUploadStatus(
+                "The upload server is unavailable right now. Please try again later.",
+                "error"
+            );
+
+        }
+
+
+        uploadButton.disabled =
+            false;
+
+        uploadButton.textContent =
+            "📤 Submit Upload";
+
+    }
+);
+
+
+function showUploadStatus(
+    message,
+    type
+) {
+
+    uploadStatus.textContent =
+        message;
+
+    uploadStatus.className =
+        "upload-status " +
+        type;
+
+}
+
+
+/* =========================================================
+   KAEL ELEMENTS
+========================================================= */
+
+const kaelButton =
+    document.getElementById(
+        "kaelButton"
+    );
+
+const kaelChat =
+    document.getElementById(
+        "kaelChat"
+    );
+
+const kaelClose =
+    document.getElementById(
+        "kaelClose"
+    );
+
+const kaelLabel =
+    document.getElementById(
+        "kaelLabel"
+    );
+
+const kaelInput =
+    document.getElementById(
+        "kaelInput"
+    );
+
+const kaelSend =
+    document.getElementById(
+        "kaelSend"
+    );
+
+const kaelMessages =
+    document.getElementById(
+        "kaelMessages"
+    );
+
+
+/* =========================================================
+   OPEN KAEL
+========================================================= */
+
+function openKael() {
+
+    kaelChat.classList.add(
+        "active"
+    );
+
+    kaelLabel.style.display =
+        "none";
+
+
+    setTimeout(
+        function () {
+
+            kaelInput.focus({
+                preventScroll: true
+            });
+
+        },
+        100
+    );
+
+}
+
+
+kaelButton.addEventListener(
+    "click",
+    function () {
+
+        if (
+            kaelChat.classList.contains(
+                "active"
+            )
+        ) {
+
+            closeKael();
+
+        } else {
+
+            openKael();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CLOSE KAEL
+========================================================= */
+
+function closeKael() {
+
+    kaelChat.classList.remove(
+        "active"
+    );
+
+    kaelLabel.style.display =
+        "block";
+
+}
+
+
+kaelClose.addEventListener(
+    "click",
+    closeKael
+);
+
+
+/* =========================================================
+   SEND KAEL MESSAGE
+========================================================= */
 
 async function sendKaelMessage() {
 
@@ -1686,9 +2710,15 @@ async function sendKaelMessage() {
     );
 
 
-    kaelInput.value = "";
+    kaelInput.value =
+        "";
 
-    kaelSend.disabled = true;
+    kaelInput.style.height =
+        "42px";
+
+
+    kaelSend.disabled =
+        true;
 
 
     const loadingMessage =
@@ -1700,60 +2730,51 @@ async function sendKaelMessage() {
 
     try {
 
-        /*
-            IMPORTANT:
-
-            Your server needs this endpoint:
-
-                POST /api/kael
-
-            It should receive:
-
+        const response =
+            await fetch(
+                API_BASE_URL +
+                "/api/kael",
                 {
-                    "message": "user question"
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+                            message:
+                                message
+                        })
+
                 }
-
-            Then your server talks to the AI API
-            and returns:
-
-                {
-                    "reply": "AI response"
-                }
-
-            NEVER put your private AI API key
-            directly inside this HTML file.
-        */
+            );
 
 
-        const response = await fetch(
-            "/api/kael",
-            {
+        let data = {};
 
-                method: "POST",
+        try {
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+            data =
+                await response.json();
 
-                body: JSON.stringify({
-                    message: message
-                })
+        } catch {
 
-            }
-        );
+            data = {};
+
+        }
 
 
         if (!response.ok) {
 
             throw new Error(
+                data.message ||
                 "Kael server unavailable."
             );
 
         }
-
-
-        const data =
-            await response.json();
 
 
         loadingMessage.textContent =
@@ -1763,29 +2784,55 @@ async function sendKaelMessage() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Kael error:",
+            error
+        );
 
 
         loadingMessage.textContent =
-            "Kael is not connected to the AI server yet. Once the server is connected, I'll be able to answer your questions.";
+            "I'm having trouble connecting right now. Please try again in a moment.";
 
     }
 
 
-    kaelSend.disabled = false;
+    kaelSend.disabled =
+        false;
 
-    kaelInput.focus();
+
+    setTimeout(
+        function () {
+
+            kaelInput.focus({
+                preventScroll: true
+            });
+
+        },
+        50
+    );
 
 }
 
 
-/* ENTER TO SEND */
+/* =========================================================
+   ENTER TO SEND
+========================================================= */
 
 kaelInput.addEventListener(
     "keydown",
     function (event) {
 
-        if (event.key === "Enter") {
+        /*
+            Enter = send
+
+            Shift + Enter =
+            new line
+        */
+
+        if (
+            event.key === "Enter" &&
+            !event.shiftKey
+        ) {
 
             event.preventDefault();
 
@@ -1797,7 +2844,30 @@ kaelInput.addEventListener(
 );
 
 
-/* SEND BUTTON */
+/* =========================================================
+   AUTO-GROW KAEL TEXTAREA
+========================================================= */
+
+kaelInput.addEventListener(
+    "input",
+    function () {
+
+        this.style.height =
+            "42px";
+
+        this.style.height =
+            Math.min(
+                this.scrollHeight,
+                120
+            ) + "px";
+
+    }
+);
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
 
 kaelSend.addEventListener(
     "click",
@@ -1805,7 +2875,47 @@ kaelSend.addEventListener(
 );
 
 
-/* ADD MESSAGE */
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key !== "Escape") {
+            return;
+        }
+
+
+        if (
+            kaelChat.classList.contains(
+                "active"
+            )
+        ) {
+
+            closeKael();
+
+        }
+
+
+        if (
+            mainNav.classList.contains(
+                "mobile-open"
+            )
+        ) {
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ADD KAEL MESSAGE
+========================================================= */
 
 function addKaelMessage(
     message,
@@ -1813,12 +2923,21 @@ function addKaelMessage(
 ) {
 
     const messageElement =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     messageElement.className =
-        "kael-message " + sender;
+        "kael-message " +
+        sender;
 
+
+    /*
+        textContent is intentionally used
+        so Kael responses cannot inject
+        arbitrary HTML into the page.
+    */
 
     messageElement.textContent =
         message;
@@ -1837,8 +2956,92 @@ function addKaelMessage(
 
 }
 
+
+/* =========================================================
+   MOBILE KEYBOARD SUPPORT
+========================================================= */
+
+if (
+    window.visualViewport
+) {
+
+    function updateKaelForKeyboard() {
+
+        if (
+            window.innerWidth > 500 ||
+            !kaelChat.classList.contains(
+                "active"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        const viewport =
+            window.visualViewport;
+
+
+        const keyboardHeight =
+            Math.max(
+                0,
+                window.innerHeight -
+                viewport.height -
+                viewport.offsetTop
+            );
+
+
+        if (
+            keyboardHeight > 100
+        ) {
+
+            kaelChat.style.bottom =
+                (
+                    keyboardHeight +
+                    12
+                ) + "px";
+
+        } else {
+
+            kaelChat.style.bottom =
+                "88px";
+
+        }
+
+    }
+
+
+    window.visualViewport.addEventListener(
+        "resize",
+        updateKaelForKeyboard
+    );
+
+
+    window.visualViewport.addEventListener(
+        "scroll",
+        updateKaelForKeyboard
+    );
+
+}
+
+
+/* =========================================================
+   INITIAL SETUP
+========================================================= */
+
+console.log(
+    "Young Prince website loaded."
+);
+
+console.log(
+    "Kael API:",
+    API_BASE_URL
+);
+
 </script>
 
+
 </body>
+
 </html>
-```
