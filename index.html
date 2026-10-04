@@ -3157,6 +3157,215 @@ console.log(
     API_BASE_URL
 );
 
+    /* =========================
+   COMMUNITY CREATIONS
+========================= */
+
+async function loadCommunityCreations() {
+
+    const container =
+        document.getElementById("communityUploads");
+
+    if (!container) {
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                API_BASE_URL + "/api/uploads"
+            );
+
+        if (!response.ok) {
+            throw new Error(
+                "Could not load uploads."
+            );
+        }
+
+        const data =
+            await response.json();
+
+        const uploads =
+            data.uploads || [];
+
+        if (uploads.length === 0) {
+
+            container.innerHTML = `
+                <div class="community-empty">
+                    No community creations have been approved yet.
+                </div>
+            `;
+
+            return;
+        }
+
+        container.innerHTML = "";
+
+        uploads.forEach(upload => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "community-card";
+
+            const fileUrl =
+                API_BASE_URL +
+                "/api/uploads/" +
+                encodeURIComponent(upload.id) +
+                "/file";
+
+            let mediaHTML = "";
+
+            if (
+                upload.mimeType &&
+                upload.mimeType.startsWith("image/")
+            ) {
+
+                mediaHTML = `
+                    <img
+                        src="${fileUrl}"
+                        alt="${escapeCommunityText(upload.title || upload.name || "Community creation")}"
+                        class="community-media"
+                        loading="lazy"
+                    >
+                `;
+
+            } else if (
+                upload.mimeType &&
+                upload.mimeType.startsWith("video/")
+            ) {
+
+                mediaHTML = `
+                    <video
+                        src="${fileUrl}"
+                        class="community-video"
+                        controls
+                        preload="metadata"
+                    ></video>
+                `;
+
+            } else if (
+                upload.mimeType &&
+                upload.mimeType.startsWith("audio/")
+            ) {
+
+                mediaHTML = `
+                    <div class="community-file">
+                        <strong>🎵 Music</strong>
+
+                        <audio
+                            src="${fileUrl}"
+                            class="community-audio"
+                            controls
+                        ></audio>
+                    </div>
+                `;
+
+            } else {
+
+                mediaHTML = `
+                    <div class="community-file">
+                        📄
+                        <br><br>
+
+                        <a
+                            href="${fileUrl}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View / Open File
+                        </a>
+                    </div>
+                `;
+            }
+
+            card.innerHTML = `
+                ${mediaHTML}
+
+                <div class="community-card-content">
+
+                    <span class="community-category">
+                        ${escapeCommunityText(
+                            upload.category || "Community"
+                        )}
+                    </span>
+
+                    <h3>
+                        ${escapeCommunityText(
+                            upload.title ||
+                            upload.name ||
+                            "Untitled Creation"
+                        )}
+                    </h3>
+
+                    ${
+                        upload.description
+                            ? `
+                                <p>
+                                    ${escapeCommunityText(
+                                        upload.description
+                                    )}
+                                </p>
+                            `
+                            : ""
+                    }
+
+                    <p class="community-author">
+                        Shared by ${
+                            escapeCommunityText(
+                                upload.name ||
+                                "Young Prince Community"
+                            )
+                        }
+                    </p>
+
+                </div>
+            `;
+
+            container.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "COMMUNITY UPLOAD ERROR:",
+            error
+        );
+
+        container.innerHTML = `
+            <div class="community-error">
+                Unable to load community creations.
+                Please try again later.
+            </div>
+        `;
+
+    }
+}
+
+
+/* Prevent uploaded text from being interpreted as HTML */
+
+function escapeCommunityText(text) {
+
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* Load approved creations when the page opens */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadCommunityCreations
+);
+    
 </script>
 
 
