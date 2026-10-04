@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Young Prince — Admin</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+        }
+
+        .admin-box {
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 16px;
+            background: #1d1d1d;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background: #111;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #777;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 14px;
+            border: 0;
+            border-radius: 8px;
+            background: #fff;
+            color: #111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            min-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="admin-box">
+
+        <h1>Young Prince Admin</h1>
+
+        <div class="subtitle">
+            Upload Review Dashboard
+        </div>
+
+        <form id="loginForm">
+
+            <label for="password">
+                Admin Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter admin password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <div id="message"></div>
+
+    </div>
+
+    <script>
+
+        const API_BASE_URL =
+            "https://youngprincejp-github-io.onrender.com";
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const message =
+            document.getElementById("message");
+
+        loginForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+                message.textContent =
+                    "Logging in...";
+
+                try {
+
+                    const response =
+                        await fetch(
+                            API_BASE_URL +
+                            "/api/admin/login",
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+                                    password:
+                                        passwordInput.value
+                                })
+                            }
+                        );
+
+                    const data =
+                        await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(
+                            data.message ||
+                            "Login failed."
+                        );
+                    }
+
+                    sessionStorage.setItem(
+                        "youngPrinceAdminToken",
+                        data.token
+                    );
+
+                    message.textContent =
+                        "Login successful.";
+
+                    setTimeout(
+                        function () {
+                            window.location.href =
+                                "admin-dashboard.html";
+                        },
+                        500
+                    );
+
+                } catch (error) {
+
+                    message.textContent =
+                        error.message ||
+                        "Unable to login.";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
