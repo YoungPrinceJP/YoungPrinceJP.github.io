@@ -448,8 +448,27 @@ select option {
 
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
 
-    <script>
+<script>
+    const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+    async function checkUploadAccess() {
+        const {
+            data: { user }
+        } = await supabaseClient.auth.getUser();
+
+        if (!user) {
+            window.location.href = "login.html";
+        }
+    }
+
+    checkUploadAccess();
+</script>
 
         const API_BASE_URL =
             "https://youngprincejp-github-io.onrender.com";
