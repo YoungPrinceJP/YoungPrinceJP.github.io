@@ -97,13 +97,30 @@ textarea:focus {
     line-height: 1.6;
 }
         .file-label {
-            display: block;
-            padding: 20px;
-            border: 2px dashed rgba(255,255,255,0.3);
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-        }
+    display: block;
+    padding: 26px 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.22);
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.file-label:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+}
+
+.file-label small {
+    display: inline-block;
+    margin-top: 7px;
+    opacity: 0.55;
+}
 
         #uploadFile {
             display: none;
