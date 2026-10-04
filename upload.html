@@ -573,12 +573,15 @@ uploadButton.disabled =
                         error
                     );
 
-                    uploadStatus.textContent =
-                        error.message ||
-                        "Upload failed. Please try again.";
+               uploadStatus.textContent =
+    error.message ||
+    "Upload failed. Please try again.";
 
-                    uploadButton.disabled =
-                        false;
+uploadButton.textContent =
+    "📤 Submit Upload";
+
+uploadButton.disabled =
+    false;
 
                 }
 
