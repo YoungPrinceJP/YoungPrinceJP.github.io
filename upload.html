@@ -1,1 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Upload Your Creation | Young Prince</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        .upload-page {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .upload-box {
+            background: rgba(255,255,255,0.06);
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #222;
+            color: white;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .file-label {
+            display: block;
+            padding: 20px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #uploadFile {
+            display: none;
+        }
+
+        #uploadButton {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+            color: #111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #uploadStatus {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: block;
+            margin-bottom: 25px;
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="upload-page">
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Back to Young Prince
+        </a>
+
+        <h1>
+            📤 Upload Your Creation
+        </h1>
+
+        <div class="upload-box">
+
+            <p>
+                Share your artwork, stories, videos, music
+                and creative work with the Young Prince community.
+            </p>
+
+            <label for="uploaderName">
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="uploaderName"
+                placeholder="Enter your name"
+            >
+
+            <label for="contentTitle">
+                Title
+            </label>
+
+            <input
+                type="text"
+                id="contentTitle"
+                placeholder="Give your creation a title"
+            >
+
+            <label for="contentCategory">
+                Category
+            </label>
+
+            <select id="contentCategory">
+
+                <option value="">
+                    Select a category
+                </option>
+
+                <option value="story">
+                    📖 Story / Writing
+                </option>
+
+                <option value="image">
+                    🖼️ Artwork / Image
+                </option>
+
+                <option value="video">
+                    🎬 Video
+                </option>
+
+                <option value="music">
+                    🎵 Music / Audio
+                </option>
+
+                <option value="document">
+                    📄 Document
+                </option>
+
+                <option value="other">
+                    📦 Other
+                </option>
+
+            </select>
+
+            <label for="contentDescription">
+                Description
+            </label>
+
+            <textarea
+                id="contentDescription"
+                placeholder="Tell us about your creation"
+            ></textarea>
+
+            <label>
+                File
+            </label>
+
+            <label
+                for="uploadFile"
+                class="file-label"
+            >
+                📁 Choose a file
+                <br>
+                <small>
+                    Click here to select your creation
+                </small>
+            </label>
+
+            <input
+                type="file"
+                id="uploadFile"
+            >
+
+            <button
+                type="button"
+                id="uploadButton"
+            >
+                📤 Submit Upload
+            </button>
+
+            <div id="uploadStatus"></div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const API_BASE_URL =
+            "https://youngprincejp-github-io.onrender.com";
+
+
+        const uploadButton =
+            document.getElementById("uploadButton");
+
+
+        const uploadStatus =
+            document.getElementById("uploadStatus");
+
+
+        uploadButton.addEventListener(
+            "click",
+            async function() {
+
+                const uploaderName =
+                    document.getElementById(
+                        "uploaderName"
+                    ).value.trim();
+
+                const contentTitle =
+                    document.getElementById(
+                        "contentTitle"
+                    ).value.trim();
+
+                const contentCategory =
+                    document.getElementById(
+                        "contentCategory"
+                    ).value;
+
+                const contentDescription =
+                    document.getElementById(
+                        "contentDescription"
+                    ).value.trim();
+
+                const file =
+                    document.getElementById(
+                        "uploadFile"
+                    ).files[0];
+
+
+                if (!uploaderName) {
+
+                    uploadStatus.textContent =
+                        "Please enter your name.";
+
+                    return;
+                }
+
+
+                if (!contentTitle) {
+
+                    uploadStatus.textContent =
+                        "Please enter a title.";
+
+                    return;
+                }
+
+
+                if (!contentCategory) {
+
+                    uploadStatus.textContent =
+                        "Please select a category.";
+
+                    return;
+                }
+
+
+                if (!file) {
+
+                    uploadStatus.textContent =
+                        "Please choose a file.";
+
+                    return;
+                }
+
+
+                const formData =
+                    new FormData();
+
+                formData.append(
+                    "name",
+                    uploaderName
+                );
+
+                formData.append(
+                    "title",
+                    contentTitle
+                );
+
+                formData.append(
+                    "category",
+                    contentCategory
+                );
+
+                formData.append(
+                    "description",
+                    contentDescription
+                );
+
+                formData.append(
+                    "file",
+                    file
+                );
+
+
+                uploadStatus.textContent =
+                    "Uploading...";
+
+
+                uploadButton.disabled =
+                    true;
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            API_BASE_URL +
+                            "/api/upload",
+                            {
+                                method: "POST",
+                                body: formData
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            result.message ||
+                            "Upload failed."
+                        );
+
+                    }
+
+
+                    uploadStatus.textContent =
+                        result.message ||
+                        "Upload submitted successfully.";
+
+                    uploadButton.disabled =
+                        false;
+
+
+                } catch (error) {
+
+                    console.error(
+                        "UPLOAD ERROR:",
+                        error
+                    );
+
+                    uploadStatus.textContent =
+                        error.message ||
+                        "Upload failed. Please try again.";
+
+                    uploadButton.disabled =
+                        false;
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
