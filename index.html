@@ -3364,6 +3364,52 @@ function escapeCommunityText(text) {
 
 /* Load approved creations when the page opens */
 
+function openCommunityImage(imageUrl, imageTitle) {
+
+    const viewer = document.createElement("div");
+
+    viewer.className = "community-image-viewer";
+
+    viewer.innerHTML = `
+        <button
+            type="button"
+            class="community-image-close"
+            aria-label="Close image"
+        >
+            ×
+        </button>
+
+        <img
+            src="${imageUrl}"
+            alt=""
+            class="community-full-image"
+        >
+
+        <div class="community-image-title"></div>
+    `;
+
+    viewer.querySelector(
+        ".community-image-title"
+    ).textContent = imageTitle;
+
+    document.body.appendChild(viewer);
+
+    viewer.addEventListener("click", function(event) {
+
+        if (
+            event.target === viewer ||
+            event.target.classList.contains(
+                "community-image-close"
+            )
+        ) {
+            viewer.remove();
+        }
+
+    });
+
+}
+
+    
 document.addEventListener(
     "DOMContentLoaded",
     loadCommunityCreations
