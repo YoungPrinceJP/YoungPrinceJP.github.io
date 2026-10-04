@@ -589,9 +589,11 @@ uploadButton.disabled =
                     }
 
 
-                    uploadStatus.textContent =
+             uploadStatus.textContent =
     result.message ||
     "Upload submitted successfully.";
+
+uploadStatus.classList.add("success");
 
 uploadButton.textContent =
     "✓ Upload Submitted";
