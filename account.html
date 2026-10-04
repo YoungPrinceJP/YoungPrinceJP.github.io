@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>My Account | Young Prince</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .account-box {
+            width: 100%;
+            max-width: 500px;
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #f5c542;
+        }
+
+        .email {
+            margin: 20px 0;
+            padding: 15px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            color: #ccc;
+            word-break: break-word;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #f5c542;
+            color: #111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .message {
+            margin-top: 15px;
+            color: #aaa;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #f5c542;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="account-box">
+
+        <h1>My Account</h1>
+
+        <p>Welcome to Young Prince.</p>
+
+        <div class="email" id="userEmail">
+            Checking account...
+        </div>
+
+        <button id="logoutButton">
+            Log Out
+        </button>
+
+        <div class="message" id="message"></div>
+
+        <a href="index.html" class="back">
+            ← Back to Young Prince
+        </a>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
+    <script>
+        const supabaseClient = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+        const userEmail = document.getElementById("userEmail");
+        const logoutButton = document.getElementById("logoutButton");
+        const message = document.getElementById("message");
+
+        async function loadAccount() {
+
+            const {
+                data: { user },
+                error
+            } = await supabaseClient.auth.getUser();
+
+            if (error || !user) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            userEmail.textContent = user.email;
+        }
+
+        logoutButton.addEventListener("click", async function () {
+
+            logoutButton.disabled = true;
+            logoutButton.textContent = "Logging out...";
+
+            const { error } =
+                await supabaseClient.auth.signOut();
+
+            if (error) {
+
+                message.textContent = error.message;
+
+                logoutButton.disabled = false;
+                logoutButton.textContent = "Log Out";
+
+                return;
+            }
+
+            window.location.href = "index.html";
+        });
+
+        loadAccount();
+    </script>
+
+</body>
+</html>
