@@ -557,12 +557,14 @@ uploadButton.disabled =
 
 
                     uploadStatus.textContent =
-                        result.message ||
-                        "Upload submitted successfully.";
+    result.message ||
+    "Upload submitted successfully.";
 
-                    uploadButton.disabled =
-                        false;
+uploadButton.textContent =
+    "✓ Upload Submitted";
 
+uploadButton.disabled =
+    false;
 
                 } catch (error) {
 
