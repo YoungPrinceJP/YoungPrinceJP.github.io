@@ -615,7 +615,11 @@ uploadButton.disabled =
                         error
                     );
 
-               uploadStatus.textContent =
+            uploadStatus.classList.remove("success");
+
+uploadStatus.classList.add("error");
+
+uploadStatus.textContent =
     error.message ||
     "Upload failed. Please try again.";
 
