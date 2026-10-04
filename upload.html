@@ -430,6 +430,22 @@ select option {
                 id="uploadFile"
             >
 
+<p id="fileName" style="margin-top: 8px;"></p>
+
+<script>
+const uploadFile = document.getElementById("uploadFile");
+const fileName = document.getElementById("fileName");
+
+uploadFile.addEventListener("change", function () {
+    if (uploadFile.files.length > 0) {
+        fileName.textContent =
+            "Selected: " + uploadFile.files[0].name;
+    } else {
+        fileName.textContent = "";
+    }
+});
+</script>
+            
             <button
                 type="button"
                 id="uploadButton"
