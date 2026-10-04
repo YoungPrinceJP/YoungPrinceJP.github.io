@@ -1558,6 +1558,91 @@
 
         }
 
+        /* =========================
+   COMMUNITY CREATIONS
+========================= */
+
+.community-uploads {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.community-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.community-media {
+    width: 100%;
+    display: block;
+    max-height: 320px;
+    object-fit: cover;
+}
+
+.community-card-content {
+    padding: 18px;
+}
+
+.community-card-content h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.community-card-content p {
+    margin: 6px 0;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.community-author {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 12px !important;
+}
+
+.community-category {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.community-loading,
+.community-empty,
+.community-error {
+    text-align: center;
+    padding: 30px 15px;
+    opacity: 0.75;
+}
+
+.community-video {
+    width: 100%;
+    display: block;
+}
+
+.community-audio {
+    width: calc(100% - 30px);
+    margin: 15px;
+}
+
+.community-file {
+    padding: 30px 20px;
+    text-align: center;
+}
+        
     </style>
 
 </head>
