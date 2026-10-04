@@ -3085,14 +3085,20 @@ async function loadCommunityCreations() {
                 upload.mimeType.startsWith("image/")
             ) {
 
-           mediaHTML = `
-    <img
-        src="${fileUrl}"
-        alt="${escapeCommunityText(upload.title || upload.name || "Community creation")}"
+        mediaHTML = `
+    <div
         class="community-media"
-        loading="lazy"
         style="cursor: pointer;"
+        data-file-url="${fileUrl}"
+        data-requires-login="true"
     >
+        <img
+            src="${fileUrl}"
+            alt="${escapeCommunityText(upload.title || upload.name || "Community creation")}"
+            style="width: 100%; height: 260px; object-fit: contain; display: block;"
+            loading="lazy"
+        >
+    </div>
 `;
 
             } else if (
