@@ -109,18 +109,37 @@ textarea:focus {
             display: none;
         }
 
-        #uploadButton {
-            width: 100%;
-            margin-top: 25px;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: #fff;
-            color: #111;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+       #uploadButton {
+    width: 100%;
+    margin-top: 28px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#uploadButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.12);
+}
+
+#uploadButton:active {
+    transform: translateY(0);
+}
+
+#uploadButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
 
         #uploadStatus {
             margin-top: 20px;
