@@ -3199,18 +3199,27 @@ const communityImage =
 if (communityImage) {
 
     communityImage.addEventListener(
-        "click",
-        function() {
+    "click",
+    async function() {
 
-            openCommunityImage(
-                fileUrl,
-                upload.title ||
-                upload.name ||
-                "Community creation"
-            );
+        const {
+            data: { user }
+        } = await supabaseClient.auth.getUser();
 
+        if (!user) {
+            window.location.href = "login.html";
+            return;
         }
-    );
+
+        openCommunityImage(
+            fileUrl,
+            upload.title ||
+            upload.name ||
+            "Community creation"
+        );
+
+    }
+);
 
 }
             
