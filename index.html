@@ -3223,6 +3223,42 @@ async function loadCommunityCreations() {
 const communityImage =
     card.querySelector(".community-media");
 
+const communityVideo =
+    card.querySelector("[data-video-url]");
+
+if (communityVideo) {
+
+    communityVideo.addEventListener(
+        "click",
+        async function() {
+
+            const {
+                data: { user }
+            } = await supabaseClient.auth.getUser();
+
+            if (!user) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            const videoUrl =
+                communityVideo.dataset.videoUrl;
+
+            const video =
+                communityVideo.querySelector("video");
+
+            if (video) {
+                video.src = videoUrl;
+                video.controls = true;
+                video.muted = false;
+                video.play();
+            }
+
+        }
+    );
+
+}
+            
 if (communityImage) {
 
     communityImage.addEventListener(
