@@ -3104,18 +3104,43 @@ async function loadCommunityCreations() {
 `;
 
             } else if (
-                upload.mimeType &&
-                upload.mimeType.startsWith("video/")
-            ) {
+    upload.mimeType &&
+    upload.mimeType.startsWith("video/")
+) {
 
-                mediaHTML = `
-                    <video
-                        src="${fileUrl}"
-                        class="community-video"
-                        controls
-                        preload="metadata"
-                    ></video>
-                `;
+    mediaHTML = `
+        <div
+            class="community-video"
+            data-video-url="${fileUrl}"
+            data-requires-login="true"
+            style="position: relative; cursor: pointer;"
+        >
+            <video
+                src="${fileUrl}"
+                class="community-video"
+                preload="metadata"
+                muted
+                playsinline
+                style="width: 100%; display: block;"
+            ></video>
+
+            <div
+                style="
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0,0,0,0.7);
+                    color: white;
+                    padding: 12px 18px;
+                    border-radius: 30px;
+                    font-size: 18px;
+                "
+            >
+                ▶ Watch
+            </div>
+        </div>
+    `;
 
             } else if (
                 upload.mimeType &&
