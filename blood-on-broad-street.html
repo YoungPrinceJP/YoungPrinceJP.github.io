@@ -1,343 +1,498 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXSHPJ9YSR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TXSHPJ9YSR');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BLOOD ON BROAD STREET — Young Prince</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXSHPJ9YSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<style>
-
-* {
-  box-sizing: border-box;
-}
+    gtag('config', 'G-TXSHPJ9YSR');
+  </script>
 
-html {
-  scroll-behavior: smooth;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
-}
+  <title>BLOOD ON BROAD STREET — Young Prince</title>
 
-/* =========================
-   NAVIGATION
-========================= */
+  <meta
+    name="description"
+    content="Blood on Broad Street — A Young Prince Original Lagos crime drama."
+  >
 
-.navbar {
-  width: 100%;
-  background: #111111;
-  border-bottom: 1px solid #444;
-  padding: 16px 20px;
-}
+  <style>
 
-.nav-container {
-  max-width: 1100px;
-  margin: 0 auto;
+    * {
+      box-sizing: border-box;
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    html {
+      scroll-behavior: smooth;
+    }
 
-  gap: 20px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
 
-.logo {
-  color: #ffffff;
-  text-decoration: none;
+      /* MAIN PAGE BACKGROUND */
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.78),
+          rgba(0, 0, 0, 0.90)
+        ),
+        url("images/blood-broad-street-bg.png")
+        center center / cover fixed no-repeat;
 
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 2px;
+      background-color: #080808;
+    }
 
-  white-space: nowrap;
-}
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-  gap: 18px;
-  flex-wrap: wrap;
-}
+    .navbar {
+      width: 100%;
 
-.nav-links a {
-  color: #dddddd;
-  text-decoration: none;
+      background: rgba(8, 8, 8, 0.92);
 
-  font-size: 14px;
-  font-weight: bold;
+      border-bottom: 1px solid #3a3a3a;
 
-  padding: 5px 0;
-}
+      padding: 16px 20px;
 
-.nav-links a:hover {
-  color: #d85b5b;
-}
+      position: sticky;
+      top: 0;
+      z-index: 1000;
 
+      backdrop-filter: blur(10px);
+    }
 
-/* =========================
-   HERO
-========================= */
+    .nav-container {
+      max-width: 1100px;
 
-.hero {
-  text-align: center;
+      margin: 0 auto;
 
-  padding: 100px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-  background:
-    linear-gradient(
-      135deg,
-      #351313 0%,
-      #160909 50%,
-      #080808 100%
-    );
-}
+      gap: 20px;
+    }
 
-.hero small {
-  color: #d85b5b;
+    .logo {
+      color: #ffffff;
 
-  letter-spacing: 4px;
-  font-weight: bold;
-}
+      text-decoration: none;
 
-.hero h1 {
-  font-size: clamp(42px, 8vw, 78px);
+      font-size: 22px;
 
-  letter-spacing: 4px;
+      font-weight: bold;
 
-  margin: 18px 0;
+      letter-spacing: 2px;
 
-  font-weight: 900;
-}
+      white-space: nowrap;
+    }
 
-.hero p {
-  color: #cccccc;
+    .nav-links {
+      display: flex;
 
-  font-size: 18px;
+      align-items: center;
+      justify-content: center;
 
-  max-width: 700px;
+      gap: 18px;
 
-  margin: auto;
-}
+      flex-wrap: wrap;
+    }
 
-.tagline {
-  margin-top: 22px;
+    .nav-links a {
+      color: #dddddd;
 
-  color: #d85b5b;
+      text-decoration: none;
 
-  font-style: italic;
+      font-size: 14px;
 
-  font-size: 19px;
-}
+      font-weight: bold;
 
+      padding: 5px 0;
 
-/* =========================
-   EPISODES
-========================= */
+      transition: 0.3s;
+    }
 
-.container {
-  max-width: 900px;
+    .nav-links a:hover {
+      color: #ff4040;
+    }
 
-  margin: auto;
 
-  padding: 60px 20px;
-}
+    /* =========================
+       HERO
+    ========================= */
 
-.title {
-  text-align: center;
+    .hero {
 
-  margin-bottom: 35px;
-}
+      min-height: 82vh;
 
-.title h2 {
-  font-size: 36px;
+      display: flex;
 
-  margin-bottom: 10px;
-}
+      flex-direction: column;
 
-.title p {
-  color: #999999;
-}
+      justify-content: center;
 
+      align-items: center;
 
-/* =========================
-   EPISODE CARDS
-========================= */
+      text-align: center;
 
-.episode {
-  background: #151515;
+      padding: 100px 20px;
 
-  border: 1px solid #333333;
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.70)
+        );
 
-  border-radius: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-  padding: 25px;
+    .hero small {
 
-  margin-bottom: 18px;
+      color: #ff3b3b;
 
-  transition: 0.3s;
-}
+      letter-spacing: 4px;
 
-.episode:hover {
-  transform: translateY(-3px);
+      font-weight: bold;
 
-  border-color: #8e3d3d;
-}
+      text-transform: uppercase;
+    }
 
-.episode-number {
-  color: #d85b5b;
+    .hero h1 {
 
-  font-size: 13px;
+      font-size: clamp(42px, 8vw, 82px);
 
-  font-weight: bold;
+      letter-spacing: 4px;
 
-  letter-spacing: 2px;
-}
+      margin: 18px 0;
 
-.episode h3 {
-  font-size: 25px;
+      font-weight: 900;
 
-  margin: 8px 0;
-}
+      line-height: 1.05;
 
-.episode p {
-  color: #aaaaaa;
+      text-shadow:
+        0 4px 15px #000,
+        0 0 35px rgba(180, 0, 0, 0.5);
+    }
 
-  line-height: 1.7;
-}
+    .hero p {
 
-.read-button {
-  display: inline-block;
+      color: #eeeeee;
 
-  background: #b64c4c;
+      font-size: 18px;
 
-  color: white;
+      max-width: 700px;
 
-  text-decoration: none;
+      margin: auto;
 
-  padding: 10px 18px;
+      line-height: 1.7;
+    }
 
-  border-radius: 6px;
+    .tagline {
 
-  font-weight: bold;
+      margin-top: 22px;
 
-  margin-top: 10px;
-}
+      color: #ff5252;
 
-.read-button:hover {
-  background: #d85b5b;
-}
+      font-style: italic;
 
-.coming {
-  color: #666666 !important;
+      font-size: 19px;
 
-  font-weight: bold;
-}
+      font-weight: bold;
+    }
 
+    .hero-button {
 
-/* =========================
-   STORY INTRO
-========================= */
+      display: inline-block;
 
-.story {
-  background: #111111;
+      margin-top: 30px;
 
-  border-top: 1px solid #292929;
+      padding: 13px 25px;
 
-  border-bottom: 1px solid #292929;
-}
+      background: #b60000;
 
-.story-box {
-  max-width: 800px;
+      color: white;
 
-  margin: auto;
+      text-decoration: none;
 
-  text-align: center;
-}
+      border-radius: 7px;
 
-.story-box h2 {
-  font-size: 34px;
+      font-weight: bold;
 
-  margin-bottom: 20px;
-}
+      transition: 0.3s;
 
-.story-box p {
-  color: #aaaaaa;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
 
-  font-size: 17px;
+    .hero-button:hover {
 
-  line-height: 1.8;
-}
+      background: #e00000;
 
+      transform: translateY(-2px);
+    }
 
-/* =========================
-   FOOTER
-========================= */
 
-footer {
-  text-align: center;
+    /* =========================
+       CONTENT
+    ========================= */
 
-  padding: 35px 20px;
+    .container {
 
-  background: #050505;
+      max-width: 900px;
 
-  color: #777777;
-}
+      margin: auto;
 
-footer strong {
-  color: white;
-}
+      padding: 60px 20px;
+    }
 
+    .title {
 
-/* =========================
-   MOBILE
-========================= */
+      text-align: center;
 
-@media (max-width: 700px) {
+      margin-bottom: 35px;
+    }
 
-  .nav-container {
-    flex-direction: column;
-  }
+    .title h2 {
 
-  .nav-links {
-    gap: 12px;
-  }
+      font-size: 36px;
 
-  .nav-links a {
-    font-size: 13px;
-  }
+      margin-bottom: 10px;
 
-  .hero {
-    padding: 75px 20px;
-  }
+      text-transform: uppercase;
+    }
 
-  .hero h1 {
-    font-size: 43px;
+    .title p {
 
-    letter-spacing: 2px;
-  }
+      color: #bbbbbb;
+    }
 
-  .hero p {
-    font-size: 16px;
-  }
 
-}
+    /* =========================
+       EPISODE CARDS
+    ========================= */
 
-</style>
+    .episode {
+
+      background: rgba(12, 12, 12, 0.90);
+
+      border: 1px solid #3a3a3a;
+
+      border-left: 4px solid #b60000;
+
+      border-radius: 12px;
+
+      padding: 25px;
+
+      margin-bottom: 18px;
+
+      transition: 0.3s;
+
+      backdrop-filter: blur(5px);
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    .episode:hover {
+
+      transform: translateY(-3px);
+
+      border-color: #ff3030;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .episode-number {
+
+      color: #ff3d3d;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 2px;
+    }
+
+    .episode h3 {
+
+      font-size: 25px;
+
+      margin: 8px 0;
+    }
+
+    .episode p {
+
+      color: #bbbbbb;
+
+      line-height: 1.7;
+    }
+
+    .read-button {
+
+      display: inline-block;
+
+      background: #b60000;
+
+      color: white;
+
+      text-decoration: none;
+
+      padding: 10px 18px;
+
+      border-radius: 6px;
+
+      font-weight: bold;
+
+      margin-top: 10px;
+
+      transition: 0.3s;
+    }
+
+    .read-button:hover {
+
+      background: #e00000;
+
+      transform: translateY(-2px);
+    }
+
+    .coming {
+
+      color: #777777 !important;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       STORY INTRO
+    ========================= */
+
+    .story {
+
+      background: rgba(5, 5, 5, 0.88);
+
+      border-top: 1px solid #292929;
+
+      border-bottom: 1px solid #292929;
+    }
+
+    .story-box {
+
+      max-width: 800px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .story-box h2 {
+
+      font-size: 34px;
+
+      margin-bottom: 20px;
+    }
+
+    .story-box p {
+
+      color: #bbbbbb;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+    .story-box strong {
+
+      color: #ffffff;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 35px 20px;
+
+      background: rgba(3, 3, 3, 0.96);
+
+      color: #777777;
+
+      border-top: 1px solid #292929;
+    }
+
+    footer strong {
+
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      body {
+
+        background-attachment: scroll;
+      }
+
+      .nav-container {
+
+        flex-direction: column;
+      }
+
+      .nav-links {
+
+        gap: 12px;
+      }
+
+      .nav-links a {
+
+        font-size: 13px;
+      }
+
+      .hero {
+
+        min-height: 75vh;
+
+        padding: 75px 20px;
+      }
+
+      .hero h1 {
+
+        font-size: 43px;
+
+        letter-spacing: 2px;
+      }
+
+      .hero p {
+
+        font-size: 16px;
+      }
+
+      .episode {
+
+        padding: 20px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 
@@ -356,16 +511,11 @@ footer strong {
       YOUNG PRINCE
     </a>
 
-
     <div class="nav-links">
 
-      <a href="index.html">
-        HOME
-      </a>
+      <a href="index.html">HOME</a>
 
-      <a href="primordia.html">
-        PRIMORDIA
-      </a>
+      <a href="primordia.html">PRIMORDIA</a>
 
       <a href="blood-on-broad-street.html">
         BLOOD ON BROAD STREET
@@ -417,6 +567,14 @@ footer strong {
     Every story has a beginning.
   </div>
 
+  <a
+    href="#episodes"
+    class="hero-button">
+
+    ENTER THE STORY →
+
+  </a>
+
 </section>
 
 
@@ -424,7 +582,9 @@ footer strong {
      EPISODES
 ========================= -->
 
-<section class="container">
+<section
+  class="container"
+  id="episodes">
 
   <div class="title">
 
@@ -697,3 +857,4 @@ footer strong {
 
 </body>
 </html>
+```
