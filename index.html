@@ -3021,7 +3021,7 @@ console.log(
     API_BASE_URL
 );
 
-    /* =========================
+ /* =========================
    COMMUNITY CREATIONS
 ========================= */
 
@@ -3074,108 +3074,183 @@ async function loadCommunityCreations() {
             card.className =
                 "community-card";
 
-         const fileUrl =
-    API_BASE_URL +
-    "/api/uploads/" +
-    upload.id +
-    "/file";
+            const fileUrl =
+                API_BASE_URL +
+                "/api/uploads/" +
+                upload.id +
+                "/file";
 
             let mediaHTML = "";
+
+            /* =========================
+               IMAGE
+            ========================= */
 
             if (
                 upload.mimeType &&
                 upload.mimeType.startsWith("image/")
             ) {
 
-        mediaHTML = `
-    <div
-        class="community-media"
-        style="cursor: pointer;"
-        data-file-url="${fileUrl}"
-        data-requires-login="true"
-    >
-        <img
-            src="${fileUrl}"
-            alt="${escapeCommunityText(upload.title || upload.name || "Community creation")}"
-            style="width: 100%; height: 260px; object-fit: contain; display: block;"
-            loading="lazy"
-        >
-    </div>
-`;
+                mediaHTML = `
+                    <div
+                        class="community-media community-protected-preview"
+                        data-file-url="${fileUrl}"
+                        style="
+                            cursor: pointer;
+                            height: 260px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: rgba(255,255,255,0.05);
+                            color: white;
+                            text-align: center;
+                            padding: 20px;
+                            box-sizing: border-box;
+                        "
+                    >
+                        <div>
+                            <div style="font-size: 48px; margin-bottom: 10px;">
+                                🖼️
+                            </div>
 
-            } else if (
-    upload.mimeType &&
-    upload.mimeType.startsWith("video/")
-) {
+                            <strong>
+                                Image Creation
+                            </strong>
 
-    mediaHTML = `
-        <div
-            class="community-video"
-            data-video-url="${fileUrl}"
-            data-requires-login="true"
-            style="position: relative; cursor: pointer;"
-        >
-            <video
-                src="${fileUrl}"
-                class="community-video"
-                preload="metadata"
-                muted
-                playsinline
-                style="width: 100%; display: block;"
-            ></video>
+                            <div style="
+                                margin-top: 8px;
+                                font-size: 13px;
+                                opacity: 0.7;
+                            ">
+                                Sign in to view
+                            </div>
+                        </div>
+                    </div>
+                `;
 
-            <div
-                style="
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    background: rgba(0,0,0,0.7);
-                    color: white;
-                    padding: 12px 18px;
-                    border-radius: 30px;
-                    font-size: 18px;
-                "
-            >
-                ▶ Watch
-            </div>
-        </div>
-    `;
+            }
 
-            } else if (
+            /* =========================
+               VIDEO
+            ========================= */
+
+            else if (
+                upload.mimeType &&
+                upload.mimeType.startsWith("video/")
+            ) {
+
+                mediaHTML = `
+                    <div
+                        class="community-video community-protected-preview"
+                        data-video-url="${fileUrl}"
+                        style="
+                            position: relative;
+                            cursor: pointer;
+                            height: 260px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: rgba(0,0,0,0.35);
+                            color: white;
+                            text-align: center;
+                        "
+                    >
+
+                        <div>
+                            <div style="
+                                font-size: 55px;
+                                margin-bottom: 10px;
+                            ">
+                                ▶
+                            </div>
+
+                            <strong>
+                                Video Creation
+                            </strong>
+
+                            <div style="
+                                margin-top: 8px;
+                                font-size: 13px;
+                                opacity: 0.7;
+                            ">
+                                Sign in to watch
+                            </div>
+                        </div>
+
+                    </div>
+                `;
+
+            }
+
+            /* =========================
+               AUDIO
+            ========================= */
+
+            else if (
                 upload.mimeType &&
                 upload.mimeType.startsWith("audio/")
             ) {
 
                 mediaHTML = `
-                    <div class="community-file">
-                        <strong>🎵 Music</strong>
+                    <div
+                        class="community-file community-protected-preview"
+                        data-audio-url="${fileUrl}"
+                        style="
+                            cursor: pointer;
+                        "
+                    >
+                        <strong>
+                            🎵 Music
+                        </strong>
 
-                        <audio
-                            src="${fileUrl}"
-                            class="community-audio"
-                            controls
-                        ></audio>
+                        <p style="
+                            margin-top: 10px;
+                            opacity: 0.7;
+                        ">
+                            Sign in to listen
+                        </p>
                     </div>
                 `;
 
-            } else {
+            }
+
+            /* =========================
+               OTHER FILES
+            ========================= */
+
+            else {
 
                 mediaHTML = `
-                    <div class="community-file">
-                        📄
-                        <br><br>
+                    <div
+                        class="community-file community-protected-preview"
+                        data-file-url="${fileUrl}"
+                        style="
+                            cursor: pointer;
+                        "
+                    >
+                        <div style="font-size: 40px;">
+                            📄
+                        </div>
 
-                        <a
-                            href="${fileUrl}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View / Open File
-                        </a>
+                        <strong>
+                            Community File
+                        </strong>
+
+                        <p style="
+                            margin-top: 10px;
+                            opacity: 0.7;
+                        ">
+                            Sign in to open
+                        </p>
                     </div>
                 `;
+
             }
+
+
+            /* =========================
+               CARD CONTENT
+            ========================= */
 
             card.innerHTML = `
                 ${mediaHTML}
@@ -3220,148 +3295,407 @@ async function loadCommunityCreations() {
                 </div>
             `;
 
-const communityImage =
-    card.querySelector(".community-media");
 
-const communityVideo =
-    card.querySelector("[data-video-url]");
+            /* =========================
+               IMAGE ACCESS
+            ========================= */
 
-if (communityVideo) {
+            const communityImage =
+                card.querySelector(
+                    ".community-media"
+                );
 
-    communityVideo.addEventListener(
-        "click",
-        async function() {
+            if (communityImage) {
 
-            const {
-                data: { user }
-            } = await supabaseClient.auth.getUser();
+                communityImage.addEventListener(
+                    "click",
+                    async function() {
 
-            if (!user) {
-                window.location.href = "login.html";
-                return;
-            }
+                        const {
+                            data: { session }
+                        } =
+                            await supabaseClient.auth.getSession();
 
-            const videoUrl =
-                communityVideo.dataset.videoUrl;
+                        if (!session) {
 
-            const video =
-                communityVideo.querySelector("video");
+                            window.location.href =
+                                "login.html";
 
-            if (video) {
+                            return;
+                        }
 
-    try {
+                        try {
 
-        const response =
-            await fetch(
-                videoUrl,
-                {
-                    headers: {
-                        Authorization:
-                            "Bearer " +
-                            session.access_token
-                    }
-                }
-            );
+                            const response =
+                                await fetch(
+                                    fileUrl,
+                                    {
+                                        headers: {
+                                            Authorization:
+                                                "Bearer " +
+                                                session.access_token
+                                        }
+                                    }
+                                );
 
-        if (!response.ok) {
-            throw new Error(
-                "Unable to access this video."
-            );
-        }
+                            if (!response.ok) {
 
-        const blob =
-            await response.blob();
+                                throw new Error(
+                                    "Unable to access this creation."
+                                );
 
-        const protectedUrl =
-            URL.createObjectURL(blob);
-
-        video.src = protectedUrl;
-        video.controls = true;
-        video.muted = false;
-
-        await video.play();
-
-    } catch (error) {
-
-        console.error(
-            "COMMUNITY VIDEO ACCESS ERROR:",
-            error
-        );
-
-        alert(
-            "Unable to play this video. Please try again."
-        );
-
-    }
-
-}
-            
-if (communityImage) {
-
-    communityImage.addEventListener(
-        "click",
-        async function() {
-
-            const {
-                data: { session }
-            } = await supabaseClient.auth.getSession();
-
-            if (!session) {
-                window.location.href = "login.html";
-                return;
-            }
-
-            try {
-
-                const response =
-                    await fetch(
-                        fileUrl,
-                        {
-                            headers: {
-                                Authorization:
-                                    "Bearer " +
-                                    session.access_token
                             }
+
+                            const blob =
+                                await response.blob();
+
+                            const protectedUrl =
+                                URL.createObjectURL(
+                                    blob
+                                );
+
+                            openCommunityImage(
+                                protectedUrl,
+                                upload.title ||
+                                upload.name ||
+                                "Community creation"
+                            );
+
+                        } catch (error) {
+
+                            console.error(
+                                "COMMUNITY IMAGE ACCESS ERROR:",
+                                error
+                            );
+
+                            alert(
+                                "Unable to open this creation. Please try again."
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            /* =========================
+               VIDEO ACCESS
+            ========================= */
+
+            const communityVideo =
+                card.querySelector(
+                    "[data-video-url]"
+                );
+
+            if (communityVideo) {
+
+                communityVideo.addEventListener(
+                    "click",
+                    async function() {
+
+                        const {
+                            data: { session }
+                        } =
+                            await supabaseClient.auth.getSession();
+
+                        if (!session) {
+
+                            window.location.href =
+                                "login.html";
+
+                            return;
+                        }
+
+                        const videoUrl =
+                            communityVideo.dataset.videoUrl;
+
+                        try {
+
+                            const response =
+                                await fetch(
+                                    videoUrl,
+                                    {
+                                        headers: {
+                                            Authorization:
+                                                "Bearer " +
+                                                session.access_token
+                                        }
+                                    }
+                                );
+
+                            if (!response.ok) {
+
+                                throw new Error(
+                                    "Unable to access this video."
+                                );
+
+                            }
+
+                            const blob =
+                                await response.blob();
+
+                            const protectedUrl =
+                                URL.createObjectURL(
+                                    blob
+                                );
+
+                            const video =
+                                document.createElement(
+                                    "video"
+                                );
+
+                            video.src =
+                                protectedUrl;
+
+                            video.controls = true;
+                            video.autoplay = true;
+                            video.playsInline = true;
+
+                            video.style.width =
+                                "100%";
+
+                            video.style.maxHeight =
+                                "80vh";
+
+                            video.style.borderRadius =
+                                "8px";
+
+                            const viewer =
+                                document.createElement(
+                                    "div"
+                                );
+
+                            viewer.className =
+                                "community-image-viewer";
+
+                            const closeButton =
+                                document.createElement(
+                                    "button"
+                                );
+
+                            closeButton.type =
+                                "button";
+
+                            closeButton.className =
+                                "community-image-close";
+
+                            closeButton.textContent =
+                                "×";
+
+                            closeButton.setAttribute(
+                                "aria-label",
+                                "Close video"
+                            );
+
+                            viewer.appendChild(
+                                closeButton
+                            );
+
+                            viewer.appendChild(
+                                video
+                            );
+
+                            document.body.appendChild(
+                                viewer
+                            );
+
+                            closeButton.addEventListener(
+                                "click",
+                                function() {
+
+                                    URL.revokeObjectURL(
+                                        protectedUrl
+                                    );
+
+                                    viewer.remove();
+
+                                }
+                            );
+
+                            viewer.addEventListener(
+                                "click",
+                                function(event) {
+
+                                    if (
+                                        event.target ===
+                                        viewer
+                                    ) {
+
+                                        URL.revokeObjectURL(
+                                            protectedUrl
+                                        );
+
+                                        viewer.remove();
+
+                                    }
+
+                                }
+                            );
+
+                            await video.play();
+
+                        } catch (error) {
+
+                            console.error(
+                                "COMMUNITY VIDEO ACCESS ERROR:",
+                                error
+                            );
+
+                            alert(
+                                "Unable to play this video. Please try again."
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            /* =========================
+               AUDIO / OTHER FILE ACCESS
+            ========================= */
+
+            const protectedFiles =
+                card.querySelectorAll(
+                    "[data-audio-url], [data-file-url]"
+                );
+
+            protectedFiles.forEach(
+                function(protectedElement) {
+
+                    protectedElement.addEventListener(
+                        "click",
+                        async function() {
+
+                            const {
+                                data: { session }
+                            } =
+                                await supabaseClient.auth.getSession();
+
+                            if (!session) {
+
+                                window.location.href =
+                                    "login.html";
+
+                                return;
+                            }
+
+                            const protectedFileUrl =
+                                protectedElement.dataset.fileUrl ||
+                                protectedElement.dataset.audioUrl;
+
+                            try {
+
+                                const response =
+                                    await fetch(
+                                        protectedFileUrl,
+                                        {
+                                            headers: {
+                                                Authorization:
+                                                    "Bearer " +
+                                                    session.access_token
+                                            }
+                                        }
+                                    );
+
+                                if (!response.ok) {
+
+                                    throw new Error(
+                                        "Unable to access this file."
+                                    );
+
+                                }
+
+                                const blob =
+                                    await response.blob();
+
+                                const protectedUrl =
+                                    URL.createObjectURL(
+                                        blob
+                                    );
+
+                                if (
+                                    upload.mimeType &&
+                                    upload.mimeType.startsWith(
+                                        "audio/"
+                                    )
+                                ) {
+
+                                    const audio =
+                                        document.createElement(
+                                            "audio"
+                                        );
+
+                                    audio.src =
+                                        protectedUrl;
+
+                                    audio.controls =
+                                        true;
+
+                                    audio.autoplay =
+                                        true;
+
+                                    audio.style.width =
+                                        "100%";
+
+                                    const viewer =
+                                        document.createElement(
+                                            "div"
+                                        );
+
+                                    viewer.className =
+                                        "community-image-viewer";
+
+                                    viewer.appendChild(
+                                        audio
+                                    );
+
+                                    document.body.appendChild(
+                                        viewer
+                                    );
+
+                                } else {
+
+                                    const link =
+                                        document.createElement(
+                                            "a"
+                                        );
+
+                                    link.href =
+                                        protectedUrl;
+
+                                    link.download =
+                                        upload.name ||
+                                        "community-file";
+
+                                    link.click();
+
+                                }
+
+                            } catch (error) {
+
+                                console.error(
+                                    "COMMUNITY FILE ACCESS ERROR:",
+                                    error
+                                );
+
+                                alert(
+                                    "Unable to open this file. Please try again."
+                                );
+
+                            }
+
                         }
                     );
 
-                if (!response.ok) {
-                    throw new Error(
-                        "Unable to access this creation."
-                    );
                 }
+            );
 
-                const blob =
-                    await response.blob();
 
-                const protectedUrl =
-                    URL.createObjectURL(blob);
-
-                openCommunityImage(
-                    protectedUrl,
-                    upload.title ||
-                    upload.name ||
-                    "Community creation"
-                );
-
-            } catch (error) {
-
-                console.error(
-                    "COMMUNITY IMAGE ACCESS ERROR:",
-                    error
-                );
-
-                alert(
-                    "Unable to open this creation. Please try again."
-                );
-
-            }
-
-        }
-    );
-
-}
-            
             container.appendChild(card);
 
         });
@@ -3381,10 +3715,13 @@ if (communityImage) {
         `;
 
     }
+
 }
 
 
-/* Prevent uploaded text from being interpreted as HTML */
+/* =========================
+   ESCAPE COMMUNITY TEXT
+========================= */
 
 function escapeCommunityText(text) {
 
@@ -3394,16 +3731,24 @@ function escapeCommunityText(text) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
+
 }
 
 
-/* Load approved creations when the page opens */
+/* =========================
+   IMAGE VIEWER
+========================= */
 
-function openCommunityImage(imageUrl, imageTitle) {
+function openCommunityImage(
+    imageUrl,
+    imageTitle
+) {
 
-    const viewer = document.createElement("div");
+    const viewer =
+        document.createElement("div");
 
-    viewer.className = "community-image-viewer";
+    viewer.className =
+        "community-image-viewer";
 
     viewer.innerHTML = `
         <button
@@ -3425,26 +3770,42 @@ function openCommunityImage(imageUrl, imageTitle) {
 
     viewer.querySelector(
         ".community-image-title"
-    ).textContent = imageTitle;
+    ).textContent =
+        imageTitle;
 
-    document.body.appendChild(viewer);
+    document.body.appendChild(
+        viewer
+    );
 
-    viewer.addEventListener("click", function(event) {
+    viewer.addEventListener(
+        "click",
+        function(event) {
 
-        if (
-            event.target === viewer ||
-            event.target.classList.contains(
-                "community-image-close"
-            )
-        ) {
-            viewer.remove();
+            if (
+                event.target === viewer ||
+                event.target.classList.contains(
+                    "community-image-close"
+                )
+            ) {
+
+                URL.revokeObjectURL(
+                    imageUrl
+                );
+
+                viewer.remove();
+
+            }
+
         }
-
-    });
+    );
 
 }
 
-    
+
+/* =========================
+   LOAD COMMUNITY CREATIONS
+========================= */
+
 document.addEventListener(
     "DOMContentLoaded",
     loadCommunityCreations
