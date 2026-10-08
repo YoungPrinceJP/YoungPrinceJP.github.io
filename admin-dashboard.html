@@ -1,185 +1,182 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-```
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Young Prince — Upload Dashboard</title>
+    <title>Young Prince — Upload Dashboard</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #111;
-        color: #fff;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+        }
 
-    header {
-        padding: 20px;
-        background: #1b1b1b;
-        border-bottom: 1px solid #333;
-    }
-
-    header h1 {
-        margin: 0;
-    }
-
-    header p {
-        margin: 6px 0 0;
-        color: #aaa;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 1100px;
-        margin: auto;
-        padding: 25px 20px;
-    }
-
-    .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 25px;
-        flex-wrap: wrap;
-    }
-
-    .top-bar h2 {
-        margin: 0;
-    }
-
-    button {
-        border: none;
-        border-radius: 8px;
-        padding: 10px 15px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-
-    .refresh {
-        background: #fff;
-        color: #111;
-    }
-
-    .logout {
-        background: #333;
-        color: #fff;
-    }
-
-    #message {
-        margin-bottom: 20px;
-        color: #aaa;
-    }
-
-    .uploads {
-        display: grid;
-        gap: 18px;
-    }
-
-    .upload-card {
-        background: #1c1c1c;
-        border: 1px solid #333;
-        border-radius: 14px;
-        padding: 20px;
-    }
-
-    .upload-card h3 {
-        margin-top: 0;
-        margin-bottom: 8px;
-    }
-
-    .upload-card p {
-        color: #bbb;
-        line-height: 1.5;
-    }
-
-    .status {
-        display: inline-block;
-        padding: 5px 9px;
-        border-radius: 20px;
-        background: #333;
-        font-size: 13px;
-        margin-bottom: 12px;
-    }
-
-    .actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 18px;
-    }
-
-    .approve {
-        background: #fff;
-        color: #111;
-    }
-
-    .reject {
-        background: #555;
-        color: #fff;
-    }
-
-    .delete {
-        background: #8b0000;
-        color: #fff;
-    }
-
-    .empty {
-        text-align: center;
-        padding: 50px 20px;
-        color: #888;
-        background: #1c1c1c;
-        border-radius: 14px;
-    }
-
-    @media (max-width: 600px) {
+        header {
+            padding: 20px;
+            background: #1b1b1b;
+            border-bottom: 1px solid #333;
+        }
 
         header h1 {
-            font-size: 24px;
+            margin: 0;
+        }
+
+        header p {
+            margin: 6px 0 0;
+            color: #aaa;
         }
 
         .container {
-            padding: 20px 14px;
-        }
-
-        .upload-card {
-            padding: 16px;
-        }
-
-        .actions button {
             width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 20px;
         }
 
-        .top-bar > div {
-            width: 100%;
+        .top-bar {
             display: flex;
-            gap: 8px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
-        .top-bar > div button {
-            flex: 1;
+        .top-bar h2 {
+            margin: 0;
         }
-    }
-</style>
-```
 
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .refresh {
+            background: #fff;
+            color: #111;
+        }
+
+        .logout {
+            background: #333;
+            color: #fff;
+        }
+
+        #message {
+            margin-bottom: 20px;
+            color: #aaa;
+        }
+
+        .uploads {
+            display: grid;
+            gap: 18px;
+        }
+
+        .upload-card {
+            background: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .upload-card h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .upload-card p {
+            color: #bbb;
+            line-height: 1.5;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 20px;
+            background: #333;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .approve {
+            background: #fff;
+            color: #111;
+        }
+
+        .reject {
+            background: #555;
+            color: #fff;
+        }
+
+        .delete {
+            background: #8b0000;
+            color: #fff;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 50px 20px;
+            color: #888;
+            background: #1c1c1c;
+            border-radius: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 20px 14px;
+            }
+
+            .upload-card {
+                padding: 16px;
+            }
+
+            .actions button {
+                width: 100%;
+            }
+
+            .top-bar > div {
+                width: 100%;
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .top-bar > div button {
+                flex: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -191,50 +188,48 @@
 
 <main class="container">
 
-```
-<div class="top-bar">
+    <div class="top-bar">
 
-    <h2>Submitted Creations</h2>
+        <h2>Submitted Creations</h2>
 
-    <div>
+        <div>
 
-        <button
-            class="refresh"
-            id="refreshButton"
-            type="button"
-        >
-            Refresh
-        </button>
+            <button
+                class="refresh"
+                id="refreshButton"
+                type="button"
+            >
+                Refresh
+            </button>
 
-        <button
-            class="refresh"
-            id="thumbnailButton"
-            type="button"
-        >
-            Generate Thumbnails
-        </button>
+            <button
+                class="refresh"
+                id="thumbnailButton"
+                type="button"
+            >
+                Generate Thumbnails
+            </button>
 
-        <button
-            class="logout"
-            id="logoutButton"
-            type="button"
-        >
-            Logout
-        </button>
+            <button
+                class="logout"
+                id="logoutButton"
+                type="button"
+            >
+                Logout
+            </button>
+
+        </div>
 
     </div>
 
-</div>
+    <div id="message">
+        Loading uploads...
+    </div>
 
-<div id="message">
-    Loading uploads...
-</div>
-
-<div
-    id="uploads"
-    class="uploads"
-></div>
-```
+    <div
+        id="uploads"
+        class="uploads"
+    ></div>
 
 </main>
 
@@ -339,6 +334,11 @@ async function loadUploads() {
         );
 
     } catch (error) {
+
+        console.error(
+            "LOAD UPLOADS ERROR:",
+            error
+        );
 
         message.textContent =
             error.message ||
@@ -641,6 +641,20 @@ async function updateUpload(
         const data =
             await response.json();
 
+        if (
+            response.status === 401
+        ) {
+
+            sessionStorage.removeItem(
+                "youngPrinceAdminToken"
+            );
+
+            window.location.href =
+                "admin.html";
+
+            return;
+        }
+
         if (!response.ok) {
 
             throw new Error(
@@ -652,6 +666,11 @@ async function updateUpload(
         await loadUploads();
 
     } catch (error) {
+
+        console.error(
+            "UPDATE UPLOAD ERROR:",
+            error
+        );
 
         alert(
             error.message ||
@@ -686,4 +705,112 @@ async function deleteUpload(
                 API_BASE_URL +
                 `/api/admin/uploads/${id}`,
                 {
-                    me
+                    method: "DELETE",
+
+                    headers: {
+                        "Authorization":
+                            "Bearer " + token
+                    }
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (
+            response.status === 401
+        ) {
+
+            sessionStorage.removeItem(
+                "youngPrinceAdminToken"
+            );
+
+            window.location.href =
+                "admin.html";
+
+            return;
+        }
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                "Delete failed."
+            );
+        }
+
+        await loadUploads();
+
+    } catch (error) {
+
+        console.error(
+            "DELETE UPLOAD ERROR:",
+            error
+        );
+
+        alert(
+            error.message ||
+            "Unable to delete upload."
+        );
+
+    }
+}
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHtml(
+    value
+) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+refreshButton.addEventListener(
+    "click",
+    loadUploads
+);
+
+thumbnailButton.addEventListener(
+    "click",
+    generateMissingThumbnails
+);
+
+logoutButton.addEventListener(
+    "click",
+    function () {
+
+        sessionStorage.removeItem(
+            "youngPrinceAdminToken"
+        );
+
+        window.location.href =
+            "admin.html";
+
+    }
+);
+
+
+/* =========================
+   START
+========================= */
+
+loadUploads();
+
+</script>
+
+</body>
+</html>
