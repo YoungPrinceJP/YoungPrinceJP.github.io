@@ -3021,7 +3021,7 @@ console.log(
     API_BASE_URL
 );
 
- /* =========================
+/* =========================
    COMMUNITY CREATIONS
 ========================= */
 
@@ -3080,7 +3080,28 @@ async function loadCommunityCreations() {
                 upload.id +
                 "/file";
 
+
+            /*
+                PUBLIC THUMBNAIL
+
+                The thumbnail is safe to display publicly.
+
+                The original fileUrl remains protected
+                and is only requested after login.
+            */
+
+            const thumbnailUrl =
+                upload.thumbnailUrl ||
+                (
+                    API_BASE_URL +
+                    "/api/uploads/" +
+                    upload.id +
+                    "/thumbnail"
+                );
+
+
             let mediaHTML = "";
+
 
             /* =========================
                IMAGE
@@ -3097,38 +3118,51 @@ async function loadCommunityCreations() {
                         data-file-url="${fileUrl}"
                         style="
                             cursor: pointer;
+                            position: relative;
                             height: 260px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            overflow: hidden;
                             background: rgba(255,255,255,0.05);
-                            color: white;
-                            text-align: center;
-                            padding: 20px;
-                            box-sizing: border-box;
                         "
                     >
-                        <div>
-                            <div style="font-size: 48px; margin-bottom: 10px;">
-                                🖼️
-                            </div>
 
-                            <strong>
-                                Image Creation
-                            </strong>
+                        <img
+                            src="${thumbnailUrl}"
+                            alt="${escapeCommunityText(
+                                upload.title ||
+                                upload.name ||
+                                "Community creation"
+                            )}"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                            "
+                            loading="lazy"
+                        >
 
-                            <div style="
-                                margin-top: 8px;
-                                font-size: 13px;
-                                opacity: 0.7;
-                            ">
-                                Sign in to view
-                            </div>
+                        <div style="
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            padding: 10px;
+                            background: linear-gradient(
+                                transparent,
+                                rgba(0,0,0,0.7)
+                            );
+                            color: white;
+                            font-size: 13px;
+                            text-align: center;
+                        ">
+                            🔒 Sign in to view full image
                         </div>
+
                     </div>
                 `;
 
             }
+
 
             /* =========================
                VIDEO
@@ -3147,40 +3181,76 @@ async function loadCommunityCreations() {
                             position: relative;
                             cursor: pointer;
                             height: 260px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            overflow: hidden;
                             background: rgba(0,0,0,0.35);
-                            color: white;
-                            text-align: center;
                         "
                     >
 
-                        <div>
+                        <img
+                            src="${thumbnailUrl}"
+                            alt="${escapeCommunityText(
+                                upload.title ||
+                                upload.name ||
+                                "Community video"
+                            )}"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                            "
+                            loading="lazy"
+                        >
+
+                        <div style="
+                            position: absolute;
+                            inset: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: rgba(0,0,0,0.18);
+                        ">
+
                             <div style="
-                                font-size: 55px;
-                                margin-bottom: 10px;
+                                width: 64px;
+                                height: 64px;
+                                border-radius: 50%;
+                                background: rgba(0,0,0,0.7);
+                                color: white;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 28px;
+                                padding-left: 4px;
+                                box-sizing: border-box;
                             ">
                                 ▶
                             </div>
 
-                            <strong>
-                                Video Creation
-                            </strong>
+                        </div>
 
-                            <div style="
-                                margin-top: 8px;
-                                font-size: 13px;
-                                opacity: 0.7;
-                            ">
-                                Sign in to watch
-                            </div>
+                        <div style="
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            padding: 10px;
+                            background: linear-gradient(
+                                transparent,
+                                rgba(0,0,0,0.75)
+                            );
+                            color: white;
+                            font-size: 13px;
+                            text-align: center;
+                        ">
+                            🔒 Sign in to watch
                         </div>
 
                     </div>
                 `;
 
             }
+
 
             /* =========================
                AUDIO
@@ -3199,8 +3269,16 @@ async function loadCommunityCreations() {
                             cursor: pointer;
                         "
                     >
+
+                        <div style="
+                            font-size: 48px;
+                            margin-bottom: 10px;
+                        ">
+                            🎵
+                        </div>
+
                         <strong>
-                            🎵 Music
+                            Music
                         </strong>
 
                         <p style="
@@ -3209,10 +3287,12 @@ async function loadCommunityCreations() {
                         ">
                             Sign in to listen
                         </p>
+
                     </div>
                 `;
 
             }
+
 
             /* =========================
                OTHER FILES
@@ -3228,7 +3308,11 @@ async function loadCommunityCreations() {
                             cursor: pointer;
                         "
                     >
-                        <div style="font-size: 40px;">
+
+                        <div style="
+                            font-size: 40px;
+                            margin-bottom: 10px;
+                        ">
                             📄
                         </div>
 
@@ -3242,6 +3326,7 @@ async function loadCommunityCreations() {
                         ">
                             Sign in to open
                         </p>
+
                     </div>
                 `;
 
@@ -3259,7 +3344,8 @@ async function loadCommunityCreations() {
 
                     <span class="community-category">
                         ${escapeCommunityText(
-                            upload.category || "Community"
+                            upload.category ||
+                            "Community"
                         )}
                     </span>
 
@@ -3302,10 +3388,15 @@ async function loadCommunityCreations() {
 
             const communityImage =
                 card.querySelector(
-                    ".community-media"
+                    "[data-file-url]"
                 );
 
-            if (communityImage) {
+
+            if (
+                communityImage &&
+                upload.mimeType &&
+                upload.mimeType.startsWith("image/")
+            ) {
 
                 communityImage.addEventListener(
                     "click",
@@ -3316,6 +3407,7 @@ async function loadCommunityCreations() {
                         } =
                             await supabaseClient.auth.getSession();
 
+
                         if (!session) {
 
                             window.location.href =
@@ -3323,6 +3415,7 @@ async function loadCommunityCreations() {
 
                             return;
                         }
+
 
                         try {
 
@@ -3338,6 +3431,7 @@ async function loadCommunityCreations() {
                                     }
                                 );
 
+
                             if (!response.ok) {
 
                                 throw new Error(
@@ -3346,13 +3440,16 @@ async function loadCommunityCreations() {
 
                             }
 
+
                             const blob =
                                 await response.blob();
+
 
                             const protectedUrl =
                                 URL.createObjectURL(
                                     blob
                                 );
+
 
                             openCommunityImage(
                                 protectedUrl,
@@ -3361,12 +3458,14 @@ async function loadCommunityCreations() {
                                 "Community creation"
                             );
 
+
                         } catch (error) {
 
                             console.error(
                                 "COMMUNITY IMAGE ACCESS ERROR:",
                                 error
                             );
+
 
                             alert(
                                 "Unable to open this creation. Please try again."
@@ -3389,6 +3488,7 @@ async function loadCommunityCreations() {
                     "[data-video-url]"
                 );
 
+
             if (communityVideo) {
 
                 communityVideo.addEventListener(
@@ -3400,6 +3500,7 @@ async function loadCommunityCreations() {
                         } =
                             await supabaseClient.auth.getSession();
 
+
                         if (!session) {
 
                             window.location.href =
@@ -3408,8 +3509,10 @@ async function loadCommunityCreations() {
                             return;
                         }
 
+
                         const videoUrl =
                             communityVideo.dataset.videoUrl;
+
 
                         try {
 
@@ -3425,6 +3528,7 @@ async function loadCommunityCreations() {
                                     }
                                 );
 
+
                             if (!response.ok) {
 
                                 throw new Error(
@@ -3433,34 +3537,16 @@ async function loadCommunityCreations() {
 
                             }
 
+
                             const blob =
                                 await response.blob();
+
 
                             const protectedUrl =
                                 URL.createObjectURL(
                                     blob
                                 );
 
-                            const video =
-                                document.createElement(
-                                    "video"
-                                );
-
-                            video.src =
-                                protectedUrl;
-
-                            video.controls = true;
-                            video.autoplay = true;
-                            video.playsInline = true;
-
-                            video.style.width =
-                                "100%";
-
-                            video.style.maxHeight =
-                                "80vh";
-
-                            video.style.borderRadius =
-                                "8px";
 
                             const viewer =
                                 document.createElement(
@@ -3469,6 +3555,7 @@ async function loadCommunityCreations() {
 
                             viewer.className =
                                 "community-image-viewer";
+
 
                             const closeButton =
                                 document.createElement(
@@ -3489,6 +3576,37 @@ async function loadCommunityCreations() {
                                 "Close video"
                             );
 
+
+                            const video =
+                                document.createElement(
+                                    "video"
+                                );
+
+                            video.src =
+                                protectedUrl;
+
+                            video.controls =
+                                true;
+
+                            video.autoplay =
+                                true;
+
+                            video.playsInline =
+                                true;
+
+                            video.style.width =
+                                "100%";
+
+                            video.style.maxWidth =
+                                "900px";
+
+                            video.style.maxHeight =
+                                "80vh";
+
+                            video.style.borderRadius =
+                                "8px";
+
+
                             viewer.appendChild(
                                 closeButton
                             );
@@ -3497,22 +3615,28 @@ async function loadCommunityCreations() {
                                 video
                             );
 
+
                             document.body.appendChild(
                                 viewer
                             );
 
+
+                            function closeVideo() {
+
+                                URL.revokeObjectURL(
+                                    protectedUrl
+                                );
+
+                                viewer.remove();
+
+                            }
+
+
                             closeButton.addEventListener(
                                 "click",
-                                function() {
-
-                                    URL.revokeObjectURL(
-                                        protectedUrl
-                                    );
-
-                                    viewer.remove();
-
-                                }
+                                closeVideo
                             );
+
 
                             viewer.addEventListener(
                                 "click",
@@ -3523,18 +3647,27 @@ async function loadCommunityCreations() {
                                         viewer
                                     ) {
 
-                                        URL.revokeObjectURL(
-                                            protectedUrl
-                                        );
-
-                                        viewer.remove();
+                                        closeVideo();
 
                                     }
 
                                 }
                             );
 
-                            await video.play();
+
+                            try {
+
+                                await video.play();
+
+                            } catch {
+
+                                /*
+                                    Browser may block
+                                    autoplay. Controls remain
+                                    available.
+                                */
+
+                            }
 
                         } catch (error) {
 
@@ -3542,6 +3675,7 @@ async function loadCommunityCreations() {
                                 "COMMUNITY VIDEO ACCESS ERROR:",
                                 error
                             );
+
 
                             alert(
                                 "Unable to play this video. Please try again."
@@ -3564,8 +3698,24 @@ async function loadCommunityCreations() {
                     "[data-audio-url], [data-file-url]"
                 );
 
+
             protectedFiles.forEach(
                 function(protectedElement) {
+
+                    /*
+                        Images are already handled above.
+                        Skip them here.
+                    */
+
+                    if (
+                        upload.mimeType &&
+                        upload.mimeType.startsWith("image/")
+                    ) {
+
+                        return;
+
+                    }
+
 
                     protectedElement.addEventListener(
                         "click",
@@ -3576,17 +3726,21 @@ async function loadCommunityCreations() {
                             } =
                                 await supabaseClient.auth.getSession();
 
+
                             if (!session) {
 
                                 window.location.href =
                                     "login.html";
 
                                 return;
+
                             }
+
 
                             const protectedFileUrl =
                                 protectedElement.dataset.fileUrl ||
                                 protectedElement.dataset.audioUrl;
+
 
                             try {
 
@@ -3602,6 +3756,7 @@ async function loadCommunityCreations() {
                                         }
                                     );
 
+
                                 if (!response.ok) {
 
                                     throw new Error(
@@ -3610,13 +3765,16 @@ async function loadCommunityCreations() {
 
                                 }
 
+
                                 const blob =
                                     await response.blob();
+
 
                                 const protectedUrl =
                                     URL.createObjectURL(
                                         blob
                                     );
+
 
                                 if (
                                     upload.mimeType &&
@@ -3624,6 +3782,15 @@ async function loadCommunityCreations() {
                                         "audio/"
                                     )
                                 ) {
+
+                                    const viewer =
+                                        document.createElement(
+                                            "div"
+                                        );
+
+                                    viewer.className =
+                                        "community-image-viewer";
+
 
                                     const audio =
                                         document.createElement(
@@ -3642,21 +3809,52 @@ async function loadCommunityCreations() {
                                     audio.style.width =
                                         "100%";
 
-                                    const viewer =
+
+                                    const closeButton =
                                         document.createElement(
-                                            "div"
+                                            "button"
                                         );
 
-                                    viewer.className =
-                                        "community-image-viewer";
+                                    closeButton.type =
+                                        "button";
+
+                                    closeButton.className =
+                                        "community-image-close";
+
+                                    closeButton.textContent =
+                                        "×";
+
+
+                                    viewer.appendChild(
+                                        closeButton
+                                    );
 
                                     viewer.appendChild(
                                         audio
                                     );
 
+
                                     document.body.appendChild(
                                         viewer
                                     );
+
+
+                                    function closeAudio() {
+
+                                        URL.revokeObjectURL(
+                                            protectedUrl
+                                        );
+
+                                        viewer.remove();
+
+                                    }
+
+
+                                    closeButton.addEventListener(
+                                        "click",
+                                        closeAudio
+                                    );
+
 
                                 } else {
 
@@ -3672,9 +3870,28 @@ async function loadCommunityCreations() {
                                         upload.name ||
                                         "community-file";
 
+                                    document.body.appendChild(
+                                        link
+                                    );
+
                                     link.click();
 
+                                    link.remove();
+
+
+                                    setTimeout(
+                                        function() {
+
+                                            URL.revokeObjectURL(
+                                                protectedUrl
+                                            );
+
+                                        },
+                                        1000
+                                    );
+
                                 }
+
 
                             } catch (error) {
 
@@ -3682,6 +3899,7 @@ async function loadCommunityCreations() {
                                     "COMMUNITY FILE ACCESS ERROR:",
                                     error
                                 );
+
 
                                 alert(
                                     "Unable to open this file. Please try again."
@@ -3696,7 +3914,9 @@ async function loadCommunityCreations() {
             );
 
 
-            container.appendChild(card);
+            container.appendChild(
+                card
+            );
 
         });
 
@@ -3706,6 +3926,7 @@ async function loadCommunityCreations() {
             "COMMUNITY UPLOAD ERROR:",
             error
         );
+
 
         container.innerHTML = `
             <div class="community-error">
@@ -3750,6 +3971,7 @@ function openCommunityImage(
     viewer.className =
         "community-image-viewer";
 
+
     viewer.innerHTML = `
         <button
             type="button"
@@ -3768,14 +3990,17 @@ function openCommunityImage(
         <div class="community-image-title"></div>
     `;
 
+
     viewer.querySelector(
         ".community-image-title"
     ).textContent =
         imageTitle;
 
+
     document.body.appendChild(
         viewer
     );
+
 
     viewer.addEventListener(
         "click",
