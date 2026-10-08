@@ -3248,14 +3248,51 @@ if (communityVideo) {
                 communityVideo.querySelector("video");
 
             if (video) {
-                video.src = videoUrl;
-                video.controls = true;
-                video.muted = false;
-                video.play();
-            }
 
+    try {
+
+        const response =
+            await fetch(
+                videoUrl,
+                {
+                    headers: {
+                        Authorization:
+                            "Bearer " +
+                            session.access_token
+                    }
+                }
+            );
+
+        if (!response.ok) {
+            throw new Error(
+                "Unable to access this video."
+            );
         }
-    );
+
+        const blob =
+            await response.blob();
+
+        const protectedUrl =
+            URL.createObjectURL(blob);
+
+        video.src = protectedUrl;
+        video.controls = true;
+        video.muted = false;
+
+        await video.play();
+
+    } catch (error) {
+
+        console.error(
+            "COMMUNITY VIDEO ACCESS ERROR:",
+            error
+        );
+
+        alert(
+            "Unable to play this video. Please try again."
+        );
+
+    }
 
 }
             
