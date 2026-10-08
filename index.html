@@ -3262,27 +3262,66 @@ if (communityVideo) {
 if (communityImage) {
 
     communityImage.addEventListener(
-    "click",
-    async function() {
+        "click",
+        async function() {
 
-        const {
-            data: { user }
-        } = await supabaseClient.auth.getUser();
+            const {
+                data: { session }
+            } = await supabaseClient.auth.getSession();
 
-        if (!user) {
-            window.location.href = "login.html";
-            return;
+            if (!session) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            try {
+
+                const response =
+                    await fetch(
+                        fileUrl,
+                        {
+                            headers: {
+                                Authorization:
+                                    "Bearer " +
+                                    session.access_token
+                            }
+                        }
+                    );
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Unable to access this creation."
+                    );
+                }
+
+                const blob =
+                    await response.blob();
+
+                const protectedUrl =
+                    URL.createObjectURL(blob);
+
+                openCommunityImage(
+                    protectedUrl,
+                    upload.title ||
+                    upload.name ||
+                    "Community creation"
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "COMMUNITY IMAGE ACCESS ERROR:",
+                    error
+                );
+
+                alert(
+                    "Unable to open this creation. Please try again."
+                );
+
+            }
+
         }
-
-        openCommunityImage(
-            fileUrl,
-            upload.title ||
-            upload.name ||
-            "Community creation"
-        );
-
-    }
-);
+    );
 
 }
             
