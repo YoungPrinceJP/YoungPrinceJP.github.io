@@ -1,94 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!-- =========================
-         GOOGLE ANALYTICS
-    ========================= -->
-
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXSHPJ9YSR"></script>
-
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-TXSHPJ9YSR');
     </script>
 
-    <!-- End Google Analytics -->
-
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Young Prince | Creative Stories & Entertainment
-    </title>
-
-    <meta
-        name="description"
-        content="Young Prince — original stories, series, manga, music, videos and creative works."
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Young Prince — original stories, series, manga, music, videos and creative works.">
+    <meta name="theme-color" content="#241337">
+    <title>Young Prince | Creative Stories &amp; Entertainment</title>
 
     <style>
-
-        /* =========================
-           GLOBAL
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #f8f6f2;
             color: #17151f;
             overflow-x: hidden;
+            line-height: 1.55;
         }
 
-        body.menu-open {
-            overflow: hidden;
-        }
+        body.menu-open { overflow: hidden; }
 
-        a {
-            text-decoration: none;
-        }
+        a { text-decoration: none; }
+        button, input, textarea, select { font-family: inherit; }
 
-        button,
-        input,
-        textarea,
-        select {
-            font-family: inherit;
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
+        /* HEADER */
         header {
-            background: rgba(255,255,255,0.94);
+            background: rgba(255,255,255,.96);
             backdrop-filter: blur(12px);
-            color: #17151f;
-            padding: 18px 6%;
+            padding: 12px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -96,149 +50,88 @@
         }
 
         .header {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 25px;
+            gap: 18px;
             position: relative;
         }
 
         .logo {
             color: #241337;
-            font-size: 26px;
+            font-size: 21px;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1.4px;
+            white-space: nowrap;
         }
 
-        .logo::after {
-            content: " ✦";
-            color: #c79a27;
-        }
-
-
-        /* =========================
-           DESKTOP NAV
-        ========================= */
+        .logo::after { content: " ✦"; color: #c79a27; }
 
         nav {
             display: flex;
-            gap: 24px;
+            align-items: center;
+            gap: 19px;
             flex-wrap: wrap;
         }
 
         nav a {
             color: #4d4655;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            transition: .2s ease;
+            transition: color .2s ease;
         }
 
-        nav a:hover {
-            color: #7b3f98;
-        }
-
-
-        /* =========================
-           MOBILE MENU BUTTON
-        ========================= */
+        nav a:hover { color: #7b3f98; }
 
         .mobile-menu-button {
             display: none;
-
             border: none;
             background: transparent;
-
             color: #241337;
-
-            font-size: 30px;
+            font-size: 26px;
             line-height: 1;
-
             cursor: pointer;
-
             padding: 5px;
-
-            -webkit-tap-highlight-color: transparent;
         }
 
-        .mobile-menu-button:focus {
-            outline: 2px solid #7b3f98;
-            outline-offset: 4px;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
+        /* COMPACT HERO */
         .hero {
             position: relative;
             overflow: hidden;
             color: white;
-
-            padding: 125px 20px 135px;
-
+            padding: 72px 20px 78px;
             text-align: center;
-
             background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(199,154,39,.35),
-                    transparent 28%
-                ),
+                radial-gradient(circle at 15% 20%, rgba(199,154,39,.28), transparent 28%),
+                radial-gradient(circle at 85% 20%, rgba(44,102,150,.30), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(123,63,152,.30), transparent 40%),
+                linear-gradient(135deg, #332047, #53356f 30%, #285878 65%, #8b4f72);
+        }
 
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(44,102,150,.35),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 50% 100%,
-                    rgba(123,63,152,.35),
-                    transparent 40%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #332047 0%,
-                    #53356f 30%,
-                    #285878 65%,
-                    #8b4f72 100%
-                );
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .hero::before {
-            content: "";
-
-            position: absolute;
-
-            width: 420px;
-            height: 420px;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,.07);
-
-            top: -220px;
-            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,.06);
+            top: -175px;
+            left: -80px;
         }
 
         .hero::after {
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,.06);
-
-            bottom: -190px;
-            right: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,.05);
+            bottom: -150px;
+            right: -65px;
         }
 
         .hero small,
@@ -250,3795 +143,634 @@
 
         .hero small {
             display: block;
-
             color: #f4d78b;
-
-            font-size: 13px;
+            font-size: 11px;
             font-weight: bold;
-
-            letter-spacing: 4px;
-
-            margin-bottom: 22px;
+            letter-spacing: 3px;
+            margin-bottom: 17px;
         }
 
         .hero h1 {
-            font-size: clamp(52px, 10vw, 105px);
-
-            line-height: .88;
-
-            letter-spacing: -5px;
-
-            margin-bottom: 30px;
-
-            text-shadow:
-                0 8px 35px rgba(0,0,0,.25);
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -2.5px;
+            margin-bottom: 19px;
+            text-shadow: 0 6px 25px rgba(0,0,0,.22);
         }
 
         .hero p {
-            max-width: 680px;
-
+            max-width: 580px;
             margin: auto;
-
-            color: rgba(255,255,255,.88);
-
-            font-size: 19px;
-
-            line-height: 1.7;
+            color: rgba(255,255,255,.9);
+            font-size: 16px;
+            line-height: 1.65;
         }
 
-
-        /* =========================
-           MAIN
-        ========================= */
-
+        /* MAIN AND SECTIONS */
         main {
-            max-width: 1200px;
-
+            max-width: 1120px;
             margin: auto;
-
-            padding: 85px 20px;
+            padding: 52px 22px;
         }
 
-        .section {
-            margin-bottom: 100px;
-        }
+        .section { margin-bottom: 64px; }
 
-        .section-heading {
-            margin-bottom: 35px;
-        }
+        .section-heading { margin-bottom: 23px; }
 
         .section-heading h2 {
             color: #241337;
-
-            font-size: 42px;
-
-            margin-bottom: 10px;
+            font-size: clamp(25px, 3.2vw, 32px);
+            line-height: 1.2;
+            margin-bottom: 7px;
         }
 
         .section-heading p {
             color: #756d79;
-
-            font-size: 16px;
+            font-size: 14px;
         }
 
-
-        /* =========================
-           STORY CARDS
-        ========================= */
-
+        /* STORY CARDS */
         .stories {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 30px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
         }
 
         .story-card {
-            background: #ffffff;
-
-            border-radius: 22px;
-
+            background: #fff;
+            border-radius: 15px;
             overflow: hidden;
-
             border: 1px solid #e7e0e8;
-
-            box-shadow:
-                0 12px 35px rgba(48,31,64,.08);
-
-            transition: .3s ease;
+            box-shadow: 0 7px 22px rgba(48,31,64,.07);
+            transition: transform .25s ease, box-shadow .25s ease;
+            min-width: 0;
         }
 
         .story-card:hover {
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 22px 50px rgba(48,31,64,.15);
+            transform: translateY(-4px);
+            box-shadow: 0 13px 30px rgba(48,31,64,.12);
         }
 
         .story-cover {
-            min-height: 330px;
-
+            min-height: 215px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
-            padding: 35px;
-
+            padding: 24px;
             color: white;
-
             position: relative;
-
             overflow: hidden;
         }
 
-        .story-cover::before {
+        .story-cover::before,
+        .story-cover::after {
             content: "";
-
             position: absolute;
-
-            width: 280px;
-            height: 280px;
-
             border-radius: 50%;
+            pointer-events: none;
+        }
 
-            background: rgba(255,255,255,.10);
-
-            top: -120px;
-            right: -80px;
+        .story-cover::before {
+            width: 220px;
+            height: 220px;
+            background: rgba(255,255,255,.09);
+            top: -100px;
+            right: -60px;
         }
 
         .story-cover::after {
-            content: "";
-
-            position: absolute;
-
-            width: 220px;
-            height: 220px;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,.08);
-
-            bottom: -120px;
-            left: -70px;
+            width: 170px;
+            height: 170px;
+            background: rgba(255,255,255,.07);
+            bottom: -90px;
+            left: -55px;
         }
 
         .primordia-cover {
             background:
-                radial-gradient(
-                    circle at 50% 35%,
-                    rgba(191,222,135,.45),
-                    transparent 25%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #183c38,
-                    #246b60 45%,
-                    #477d58 75%,
-                    #8c7b39
-                );
+                radial-gradient(circle at 50% 35%, rgba(191,222,135,.4), transparent 25%),
+                linear-gradient(135deg, #183c38, #246b60 45%, #477d58 75%, #8c7b39);
         }
 
         .blood-cover {
             background:
-                radial-gradient(
-                    circle at 70% 30%,
-                    rgba(230,90,80,.45),
-                    transparent 25%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #421d35,
-                    #702d43 42%,
-                    #9b3f42 70%,
-                    #c27b3d
-                );
+                radial-gradient(circle at 70% 30%, rgba(230,90,80,.4), transparent 25%),
+                linear-gradient(135deg, #421d35, #702d43 42%, #9b3f42 70%, #c27b3d);
         }
 
         .story-cover h3 {
             position: relative;
-
             z-index: 2;
-
-            font-size: 46px;
-
+            font-size: clamp(27px, 3.2vw, 37px);
             line-height: 1.05;
-
-            letter-spacing: 2px;
-
-            text-shadow:
-                0 6px 20px rgba(0,0,0,.25);
+            letter-spacing: 1.3px;
+            text-shadow: 0 5px 18px rgba(0,0,0,.25);
         }
 
-        .blood-cover h3 {
-            font-size: 36px;
-        }
+        .blood-cover h3 { font-size: clamp(24px, 2.8vw, 31px); }
 
-        .story-info {
-            padding: 32px;
-        }
+        .story-info { padding: 22px; }
 
         .category {
-            font-size: 12px;
-
+            font-size: 10px;
             font-weight: bold;
-
-            letter-spacing: 2px;
-
+            letter-spacing: 1.4px;
             color: #7b3f98;
-
             text-transform: uppercase;
-
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .story-info h3 {
             color: #241337;
-
-            font-size: 28px;
-
-            margin-bottom: 14px;
+            font-size: 21px;
+            line-height: 1.3;
+            margin-bottom: 10px;
         }
 
         .story-info p {
             color: #665f6b;
-
-            line-height: 1.7;
-
-            margin-bottom: 25px;
+            font-size: 13px;
+            line-height: 1.65;
+            margin-bottom: 17px;
         }
 
         .button {
             display: inline-block;
-
             color: white;
-
-            padding: 12px 21px;
-
-            border-radius: 8px;
-
-            font-size: 14px;
-
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-size: 12px;
             font-weight: bold;
-
             transition: .2s ease;
         }
 
-        .story-card:first-child .button {
-            background: #287267;
-        }
+        .story-card:first-child .button { background: #287267; }
+        .story-card:first-child .button:hover { background: #1e5a52; }
+        .story-card:last-child .button { background: #9b3f42; }
+        .story-card:last-child .button:hover { background: #7d3035; }
 
-        .story-card:first-child .button:hover {
-            background: #1e5a52;
-        }
-
-        .story-card:last-child .button {
-            background: #9b3f42;
-        }
-
-        .story-card:last-child .button:hover {
-            background: #7d3035;
-        }
-
-
-        /* =========================
-           EXPLORE
-        ========================= */
-
+        /* EXPLORE */
         .explore {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 15px;
         }
 
         .explore-card {
             background: white;
-
             border: 1px solid #e5dfe7;
-
-            border-radius: 18px;
-
-            padding: 32px 20px;
-
+            border-radius: 13px;
+            padding: 23px 15px;
             text-align: center;
-
-            box-shadow:
-                0 8px 25px rgba(48,31,64,.06);
-
-            transition: .25s ease;
+            box-shadow: 0 5px 18px rgba(48,31,64,.05);
+            transition: transform .2s ease, box-shadow .2s ease;
+            min-width: 0;
         }
 
         .explore-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 15px 35px rgba(48,31,64,.12);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(48,31,64,.1);
         }
 
         .explore-icon {
-            width: 68px;
-            height: 68px;
-
+            width: 52px;
+            height: 52px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
-            margin: 0 auto 18px;
-
-            border-radius: 18px;
-
-            font-size: 32px;
-
+            margin: 0 auto 13px;
+            border-radius: 14px;
+            font-size: 25px;
             background: #f1e9f5;
         }
 
-        .explore-card:nth-child(1)
-        .explore-icon {
-            background: #e5f2ef;
-        }
-
-        .explore-card:nth-child(2)
-        .explore-icon {
-            background: #f8e7eb;
-        }
-
-        .explore-card:nth-child(3)
-        .explore-icon {
-            background: #e7edf8;
-        }
-
-        .explore-card:nth-child(4)
-        .explore-icon {
-            background: #f8f0d9;
-        }
+        .explore-card:nth-child(1) .explore-icon { background: #e5f2ef; }
+        .explore-card:nth-child(2) .explore-icon { background: #f8e7eb; }
+        .explore-card:nth-child(3) .explore-icon { background: #e7edf8; }
+        .explore-card:nth-child(4) .explore-icon { background: #f8f0d9; }
 
         .explore-card h3 {
             color: #241337;
-
-            margin-bottom: 9px;
-
-            font-size: 19px;
+            margin-bottom: 6px;
+            font-size: 16px;
         }
 
         .explore-card p {
             color: #77707b;
-
-            font-size: 14px;
-
-            line-height: 1.6;
+            font-size: 12px;
+            line-height: 1.5;
         }
 
-
-        /* =========================
-           UPLOAD CENTER
-        ========================= */
-
-        .upload-section {
-            background:
-
-                radial-gradient(
-                    circle at 10% 10%,
-                    rgba(199,154,39,.16),
-                    transparent 25%
-                ),
-
-                radial-gradient(
-                    circle at 90% 90%,
-                    rgba(123,63,152,.12),
-                    transparent 30%
-                ),
-
-                #ffffff;
-
-            border: 1px solid #e5dfe7;
-
-            border-radius: 28px;
-
-            padding: 55px;
-
-            box-shadow:
-                0 15px 45px rgba(48,31,64,.08);
+        /* COMMUNITY CREATIONS */
+        .community-uploads {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 22px;
         }
 
-        .upload-heading {
-            text-align: center;
-
-            margin-bottom: 35px;
+        .community-card {
+            background: #fff;
+            border: 1px solid #e7e0e8;
+            border-radius: 13px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(48,31,64,.06);
+            transition: transform .2s ease, box-shadow .2s ease;
+            min-width: 0;
         }
 
-        .upload-heading .upload-icon {
-            width: 78px;
-            height: 78px;
+        .community-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,.12);
+        }
 
-            border-radius: 22px;
+        .community-media {
+            width: 100%;
+            max-width: 100%;
+            height: 180px;
+            display: block;
+            object-fit: contain;
+            margin: 0 auto;
+        }
 
+        .community-card-content { padding: 14px; }
+
+        .community-card-content h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+            line-height: 1.35;
+            overflow-wrap: anywhere;
+        }
+
+        .community-card-content p {
+            margin: 5px 0;
+            font-size: 13px;
+            line-height: 1.5;
+            opacity: .85;
+            overflow-wrap: anywhere;
+        }
+
+        .community-author {
+            font-size: 12px;
+            opacity: .7;
+            margin-top: 9px !important;
+        }
+
+        .community-category {
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 10px;
+            text-transform: uppercase;
             background: #f1e9f5;
+            color: #59316e;
+        }
 
+        .community-loading,
+        .community-empty,
+        .community-error {
+            text-align: center;
+            padding: 22px 12px;
+            color: #756d79;
+            font-size: 13px;
+        }
+
+        .community-video { width: 100%; display: block; }
+        .community-audio { width: calc(100% - 24px); margin: 12px; }
+
+        .community-file {
+            padding: 22px 15px;
+            text-align: center;
+        }
+
+        .community-image-viewer {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0,0,0,.92);
             display: flex;
-
             align-items: center;
             justify-content: center;
-
-            font-size: 36px;
-
-            margin: 0 auto 18px;
+            padding: 20px;
         }
 
-        .upload-heading h2 {
-            color: #241337;
-
-            font-size: 40px;
-
-            margin-bottom: 10px;
+        .community-full-image {
+            max-width: 95%;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
-        .upload-heading p {
-            color: #756d79;
-
-            line-height: 1.7;
-        }
-
-        .upload-form {
-            max-width: 800px;
-
-            margin: auto;
-        }
-
-        .form-row {
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 18px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-
-            color: #30243a;
-
-            font-weight: bold;
-
-            font-size: 14px;
-
-            margin-bottom: 8px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-
-            padding: 14px 15px;
-
-            border: 1px solid #ddd5e0;
-
-            border-radius: 10px;
-
-            background: #fbfafc;
-
-            color: #241337;
-
-            font-family: inherit;
-
-            font-size: 14px;
-
-            outline: none;
-
-            transition: .2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #7b3f98;
-
-            box-shadow:
-                0 0 0 3px rgba(123,63,152,.08);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-
-            resize: vertical;
-        }
-
-        .file-box {
-            border: 2px dashed #d5c9da;
-
-            border-radius: 15px;
-
-            padding: 30px;
-
-            text-align: center;
-
-            background: #fcfbfd;
-
-            cursor: pointer;
-
-            transition: .2s ease;
-        }
-
-        .file-box:hover {
-            border-color: #7b3f98;
-
-            background: #faf7fc;
-        }
-
-        .file-box input {
-            display: none;
-        }
-
-        .file-box strong {
-            display: block;
-
-            color: #241337;
-
-            margin-bottom: 7px;
-        }
-
-        .file-box span {
-            color: #827887;
-
-            font-size: 13px;
-        }
-
-        .file-name {
-            margin-top: 12px;
-
-            color: #287267;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            word-break: break-word;
-        }
-
-        .upload-button {
-            width: 100%;
-
+        .community-image-close {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            width: 42px;
+            height: 42px;
             border: none;
-
-            padding: 15px;
-
-            border-radius: 10px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #7b3f98,
-                    #4d2d69
-                );
-
+            border-radius: 50%;
+            background: rgba(255,255,255,.15);
             color: white;
-
-            font-size: 15px;
-
-            font-weight: bold;
-
+            font-size: 29px;
+            line-height: 1;
             cursor: pointer;
-
-            transition: .2s ease;
         }
 
-        .upload-button:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 10px 25px rgba(77,45,105,.2);
-        }
-
-        .upload-button:disabled {
-            opacity: .65;
-
-            cursor: not-allowed;
-
-            transform: none;
-        }
-
-        .upload-status {
-            display: none;
-
-            margin-top: 15px;
-
-            padding: 13px;
-
-            border-radius: 10px;
-
+        .community-image-title {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
             text-align: center;
-
+            color: white;
             font-size: 14px;
         }
 
-        .upload-status.success {
-            display: block;
-
-            background: #e5f2ef;
-
-            color: #21685e;
-        }
-
-        .upload-status.error {
-            display: block;
-
-            background: #f8e7eb;
-
-            color: #8c303d;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
+        /* ABOUT */
         .about {
             position: relative;
-
             overflow: hidden;
-
             color: white;
-
-            border-radius: 24px;
-
-            padding: 75px 30px;
-
+            border-radius: 18px;
+            padding: 48px 25px;
             text-align: center;
-
             background:
-
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(199,154,39,.35),
-                    transparent 25%
-                ),
-
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(39,113,103,.4),
-                    transparent 30%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #4a285f,
-                    #713d72,
-                    #376c70
-                );
+                radial-gradient(circle at 20% 20%, rgba(199,154,39,.28), transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(39,113,103,.35), transparent 30%),
+                linear-gradient(135deg, #4a285f, #713d72, #376c70);
         }
 
         .about h2 {
             position: relative;
-
             z-index: 2;
-
-            font-size: 40px;
-
-            margin-bottom: 18px;
+            font-size: 29px;
+            margin-bottom: 12px;
         }
 
         .about p {
             position: relative;
-
             z-index: 2;
-
-            max-width: 720px;
-
+            max-width: 680px;
             margin: auto;
-
-            color: rgba(255,255,255,.88);
-
-            line-height: 1.9;
-
-            font-size: 17px;
+            color: rgba(255,255,255,.9);
+            line-height: 1.75;
+            font-size: 14px;
         }
 
-
-        /* =========================
-           KAEL AI BUTTON
-        ========================= */
-
+        /* KAEL BUTTON AND LABEL */
         .kael-button {
             position: fixed;
-
-            right: 25px;
-            bottom: 25px;
-
-            width: 64px;
-            height: 64px;
-
+            right: 20px;
+            bottom: 20px;
+            width: 54px;
+            height: 54px;
             border: none;
-
             border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #7b3f98,
-                    #3e2a63
-                );
-
+            background: linear-gradient(135deg, #7b3f98, #3e2a63);
             color: white;
-
-            font-size: 28px;
-
+            font-size: 24px;
             cursor: pointer;
-
             z-index: 3000;
-
-            box-shadow:
-                0 10px 35px rgba(48,31,64,.3);
-
-            transition: .25s ease;
-
-            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 8px 25px rgba(48,31,64,.25);
+            transition: .2s ease;
         }
 
-        .kael-button:hover {
-            transform: scale(1.08);
-        }
+        .kael-button:hover { transform: scale(1.05); }
 
         .kael-button:focus {
             outline: 2px solid #c79a27;
-
             outline-offset: 4px;
         }
 
         .kael-label {
             position: fixed;
-
-            right: 25px;
-            bottom: 96px;
-
+            right: 20px;
+            bottom: 82px;
             background: #241337;
-
             color: white;
-
-            padding: 8px 13px;
-
-            border-radius: 8px;
-
-            font-size: 12px;
-
+            padding: 6px 10px;
+            border-radius: 7px;
+            font-size: 11px;
             font-weight: bold;
-
             z-index: 2999;
-
-            box-shadow:
-                0 5px 20px rgba(0,0,0,.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,.12);
         }
 
-
-        /* =========================
-           KAEL CHAT
-        ========================= */
-
+        /* KAEL CHAT */
         .kael-chat {
             position: fixed;
-
-            right: 25px;
-
-            bottom: 100px;
-
-            width: 360px;
-
-            height: 500px;
-
-            max-height:
-                calc(100dvh - 120px);
-
+            right: 20px;
+            bottom: 85px;
+            width: 330px;
+            height: 440px;
+            max-height: calc(100dvh - 110px);
             background: white;
-
-            border-radius: 22px;
-
+            border-radius: 17px;
             overflow: hidden;
-
             z-index: 2998;
-
-            box-shadow:
-                0 25px 70px rgba(30,20,40,.25);
-
+            box-shadow: 0 20px 55px rgba(30,20,40,.23);
             border: 1px solid #e2dbe5;
-
             display: none;
-
             flex-direction: column;
         }
 
-        .kael-chat.active {
-            display: flex;
-        }
+        .kael-chat.active { display: flex; }
 
         .kael-header {
-            background:
-                linear-gradient(
-                    135deg,
-                    #7b3f98,
-                    #3e2a63
-                );
-
+            background: linear-gradient(135deg, #7b3f98, #3e2a63);
             color: white;
-
-            padding: 18px;
-
+            padding: 13px;
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             flex-shrink: 0;
         }
 
         .kael-title {
             display: flex;
-
             align-items: center;
-
-            gap: 11px;
+            gap: 9px;
         }
 
         .kael-avatar {
-            width: 40px;
-            height: 40px;
-
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-
-            background:
-                rgba(255,255,255,.18);
-
+            background: rgba(255,255,255,.18);
             display: flex;
-
             align-items: center;
             justify-content: center;
-
-            font-size: 21px;
+            font-size: 18px;
         }
 
-        .kael-title strong {
-            display: block;
-
-            font-size: 15px;
-        }
-
-        .kael-title span {
-            display: block;
-
-            font-size: 11px;
-
-            opacity: .8;
-
-            margin-top: 3px;
-        }
+        .kael-title strong { display: block; font-size: 14px; }
+        .kael-title span { display: block; font-size: 10px; opacity: .8; margin-top: 2px; }
 
         .kael-close {
             background: none;
-
             border: none;
-
             color: white;
-
-            font-size: 26px;
-
+            font-size: 24px;
             cursor: pointer;
-
-            width: 35px;
-            height: 35px;
-
-            border-radius: 8px;
-
-            -webkit-tap-highlight-color: transparent;
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
         }
 
-        .kael-close:hover {
-            background: rgba(255,255,255,.12);
-        }
-
-
-        /* =========================
-           KAEL MESSAGES
-        ========================= */
+        .kael-close:hover { background: rgba(255,255,255,.12); }
 
         .kael-messages {
             flex: 1;
-
-            padding: 18px;
-
+            padding: 14px;
             overflow-y: auto;
-
             background: #faf8fb;
-
             overscroll-behavior: contain;
         }
 
         .kael-message {
             max-width: 85%;
-
-            padding: 11px 13px;
-
-            margin-bottom: 12px;
-
-            border-radius: 13px;
-
-            font-size: 13px;
-
-            line-height: 1.55;
-
+            padding: 9px 11px;
+            margin-bottom: 10px;
+            border-radius: 11px;
+            font-size: 12px;
+            line-height: 1.5;
             white-space: pre-wrap;
-
             word-break: break-word;
         }
 
         .kael-message.bot {
             background: #eee7f2;
-
             color: #30243a;
-
             border-bottom-left-radius: 4px;
         }
 
         .kael-message.user {
             margin-left: auto;
-
             background: #7b3f98;
-
             color: white;
-
             border-bottom-right-radius: 4px;
         }
 
-
-        /* =========================
-           KAEL INPUT
-        ========================= */
-
         .kael-input-area {
             display: flex;
-
             align-items: flex-end;
-
-            gap: 8px;
-
-            padding: 12px;
-
+            gap: 7px;
+            padding: 10px;
             border-top: 1px solid #e7e0e8;
-
             background: white;
-
             flex-shrink: 0;
         }
 
         .kael-input {
             flex: 1;
-
-            min-height: 42px;
-
-            max-height: 120px;
-
+            min-width: 0;
+            min-height: 40px;
+            max-height: 110px;
             resize: none;
-
             border: 1px solid #ddd5e0;
-
-            border-radius: 10px;
-
-            padding: 11px 12px;
-
+            border-radius: 9px;
+            padding: 10px;
             outline: none;
-
             font-family: inherit;
-
             font-size: 13px;
-
             line-height: 1.4;
-
             overflow-y: auto;
         }
 
         .kael-input:focus {
             border-color: #7b3f98;
-
-            box-shadow:
-                0 0 0 3px rgba(123,63,152,.08);
+            box-shadow: 0 0 0 3px rgba(123,63,152,.08);
         }
 
         .kael-send {
-            width: 43px;
-            min-width: 43px;
-
-            height: 42px;
-
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
             border: none;
-
-            border-radius: 10px;
-
+            border-radius: 9px;
             background: #7b3f98;
-
             color: white;
-
             cursor: pointer;
-
-            font-size: 17px;
-
-            transition: .2s ease;
+            font-size: 16px;
         }
 
-        .kael-send:hover {
-            background: #64307e;
-        }
+        .kael-send:hover { background: #64307e; }
+        .kael-send:disabled { opacity: .5; cursor: not-allowed; }
 
-        .kael-send:disabled {
-            opacity: .5;
-
-            cursor: not-allowed;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
+        /* FOOTER */
         footer {
             background: #21172b;
-
             color: #aaa0b1;
-
             text-align: center;
-
-            padding: 40px 20px;
+            padding: 27px 15px;
+            font-size: 12px;
         }
 
-        footer strong {
-            color: #f4d78b;
-        }
+        footer strong { color: #f4d78b; }
 
-
-        /* =========================
-           TABLET / MOBILE
-        ========================= */
-
+        /* TABLET */
         @media (max-width: 800px) {
+            header { padding: 11px 5%; }
 
-            header {
-                padding:
-                    15px 5%;
-            }
-
-            .header {
-                flex-direction: row;
-
-                justify-content:
-                    space-between;
-            }
-
-
-            /* MOBILE MENU */
-
-            .mobile-menu-button {
-                display: block;
-            }
+            .mobile-menu-button { display: block; }
 
             nav {
                 position: absolute;
-
                 top: calc(100% + 1px);
-
                 left: 0;
                 right: 0;
-
                 display: none;
-
                 flex-direction: column;
-
+                align-items: stretch;
                 gap: 0;
-
-                background:
-                    rgba(255,255,255,.98);
-
-                backdrop-filter:
-                    blur(15px);
-
-                border-bottom:
-                    1px solid #e6e0e8;
-
-                box-shadow:
-                    0 15px 30px
-                    rgba(48,31,64,.12);
-
-                padding: 10px 6%;
+                background: rgba(255,255,255,.98);
+                backdrop-filter: blur(15px);
+                border-bottom: 1px solid #e6e0e8;
+                box-shadow: 0 12px 25px rgba(48,31,64,.1);
+                padding: 8px 6%;
             }
 
-            nav.mobile-open {
-                display: flex;
-            }
+            nav.mobile-open { display: flex; }
 
             nav a {
                 display: block;
-
-                padding: 16px 5px;
-
-                font-size: 15px;
-
-                border-bottom:
-                    1px solid #eee8f0;
+                padding: 12px 4px;
+                font-size: 14px;
+                border-bottom: 1px solid #eee8f0;
             }
 
-            nav a:last-child {
-                border-bottom: none;
-            }
+            nav a:last-child { border-bottom: none; }
 
+            .hero { padding: 60px 18px 65px; }
 
-            /* HERO */
+            main { padding: 40px 18px; }
 
-            .hero {
-                padding:
-                    90px 20px 100px;
-            }
+            .section { margin-bottom: 50px; }
 
+            .stories { gap: 16px; }
 
-            /* STORIES */
+            .story-cover { min-height: 190px; }
 
-            .stories {
-                grid-template-columns: 1fr;
-            }
+            .story-info { padding: 17px; }
 
+            .explore { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-            /* EXPLORE */
+            .upload-section { padding: 28px 18px; }
 
-            .explore {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-
-            /* MAIN */
-
-            main {
-                padding-top: 65px;
-            }
-
-
-            /* UPLOAD */
-
-            .upload-section {
-                padding: 35px 20px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
+            .form-row { grid-template-columns: 1fr; }
         }
 
-
-        /* =========================
-           SMALL MOBILE
-        ========================= */
-
+        /* SMALL MOBILE */
         @media (max-width: 500px) {
+            header { padding: 11px 15px; }
 
-            header {
-                padding:
-                    14px 18px;
-            }
+            .logo { font-size: 18px; letter-spacing: 1px; }
 
-            .logo {
-                font-size: 23px;
+            .hero { padding: 49px 16px 54px; }
 
-                letter-spacing: 1.5px;
-            }
-
-
-            /* HERO */
-
-            .hero h1 {
-                font-size: 54px;
-
-                letter-spacing: -3px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-
-            /* SECTIONS */
-
-            .section-heading h2 {
-                font-size: 34px;
-            }
-
-
-            /* STORIES */
-
-            .story-cover {
-                min-height: 250px;
-            }
-
-            .story-cover h3 {
-                font-size: 37px;
-            }
-
-            .blood-cover h3 {
-                font-size: 29px;
-            }
-
-
-            /* EXPLORE */
-
-            .explore {
-                grid-template-columns: 1fr;
-            }
-
-
-            /* ABOUT */
-
-            .about {
-                padding:
-                    55px 22px;
-            }
-
-            .about h2 {
-                font-size: 32px;
-            }
-
-
-            /* UPLOAD */
-
-            .upload-heading h2 {
-                font-size: 32px;
-            }
-
-            .upload-section {
-                border-radius: 20px;
-            }
-
-
-            /* KAEL */
-
-            .kael-chat {
-                left: 12px;
-
-                right: 12px;
-
-                bottom: 88px;
-
-                width: auto;
-
-                height:
-                    min(70dvh, 560px);
-
-                max-height:
-                    calc(100dvh - 105px);
-
-                border-radius: 18px;
-            }
-
-            .kael-button {
-                right: 18px;
-
-                bottom: 18px;
-
-                width: 58px;
-                height: 58px;
-            }
-
-            .kael-label {
-                right: 18px;
-
-                bottom: 82px;
-            }
-
-            .kael-input {
-                font-size: 16px;
-            }
-
-            .kael-messages {
-                padding: 14px;
-            }
-
-            .kael-message {
-                max-width: 90%;
-            }
-
-        }
-
-        /* =========================
-   COMMUNITY CREATIONS
-========================= */
-
-.community-uploads {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    margin-top: 30px;
-}
-
-.community-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.community-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.community-media {
-    width: 100%;
-    max-width: 100%;
-    height: 260px;
-    display: block;
-    object-fit: contain;
-    margin: 0 auto;
-}
-
-.community-card-content {
-    padding: 18px;
-}
-
-.community-card-content h3 {
-    margin: 0 0 8px;
-    font-size: 20px;
-}
-
-.community-card-content p {
-    margin: 6px 0;
-    line-height: 1.5;
-    opacity: 0.85;
-}
-
-.community-author {
-    font-size: 14px;
-    opacity: 0.7;
-    margin-top: 12px !important;
-}
-
-.community-category {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.community-loading,
-.community-empty,
-.community-error {
-    text-align: center;
-    padding: 30px 15px;
-    opacity: 0.75;
-}
-
-.community-video {
-    width: 100%;
-    display: block;
-}
-
-.community-audio {
-    width: calc(100% - 30px);
-    margin: 15px;
-}
-
-.community-file {
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.community-image-viewer {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: rgba(0, 0, 0, 0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-}
-
-.community-full-image {
-    max-width: 95%;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.community-image-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    font-size: 32px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.community-image-title {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    text-align: center;
-    color: white;
-    font-size: 16px;
-}
-        
-    </style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-    <div class="header">
-
-        <a
-            href="index.html"
-            class="logo"
-        >
-            YOUNG PRINCE
-        </a>
-
-
-        <!-- MOBILE MENU BUTTON -->
-
-        <button
-            class="mobile-menu-button"
-            id="mobileMenuButton"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            type="button"
-        >
-            ☰
-        </button>
-
-
-<!-- NAVIGATION -->
-
-<nav id="mainNav">
-
-    <a href="index.html">
-        Home
-    </a>
-
-    <a href="#stories">
-        Stories
-    </a>
-
-    <a href="#explore">
-        Explore
-    </a>
-
-    <a href="upload.html">
-        Upload
-    </a>
-
-    <a href="account.html">
-        Account
-    </a>
-
-    <a href="#about">
-        About
-    </a>
-
-</nav>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-    <small>
-        WELCOME TO MY CREATIVE WORLD
-    </small>
-
-    <h1>
-        YOUNG<br>
-        PRINCE
-    </h1>
-
-    <p>
-        Stories, manga, drama, music, videos and imagination —
-        all in one place.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<main>
-
-
-    <!-- =========================
-         FEATURED STORIES
-    ========================= -->
-
-    <section
-        class="section"
-        id="stories"
-    >
-
-        <div class="section-heading">
-
-            <h2>
-                Featured Stories
-            </h2>
-
-            <p>
-                Discover original worlds and stories created by Young Prince.
-            </p>
-
-        </div>
-
-
-        <div class="stories">
-
-
-            <!-- PRIMORDIA -->
-
-            <article class="story-card">
-
-                <a href="primordia.html">
-
-                    <div class="story-cover primordia-cover">
-
-                        <h3>
-                            PRIMORDIA
-                        </h3>
-
-                    </div>
-
-                </a>
-
-
-                <div class="story-info">
-
-                    <div class="category">
-                        Manga • Fantasy
-                    </div>
-
-                    <h3>
-                        PRIMORDIA
-                    </h3>
-
-                    <p>
-                        An ancient power awakens.
-                        A mysterious boy discovers that his destiny
-                        may be connected to forces older than the elements.
-                    </p>
-
-                    <a
-                        href="primordia.html"
-                        class="button"
-                    >
-                        Read PRIMORDIA →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- BLOOD ON BROAD STREET -->
-
-            <article class="story-card">
-
-                <a href="blood-on-broad-street.html">
-
-                    <div class="story-cover blood-cover">
-
-                        <h3>
-                            BLOOD ON<br>
-                            BROAD STREET
-                        </h3>
-
-                    </div>
-
-                </a>
-
-
-                <div class="story-info">
-
-                    <div class="category">
-                        Crime • Drama • Series
-                    </div>
-
-                    <h3>
-                        BLOOD ON BROAD STREET
-                    </h3>
-
-                    <p>
-                        Before the blood, there was friendship.
-                        Three boys grow up in Lagos City,
-                        unaware of the events waiting ahead.
-                    </p>
-
-                    <a
-                        href="blood-on-broad-street.html"
-                        class="button"
-                    >
-                        Read Blood on Broad Street →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         EXPLORE
-    ========================= -->
-
-    <section
-        class="section"
-        id="explore"
-    >
-
-        <div class="section-heading">
-
-            <h2>
-                Explore
-            </h2>
-
-            <p>
-                Stories, videos, artwork, music and more.
-            </p>
-
-        </div>
-
-
-        <div class="explore">
-
-
-            <div class="explore-card">
-
-                <div class="explore-icon">
-                    📖
-                </div>
-
-                <h3>
-                    Stories
-                </h3>
-
-                <p>
-                    Original stories and written worlds.
-                </p>
-
-            </div>
-
-
-            <div class="explore-card">
-
-                <div class="explore-icon">
-                    🎬
-                </div>
-
-                <h3>
-                    Videos
-                </h3>
-
-                <p>
-                    Creative videos and future adaptations.
-                </p>
-
-            </div>
-
-
-            <div class="explore-card">
-
-                <div class="explore-icon">
-                    🖼️
-                </div>
-
-                <h3>
-                    Images
-                </h3>
-
-                <p>
-                    Artwork, designs and visual creations.
-                </p>
-
-            </div>
-
-
-            <div class="explore-card">
-
-                <div class="explore-icon">
-                    🎵
-                </div>
-
-                <h3>
-                    Music
-                </h3>
-
-                <p>
-                    Original songs and musical projects.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-        <!-- =========================
-         COMMUNITY CREATIONS
-    ========================= -->
-
-    <section
-        class="section"
-        id="community"
-    >
-
-        <div class="section-heading">
-
-            <h2>
-                Community Creations
-            </h2>
-
-            <p>
-                Discover creations shared by the Young Prince community.
-            </p>
-
-        </div>
-
-
-        <div
-            id="communityUploads"
-            class="community-uploads"
-        >
-
-            <div class="community-loading">
-                Loading community creations...
-            </div>
-
-        </div>
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section
-        class="section"
-        id="about"
-    >
-
-        <div class="about">
-
-            <h2>
-                About Young Prince
-            </h2>
-
-            <p>
-                Young Prince is a creative platform built around
-                storytelling, imagination and entertainment.
-                From manga and crime drama to music, videos and
-                visual art, this is a place where original ideas
-                can grow into complete worlds.
-            </p>
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        © 2026 <strong>Young Prince</strong>.
-        All rights reserved.
-    </p>
-
-</footer>
-
-
-<!-- =========================
-     KAEL AI LABEL
-========================= -->
-
-<div
-    class="kael-label"
-    id="kaelLabel"
->
-    Ask Kael
-</div>
-
-
-<!-- =========================
-     KAEL AI BUTTON
-========================= -->
-
-<button
-    class="kael-button"
-    id="kaelButton"
-    aria-label="Open Kael AI"
-    type="button"
->
-    ✨
-</button>
-
-
-<!-- =========================
-     KAEL CHAT
-========================= -->
-
-<div
-    class="kael-chat"
-    id="kaelChat"
->
-
-
-    <div class="kael-header">
-
-        <div class="kael-title">
-
-            <div class="kael-avatar">
-                ✨
-            </div>
-
-            <div>
-
-                <strong>
-                    Kael
-                </strong>
-
-                <span>
-                    General AI Assistant
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <button
-            class="kael-close"
-            id="kaelClose"
-            type="button"
-            aria-label="Close Kael"
-        >
-            ×
-        </button>
-
-    </div>
-
-
-    <div
-        class="kael-messages"
-        id="kaelMessages"
-    >
-
-        <div class="kael-message bot">
-
-            Hello! I'm <strong>Kael</strong>. 👋<br><br>
-
-            Ask me anything — I can help with
-            questions, ideas, writing, explanations,
-            learning and much more.
-
-        </div>
-
-    </div>
-
-
-    <div class="kael-input-area">
-
-        <textarea
-            class="kael-input"
-            id="kaelInput"
-            placeholder="Ask Kael anything..."
-            autocomplete="off"
-            rows="1"
-            aria-label="Message Kael"
-        ></textarea>
-
-
-        <button
-            class="kael-send"
-            id="kaelSend"
-            type="button"
-            aria-label="Send message"
-        >
-            ➤
-        </button>
-
-    </div>
-
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
-
-<script>
-
-/* =========================================================
-   API CONFIGURATION
-========================================================= */
-
-/*
-    IMPORTANT:
-
-    Your GitHub Pages website cannot safely contain
-    your private AI API key.
-
-    Kael and the upload system will connect to your
-    separate backend server.
-
-    AFTER WE CREATE THE RENDER SERVER:
-
-    Change this:
-
-        https://YOUR-BACKEND.onrender.com
-
-    to your real Render backend address.
-
-*/
-
-const API_BASE_URL =
-    "https://youngprincejp-github-io.onrender.com";
-
-    const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
-);
-    
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const mobileMenuButton =
-    document.getElementById(
-        "mobileMenuButton"
-    );
-
-const mainNav =
-    document.getElementById(
-        "mainNav"
-    );
-
-
-function closeMobileMenu() {
-
-    mainNav.classList.remove(
-        "mobile-open"
-    );
-
-    mobileMenuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    mobileMenuButton.textContent =
-        "☰";
-
-    document.body.classList.remove(
-        "menu-open"
-    );
-
-}
-
-
-mobileMenuButton.addEventListener(
-    "click",
-    function () {
-
-        const isOpen =
-            mainNav.classList.toggle(
-                "mobile-open"
-            );
-
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
-
-
-        mobileMenuButton.textContent =
-            isOpen ? "✕" : "☰";
-
-
-        document.body.classList.toggle(
-            "menu-open",
-            isOpen
-        );
-
-    }
-);
-
-
-mainNav
-    .querySelectorAll("a")
-    .forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            closeMobileMenu
-        );
-
-    });
-
-
-/* Close menu when screen becomes desktop */
-
-window.addEventListener(
-    "resize",
-    function () {
-
-        if (window.innerWidth > 800) {
-            closeMobileMenu();
-        }
-
-    }
-);
-
-
-/* =========================================================
-   FILE NAME DISPLAY
-========================================================= */
-
-const uploadFile =
-    document.getElementById(
-        "uploadFile"
-    );
-
-const fileName =
-    document.getElementById(
-        "fileName"
-    );
-
-
-uploadFile?.addEventListener(
-    "change",
-    function () {
-
-        if (this.files.length > 0) {
-
-            const file =
-                this.files[0];
-
-            const sizeMB =
-                file.size /
-                (1024 * 1024);
-
-
-            fileName.textContent =
-                "Selected: " +
-                file.name +
-                " (" +
-                sizeMB.toFixed(2) +
-                " MB)";
-
-        } else {
-
-            fileName.textContent =
-                "";
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   UPLOAD SYSTEM
-========================================================= */
-
-const uploadForm =
-    document.getElementById(
-        "uploadForm"
-    );
-
-const uploadStatus =
-    document.getElementById(
-        "uploadStatus"
-    );
-
-const uploadButton =
-    document.getElementById(
-        "uploadButton"
-    );
-
-
-uploadForm?.addEventListener(
-    "submit",
-    async function (event) {
-
-        event.preventDefault();
-
-
-        const file =
-            uploadFile.files[0];
-
-
-        if (!file) {
-
-            showUploadStatus(
-                "Please choose a file first.",
-                "error"
-            );
-
-            return;
-
-        }
-
-
-        /*
-            Frontend size warning.
-
-            The backend will also enforce
-            its own maximum upload size.
-        */
-
-        const maxSizeMB = 25;
-
-        if (
-            file.size >
-            maxSizeMB * 1024 * 1024
-        ) {
-
-            showUploadStatus(
-                "This file is larger than the 25 MB upload limit.",
-                "error"
-            );
-
-            return;
-
-        }
-
-
-        const formData =
-            new FormData(
-                uploadForm
-            );
-
-
-        uploadButton.disabled =
-            true;
-
-        uploadButton.textContent =
-            "⏳ Uploading...";
-
-
-        showUploadStatus(
-            "Uploading your creation...",
-            "success"
-        );
-
-
-        try {
-
-            const response =
-                await fetch(
-                    API_BASE_URL +
-                    "/api/upload",
-                    {
-
-                        method: "POST",
-
-                        body: formData
-
-                    }
-                );
-
-
-            let result = {};
-
-            try {
-
-                result =
-                    await response.json();
-
-            } catch {
-
-                result = {};
-
-            }
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    result.message ||
-                    "Upload failed."
-                );
-
-            }
-
-
-            showUploadStatus(
-                result.message ||
-                "Your creation has been uploaded successfully!",
-                "success"
-            );
-
-
-            uploadForm.reset();
-
-            fileName.textContent =
-                "";
-
-
-        } catch (error) {
-
-            console.error(
-                "Upload error:",
-                error
-            );
-
-
-            showUploadStatus(
-                "The upload server is unavailable right now. Please try again later.",
-                "error"
-            );
-
-        }
-
-
-        uploadButton.disabled =
-            false;
-
-        uploadButton.textContent =
-            "📤 Submit Upload";
-
-    }
-);
-
-
-function showUploadStatus(
-    message,
-    type
-) {
-
-    uploadStatus.textContent =
-        message;
-
-    uploadStatus.className =
-        "upload-status " +
-        type;
-
-}
-
-
-/* =========================================================
-   KAEL ELEMENTS
-========================================================= */
-
-const kaelButton =
-    document.getElementById(
-        "kaelButton"
-    );
-
-const kaelChat =
-    document.getElementById(
-        "kaelChat"
-    );
-
-const kaelClose =
-    document.getElementById(
-        "kaelClose"
-    );
-
-const kaelLabel =
-    document.getElementById(
-        "kaelLabel"
-    );
-
-const kaelInput =
-    document.getElementById(
-        "kaelInput"
-    );
-
-const kaelSend =
-    document.getElementById(
-        "kaelSend"
-    );
-
-const kaelMessages =
-    document.getElementById(
-        "kaelMessages"
-    );
-
-
-/* =========================================================
-   OPEN KAEL
-========================================================= */
-
-function openKael() {
-
-    kaelChat.classList.add(
-        "active"
-    );
-
-    kaelLabel.style.display =
-        "none";
-
-
-    setTimeout(
-        function () {
-
-            kaelInput.focus({
-                preventScroll: true
-            });
-
-        },
-        100
-    );
-
-}
-
-
-kaelButton.addEventListener(
-    "click",
-    function () {
-
-        if (
-            kaelChat.classList.contains(
-                "active"
-            )
-        ) {
-
-            closeKael();
-
-        } else {
-
-            openKael();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE KAEL
-========================================================= */
-
-function closeKael() {
-
-    kaelChat.classList.remove(
-        "active"
-    );
-
-    kaelLabel.style.display =
-        "block";
-
-}
-
-
-kaelClose.addEventListener(
-    "click",
-    closeKael
-);
-
-
-/* =========================================================
-   SEND KAEL MESSAGE
-========================================================= */
-
-async function sendKaelMessage() {
-
-    const message =
-        kaelInput.value.trim();
-
-
-    if (!message) {
-        return;
-    }
-
-
-    addKaelMessage(
-        message,
-        "user"
-    );
-
-
-    kaelInput.value =
-        "";
-
-    kaelInput.style.height =
-        "42px";
-
-
-    kaelSend.disabled =
-        true;
-
-
-    const loadingMessage =
-        addKaelMessage(
-            "Kael is thinking...",
-            "bot"
-        );
-
-
-    try {
-
-        const response =
-            await fetch(
-                API_BASE_URL +
-                "/api/kael",
-                {
-
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body:
-                        JSON.stringify({
-                            message:
-                                message
-                        })
-
-                }
-            );
-
-
-        let data = {};
-
-        try {
-
-            data =
-                await response.json();
-
-        } catch {
-
-            data = {};
-
-        }
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                data.message ||
-                "Kael server unavailable."
-            );
-
-        }
-
-
-        loadingMessage.textContent =
-            data.reply ||
-            "I couldn't generate a response.";
-
-
-    } catch (error) {
-
-        console.error(
-            "Kael error:",
-            error
-        );
-
-
-        loadingMessage.textContent =
-            "I'm having trouble connecting right now. Please try again in a moment.";
-
-    }
-
-
-    kaelSend.disabled =
-        false;
-
-
-    setTimeout(
-        function () {
-
-            kaelInput.focus({
-                preventScroll: true
-            });
-
-        },
-        50
-    );
-
-}
-
-
-/* =========================================================
-   ENTER TO SEND
-========================================================= */
-
-kaelInput.addEventListener(
-    "keydown",
-    function (event) {
-
-        /*
-            Enter = send
-
-            Shift + Enter =
-            new line
-        */
-
-        if (
-            event.key === "Enter" &&
-            !event.shiftKey
-        ) {
-
-            event.preventDefault();
-
-            sendKaelMessage();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   AUTO-GROW KAEL TEXTAREA
-========================================================= */
-
-kaelInput.addEventListener(
-    "input",
-    function () {
-
-        this.style.height =
-            "42px";
-
-        this.style.height =
-            Math.min(
-                this.scrollHeight,
-                120
-            ) + "px";
-
-    }
-);
-
-
-/* =========================================================
-   SEND BUTTON
-========================================================= */
-
-kaelSend.addEventListener(
-    "click",
-    sendKaelMessage
-);
-
-
-/* =========================================================
-   ESCAPE KEY
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        if (event.key !== "Escape") {
-            return;
-        }
-
-
-        if (
-            kaelChat.classList.contains(
-                "active"
-            )
-        ) {
-
-            closeKael();
-
-        }
-
-
-        if (
-            mainNav.classList.contains(
-                "mobile-open"
-            )
-        ) {
-
-            closeMobileMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   ADD KAEL MESSAGE
-========================================================= */
-
-function addKaelMessage(
-    message,
-    sender
-) {
-
-    const messageElement =
-        document.createElement(
-            "div"
-        );
-
-
-    messageElement.className =
-        "kael-message " +
-        sender;
-
-
-    /*
-        textContent is intentionally used
-        so Kael responses cannot inject
-        arbitrary HTML into the page.
-    */
-
-    messageElement.textContent =
-        message;
-
-
-    kaelMessages.appendChild(
-        messageElement
-    );
-
-
-    kaelMessages.scrollTop =
-        kaelMessages.scrollHeight;
-
-
-    return messageElement;
-
-}
-
-
-/* =========================================================
-   MOBILE KEYBOARD SUPPORT
-========================================================= */
-
-if (
-    window.visualViewport
-) {
-
-    function updateKaelForKeyboard() {
-
-        if (
-            window.innerWidth > 500 ||
-            !kaelChat.classList.contains(
-                "active"
-            )
-        ) {
-
-            return;
-
-        }
-
-
-        const viewport =
-            window.visualViewport;
-
-
-        const keyboardHeight =
-            Math.max(
-                0,
-                window.innerHeight -
-                viewport.height -
-                viewport.offsetTop
-            );
-
-
-        if (
-            keyboardHeight > 100
-        ) {
-
-            kaelChat.style.bottom =
-                (
-                    keyboardHeight +
-                    12
-                ) + "px";
-
-        } else {
-
-            kaelChat.style.bottom =
-                "88px";
-
-        }
-
-    }
-
-
-    window.visualViewport.addEventListener(
-        "resize",
-        updateKaelForKeyboard
-    );
-
-
-    window.visualViewport.addEventListener(
-        "scroll",
-        updateKaelForKeyboard
-    );
-
-}
-
-
-/* =========================================================
-   INITIAL SETUP
-========================================================= */
-
-console.log(
-    "Young Prince website loaded."
-);
-
-console.log(
-    "Kael API:",
-    API_BASE_URL
-);
-
-/* =========================
-   COMMUNITY CREATIONS
-========================= */
-
-async function loadCommunityCreations() {
-
-    const container =
-        document.getElementById("communityUploads");
-
-    if (!container) {
-        return;
-    }
-
-    try {
-
-        const response =
-            await fetch(
-                API_BASE_URL + "/api/uploads"
-            );
-
-        if (!response.ok) {
-            throw new Error(
-                "Could not load uploads."
-            );
-        }
-
-        const data =
-            await response.json();
-
-        const uploads =
-            data.uploads || [];
-
-        if (uploads.length === 0) {
-
-            container.innerHTML = `
-                <div class="community-empty">
-                    No community creations have been approved yet.
-                </div>
-            `;
-
-            return;
-        }
-
-        container.innerHTML = "";
-
-        uploads.forEach(upload => {
-
-            const card =
-                document.createElement("article");
-
-            card.className =
-                "community-card";
-
-            const fileUrl =
-                API_BASE_URL +
-                "/api/uploads/" +
-                upload.id +
-                "/file";
-
-
-            /*
-                PUBLIC THUMBNAIL
-
-                The thumbnail is safe to display publicly.
-
-                The original fileUrl remains protected
-                and is only requested after login.
-            */
-
-            const thumbnailUrl =
-                upload.thumbnailUrl ||
-                (
-                    API_BASE_URL +
-                    "/api/uploads/" +
-                    upload.id +
-                    "/thumbnail"
-                );
-
-
-            let mediaHTML = "";
-
-
-            /* =========================
-               IMAGE
-            ========================= */
-
-            if (
-                upload.mimeType &&
-                upload.mimeType.startsWith("image/")
-            ) {
-
-                mediaHTML = `
-                    <div
-                        class="community-media community-protected-preview"
-                        data-file-url="${fileUrl}"
-                        style="
-                            cursor: pointer;
-                            position: relative;
-                            height: 260px;
-                            overflow: hidden;
-                            background: rgba(255,255,255,0.05);
-                        "
-                    >
-
-                        <img
-                            src="${thumbnailUrl}"
-                            alt="${escapeCommunityText(
-                                upload.title ||
-                                upload.name ||
-                                "Community creation"
-                            )}"
-                            style="
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                display: block;
-                            "
-                            loading="lazy"
-                        >
-
-                        <div style="
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            padding: 10px;
-                            background: linear-gradient(
-                                transparent,
-                                rgba(0,0,0,0.7)
-                            );
-                            color: white;
-                            font-size: 13px;
-                            text-align: center;
-                        ">
-                            🔒 Sign in to view full image
-                        </div>
-
-                    </div>
-                `;
-
-            }
-
-
-            /* =========================
-               VIDEO
-            ========================= */
-
-            else if (
-                upload.mimeType &&
-                upload.mimeType.startsWith("video/")
-            ) {
-
-                mediaHTML = `
-                    <div
-                        class="community-video community-protected-preview"
-                        data-video-url="${fileUrl}"
-                        style="
-                            position: relative;
-                            cursor: pointer;
-                            height: 260px;
-                            overflow: hidden;
-                            background: rgba(0,0,0,0.35);
-                        "
-                    >
-
-                        <img
-                            src="${thumbnailUrl}"
-                            alt="${escapeCommunityText(
-                                upload.title ||
-                                upload.name ||
-                                "Community video"
-                            )}"
-                            style="
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                display: block;
-                            "
-                            loading="lazy"
-                        >
-
-                        <div style="
-                            position: absolute;
-                            inset: 0;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            background: rgba(0,0,0,0.18);
-                        ">
-
-                            <div style="
-                                width: 64px;
-                                height: 64px;
-                                border-radius: 50%;
-                                background: rgba(0,0,0,0.7);
-                                color: white;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                font-size: 28px;
-                                padding-left: 4px;
-                                box-sizing: border-box;
-                            ">
-                                ▶
-                            </div>
-
-                        </div>
-
-                        <div style="
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            padding: 10px;
-                            background: linear-gradient(
-                                transparent,
-                                rgba(0,0,0,0.75)
-                            );
-                            color: white;
-                            font-size: 13px;
-                            text-align: center;
-                        ">
-                            🔒 Sign in to watch
-                        </div>
-
-                    </div>
-                `;
-
-            }
-
-
-            /* =========================
-               AUDIO
-            ========================= */
-
-            else if (
-                upload.mimeType &&
-                upload.mimeType.startsWith("audio/")
-            ) {
-
-                mediaHTML = `
-                    <div
-                        class="community-file community-protected-preview"
-                        data-audio-url="${fileUrl}"
-                        style="
-                            cursor: pointer;
-                        "
-                    >
-
-                        <div style="
-                            font-size: 48px;
-                            margin-bottom: 10px;
-                        ">
-                            🎵
-                        </div>
-
-                        <strong>
-                            Music
-                        </strong>
-
-                        <p style="
-                            margin-top: 10px;
-                            opacity: 0.7;
-                        ">
-                            Sign in to listen
-                        </p>
-
-                    </div>
-                `;
-
-            }
-
-
-            /* =========================
-               OTHER FILES
-            ========================= */
-
-            else {
-
-                mediaHTML = `
-                    <div
-                        class="community-file community-protected-preview"
-                        data-file-url="${fileUrl}"
-                        style="
-                            cursor: pointer;
-                        "
-                    >
-
-                        <div style="
-                            font-size: 40px;
-                            margin-bottom: 10px;
-                        ">
-                            📄
-                        </div>
-
-                        <strong>
-                            Community File
-                        </strong>
-
-                        <p style="
-                            margin-top: 10px;
-                            opacity: 0.7;
-                        ">
-                            Sign in to open
-                        </p>
-
-                    </div>
-                `;
-
-            }
-
-
-            /* =========================
-               CARD CONTENT
-            ========================= */
-
-            card.innerHTML = `
-                ${mediaHTML}
-
-                <div class="community-card-content">
-
-                    <span class="community-category">
-                        ${escapeCommunityText(
-                            upload.category ||
-                            "Community"
-                        )}
-                    </span>
-
-                    <h3>
-                        ${escapeCommunityText(
-                            upload.title ||
-                            upload.name ||
-                            "Untitled Creation"
-                        )}
-                    </h3>
-
-                    ${
-                        upload.description
-                            ? `
-                                <p>
-                                    ${escapeCommunityText(
-                                        upload.description
-                                    )}
-                                </p>
-                            `
-                            : ""
-                    }
-
-                    <p class="community-author">
-                        Shared by ${
-                            escapeCommunityText(
-                                upload.name ||
-                                "Young Prince Community"
-                            )
-                        }
-                    </p>
-
-                </div>
-            `;
-
-
-            /* =========================
-               IMAGE ACCESS
-            ========================= */
-
-            const communityImage =
-                card.querySelector(
-                    "[data-file-url]"
-                );
-
-
-            if (
-                communityImage &&
-                upload.mimeType &&
-                upload.mimeType.startsWith("image/")
-            ) {
-
-                communityImage.addEventListener(
-                    "click",
-                    async function() {
-
-                        const {
-                            data: { session }
-                        } =
-                            await supabaseClient.auth.getSession();
-
-
-                        if (!session) {
-
-                            window.location.href =
-                                "login.html";
-
-                            return;
-                        }
-
-
-                        try {
-
-                            const response =
-                                await fetch(
-                                    fileUrl,
-                                    {
-                                        headers: {
-                                            Authorization:
-                                                "Bearer " +
-                                                session.access_token
-                                        }
-                                    }
-                                );
-
-
-                            if (!response.ok) {
-
-                                throw new Error(
-                                    "Unable to access this creation."
-                                );
-
-                            }
-
-
-                            const blob =
-                                await response.blob();
-
-
-                            const protectedUrl =
-                                URL.createObjectURL(
-                                    blob
-                                );
-
-
-                            openCommunityImage(
-                                protectedUrl,
-                                upload.title ||
-                                upload.name ||
-                                "Community creation"
-                            );
-
-
-                        } catch (error) {
-
-                            console.error(
-                                "COMMUNITY IMAGE ACCESS ERROR:",
-                                error
-                            );
-
-
-                            alert(
-                                "Unable to open this creation. Please try again."
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-
-
-            /* =========================
-               VIDEO ACCESS
-            ========================= */
-
-            const communityVideo =
-                card.querySelector(
-                    "[data-video-url]"
-                );
-
-
-            if (communityVideo) {
-
-                communityVideo.addEventListener(
-                    "click",
-                    async function() {
-
-                        const {
-                            data: { session }
-                        } =
-                            await supabaseClient.auth.getSession();
-
-
-                        if (!session) {
-
-                            window.location.href =
-                                "login.html";
-
-                            return;
-                        }
-
-
-                        const videoUrl =
-                            communityVideo.dataset.videoUrl;
-
-
-                        try {
-
-                            const response =
-                                await fetch(
-                                    videoUrl,
-                                    {
-                                        headers: {
-                                            Authorization:
-                                                "Bearer " +
-                                                session.access_token
-                                        }
-                                    }
-                                );
-
-
-                            if (!response.ok) {
-
-                                throw new Error(
-                                    "Unable to access this video."
-                                );
-
-                            }
-
-
-                            const blob =
-                                await response.blob();
-
-
-                            const protectedUrl =
-                                URL.createObjectURL(
-                                    blob
-                                );
-
-
-                            const viewer =
-                                document.createElement(
-                                    "div"
-                                );
-
-                            viewer.className =
-                                "community-image-viewer";
-
-
-                            const closeButton =
-                                document.createElement(
-                                    "button"
-                                );
-
-                            closeButton.type =
-                                "button";
-
-                            closeButton.className =
-                                "community-image-close";
-
-                            closeButton.textContent =
-                                "×";
-
-                            closeButton.setAttribute(
-                                "aria-label",
-                                "Close video"
-                            );
-
-
-                            const video =
-                                document.createElement(
-                                    "video"
-                                );
-
-                            video.src =
-                                protectedUrl;
-
-                            video.controls =
-                                true;
-
-                            video.autoplay =
-                                true;
-
-                            video.playsInline =
-                                true;
-
-                            video.style.width =
-                                "100%";
-
-                            video.style.maxWidth =
-                                "900px";
-
-                            video.style.maxHeight =
-                                "80vh";
-
-                            video.style.borderRadius =
-                                "8px";
-
-
-                            viewer.appendChild(
-                                closeButton
-                            );
-
-                            viewer.appendChild(
-                                video
-                            );
-
-
-                            document.body.appendChild(
-                                viewer
-                            );
-
-
-                            function closeVideo() {
-
-                                URL.revokeObjectURL(
-                                    protectedUrl
-                                );
-
-                                viewer.remove();
-
-                            }
-
-
-                            closeButton.addEventListener(
-                                "click",
-                                closeVideo
-                            );
-
-
-                            viewer.addEventListener(
-                                "click",
-                                function(event) {
-
-                                    if (
-                                        event.target ===
-                                        viewer
-                                    ) {
-
-                                        closeVideo();
-
-                                    }
-
-                                }
-                            );
-
-
-                            try {
-
-                                await video.play();
-
-                            } catch {
-
-                                /*
-                                    Browser may block
-                                    autoplay. Controls remain
-                                    available.
-                                */
-
-                            }
-
-                        } catch (error) {
-
-                            console.error(
-                                "COMMUNITY VIDEO ACCESS ERROR:",
-                                error
-                            );
-
-
-                            alert(
-                                "Unable to play this video. Please try again."
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-
-
-            /* =========================
-               AUDIO / OTHER FILE ACCESS
-            ========================= */
-
-            const protectedFiles =
-                card.querySelectorAll(
-                    "[data-audio-url], [data-file-url]"
-                );
-
-
-            protectedFiles.forEach(
-                function(protectedElement) {
-
-                    /*
-                        Images are already handled above.
-                        Skip them here.
-                    */
-
-                    if (
-                        upload.mimeType &&
-                        upload.mimeType.startsWith("image/")
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    protectedElement.addEventListener(
-                        "click",
-                        async function() {
-
-                            const {
-                                data: { session }
-                            } =
-                                await supabaseClient.auth.getSession();
-
-
-                            if (!session) {
-
-                                window.location.href =
-                                    "login.html";
-
-                                return;
-
-                            }
-
-
-                            const protectedFileUrl =
-                                protectedElement.dataset.fileUrl ||
-                                protectedElement.dataset.audioUrl;
-
-
-                            try {
-
-                                const response =
-                                    await fetch(
-                                        protectedFileUrl,
-                                        {
-                                            headers: {
-                                                Authorization:
-                                                    "Bearer " +
-                                                    session.access_token
-                                            }
-                                        }
-                                    );
-
-
-                                if (!response.ok) {
-
-                                    throw new Error(
-                                        "Unable to access this file."
-                                    );
-
-                                }
-
-
-                                const blob =
-                                    await response.blob();
-
-
-                                const protectedUrl =
-                                    URL.createObjectURL(
-                                        blob
-                                    );
-
-
-                                if (
-                                    upload.mimeType &&
-                                    upload.mimeType.startsWith(
-                                        "audio/"
-                                    )
-                                ) {
-
-                                    const viewer =
-                                        document.createElement(
-                                            "div"
-                                        );
-
-                                    viewer.className =
-                                        "community-image-viewer";
-
-
-                                    const audio =
-                                        document.createElement(
-                                            "audio"
-                                        );
-
-                                    audio.src =
-                                        protectedUrl;
-
-                                    audio.controls =
-                                        true;
-
-                                    audio.autoplay =
-                                        true;
-
-                                    audio.style.width =
-                                        "100%";
-
-
-                                    const closeButton =
-                                        document.createElement(
-                                            "button"
-                                        );
-
-                                    closeButton.type =
-                                        "button";
-
-                                    closeButton.className =
-                                        "community-image-close";
-
-                                    closeButton.textContent =
-                                        "×";
-
-
-                                    viewer.appendChild(
-                                        closeButton
-                                    );
-
-                                    viewer.appendChild(
-                                        audio
-                                    );
-
-
-                                    document.body.appendChild(
-                                        viewer
-                                    );
-
-
-                                    function closeAudio() {
-
-                                        URL.revokeObjectURL(
-                                            protectedUrl
-                                        );
-
-                                        viewer.remove();
-
-                                    }
-
-
-                                    closeButton.addEventListener(
-                                        "click",
-                                        closeAudio
-                                    );
-
-
-                                } else {
-
-                                    const link =
-                                        document.createElement(
-                                            "a"
-                                        );
-
-                                    link.href =
-                                        protectedUrl;
-
-                                    link.download =
-                                        upload.name ||
-                                        "community-file";
-
-                                    document.body.appendChild(
-                                        link
-                                    );
-
-                                    link.click();
-
-                                    link.remove();
-
-
-                                    setTimeout(
-                                        function() {
-
-                                            URL.revokeObjectURL(
-                                                protectedUrl
-                                            );
-
-                                        },
-                                        1000
-                                    );
-
-                                }
-
-
-                            } catch (error) {
-
-                                console.error(
-                                    "COMMUNITY FILE ACCESS ERROR:",
-                                    error
-                                );
-
-
-                                alert(
-                                    "Unable to open this file. Please try again."
-                                );
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
-
-
-            container.appendChild(
-                card
-            );
-
-        });
-
-    } catch (error) {
-
-        console.error(
-            "COMMUNITY UPLOAD ERROR:",
-            error
-        );
-
-
-        container.innerHTML = `
-            <div class="community-error">
-                Unable to load community creations.
-                Please try again later.
-            </div>
-        `;
-
-    }
-
-}
-
-
-/* =========================
-   ESCAPE COMMUNITY TEXT
-========================= */
-
-function escapeCommunityText(text) {
-
-    return String(text)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* =========================
-   IMAGE VIEWER
-========================= */
-
-function openCommunityImage(
-    imageUrl,
-    imageTitle
-) {
-
-    const viewer =
-        document.createElement("div");
-
-    viewer.className =
-        "community-image-viewer";
-
-
-    viewer.innerHTML = `
-        <button
-            type="button"
-            class="community-image-close"
-            aria-label="Close image"
-        >
-            ×
-        </button>
-
-        <img
-            src="${imageUrl}"
-            alt=""
-            class="community-full-image"
-        >
-
-        <div class="community-image-title"></div>
-    `;
-
-
-    viewer.querySelector(
-        ".community-image-title"
-    ).textContent =
-        imageTitle;
-
-
-    document.body.appendChild(
-        viewer
-    );
-
-
-    viewer.addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target === viewer ||
-                event.target.classList.contains(
-                    "community-image-close"
-                )
-            ) {
-
-                URL.revokeObjectURL(
-                    imageUrl
-                );
-
-                viewer.remove();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================
-   LOAD COMMUNITY CREATIONS
-========================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    loadCommunityCreations
-);
-    
-</script>
-
-
-</body>
-
-</html>
+            .hero small {
+                font-size: 
