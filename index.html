@@ -892,7 +892,60 @@
       function setChat(open) { chat.classList.toggle('active', open); chat.setAttribute('aria-hidden', String(!open)); chatButton.setAttribute('aria-expanded', String(open)); }
       chatButton.addEventListener('click', function () { setChat(!chat.classList.contains('active')); });
       document.getElementById('kaelClose').addEventListener('click', function () { setChat(false); });
-      
+
+        
+function saveKaelHistory() {
+    const messages = document.getElementById('kaelMessages');
+
+    if (!messages) return;
+
+    const history = Array.from(
+        messages.querySelectorAll('.kael-message.user, .kael-message.bot')
+    )
+        .filter(message =>
+            message.textContent.trim() !== 'Kael is thinking...'
+        )
+        .map(message => ({
+            type: message.classList.contains('user') ? 'user' : 'bot',
+            text: message.textContent
+        }));
+
+    try {
+        localStorage.setItem('youngPrinceKaelHistory', JSON.stringify(history));
+    } catch (error) {
+        console.error('Could not save Kael history:', error);
+    }
+}
+
+function loadKaelHistory() {
+    const messages = document.getElementById('kaelMessages');
+
+    if (!messages) return;
+
+    try {
+        const history = JSON.parse(
+            localStorage.getItem('youngPrinceKaelHistory') || '[]'
+        );
+
+        history.forEach(item => {
+            if (
+                !item ||
+                !['user', 'bot'].includes(item.type) ||
+                typeof item.text !== 'string'
+            ) return;
+
+            const message = document.createElement('div');
+            message.className = 'kael-message ' + item.type;
+            message.textContent = item.text;
+            messages.appendChild(message);
+        });
+
+        messages.scrollTop = messages.scrollHeight;
+    } catch (error) {
+        console.error('Could not restore Kael history:', error);
+    }
+}
+
 async function sendMessage() {
     const input = document.getElementById('kaelInput');
     const value = input.value.trim();
@@ -905,7 +958,9 @@ async function sendMessage() {
     userMessage.className = 'kael-message user';
     userMessage.textContent = value;
     messages.appendChild(userMessage);
-
+    
+saveKaelHistory();
+    
     input.value = '';
 
     const botMessage = document.createElement('div');
@@ -940,6 +995,8 @@ async function sendMessage() {
         botMessage.textContent =
             data.reply || data.message ||
             'Kael returned an empty response.';
+saveKaelHistory();
+        
 
     } catch (error) {
         console.error('Kael connection error:', error);
@@ -948,12 +1005,24 @@ async function sendMessage() {
             'Kael could not connect. Please try again shortly.';
     }
 
+saveKaelHistory();
+    
     messages.scrollTop = messages.scrollHeight;
 }
-
+        
+LoadKaelHistory();
+        
       document.getElementById('kaelSend').addEventListener('click', sendMessage);
       document.getElementById('kaelInput').addEventListener('keydown', function (event) { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); } });
+          document.getElementById('kaelSend').addEventListener('click', sendMessage);
+      document.getElementById('kaelInput').addEventListener('keydown', function (event) { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); } });      
     })();
+      
+  </script>
+</body>
+</html>
+  })();
+
   </script>
 </body>
 </html>
