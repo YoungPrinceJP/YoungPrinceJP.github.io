@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Read Primordia — The First Element, Chapter 2: Into the Unknown, Scenes 1–6 by Young Prince.">
+<title>Primordia Chapter 2: Into the Unknown | Young Prince</title>
 
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0c1110;
+  --panel: #151d19;
+  --text: #e9eee8;
+  --muted: #b6c3b6;
+  --accent: #9ecb77;
+  --line: #2c3b30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #1a2b20 0, #0c1110 55%);
+  color: var(--text);
+  font: 17px/1.85 Georgia, "Times New Roman", serif;
+}
+
+header {
+  padding: 34px 18px 26px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: #0b100ee8;
+}
+
+header .eyebrow {
+  font: 700 12px/1.5 Arial, sans-serif;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+header h1 {
+  margin: 10px auto 4px;
+  font-size: clamp(28px, 6vw, 46px);
+  line-height: 1.15;
+  letter-spacing: .04em;
+}
+
+header p {
+  margin: 8px auto 0;
+  color: var(--muted);
+  font: 15px/1.6 Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+nav a, .cta a {
+  color: #0d160d;
+  background: var(--accent);
+  text-decoration: none;
+  font: 700 13px Arial, sans-serif;
+  padding: 10px 15px;
+  border-radius: 999px;
+}
+
+nav a.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+main {
+  width: min(860px, 100% - 28px);
+  margin: 28px auto 50px;
+  padding: clamp(20px, 5vw, 48px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 20px 55px #0004;
+  overflow-wrap: anywhere;
+}
+
+main h1, main h2 {
+  text-align: center;
+  color: var(--accent);
+  line-height: 1.3;
+}
+
+main h1 {
+  font-size: 30px;
+}
+
+main h2 {
+  font-size: 24px;
+}
+
+main h3 {
+  margin: 38px 0 20px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--accent);
+  font: 700 18px/1.5 Arial, sans-serif;
+  letter-spacing: .02em;
+}
+
+p {
+  margin: 0 0 17px;
+}
+
+.stage {
+  font-style: italic;
+  color: #d3ddd0;
+}
+
+.dialogue {
+  padding-left: 14px;
+  border-left: 2px solid #718c5e;
+  margin: 20px 0;
+}
+
+.dialogue strong {
+  color: var(--accent);
+  font: 700 13px Arial, sans-serif;
+  letter-spacing: .04em;
+}
+
+.sfx {
+  color: var(--accent);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.chapter-note {
+  color: var(--muted);
+  font: 14px/1.7 Arial, sans-serif;
+  text-align: center;
+  margin: 0 auto 25px;
+}
+
+.cta {
+  text-align: center;
+  padding: 28px 14px 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 36px;
+}
+
+.cta h2 {
+  margin: 0 0 10px;
+}
+
+.cta p {
+  color: var(--muted);
+  font: 15px/1.7 Arial, sans-serif;
+}
+
+.cta a {
+  display: inline-block;
+  margin: 7px;
+}
+
+footer {
+  text-align: center;
+  color: #8d9b8e;
+  font: 12px/1.6 Arial, sans-serif;
+  padding: 0 18px 30px;
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 16px;
+  }
+
+  main {
+    width: calc(100% - 16px);
+    padding: 20px 16px;
+    margin-top: 14px;
+    border-radius: 12px;
+  }
+
+  header {
+    padding-top: 28px;
+  }
+
+  main h1 {
+    font-size: 25px;
+  }
+
+  main h2 {
+    font-size: 21px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="eyebrow">Young Prince presents</div>
+  <h1>PRIMORDIA</h1>
+  <p>THE FIRST ELEMENT</p>
+  <p>Chapter 2 — Into the Unknown</p>
+</header>
+
+<nav>
+  <a href="./primordia-chapter-1.html" class="secondary">
+    ← Chapter 1
+  </a>
+  <a href="https://youngprincejp.github.io/">
+    Young Prince Home
+  </a>
+</nav>
+
+<main>
+  <p class="chapter-note">CHAPTER 2 · SCENES 1–6</p>
+
+  <h1>PRIMORDIA</h1>
+  <h2>CHAPTER 2 — INTO THE UNKNOWN</h2>
+
+  <h3>SCENE 1 — ALONE</h3>
+
+  <p class="stage">[The night is silent.]</p>
+
+  <p class="stage">
+    Deep inside the forest, Aurel runs without knowing where he is going.
+  </p>
+
+  <p class="stage">
+    His breathing is heavy. His clothes are torn. His face is covered with dirt and tears.
+  </p>
+
+  <p class="stage">
+    Behind him, the burning settlement slowly disappears between the trees.
+  </p>
+
+  <p class="stage">He doesn't stop.</p>
+  <p class="stage">He keeps running.</p>
+  <p class="stage">Until his legs finally give way.</p>
+
+  <p class="dialogue"><strong>SFX:</strong> “THUD!”</p>
+
+  <p class="stage">
+    [Aurel falls to his knees beneath a massive ancient tree.]
+  </p>
+
+  <p class="stage">[For several moments, he doesn't move.]</p>
+
+  <p class="stage">
+    [He stares at the ground, trying to catch his breath.]
+  </p>
+
+  <p class="dialogue">
+    <strong>AUREL:</strong> “Father...”
+  </p>
+
+  <p class="stage">[Nothing answers him.]</p>
+
+  <p class="stage">
+    [Aurel slowly turns his head toward the direction of the settlement.]
+  </p>
+
+  <p class="stage">
+    [The glow of the fire can barely be seen through the trees.]
+  </p>
+
+  <p class="dialogue">
+    <strong>AUREL:</strong> “I should have stayed.”
+  </p>
+
+  <p class="stage">[His voice trembles.]</p>
+
+  <p class="dialogue">
+    <strong>AUREL:</strong> “I should have stayed with you.”
+  </p>
