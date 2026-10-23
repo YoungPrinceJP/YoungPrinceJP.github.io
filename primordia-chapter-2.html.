@@ -5,279 +5,1021 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Read Primordia — The First Element, Chapter 2: Into the Unknown, Scenes 1–6 by Young Prince.">
 <title>Primordia Chapter 2: Into the Unknown | Young Prince</title>
-
 <style>
-:root {
-  color-scheme: dark;
-  --bg: #0c1110;
-  --panel: #151d19;
-  --text: #e9eee8;
-  --muted: #b6c3b6;
-  --accent: #9ecb77;
-  --line: #2c3b30;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: radial-gradient(ellipse at top, #1a2b20 0, #0c1110 55%);
-  color: var(--text);
-  font: 17px/1.85 Georgia, "Times New Roman", serif;
-}
-
-header {
-  padding: 34px 18px 26px;
-  text-align: center;
-  border-bottom: 1px solid var(--line);
-  background: #0b100ee8;
-}
-
-header .eyebrow {
-  font: 700 12px/1.5 Arial, sans-serif;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-header h1 {
-  margin: 10px auto 4px;
-  font-size: clamp(28px, 6vw, 46px);
-  line-height: 1.15;
-  letter-spacing: .04em;
-}
-
-header p {
-  margin: 8px auto 0;
-  color: var(--muted);
-  font: 15px/1.6 Arial, sans-serif;
-}
-
-nav {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 16px 12px;
-  border-bottom: 1px solid var(--line);
-}
-
-nav a, .cta a {
-  color: #0d160d;
-  background: var(--accent);
-  text-decoration: none;
-  font: 700 13px Arial, sans-serif;
-  padding: 10px 15px;
-  border-radius: 999px;
-}
-
-nav a.secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--line);
-}
-
-main {
-  width: min(860px, 100% - 28px);
-  margin: 28px auto 50px;
-  padding: clamp(20px, 5vw, 48px);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: 0 20px 55px #0004;
-  overflow-wrap: anywhere;
-}
-
-main h1, main h2 {
-  text-align: center;
-  color: var(--accent);
-  line-height: 1.3;
-}
-
-main h1 {
-  font-size: 30px;
-}
-
-main h2 {
-  font-size: 24px;
-}
-
-main h3 {
-  margin: 38px 0 20px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  color: var(--accent);
-  font: 700 18px/1.5 Arial, sans-serif;
-  letter-spacing: .02em;
-}
-
-p {
-  margin: 0 0 17px;
-}
-
-.stage {
-  font-style: italic;
-  color: #d3ddd0;
-}
-
-.dialogue {
-  padding-left: 14px;
-  border-left: 2px solid #718c5e;
-  margin: 20px 0;
-}
-
-.dialogue strong {
-  color: var(--accent);
-  font: 700 13px Arial, sans-serif;
-  letter-spacing: .04em;
-}
-
-.sfx {
-  color: var(--accent);
-  font-weight: bold;
-  font-style: italic;
-}
-
-.chapter-note {
-  color: var(--muted);
-  font: 14px/1.7 Arial, sans-serif;
-  text-align: center;
-  margin: 0 auto 25px;
-}
-
-.cta {
-  text-align: center;
-  padding: 28px 14px 8px;
-  border-top: 1px solid var(--line);
-  margin-top: 36px;
-}
-
-.cta h2 {
-  margin: 0 0 10px;
-}
-
-.cta p {
-  color: var(--muted);
-  font: 15px/1.7 Arial, sans-serif;
-}
-
-.cta a {
-  display: inline-block;
-  margin: 7px;
-}
-
-footer {
-  text-align: center;
-  color: #8d9b8e;
-  font: 12px/1.6 Arial, sans-serif;
-  padding: 0 18px 30px;
-}
-
-@media (max-width: 520px) {
-  body {
-    font-size: 16px;
-  }
-
-  main {
-    width: calc(100% - 16px);
-    padding: 20px 16px;
-    margin-top: 14px;
-    border-radius: 12px;
-  }
-
-  header {
-    padding-top: 28px;
-  }
-
-  main h1 {
-    font-size: 25px;
-  }
-
-  main h2 {
-    font-size: 21px;
-  }
-}
+:root{color-scheme:dark;--bg:#0c1110;--panel:#151d19;--text:#e9eee8;--muted:#b6c3b6;--accent:#9ecb77;--line:#2c3b30}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2b20 0,#0c1110 55%);color:var(--text);font:17px/1.85 Georgia,'Times New Roman',serif}
+header{padding:34px 18px 26px;text-align:center;border-bottom:1px solid var(--line);background:#0b100ee8}header .eyebrow{font:700 12px/1.5 Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}header h1{margin:10px auto 4px;font-size:clamp(28px,6vw,46px);line-height:1.15;letter-spacing:.04em}header p{margin:8px auto 0;color:var(--muted);font:15px/1.6 Arial,sans-serif}
+nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:16px 12px;border-bottom:1px solid var(--line)}nav a,.cta a{color:#0d160d;background:var(--accent);text-decoration:none;font:700 13px Arial,sans-serif;padding:10px 15px;border-radius:999px}nav a.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}main{width:min(860px,100% - 28px);margin:28px auto 50px;padding:clamp(20px,5vw,48px);background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 55px #0004;overflow-wrap:anywhere}main h1,main h2{text-align:center;color:var(--accent);line-height:1.3}main h1{font-size:30px}main h2{font-size:24px}main h3{margin:38px 0 20px;padding-top:22px;border-top:1px solid var(--line);color:var(--accent);font:700 18px/1.5 Arial,sans-serif;letter-spacing:.02em}p{margin:0 0 17px}.stage{font-style:italic;color:#d3ddd0}.dialogue{padding-left:14px;border-left:2px solid #718c5e;margin:20px 0}.dialogue strong{color:var(--accent);font:700 13px Arial,sans-serif;letter-spacing:.04em}.sfx{color:var(--accent);font-weight:bold;font-style:italic}.chapter-note{color:var(--muted);font:14px/1.7 Arial,sans-serif;text-align:center;margin:0 auto 25px}.cta{text-align:center;padding:28px 14px 8px;border-top:1px solid var(--line);margin-top:36px}.cta h2{margin:0 0 10px}.cta p{color:var(--muted);font:15px/1.7 Arial,sans-serif}.cta a{display:inline-block;margin:7px}footer{text-align:center;color:#8d9b8e;font:12px/1.6 Arial,sans-serif;padding:0 18px 30px}
+@media(max-width:520px){body{font-size:16px}main{width:calc(100% - 16px);padding:20px 16px;margin-top:14px;border-radius:12px}header{padding-top:28px}main h1{font-size:25px}main h2{font-size:21px}}
 </style>
 </head>
-
 <body>
-
-<header>
-  <div class="eyebrow">Young Prince presents</div>
-  <h1>PRIMORDIA</h1>
-  <p>THE FIRST ELEMENT</p>
-  <p>Chapter 2 — Into the Unknown</p>
-</header>
-
-<nav>
-  <a href="./primordia-chapter-1.html" class="secondary">
-    ← Chapter 1
-  </a>
-  <a href="https://youngprincejp.github.io/">
-    Young Prince Home
-  </a>
-</nav>
-
-<main>
-  <p class="chapter-note">CHAPTER 2 · SCENES 1–6</p>
-
-  <h1>PRIMORDIA</h1>
-  <h2>CHAPTER 2 — INTO THE UNKNOWN</h2>
-
-  <h3>SCENE 1 — ALONE</h3>
-
-  <p class="stage">[The night is silent.]</p>
-
-  <p class="stage">
-    Deep inside the forest, Aurel runs without knowing where he is going.
-  </p>
-
-  <p class="stage">
-    His breathing is heavy. His clothes are torn. His face is covered with dirt and tears.
-  </p>
-
-  <p class="stage">
-    Behind him, the burning settlement slowly disappears between the trees.
-  </p>
-
-  <p class="stage">He doesn't stop.</p>
-  <p class="stage">He keeps running.</p>
-  <p class="stage">Until his legs finally give way.</p>
-
-  <p class="dialogue"><strong>SFX:</strong> “THUD!”</p>
-
-  <p class="stage">
-    [Aurel falls to his knees beneath a massive ancient tree.]
-  </p>
-
-  <p class="stage">[For several moments, he doesn't move.]</p>
-
-  <p class="stage">
-    [He stares at the ground, trying to catch his breath.]
-  </p>
-
-  <p class="dialogue">
-    <strong>AUREL:</strong> “Father...”
-  </p>
-
-  <p class="stage">[Nothing answers him.]</p>
-
-  <p class="stage">
-    [Aurel slowly turns his head toward the direction of the settlement.]
-  </p>
-
-  <p class="stage">
-    [The glow of the fire can barely be seen through the trees.]
-  </p>
-
-  <p class="dialogue">
-    <strong>AUREL:</strong> “I should have stayed.”
-  </p>
-
-  <p class="stage">[His voice trembles.]</p>
-
-  <p class="dialogue">
-    <strong>AUREL:</strong> “I should have stayed with you.”
-  </p>
+<header><div class="eyebrow">Young Prince presents</div><h1>PRIMORDIA</h1><p>THE FIRST ELEMENT</p><p>Chapter 2 — Into the Unknown</p></header>
+<nav><a href="./primordia-chapter-1.html" class="secondary">← Chapter 1</a><a href="https://youngprincejp.github.io/">Young Prince Home</a></nav>
+<main><p class="chapter-note">CHAPTER 2 · SCENES 1–6</p>
+<h1>PRIMORDIA</h1>
+<h2>CHAPTER 2 — INTO THE UNKNOWN</h2>
+<h3>SCENE 1 — ALONE</h3>
+<p class="stage">[The night is silent.</p>
+<p class="stage">Deep inside the forest, Aurel runs without knowing where he is going.</p>
+<p class="stage">His breathing is heavy. His clothes are torn. His face is covered with dirt and tears.</p>
+<p class="stage">Behind him, the burning settlement slowly disappears between the trees.</p>
+<p class="stage">He doesn&#x27;t stop.</p>
+<p class="stage">He keeps running.</p>
+<p class="stage">Until his legs finally give way.</p>
+<p class="dialogue"><strong>SFX:</strong> “*THUD!*”</p>
+<p class="stage">[Aurel falls to his knees beneath a massive ancient tree.]</p>
+<p class="stage">[For several moments, he doesn&#x27;t move.]</p>
+<p class="stage">[He stares at the ground, trying to catch his breath.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Father...&quot;”</p>
+<p class="stage">[Nothing answers him.]</p>
+<p class="stage">[Aurel slowly turns his head toward the direction of the settlement.]</p>
+<p class="stage">[The glow of the fire can barely be seen through the trees.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I should have stayed.&quot;”</p>
+<p class="stage">[His voice trembles.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I should have stayed with you.&quot;”</p>
+<p class="stage">[He clenches his fists.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;You told me to run, but I should have gone back. I could have helped you. Maybe... maybe things would have been different.&quot;”</p>
+<p class="stage">[His eyes fill with tears.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Why didn&#x27;t you let me fight beside you?&quot;”</p>
+<p class="stage">[Silence.]</p>
+<p class="stage">[Aurel looks down at his hands.]</p>
+<p class="stage">[A faint glow begins to appear around his fingers.]</p>
+<p class="stage">[He freezes.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;...This again.&quot;”</p>
+<p class="stage">[The glow grows slightly stronger.]</p>
+<p class="stage">[Aurel remembers the dying tree.</p>
+<p class="stage">The first time he felt this power.</p>
+<p class="stage">The ancient shrine.</p>
+<p class="stage">The mysterious stone beneath the tree.</p>
+<p class="stage">The four symbols.</p>
+<p class="stage">And his Father&#x27;s final words.]</p>
+<p class="dialogue"><strong>GUARDIAN&#x27;S VOICE — MEMORY:</strong> “”</p>
+<p class="stage">&quot;Never be afraid of who you are.&quot;</p>
+<p class="stage">[Aurel closes his fist.]</p>
+<p class="stage">[The glow disappears.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;But who am I?&quot;”</p>
+<p class="stage">[He looks around the forest.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;You knew, didn&#x27;t you?&quot;”</p>
+<p class="stage">[His voice becomes softer.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;You knew something about me all these years.&quot;”</p>
+<p class="stage">[Aurel lowers his head.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Was that why you found me at the shrine?&quot;”</p>
+<p class="stage">[He wipes his eyes.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Why did you never tell me?&quot;”</p>
+<p class="stage">[No answer.]</p>
+<p class="stage">[Aurel leans his back against the tree.]</p>
+<p class="stage">[For the first time since the attack began, there is no one telling him what to do.</p>
+<p class="stage">No Father.</p>
+<p class="stage">No home.</p>
+<p class="stage">No familiar voices.</p>
+<p class="stage">Only the forest.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;...I&#x27;m alone.&quot;”</p>
+<p class="stage">[A strange wind moves through the branches above him.]</p>
+<p class="dialogue"><strong>SFX:</strong> “*WHOOSH...*”</p>
+<p class="stage">[Aurel looks up.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Father used to say the forest was never truly empty.&quot;”</p>
+<p class="stage">[He gives a weak smile.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;He said if you stayed quiet long enough, you&#x27;d hear things most people never notice.&quot;”</p>
+<p class="stage">[Aurel listens.]</p>
+<p class="stage">[Birds.</p>
+<p class="stage">Leaves.</p>
+<p class="stage">The distant sound of running water.</p>
+<p class="stage">Something moving somewhere in the darkness.]</p>
+<p class="stage">[Aurel suddenly sits upright.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;What&#x27;s that?&quot;”</p>
+<p class="stage">[He looks toward the bushes.]</p>
+<p class="stage">[The leaves move again.]</p>
+<p class="dialogue"><strong>SFX:</strong> “*RUSTLE... RUSTLE...*”</p>
+<p class="stage">[Aurel reaches for a small branch and grips it like a weapon.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Come out.&quot;”</p>
+<p class="stage">[Nothing.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I know you&#x27;re there.&quot;”</p>
+<p class="stage">[The bushes shake again.]</p>
+<p class="stage">[Aurel takes a cautious step forward.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;If you&#x27;re looking for trouble, I&#x27;m not in the mood.&quot;”</p>
+<p class="stage">[A small creature suddenly jumps out.]</p>
+<p class="dialogue"><strong>SFX:</strong> “*WHOOSH!*”</p>
+<p class="stage">[Aurel jumps backward.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Ah!&quot;”</p>
+<p class="stage">[The creature lands on a rock and stares at him.]</p>
+<p class="stage">[Aurel stares back.]</p>
+<p class="stage">[It is a strange little forest animal with large eyes and a long tail.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;...That&#x27;s what was frightening me?&quot;”</p>
+<p class="stage">[The creature makes a strange clicking sound.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Don&#x27;t look at me like that.&quot;”</p>
+<p class="stage">[The creature tilts its head.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I&#x27;ve had a bad night.&quot;”</p>
+<p class="stage">[The creature suddenly grabs something from the ground and runs.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Hey!&quot;”</p>
+<p class="stage">[Aurel looks down.]</p>
+<p class="stage">[The creature has stolen the small piece of bread he had been carrying.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Come back!&quot;”</p>
+<p class="stage">[The creature disappears into the bushes.]</p>
+<p class="stage">[Aurel stares after it in disbelief.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;That was my dinner.&quot;”</p>
+<p class="stage">[Silence.]</p>
+<p class="stage">[Then Aurel lets out a small laugh.]</p>
+<p class="stage">[It is the first genuine laugh since the settlement was attacked.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;Father would have said I deserved that.&quot;”</p>
+<p class="stage">[The smile slowly fades.]</p>
+<p class="stage">[Aurel looks toward the distant mountains again.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I miss you.&quot;”</p>
+<p class="stage">[He sits beneath the tree once more.]</p>
+<p class="stage">[A long silence follows.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;But I&#x27;m going to do what you told me.&quot;”</p>
+<p class="stage">[He looks toward the dark forest ahead.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I&#x27;m going to keep moving.&quot;”</p>
+<p class="stage">[Aurel slowly gets back on his feet.]</p>
+<p class="stage">[He looks at the path ahead.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I don&#x27;t know where this road leads.&quot;”</p>
+<p class="stage">[He takes his first step into the darkness.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I don&#x27;t know who I am.&quot;”</p>
+<p class="stage">[Another step.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;I don&#x27;t know why they came for me.&quot;”</p>
+<p class="stage">[Another step.]</p>
+<p class="stage">[Aurel looks back one final time toward the mountains.]</p>
+<p class="dialogue"><strong>AUREL:</strong> “&quot;But I&#x27;ll find the answers.&quot;”</p>
+<p class="stage">[He turns away from his old home and disappears deeper into the forest.]</p>
+<p class="stage">[The ancient tree remains behind him.</p>
+<p class="stage">For a brief moment, one of the four mysterious symbols appears faintly on its bark.</p>
+<p class="dialogue"><strong>SFX:</strong> “*THUM...*”</p>
+<p class="stage">[Then it disappears.]</p>
+<h3>END OF SCENE 1</h3>
+<h3>SCENE 2 — A STRANGER’S BREAKFAST</h3>
+<p class="stage">The morning sun struggled through the thick branches of the forest, spreading pale golden light across the damp earth. Birds called from the treetops, and a gentle breeze stirred the leaves. For the first time since fleeing his burning home, Aurel could hear something other than the screams of his people and the clash of weapons.</p>
+<p class="stage">Aurel walked alone along a narrow path, his clothes dusty, his face tired, and his stomach painfully empty. Every few steps, he glanced behind him, half expecting to see the smoke from his settlement rising above the trees.</p>
+<p class="stage">But there was nothing behind him except the forest.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Father, you always said the world beyond the mountains was full of surprises. You never mentioned that it would be this difficult to find breakfast.”</p>
+<p class="stage">He stopped beside a shallow stream and knelt to drink. The cold water refreshed him, but it did little to ease the ache in his stomach. A small fish darted between the stones.</p>
+<p class="stage">Aurel watched it carefully, then slowly lowered his hands into the water.</p>
+<p class="dialogue"><strong>AUREL:</strong> “All right. Just one fish. I don&#x27;t think that&#x27;s too much to ask after everything I&#x27;ve been through.”</p>
+<p class="stage">The fish slipped between his fingers.</p>
+<p class="stage">Aurel tried again. This time, he nearly caught it, but the creature flicked its tail and splashed water across his face before disappearing beneath a rock.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Wonderful. Even the fish are against me.”</p>
+<p class="stage">For a brief moment, he almost smiled. Then the memory of his Father returned, and the smile faded.</p>
+<p class="stage">He sat beside the stream, hugging his knees.</p>
+<p class="dialogue"><strong>AUREL:</strong> “You would have laughed at me. You would have told me to stop complaining and learn how to catch it properly.”</p>
+<p class="stage">His voice grew quieter.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I wish you were here to tell me that.”</p>
+<p class="stage">The forest offered no answer.</p>
+<p class="stage">Suddenly, a loud argument drifted from somewhere along the path.</p>
+<p class="dialogue"><strong>MARO:</strong> “I&#x27;m telling you, Bako, if you had not insisted that we load those extra baskets, this would never have happened! The cart was already carrying more than enough!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “And I&#x27;m telling you, Maro, that if you had spent less time boasting about your wonderful cart and more time checking its wheels, we wouldn&#x27;t be standing here arguing with a broken piece of wood!”</p>
+<p class="stage">Aurel lifted his head.</p>
+<p class="stage">He had heard stories about bandits and dangerous creatures lurking beyond the mountains. The voices sounded human, but he had learned that appearances could be deceiving. He rose quietly and followed the sound, keeping to the edge of the path.</p>
+<p class="stage">Around a bend, he discovered a small travelling caravan stranded beside the road.</p>
+<p class="stage">Maro, a broad-shouldered young merchant with thick arms, a round face, and a loud voice, stood beside a wooden cart loaded with cooking pots, sacks, and bundles of household goods. His tunic was dusty from the journey, and his hands were planted firmly on his hips as though he could frighten the broken wheel into repairing itself.</p>
+<p class="stage">Facing him was Bako, a thin elderly traveller with a long grey beard, a crooked walking stick, and sharp eyes that missed very little. His faded brown robe hung loosely around his narrow frame. Although his back was slightly bent, his tongue appeared to be in perfect health.</p>
+<p class="stage">Nearby, Lina, a young woman with warm brown eyes and neatly braided dark hair, was gathering vegetables that had spilled from a damaged basket. She wore a simple travelling dress and a cloth tied around her waist. Unlike her two companions, she seemed more interested in solving the problem than winning the argument.</p>
+<p class="stage">Two children were playing beside a donkey tethered to the cart. The older child, a lively girl with two uneven braids, kept trying to convince her younger brother that he was too frightened to climb onto a nearby rock. Her brother, who had a small gap between his front teeth, insisted that he was brave enough to fight anything in the forest.</p>
+<p class="dialogue"><strong>MARO:</strong> “Look at it! Look at that wheel! It has betrayed me in the middle of the road, far from a proper workshop, far from a decent inn, and far from anyone who appreciates the difficulties of honest trade!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “The wheel has more sense than you. At least it waited until we were outside the village before giving up.”</p>
+<p class="dialogue"><strong>MARO:</strong> “You know, old traveller, one day you will say something encouraging to me, and when that day comes, I shall know the world is ending.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “If the world ends, I hope it happens before you start explaining how much this cart is worth.”</p>
+<p class="stage">Lina covered her mouth to hide a laugh.</p>
+<p class="dialogue"><strong>LINA:</strong> “Both of you, please. We have vegetables scattered across the road, a broken wheel, and a donkey that has refused to move for the past ten minutes. Insulting each other isn&#x27;t going to get us anywhere.”</p>
+<p class="dialogue"><strong>MARO:</strong> “The donkey is refusing to move because it knows we are in trouble. Animals understand these things.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “No. The donkey is refusing to move because you loaded three sacks of grain on top of its feed.”</p>
+<p class="stage">The donkey let out a loud bray.</p>
+<p class="stage">Bako pointed at it triumphantly.</p>
+<p class="dialogue"><strong>BAKO:</strong> “There! Even the donkey agrees with me.”</p>
+<p class="dialogue"><strong>MARO:</strong> “That animal has no business taking sides in a merchant&#x27;s affairs!”</p>
+<p class="stage">The children burst into laughter.</p>
+<p class="stage">Aurel watched them from behind a tree. Their argument was so ordinary, so completely different from the terror he had witnessed the night before, that he almost forgot why he was hiding.</p>
+<p class="stage">Then his stomach growled.</p>
+<p class="stage">The sound was not loud, but it was loud enough for Lina to hear.</p>
+<p class="stage">She turned towards the trees.</p>
+<p class="dialogue"><strong>LINA:</strong> “Who&#x27;s there?”</p>
+<p class="stage">Aurel froze.</p>
+<p class="dialogue"><strong>MARO:</strong> “If that&#x27;s a bandit, tell him we have nothing worth stealing except Bako&#x27;s bad temper.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “And if the bandit has any intelligence, he&#x27;ll take the bad temper first. It weighs more than the rest of our luggage.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Bako!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “What? I&#x27;m only helping him assess our valuables.”</p>
+<p class="stage">Lina stepped away from the cart and approached the trees. She did not carry a weapon, and her expression held more curiosity than fear.</p>
+<p class="dialogue"><strong>LINA:</strong> “You don&#x27;t have to hide. We won&#x27;t hurt you. Come out where we can see you.”</p>
+<p class="stage">Aurel hesitated. His Father&#x27;s warning echoed in his mind: never trust someone simply because they speak kindly.</p>
+<p class="stage">But he was tired, hungry, and alone.</p>
+<p class="stage">Slowly, he stepped onto the path.</p>
+<p class="stage">The children stopped playing. Maro straightened beside his cart, while Bako leaned on his walking stick and examined the newcomer from head to toe.</p>
+<p class="stage">Aurel was a small boy, no more than twelve years old. His clothes were stained with dirt, his hair was untidy, and his face carried the exhaustion of someone who had travelled far without rest. There was a faint scratch along his cheek, and his eyes held a sadness that seemed much older than his years.</p>
+<p class="dialogue"><strong>LINA:</strong> “Oh, you&#x27;re only a child. Have you been travelling alone?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yes.”</p>
+<p class="dialogue"><strong>MARO:</strong> “Alone? In this forest? Where have you come from, young fellow? And where are the adults responsible for letting a boy your age wander around without even a proper breakfast?”</p>
+<p class="stage">Aurel lowered his eyes.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t have anyone with me.”</p>
+<p class="stage">Lina noticed the way he avoided looking at them. She also noticed that his hands were trembling slightly.</p>
+<p class="dialogue"><strong>LINA:</strong> “When was the last time you ate?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yesterday. I think.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Yesterday? That&#x27;s a terrible way to travel. Even a foolish merchant knows he must eat before making bad decisions.”</p>
+<p class="dialogue"><strong>MARO:</strong> “Why do I feel that every sentence you speak somehow becomes an insult against me?”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Because you&#x27;re beginning to understand.”</p>
+<p class="stage">Lina ignored their bickering and returned to the cart. She took a piece of bread from a cloth-covered basket, added a ripe piece of fruit, and brought them to Aurel.</p>
+<p class="dialogue"><strong>LINA:</strong> “Here. It&#x27;s not much, but it should help. You look as though the forest has been trying to eat you.”</p>
+<p class="stage">Aurel stared at the food.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Why are you giving this to me?”</p>
+<p class="dialogue"><strong>LINA:</strong> “Because you&#x27;re hungry.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “You don&#x27;t even know me.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Must I know someone&#x27;s whole life before I can offer them breakfast?”</p>
+<p class="stage">For a moment, Aurel could not answer.</p>
+<p class="stage">He remembered sitting beside his Father in their small home, listening to him complain that Aurel always ate too quickly. He remembered the way his Father would break a piece of bread in half and pretend that he was not hungry, even when Aurel knew there was little food left.</p>
+<p class="stage">His fingers tightened around the bread Lina had given him.</p>
+<p class="dialogue"><strong>LINA:</strong> “You don&#x27;t have to eat it if you don&#x27;t want to.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “No. I do. Thank you.”</p>
+<p class="stage">He took a small bite. The bread was plain, slightly dry, and unlike anything he would have called special before. Yet the kindness behind it made his throat tighten.</p>
+<p class="stage">He turned his face away, pretending to examine the trees.</p>
+<p class="stage">Lina noticed, but she did not embarrass him by asking why his eyes had filled with tears.</p>
+<p class="stage">The older girl approached him, curiosity overcoming her earlier caution.</p>
+<p class="dialogue"><strong>GIRL:</strong> “What&#x27;s your name?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Aurel.”</p>
+<p class="dialogue"><strong>GIRL:</strong> “I&#x27;m Timi. That&#x27;s my little brother, Kelechi. He says he isn&#x27;t afraid of monsters, but last night he screamed because a frog jumped onto his blanket.”</p>
+<p class="dialogue"><strong>KELECHI:</strong> “It was a very big frog!”</p>
+<p class="dialogue"><strong>TIMI:</strong> “It was smaller than your foot!”</p>
+<p class="dialogue"><strong>KELECHI:</strong> “Then why did it jump at me?”</p>
+<p class="dialogue"><strong>MARO:</strong> “Because even the frogs of this world have terrible judgment.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “That explains why one of them keeps following you around.”</p>
+<p class="stage">Maro looked at Bako in disbelief. Lina laughed openly this time, and even Aurel&#x27;s lips twitched into a small smile.</p>
+<p class="dialogue"><strong>KELECHI:</strong> “Can you fight monsters, Aurel?”</p>
+<p class="stage">The question caught Aurel off guard.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know.”</p>
+<p class="dialogue"><strong>KELECHI:</strong> “You don&#x27;t know? Then how will you fight them?”</p>
+<p class="dialogue"><strong>TIMI:</strong> “He can use a sword.”</p>
+<p class="dialogue"><strong>KELECHI:</strong> “He doesn&#x27;t have a sword!”</p>
+<p class="dialogue"><strong>TIMI:</strong> “Then he can find one!”</p>
+<p class="dialogue"><strong>KELECHI:</strong> “What if the monster swallows him before he finds one?”</p>
+<p class="dialogue"><strong>MARO:</strong> “If a monster swallows you whole, young man, the first thing you should do is complain about its manners.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “And what good will that do?”</p>
+<p class="dialogue"><strong>MARO:</strong> “It will remind the monster that it has eaten a person of excellent character.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “In that case, the monster will probably spit you out.”</p>
+<p class="stage">The children laughed again.</p>
+<p class="stage">Aurel looked down at his bread, and for the first time that morning, the ache in his chest eased just enough for him to breathe without feeling as though something were crushing him.</p>
+<p class="stage">But the warmth did not last.</p>
+<p class="stage">Bako had been watching him more carefully than the others. The elderly traveller had seen the scratches, the dust, and the boy&#x27;s frightened glances towards the forest. He had also noticed that Aurel wore no travelling bag and carried no weapon.</p>
+<p class="dialogue"><strong>BAKO:</strong> “Tell me something, Aurel. Where is your family? A boy doesn&#x27;t usually travel through these woods alone unless something has gone wrong.”</p>
+<p class="stage">The laughter around the cart faded.</p>
+<p class="stage">Aurel stopped chewing.</p>
+<p class="stage">He tried to answer, but the words caught in his throat. He saw his Father&#x27;s final expression again: the desperate command to keep moving, the terrible distance between them, and the moment his Father fell beneath the enemy&#x27;s weapons.</p>
+<p class="dialogue"><strong>AUREL:</strong> “My father…”</p>
+<p class="stage">He swallowed hard.</p>
+<p class="dialogue"><strong>AUREL:</strong> “He isn&#x27;t coming back.”</p>
+<p class="stage">Silence settled over the small caravan.</p>
+<p class="stage">Bako&#x27;s sharp expression softened. He lowered his eyes, suddenly ashamed of having asked.</p>
+<p class="dialogue"><strong>BAKO:</strong> “I&#x27;m sorry, boy. I shouldn&#x27;t have asked you that.”</p>
+<p class="stage">Lina moved closer, but she did not force Aurel to speak. She simply rested a gentle hand on his shoulder for a moment before returning it to her side.</p>
+<p class="dialogue"><strong>LINA:</strong> “You don&#x27;t have to tell us anything you&#x27;re not ready to share.”</p>
+<p class="stage">Aurel nodded, unable to trust his voice.</p>
+<p class="stage">Even Maro had fallen quiet. He scratched the back of his head, searching for something useful to say, but for once his usual stream of words failed him.</p>
+<p class="dialogue"><strong>MARO:</strong> “Well… travelling alone isn&#x27;t easy, especially for someone your age. We&#x27;re heading towards a trading village beyond these woods. There are houses, food stalls, craftsmen, and people who can help if you need something. It would be safer for you to travel with us than to wander about on your own.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Provided our magnificent merchant can get this magnificent cart moving.”</p>
+<p class="dialogue"><strong>MARO:</strong> “I am working on it!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “You have been working on it for half an hour. So far, you have managed to argue with a wheel.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Enough, both of you. Maro, can we repair it?”</p>
+<p class="stage">Maro crouched beside the broken wheel and examined the damaged wooden support.</p>
+<p class="dialogue"><strong>MARO:</strong> “The wheel itself can still turn, but this support has cracked. We need to secure it well enough to reach the village. If we can find a suitable branch and bind it tightly, we should manage.”</p>
+<p class="stage">Aurel finished the bread and fruit. He glanced at the broken cart, then at the road ahead.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I can help.”</p>
+<p class="dialogue"><strong>MARO:</strong> “You can?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;ve helped repair things at home.”</p>
+<p class="stage">He knelt beside the cart and studied the broken support. He picked up a fallen length of wood and held it against the damaged section, checking its size.</p>
+<p class="stage">For a fleeting moment, his thoughts returned to his Father, who had taught him how to mend fences, sharpen tools, and repair the roof after heavy rain.</p>
+<p class="stage">The memory hurt, but it also gave him something to hold on to.</p>
+<p class="dialogue"><strong>AUREL:</strong> “This piece might work if we bind it here. It won&#x27;t make the wheel perfect, but it should keep the support from shifting until we reach the village.”</p>
+<p class="stage">Maro crouched beside him and examined the suggestion.</p>
+<p class="dialogue"><strong>MARO:</strong> “Would you look at that? A boy who knows more about repairs than the man who owns the cart.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “That is not difficult. The cart has been trying to teach you for years, and you still refuse to listen.”</p>
+<p class="dialogue"><strong>MARO:</strong> “One more word from you, Bako, and I&#x27;ll make you walk to the village.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Excellent. Then perhaps we will arrive before sunset.”</p>
+<p class="stage">With Aurel&#x27;s help, Maro secured the wooden brace while Lina found strips of strong cloth to bind it in place. Bako held the cart steady, offering unrequested instructions throughout the process. Timi and Kelechi gathered the scattered vegetables, though the younger boy attempted to eat one before Lina caught him.</p>
+<p class="dialogue"><strong>LINA:</strong> “Kelechi, those are for the market!”</p>
+<p class="dialogue"><strong>KELECHI:</strong> “I was checking whether they were good enough to sell.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “A very noble sacrifice. Perhaps you should test the entire basket.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Bako, don&#x27;t encourage him.”</p>
+<p class="stage">After several attempts, the wheel finally held. Maro pushed against the cart, and it rolled forward with a creaking sound.</p>
+<p class="dialogue"><strong>MARO:</strong> “There! A triumph of skill, patience, and extraordinary merchant talent.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “A triumph of a piece of wood, some cloth, and a hungry twelve-year-old.”</p>
+<p class="dialogue"><strong>MARO:</strong> “History will remember this differently.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Will the wheel last until the village?”</p>
+<p class="stage">Maro placed one hand on the cart and considered the question with exaggerated seriousness.</p>
+<p class="dialogue"><strong>MARO:</strong> “Absolutely.”</p>
+<p class="stage">The wheel gave a worrying creak.</p>
+<p class="stage">Maro immediately cleared his throat.</p>
+<p class="dialogue"><strong>MARO:</strong> “Almost absolutely.”</p>
+<p class="stage">For the first time since leaving the burning settlement, Aurel laughed. It was a small, uncertain sound, but it was real.</p>
+<p class="stage">Lina smiled when she heard it.</p>
+<p class="dialogue"><strong>LINA:</strong> “There you are. I was beginning to think you had forgotten how to smile.”</p>
+<p class="stage">Aurel&#x27;s expression grew quieter.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I haven&#x27;t forgotten. I just… don&#x27;t feel like smiling very often anymore.”</p>
+<p class="dialogue"><strong>LINA:</strong> “That&#x27;s all right. You don&#x27;t have to force it. Sometimes it takes a while before the heart remembers how to feel safe again.”</p>
+<p class="stage">Aurel looked at her. There was something comforting about the way she spoke, as though she understood that some wounds could not be seen.</p>
+<p class="dialogue"><strong>MARO:</strong> “So, Aurel, what do you say? Would you like to travel with us to the village? We can&#x27;t promise luxury, and Bako will complain about nearly everything we do, but there will be food, a roof over your head if we find a suitable inn, and a road that doesn&#x27;t require you to walk alone.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “I do not complain about nearly everything.”</p>
+<p class="dialogue"><strong>LINA:</strong> “You complained about the sunrise this morning.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “It came too early.”</p>
+<p class="dialogue"><strong>MARO:</strong> “You see? A man of endless wisdom.”</p>
+<p class="stage">Aurel looked towards the forest path stretching behind him.</p>
+<p class="stage">Somewhere beyond those trees lay the ruins of his home. The place where he had grown up, where he had laughed, where he had learned from his Father, and where everything he had known had been taken from him.</p>
+<p class="stage">He wanted to turn back. He wanted to believe that if he ran hard enough, he could reach the settlement before the fire consumed the last of it. He wanted to hear his Father&#x27;s voice one more time.</p>
+<p class="stage">But he knew what he had seen.</p>
+<p class="stage">His Father was gone.</p>
+<p class="stage">And the world beyond the mountains was waiting, whether Aurel was ready for it or not.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yes. I&#x27;d like to come with you, if you don&#x27;t mind.”</p>
+<p class="dialogue"><strong>LINA:</strong> “We don&#x27;t mind at all. Stay close to the cart, and tell us if you become tired.”</p>
+<p class="dialogue"><strong>MARO:</strong> “And if you know anything else about repairing wheels, I welcome your wisdom. This cart has a difficult relationship with the road.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “The road has a difficult relationship with you.”</p>
+<p class="stage">The caravan began moving again.</p>
+<p class="stage">Timi and Kelechi walked beside the donkey, arguing over whether a monster could swallow an entire house or only a cow. Lina returned to sorting the baskets, while Maro proudly guided his patched-up cart along the path. Bako followed behind them, muttering about the quality of modern wheels.</p>
+<p class="stage">Aurel walked beside Lina, holding the last piece of bread she had given him.</p>
+<p class="stage">He looked up through the trees.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Father, I don&#x27;t know where this road will take me. I don&#x27;t know why those people came to our home, or why the things I can do frighten them. I don&#x27;t even understand what happened beneath the shrine.”</p>
+<p class="stage">His hand tightened around the bread.</p>
+<p class="dialogue"><strong>AUREL:</strong> “But I&#x27;ll keep moving. I&#x27;ll find out what happened, and I&#x27;ll find the truth about myself. I promise.”</p>
+<p class="stage">A gentle breeze passed through the forest, stirring the leaves above him.</p>
+<p class="stage">For an instant, Aurel thought he heard his Father&#x27;s familiar voice telling him to keep his head up.</p>
+<p class="stage">He turned, but there was no one there.</p>
+<p class="stage">Only the trees, the sunlight, and the long road ahead.</p>
+<p class="stage">Hours later, the forest began to thin. The path widened, and the sounds of distant voices drifted towards them. Beyond the trees, rooftops appeared above the rolling hills, followed by the faint outline of market stalls and wooden buildings clustered around a busy road.</p>
+<p class="stage">The trading village.</p>
+<p class="stage">Aurel slowed his steps.</p>
+<p class="stage">He had spent his entire childhood hidden among the mountains, knowing little of the world beyond them. Now, for the first time, he was about to enter a place where nobody knew his name, nobody knew what he had lost, and nobody knew what slept beneath the ancient shrine.</p>
+<p class="stage">He could not know that among the ordinary people going about their daily lives, someone was already watching the road.</p>
+<p class="stage">And far beyond the village, in a place where sunlight never reached, a shadow stirred at the memory of the boy whose awakening had disturbed an ancient silence.</p>
+<p class="stage">Sometimes, the road begins with a loss. Sometimes, the first kindness comes from strangers. And sometimes, when a boy believes the whole world has abandoned him, the world quietly opens a door.</p>
+<h3>END OF SCENE 2</h3>
+<h3>SCENE 3 — THE VILLAGE BEYOND THE MOUNTAINS</h3>
+<p class="stage">The forest path opened onto a wide dirt road, revealing a village nestled between rolling green hills. Wooden houses stood beside stone buildings, their roofs covered with dark tiles and dried grass. Colourful cloth hung above the market stalls, while the smell of roasted meat, fresh bread, herbs, and burning firewood drifted through the morning air.</p>
+<p class="stage">Merchants called out their prices. Farmers unloaded baskets of vegetables. A blacksmith hammered a glowing piece of metal beneath a shelter, and a group of children chased one another around a fountain in the village square.</p>
+<p class="stage">For the people who lived there, it was an ordinary morning.</p>
+<p class="stage">For Aurel, it was like entering another world.</p>
+<p class="stage">He slowed down as the caravan approached the first row of houses. His eyes moved from the tall buildings to the strange goods displayed outside the shops. He had never seen so many people gathered in one place, each occupied with a different task.</p>
+<p class="dialogue"><strong>AUREL:</strong> “There are so many people.”</p>
+<p class="dialogue"><strong>LINA:</strong> “And this is only a small trading village. You should see the larger towns where merchants arrive from distant regions. Some of them bring spices from beyond the eastern plains, silk from the southern cities, and strange objects they claim were discovered in ancient ruins.”</p>
+<p class="dialogue"><strong>MARO:</strong> “And every one of them believes their goods are worth more than mine. One day, I shall arrive at a great city with the finest merchandise anyone has ever seen. People will line the streets just to buy from me.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “What merchandise will that be? Broken wheels? Overpriced cooking pots? Or perhaps your famous talent for talking until customers surrender out of exhaustion?”</p>
+<p class="dialogue"><strong>MARO:</strong> “You laugh now, old traveller, but when I become a wealthy merchant, you will regret every insult.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “When that day comes, I shall buy a new pair of ears so I don&#x27;t have to listen to you.”</p>
+<p class="stage">Lina shook her head with a smile. Aurel watched the exchange, still surprised by how easily the three travellers argued without truly turning against one another.</p>
+<p class="stage">As they entered the village, a wooden sign creaked above the road. It carried the name of the settlement in faded lettering: **GREYFORD**.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Greyford?”</p>
+<p class="dialogue"><strong>LINA:</strong> “That&#x27;s the name of the village. Traders travelling between the mountain settlements and the lowland towns often stop here to rest, exchange goods, and find supplies for the next part of their journey.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “So people come here from places I&#x27;ve never even heard of?”</p>
+<p class="dialogue"><strong>LINA:</strong> “All the time. Some have travelled for weeks. Others have crossed rivers and plains just to sell a few bundles of cloth or buy tools they can&#x27;t find at home.”</p>
+<p class="stage">Aurel looked towards the busy road beyond the village square.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I didn&#x27;t know the world was this big.”</p>
+<p class="stage">Lina glanced at him, sensing both wonder and sadness in his voice.</p>
+<p class="dialogue"><strong>LINA:</strong> “There is much more to it than any one person can see in a lifetime. You don&#x27;t have to understand it all today.”</p>
+<p class="stage">The caravan rolled towards the market square, where Maro hoped to sell his cooking pots and other household goods. Before he could reach the first stall, a sharp voice called from beneath a faded blue awning.</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “Maro! If that is your cart making that dreadful noise again, take it somewhere else before it frightens away my customers!”</p>
+<p class="stage">Standing in front of a narrow shop was Old Beren, a stocky elderly shopkeeper with a bald head, thick white eyebrows, and a brown apron covered in flour and dust. His shop sold grain, dried herbs, household supplies, and a collection of odds and ends that seemed to have accumulated over several decades.</p>
+<p class="stage">Old Beren folded his arms as Maro guided the cart to a halt.</p>
+<p class="dialogue"><strong>MARO:</strong> “Beren, my dear friend! How wonderful to see you. I have brought you an extraordinary collection of goods, each one carefully selected for a man of your excellent taste.”</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “Last time you said that, you sold me a cooking pot with a hole in the bottom.”</p>
+<p class="dialogue"><strong>MARO:</strong> “A minor manufacturing imperfection.”</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “It leaked soup onto my foot.”</p>
+<p class="dialogue"><strong>MARO:</strong> “Then you should be grateful. You discovered the problem before serving your customers.”</p>
+<p class="stage">Bako let out a dry laugh.</p>
+<p class="dialogue"><strong>BAKO:</strong> “I see the wheel isn&#x27;t the only thing Maro has repaired with excuses.”</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “And who is this miserable-looking traveller? Did you finally find someone willing to listen to your sales pitch?”</p>
+<p class="dialogue"><strong>BAKO:</strong> “No. I found someone willing to walk beside a donkey. Unfortunately, the donkey had already agreed to travel with Maro.”</p>
+<p class="dialogue"><strong>MARO:</strong> “I brought you a perfectly good customer, and you choose to insult me in front of him!”</p>
+<p class="stage">Old Beren&#x27;s attention shifted to Aurel, who stood quietly beside Lina.</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “And who&#x27;s the boy?”</p>
+<p class="dialogue"><strong>LINA:</strong> “His name is Aurel. We met him in the forest this morning. He was travelling alone, so we offered to bring him here.”</p>
+<p class="stage">Old Beren studied Aurel&#x27;s dusty clothes and tired face. His expression lost some of its sharpness.</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “Alone, you say? That&#x27;s a dangerous way for a child to travel. The forest roads aren&#x27;t always safe, especially after dark.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I know.”</p>
+<p class="stage">The brief answer carried a weight that made Old Beren reconsider his next question.</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “Well, you&#x27;re in Greyford now. Keep your eyes open, listen when sensible people warn you, and don&#x27;t believe every smiling face you meet. This village has good people, but not everyone who offers you a hand intends to help you stand.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “That&#x27;s the most useful thing you&#x27;ve said all morning, Beren.”</p>
+<p class="dialogue"><strong>OLD BEREN:</strong> “And you must be the reason the morning has been so unpleasant.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “I was beginning to think you&#x27;d forgotten me.”</p>
+<p class="stage">Lina laughed as she helped Maro unload the first basket.</p>
+<p class="stage">Across the square, a young village girl watched the new arrivals with unmistakable curiosity. She was around thirteen, with short, dark hair tied back by a red ribbon and a small satchel hanging across her shoulder. Her name was Tessa, and she spent much of her time helping her mother deliver herbs and vegetables to the village shops.</p>
+<p class="stage">Tessa had been carrying a basket towards Old Beren&#x27;s shop when she noticed Aurel standing beside the cart. Unlike the other travellers, he was not looking at the merchandise. He was studying everything around him as though each ordinary sight contained a secret.</p>
+<p class="stage">She approached him while the adults continued their argument.</p>
+<p class="dialogue"><strong>TESSA:</strong> “I&#x27;ve never seen you here before. Are you visiting someone?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “No. I&#x27;ve never been here before.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Really? Where are you from?”</p>
+<p class="stage">Aurel hesitated.</p>
+<p class="dialogue"><strong>AUREL:</strong> “A settlement in the mountains.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Which one? My uncle trades with some of the mountain villages. He says the people there rarely travel down here because they prefer to keep to themselves.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Mine was hidden among the mountains.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Hidden? Like a secret village?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Something like that.”</p>
+<p class="stage">Tessa leaned forward, intrigued.</p>
+<p class="dialogue"><strong>TESSA:</strong> “That sounds exciting. Did you have to climb dangerous cliffs to get there? Were there ancient ruins? Strange creatures? My uncle once told me that some mountains contain caves older than the oldest kingdoms.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know about that. I grew up there. It was just home.”</p>
+<p class="stage">The word escaped his mouth before he could stop it.</p>
+<p class="stage">Tessa noticed his expression change.</p>
+<p class="dialogue"><strong>TESSA:</strong> “Oh. Sorry. I didn&#x27;t mean to ask too many questions.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “It&#x27;s all right.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “I&#x27;m Tessa, by the way. If you need to find anything in Greyford, ask me. I know where most things are, including the places visitors should avoid.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Which places?”</p>
+<p class="dialogue"><strong>TESSA:</strong> “The old well behind the abandoned mill, for one. People say the stones around it move by themselves at night.”</p>
+<p class="stage">From behind them, Bako called out.</p>
+<p class="dialogue"><strong>BAKO:</strong> “The stones don&#x27;t move. The ground sinks because the well is old, and the village children keep digging around it.”</p>
+<p class="stage">Tessa turned towards him, offended.</p>
+<p class="dialogue"><strong>TESSA:</strong> “That&#x27;s what the elders want us to believe!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “And what do you believe?”</p>
+<p class="dialogue"><strong>TESSA:</strong> “That there&#x27;s something down there.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Then I suggest you leave it there.”</p>
+<p class="stage">Maro shook his head.</p>
+<p class="dialogue"><strong>MARO:</strong> “Wonderful. We have been here for less than an hour, and already someone is trying to frighten the boy with stories about haunted wells.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “I&#x27;m not trying to frighten him!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Then stop looking so pleased about the possibility of a haunted well.”</p>
+<p class="stage">Tessa folded her arms, and Aurel found himself smiling again.</p>
+<p class="stage">For a little while, the village almost made him forget the terrible night behind him.</p>
+<p class="stage">Then a commotion erupted from the far side of the square.</p>
+<p class="dialogue"><strong>FARMER:</strong> “Please! Someone help me! I need someone who understands plants!”</p>
+<p class="stage">A middle-aged farmer hurried into the market, carrying a bundle of wilted green stalks. His clothes were stained with soil, his boots were muddy, and his face was drawn with exhaustion. A few people turned towards him, but most continued with their work.</p>
+<p class="stage">The farmer stopped beside a stall selling seeds and gardening tools. The stall belonged to a woman named Mera, a broad-faced vendor with strong hands and a green scarf wrapped around her head.</p>
+<p class="dialogue"><strong>MERA:</strong> “Davin, you&#x27;re back again? I told you those leaves wouldn&#x27;t recover just because you kept bringing them into the market.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Then tell me what will recover them! The crops in my eastern field are dying, Mera. Not just one or two plants. Everything is withering, even the young shoots that should be growing strongest at this time of year.”</p>
+<p class="dialogue"><strong>MERA:</strong> “Have you checked the water channels?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Three times. The water reaches the field, but the plants still die. I&#x27;ve changed the soil, bought new seeds, and asked every farmer I know. Nothing works.”</p>
+<p class="stage">Davin held out the wilted stalks. Their leaves were dry and curled, and their stems had lost their firmness.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Look at them. These were green only a few days ago. If the rest of the field follows the same path, I won&#x27;t have enough to feed my family, let alone sell anything at the market.”</p>
+<p class="stage">Mera examined the stalks and frowned.</p>
+<p class="dialogue"><strong>MERA:</strong> “I&#x27;ve never seen a field fail this quickly. Something is wrong, but I can&#x27;t tell what from these leaves alone.”</p>
+<p class="stage">The people gathered around the stall began offering suggestions. One man blamed the weather. Another insisted that insects must be eating the roots. A third declared that Davin had probably bought poor-quality seed, despite knowing nothing about farming.</p>
+<p class="stage">Aurel stood near the cart, listening.</p>
+<p class="stage">He knew what it meant to lose the things that kept a family alive. He remembered his Father&#x27;s small garden behind their home, the young trees they had cared for together, and the way his Father always insisted that even the weakest plant deserved a chance to grow.</p>
+<p class="stage">Davin looked down at the dying stalks in his hands.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “I&#x27;ve done everything I know. If I cannot save that field, I don&#x27;t know what will happen to my family.”</p>
+<p class="stage">Aurel took one quiet step forward.</p>
+<p class="stage">His eyes remained fixed on the leaves.</p>
+<p class="stage">For the briefest moment, he felt something familiar beneath the sadness in his chest—a faint stirring, like the warmth he had felt in his hands when he touched the dying tree before his world fell apart.</p>
+<p class="stage">He looked at his fingers.</p>
+<p class="stage">They were ordinary.</p>
+<p class="stage">At least, they appeared to be.</p>
+<p class="dialogue"><strong>AUREL:</strong> “May I see one?”</p>
+<p class="stage">Davin turned towards the boy.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “You want to see the plant?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yes. I might be able to help.”</p>
+<p class="stage">Several people exchanged doubtful looks. Maro slowly turned away from his cart. Lina watched Aurel carefully, remembering how little he had said about himself and how much pain he seemed to carry.</p>
+<p class="dialogue"><strong>MERA:</strong> “Child, even the experienced farmers haven&#x27;t found the cause. You shouldn&#x27;t feel responsible for fixing something you don&#x27;t understand.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;m not saying I can fix it. I just want to look.”</p>
+<p class="stage">Davin studied the boy&#x27;s face. There was no arrogance in his expression, only a quiet determination.</p>
+<p class="stage">After a moment, he handed Aurel one of the wilted stalks.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “All right. But be careful. Whatever is happening to these plants, I&#x27;ve never seen anything like it.”</p>
+<p class="stage">Aurel accepted the stalk.</p>
+<p class="stage">The moment his fingers touched its brittle stem, the noise of the marketplace seemed to fade.</p>
+<p class="stage">He heard the wind moving through leaves that were not there. He felt something beneath the soil, distant and faint, like a heartbeat buried deep beneath the earth.</p>
+<p class="stage">His breath caught.</p>
+<p class="stage">For an instant, a tiny green spark flickered beneath his fingertips.</p>
+<p class="stage">Then it vanished.</p>
+<p class="stage">No one in the market appeared to notice it.</p>
+<p class="stage">No one except the hooded stranger standing beneath the shadow of a building across the square.</p>
+<p class="stage">The stranger&#x27;s face remained hidden beneath a dark travelling cloak. One gloved hand slowly tightened around a small black token bearing the mark of the Shadow Legion.</p>
+<p class="dialogue"><strong>HOODED STRANGER:</strong> “So the reports were true.”</p>
+<p class="stage">His gaze remained fixed on Aurel.</p>
+<p class="dialogue"><strong>HOODED STRANGER:</strong> “The boy has survived.”</p>
+<p class="stage">He turned away from the marketplace and disappeared into a narrow alley.</p>
+<p class="stage">In the centre of the square, Aurel continued staring at the dying plant, unaware that his arrival in Greyford had already drawn the attention of someone who had been searching for him.</p>
+<h3>END OF SCENE 3</h3>
+<h3>SCENE 4 — THE LIFE BENEATH THE SOIL</h3>
+<p class="stage">Greyford’s marketplace remained crowded, but the people gathered around Mera’s stall had begun to pay attention to the strange boy holding Davin’s dying plant.</p>
+<p class="stage">Aurel stood motionless. His fingers rested against the brittle stem, and his eyes had narrowed as though he were listening to something no one else could hear.</p>
+<p class="stage">Beneath his feet, the earth seemed to carry a faint vibration.</p>
+<p class="stage">It was not a sound exactly. It was more like a feeling, distant and unfamiliar, yet strangely comforting.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Well, young man? Do you see anything? Is there something wrong with the stem?”</p>
+<p class="stage">Aurel blinked and looked at the farmer.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I… I&#x27;m not sure. I thought I felt something.”</p>
+<p class="dialogue"><strong>MERA:</strong> “Felt something? What do you mean?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know how to explain it. When I touched the plant, it felt as though something was moving beneath the ground. Not an animal. Something else.”</p>
+<p class="stage">An uneasy silence followed.</p>
+<p class="dialogue"><strong>MARKET VENDOR:</strong> “Moving beneath the ground? Are you talking about roots?”</p>
+<p class="stage">The speaker was a short, middle-aged man named Odo, who sold woven baskets and wooden farming tools from a stall opposite Mera’s. He leaned over his display, trying to get a better look at Aurel.</p>
+<p class="dialogue"><strong>ODO:</strong> “Because if you mean roots, I can tell you that plants have been doing that for longer than any of us have been alive.”</p>
+<p class="dialogue"><strong>MERA:</strong> “Odo, if you have something useful to say, say it. Otherwise, stop frightening the boy.”</p>
+<p class="dialogue"><strong>ODO:</strong> “I&#x27;m not frightening anybody. I&#x27;m protecting the marketplace from foolishness.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Then you should begin with your own stall. Half your baskets look as though they would collapse if someone placed an onion inside them.”</p>
+<p class="stage">Several people laughed. Odo turned towards Bako with an offended expression.</p>
+<p class="dialogue"><strong>ODO:</strong> “Those baskets are perfectly sound!”</p>
+<p class="stage">One of the baskets on his stall suddenly tipped over, spilling a collection of wooden spoons onto the ground.</p>
+<p class="stage">Bako looked at the fallen spoons.</p>
+<p class="dialogue"><strong>BAKO:</strong> “Perfectly sound. I stand corrected.”</p>
+<p class="stage">The laughter grew louder, and even Davin managed a brief smile. Aurel, however, remained focused on the plant.</p>
+<p class="stage">He gently turned the stalk in his hands. The leaves were dry and lifeless, yet something about them reminded him of the tree he had healed before the attack on his home.</p>
+<p class="stage">He remembered the moment his palms had touched its bark. He remembered the impossible feeling of life flowing through something that had been dying.</p>
+<p class="stage">Then he remembered the ancient shrine, the glowing symbols, and the terror in the Shadow Legion soldier’s eyes.</p>
+<p class="stage">His hands began to tremble.</p>
+<p class="dialogue"><strong>LINA:</strong> “Aurel?”</p>
+<p class="stage">Lina stepped closer, her voice low enough that the surrounding villagers could not easily hear.</p>
+<p class="dialogue"><strong>LINA:</strong> “You look frightened. Do you want to put the plant down?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know what&#x27;s happening to me.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Then you don&#x27;t have to force yourself to do anything. Give it back to Davin if you&#x27;re uncomfortable.”</p>
+<p class="stage">Aurel looked at the stalk once more.</p>
+<p class="dialogue"><strong>AUREL:</strong> “What if I can help it?”</p>
+<p class="stage">Lina followed his gaze.</p>
+<p class="dialogue"><strong>LINA:</strong> “Then we can try to help. But you mustn&#x27;t hurt yourself trying to prove something.”</p>
+<p class="stage">Her words reminded him of his Father. The old man had never demanded that Aurel understand everything at once. He had always told him that patience was often more important than strength.</p>
+<p class="stage">Aurel took a slow breath.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I want to try.”</p>
+<p class="stage">He lowered the stalk towards the small patch of soil beside Mera’s stall. The farmer watched him uncertainly, while the gathered villagers leaned forward.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “What exactly are you going to do?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “That is a remarkably honest answer. Most people would have charged you a fee before admitting that.”</p>
+<p class="dialogue"><strong>MARO:</strong> “Bako, for once in your life, let the boy concentrate.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “I am concentrating. I&#x27;m concentrating on how quickly this market has turned into a theatre.”</p>
+<p class="stage">Despite the humour, the villagers grew quieter.</p>
+<p class="stage">Aurel knelt and placed the plant&#x27;s roots against the soil. He pressed his fingertips gently into the earth.</p>
+<p class="stage">Nothing happened.</p>
+<p class="stage">He waited.</p>
+<p class="stage">The market sounds returned around him: the calls of merchants, the clatter of carts, the hammering of the blacksmith, and the distant braying of a donkey.</p>
+<p class="stage">Aurel felt foolish.</p>
+<p class="stage">Perhaps he had imagined the sensation. Perhaps grief had confused his memories. Perhaps the power that had awakened inside him during the attack was something he would never understand.</p>
+<p class="stage">He began to withdraw his hand.</p>
+<p class="stage">Then a faint warmth spread through his fingertips.</p>
+<p class="stage">It travelled into the soil like a breath passing through sleeping lungs.</p>
+<p class="stage">Deep beneath the marketplace, thin roots stirred.</p>
+<p class="stage">For a heartbeat, a soft green light appeared between Aurel’s fingers.</p>
+<p class="stage">The stalk trembled.</p>
+<p class="stage">A tiny leaf unfolded from the dry stem.</p>
+<p class="stage">Then another.</p>
+<p class="stage">The brittle brown edges of the remaining leaves slowly gave way to green.</p>
+<p class="stage">No one spoke.</p>
+<p class="stage">Davin stared at the plant as though the world had suddenly changed its laws.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “No… no, that can&#x27;t be possible.”</p>
+<p class="stage">Mera dropped the small knife she had been using to cut twine. It struck the wooden counter with a sharp clack.</p>
+<p class="dialogue"><strong>MERA:</strong> “I have sold seeds and tended plants for more than twenty years. I&#x27;ve watched crops recover after rain, after careful pruning, and after weeks of patient work. I&#x27;ve never seen anything like that.”</p>
+<p class="stage">Odo hurried around his stall, nearly stepping on his own basket.</p>
+<p class="dialogue"><strong>ODO:</strong> “What did he do? Did he use some kind of medicine? A powder? A trick?”</p>
+<p class="dialogue"><strong>MARO:</strong> “If it is a trick, it is the first useful one I&#x27;ve seen today. Perhaps he can teach my cart to repair itself.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Your cart would need more than a miracle. It would need a new owner.”</p>
+<p class="stage">No one laughed this time.</p>
+<p class="stage">Aurel pulled his hand away and stared at his fingers. The green light had vanished, but the warmth remained for a few seconds before fading.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I didn&#x27;t mean to do that.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “You brought it back to life.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I only touched it.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “That plant was dying. I brought it here because I thought someone might know what was wrong with it. Now look at it!”</p>
+<p class="stage">Davin carefully took the stalk from Aurel, holding it as though it were something precious.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “If you can do this to one plant, perhaps you can help me save my field.”</p>
+<p class="stage">The words unsettled Aurel.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Your field?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “The crops are dying. Every day, more of them wither. I have a family depending on that harvest, and I have run out of things to try. Please, if there is any chance you can help, come with me.”</p>
+<p class="stage">Aurel looked towards Lina.</p>
+<p class="stage">He had only just arrived in Greyford. He barely understood what had happened to the stalk, and the thought of using his strange ability again frightened him. Yet Davin&#x27;s desperation reminded him of the helplessness he had felt while watching his home burn.</p>
+<p class="dialogue"><strong>LINA:</strong> “You don&#x27;t have to decide immediately, Aurel. No one should expect you to solve every problem simply because something unusual happened.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “She&#x27;s right. I shouldn&#x27;t put that burden on you. But if you&#x27;re willing to come and look at the field, I would be grateful.”</p>
+<p class="stage">Aurel looked at the restored leaves.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;ll come and see it. I can&#x27;t promise that I&#x27;ll be able to help.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “That&#x27;s more than I had before. Thank you.”</p>
+<p class="stage">The farmer bowed his head, overcome with relief.</p>
+<p class="stage">Around them, the villagers began speaking in excited whispers.</p>
+<p class="dialogue"><strong>VILLAGER ONE:</strong> “Did you see the light?”</p>
+<p class="dialogue"><strong>VILLAGER TWO:</strong> “He healed the plant with his hands!”</p>
+<p class="dialogue"><strong>VILLAGER THREE:</strong> “Maybe he&#x27;s a forest spirit.”</p>
+<p class="dialogue"><strong>ODO:</strong> “Forest spirits don&#x27;t usually wear torn clothes and look as though they haven&#x27;t slept.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Then perhaps you should stop judging spirits by their clothing.”</p>
+<p class="stage">Some people laughed, but others continued watching Aurel with growing unease.</p>
+<p class="stage">An elderly woman standing near the fountain crossed herself according to an old village custom, whispering a prayer for protection. A young apprentice blacksmith called for his master to come and see what had happened. Two children began arguing over whether Aurel could make an entire tree grow in the time it took to eat a loaf of bread.</p>
+<p class="stage">The marketplace had become a place of wonder, suspicion, and speculation.</p>
+<p class="stage">Aurel wished he could disappear.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Everyone is staring at me.”</p>
+<p class="dialogue"><strong>LINA:</strong> “They have never seen anything like this. Some will be curious, some will be afraid, and others will tell stories before they understand what happened. Don&#x27;t let their first reactions decide who you are.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “What if they&#x27;re right to be afraid?”</p>
+<p class="stage">Lina studied him for a moment.</p>
+<p class="dialogue"><strong>LINA:</strong> “Then we will find out why. But doing something you don&#x27;t understand doesn&#x27;t automatically make you dangerous.”</p>
+<p class="stage">Before Aurel could answer, a bell rang from the far end of the square.</p>
+<p class="stage">An older man in a dark blue coat was approaching, accompanied by two village guards. The man was known as Warden Halden, the official responsible for maintaining order in Greyford. He was tall and broad-chested, with greying hair, a carefully trimmed beard, and a weathered face that suggested he had spent many years dealing with troublesome merchants and frightened villagers.</p>
+<p class="stage">One of the guards, a young man named Perrin, pointed towards the crowd.</p>
+<p class="dialogue"><strong>PERRIN:</strong> “Warden, the disturbance is here. Several people claim a boy made a dead plant grow again.”</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “Plants do not simply return to life because someone touches them. Let&#x27;s find out what actually happened before the market invents ten different versions of the same story.”</p>
+<p class="stage">Halden stopped in front of Aurel.</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “My name is Halden. I keep order in this village. I understand that something unusual has happened here, and I would like you to explain it to me.”</p>
+<p class="stage">Aurel felt Lina move closer beside him.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know what happened. The farmer showed me his plant, and I touched it. Then it began growing again.”</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “Did you use a substance, a tool, or any kind of charm?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “No.”</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “Have you done this before?”</p>
+<p class="stage">Aurel hesitated.</p>
+<p class="stage">He could lie. He could pretend that the event had been an accident, that he had never felt life moving through the earth, and that the glowing symbols beneath the shrine had nothing to do with him.</p>
+<p class="stage">But the image of his Father&#x27;s final moments returned to his mind.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Something like this happened once before. I healed a dying tree near my home.”</p>
+<p class="stage">Halden&#x27;s expression changed slightly.</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “You healed a tree?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yes. I didn&#x27;t understand it then, and I still don&#x27;t understand it now.”</p>
+<p class="stage">The warden studied him carefully. He was not convinced that the boy was telling the whole story, but he could see no reason to accuse him of wrongdoing.</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “I won&#x27;t accuse you of anything without cause. However, strange events can frighten people, especially when they don&#x27;t understand what they&#x27;re seeing. Until we know more, I would advise you not to demonstrate this ability in the middle of a crowded market.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “A sensible suggestion. Perhaps you could give Maro the same advice about demonstrating his bargaining skills.”</p>
+<p class="dialogue"><strong>MARO:</strong> “Why am I always part of these conversations?”</p>
+<p class="dialogue"><strong>PERRIN:</strong> “Perhaps because you are always shouting, Maro.”</p>
+<p class="stage">Maro opened his mouth to protest, then closed it again when he realised the guard had a point.</p>
+<p class="stage">The tension eased slightly, but Halden remained thoughtful.</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “Davin, you said your crops are dying?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Yes, Warden. The eastern field. I&#x27;ve tried everything I know, but the plants continue to wither.”</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “Take the boy there if he is willing, but don&#x27;t force him to do anything. And if you discover that something threatens the village, I expect you to report it immediately.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Of course.”</p>
+<p class="stage">Halden nodded and motioned for Perrin to follow him. Before leaving, the warden looked at Aurel one last time.</p>
+<p class="dialogue"><strong>WARDEN HALDEN:</strong> “Whatever your ability is, boy, learn to understand it before someone else decides what it means.”</p>
+<p class="stage">With that, he disappeared into the crowd.</p>
+<p class="stage">Aurel remained still, turning his hands over as though they belonged to someone else.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Learn to understand it…”</p>
+<p class="stage">He could still feel a faint echo of that warmth beneath his skin.</p>
+<p class="stage">Across the marketplace, beyond the awnings and the crowded stalls, the hooded stranger watched from the mouth of a narrow alley.</p>
+<p class="stage">He had seen the green light.</p>
+<p class="stage">He had heard the villagers speak of the boy&#x27;s strange power.</p>
+<p class="stage">And now he had confirmation that the child the Shadow Legion had been ordered to find was alive.</p>
+<p class="stage">The stranger withdrew a small black token from beneath his cloak. A faint mark shimmered across its surface, then faded.</p>
+<p class="dialogue"><strong>HOODED STRANGER:</strong> “The awakening is stronger than we expected.”</p>
+<p class="stage">He lowered his head, speaking in a voice barely louder than the wind.</p>
+<p class="dialogue"><strong>HOODED STRANGER:</strong> “The Dark Lord must know. The boy has begun to touch the life beneath the earth.”</p>
+<p class="stage">He slipped the token away and vanished into the alley before anyone could notice him.</p>
+<p class="stage">At Mera&#x27;s stall, Aurel looked once more at the green leaves growing from Davin&#x27;s restored plant.</p>
+<p class="stage">He had come to Greyford looking for food, shelter, and answers about the destruction of his home.</p>
+<p class="stage">Instead, he had revealed a power he could not explain.</p>
+<p class="stage">And somewhere beyond the village, an enemy had begun to follow his trail.</p>
+<h3>END OF SCENE 4</h3>
+<h3>SCENE 5 — THE FIELD THAT FORGOT TO LIVE</h3>
+<p class="stage">The afternoon sun hung above Greyford as Davin led Aurel away from the marketplace. Lina accompanied them, carrying a small bag of bread and fruit. Maro remained behind to negotiate with Old Beren, while Bako had announced that he would rather guard the cart than endure another argument about the price of cooking pots.</p>
+<p class="stage">Tessa followed for a short distance, her curiosity refusing to let the mysterious boy leave without further questions.</p>
+<p class="dialogue"><strong>TESSA:</strong> “If you really can make plants grow, could you grow a tree big enough to reach the clouds?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Could you grow a whole forest?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Could you grow a tree that produces bread instead of fruit?”</p>
+<p class="dialogue"><strong>LINA:</strong> “Tessa, must every question be bigger than the last?”</p>
+<p class="dialogue"><strong>TESSA:</strong> “I&#x27;m trying to understand what he can do.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “So am I.”</p>
+<p class="stage">Tessa stopped walking. For the first time, she seemed to realise that Aurel was not hiding a collection of impressive tricks. He was a boy who had stumbled into something he could not explain.</p>
+<p class="dialogue"><strong>TESSA:</strong> “Oh. I suppose that makes sense.”</p>
+<p class="dialogue"><strong>LINA:</strong> “We&#x27;ll be back before evening. You should return to your mother before she wonders where you&#x27;ve gone.”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Fine. But if you discover anything interesting, I want to hear about it!”</p>
+<p class="stage">She hurried back towards the village, nearly colliding with a man carrying a basket of onions.</p>
+<p class="dialogue"><strong>ONION SELLER:</strong> “Watch where you&#x27;re going, girl! These onions have travelled farther than you have!”</p>
+<p class="dialogue"><strong>TESSA:</strong> “Then perhaps they should learn to move faster!”</p>
+<p class="stage">The seller stared after her in disbelief.</p>
+<p class="dialogue"><strong>ONION SELLER:</strong> “Children have no respect for vegetables anymore.”</p>
+<p class="stage">Aurel almost smiled as he followed Lina and Davin along the road.</p>
+<p class="stage">Beyond Greyford, the houses became fewer, giving way to low stone walls, grazing animals, and stretches of farmland. The path descended towards a broad field bordered by a narrow stream. A small wooden house stood at one end, its roof patched with different shades of brown.</p>
+<p class="stage">As they approached, Aurel noticed that the land looked strangely lifeless.</p>
+<p class="stage">The grass beside the path had turned pale. Several young trees stood with drooping branches, and the leaves on the bushes were curled despite the damp soil. Beyond the wooden fence, rows of crops stretched towards the horizon, but most of them had withered into brittle stalks.</p>
+<p class="dialogue"><strong>AUREL:</strong> “All of this belongs to you?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “My family and I have worked this land for years. My father farmed here before me, and his father before him. This field fed our family and supplied a good portion of the village market.”</p>
+<p class="stage">Davin stopped beside the fence.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Three weeks ago, everything was growing normally. Then the leaves began turning yellow. At first, I thought the weather was changing, so I increased the water and checked the soil. But the damage spread from one end of the field to the other.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Did the neighbouring farms suffer the same problem?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Some plants near the eastern boundary have started to wither, but nothing like this. My field is dying faster than the others.”</p>
+<p class="stage">Aurel looked towards the stream.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Does the water still flow through the field?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Yes. I cleared the channels myself yesterday.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Then perhaps the problem isn&#x27;t a lack of water.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “That&#x27;s what I&#x27;ve been telling myself. But what else can kill healthy crops so quickly?”</p>
+<p class="stage">He pushed open the gate.</p>
+<p class="stage">The three entered the field. Underfoot, the soil was dry and cracked in some places, yet damp in others. Aurel knelt beside a row of dying plants and touched the earth.</p>
+<p class="stage">He closed his eyes.</p>
+<p class="stage">At first, he felt nothing.</p>
+<p class="stage">Then came the familiar sensation: a faint vibration beneath the ground, like a distant heartbeat.</p>
+<p class="stage">His breathing slowed.</p>
+<p class="stage">The sound of the wind seemed to recede, and the field around him became strangely quiet. He could feel the roots beneath the soil, thin and tangled, reaching into the darkness. Some were brittle. Others had curled in on themselves, as though retreating from something they could not escape.</p>
+<p class="stage">But the strangest sensation lay deeper.</p>
+<p class="stage">Something was draining the life from the field.</p>
+<p class="stage">Aurel opened his eyes abruptly.</p>
+<p class="dialogue"><strong>AUREL:</strong> “There&#x27;s something wrong beneath the soil.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “You can tell that just by touching it?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I can&#x27;t explain it. The plants don&#x27;t feel empty because they&#x27;re thirsty. It&#x27;s as though something is taking their strength away.”</p>
+<p class="stage">Lina looked towards the far end of the field.</p>
+<p class="dialogue"><strong>LINA:</strong> “Could it be something in the water?”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “I&#x27;ve thought of that. The stream has always been clean, but I checked it anyway. Nothing looked unusual.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Where does the stream come from?”</p>
+<p class="stage">Davin pointed towards a line of hills beyond the eastern boundary.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “It flows down from those hills. There&#x27;s an old stone channel near the source, though I haven&#x27;t used it in years. My grandfather said it was built long before Greyford became a trading village.”</p>
+<p class="stage">At the mention of old stonework, Aurel remembered the ancient shrine hidden among his mountains. He remembered the tree surrounded by four symbols, and the small stone he had discovered beneath its roots.</p>
+<p class="stage">His hand moved instinctively towards his chest.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Have you ever seen symbols carved into the stones near the water?”</p>
+<p class="stage">Davin frowned.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Symbols? Not that I remember. Why?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know. I just wondered.”</p>
+<p class="stage">He looked away before Davin could ask another question.</p>
+<p class="stage">For a moment, he felt the familiar pull of a memory he could not fully understand. The shrine, the glowing symbols, the strange warmth in his hands—everything seemed connected, but the connection remained just beyond his reach.</p>
+<p class="dialogue"><strong>LINA:</strong> “Aurel, are you all right?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yes. I think so.”</p>
+<p class="stage">He looked down at the dying crops.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;d like to try something, but I can&#x27;t promise it will work.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “Try whatever you think is safe. If there&#x27;s even a small chance of saving the field, I won&#x27;t stop you.”</p>
+<p class="stage">Lina crouched beside Aurel.</p>
+<p class="dialogue"><strong>LINA:</strong> “Remember what I told you in the marketplace. You don&#x27;t have to force anything. If you feel frightened or unwell, stop.”</p>
+<p class="stage">Aurel nodded.</p>
+<p class="stage">He placed both hands against the soil.</p>
+<p class="stage">The warmth returned almost immediately.</p>
+<p class="stage">It began as a faint tingling in his fingers, then spread through his palms and into his arms. He felt the roots beneath him respond, as though something sleeping in the earth had recognised his touch.</p>
+<p class="stage">For a moment, Aurel was no longer certain where his body ended and the field began.</p>
+<p class="stage">He sensed the thin roots of the nearest plants. He felt the moisture trapped beneath the cracked soil, the small stones embedded between the roots, and the delicate threads connecting one plant to another.</p>
+<p class="stage">He wanted to help them.</p>
+<p class="stage">He did not know how, so he thought of the tree he had healed before the attack on his home. He remembered the feeling of life flowing through his hands, and he allowed himself to reach towards that same feeling again.</p>
+<p class="stage">A faint green light appeared beneath his palms.</p>
+<p class="stage">One of the dying plants trembled.</p>
+<p class="stage">Its stem slowly straightened. A pale leaf unfolded, followed by another. The brown edges softened, and a fresh green colour spread across the plant.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “By the First Flame…”</p>
+<p class="stage">Lina stared at the plant, unable to hide her astonishment.</p>
+<p class="dialogue"><strong>LINA:</strong> “Aurel, it&#x27;s working.”</p>
+<p class="stage">Aurel barely heard her.</p>
+<p class="stage">The warmth was spreading farther than before. The roots beneath the ground began responding, and several plants around him lifted their drooping leaves.</p>
+<p class="stage">But then something changed.</p>
+<p class="stage">The warmth suddenly faltered.</p>
+<p class="stage">A cold sensation rose through the earth and struck Aurel&#x27;s hands.</p>
+<p class="stage">He gasped.</p>
+<p class="stage">The green light flickered violently, and a sharp pain travelled up his arms. Beneath the field, the strange heartbeat seemed to stumble.</p>
+<p class="stage">For a single instant, Aurel felt something vast and distant pressing against his awareness.</p>
+<p class="stage">It was not the gentle sensation of roots or growing leaves.</p>
+<p class="stage">It felt ancient.</p>
+<p class="stage">It felt hungry.</p>
+<p class="stage">And it seemed to be pulling away from him while trying to draw him closer at the same time.</p>
+<p class="dialogue"><strong>AUREL:</strong> “What… is that?”</p>
+<p class="stage">The light beneath his hands dimmed.</p>
+<p class="stage">He tried to pull away, but the strange coldness clung to his fingers. His breath came in short gasps as the sensation intensified.</p>
+<p class="dialogue"><strong>LINA:</strong> “Aurel! Stop! Move your hands!”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “What&#x27;s happening to him?”</p>
+<p class="dialogue"><strong>LINA:</strong> “I don&#x27;t know! Aurel, look at me. Pull away from the ground!”</p>
+<p class="stage">Aurel clenched his teeth and forced himself to lift his hands.</p>
+<p class="stage">The green light vanished.</p>
+<p class="stage">He fell backwards onto the soil, breathing hard. Lina caught his shoulder before his head struck the ground.</p>
+<p class="dialogue"><strong>LINA:</strong> “Aurel? Can you hear me?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Yes…”</p>
+<p class="stage">He stared at his hands. They were shaking.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Something was down there. I felt it.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “What was down there?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know. It wasn&#x27;t the roots. It was something else.”</p>
+<p class="stage">Davin looked across his field.</p>
+<p class="stage">The nearest plants had recovered, but the change had not spread far. A small patch of green surrounded the place where Aurel had touched the soil. Beyond it, the crops remained withered.</p>
+<p class="stage">For a few seconds, Davin could only stare at the contrast between the living plants and the dying rows beyond them.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “You saved them. You actually saved them.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Only a few.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “A few is more than nothing.”</p>
+<p class="stage">Davin knelt beside the restored plants. His hands trembled as he touched their leaves, afraid that they might wither again if he moved too quickly.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “I thought I had lost everything. I thought my family would have to leave this land.”</p>
+<p class="stage">His voice broke.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “I don&#x27;t know how to thank you.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Please don&#x27;t. I didn&#x27;t save the whole field.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “You gave me hope. That is not nothing.”</p>
+<p class="stage">Aurel lowered his eyes.</p>
+<p class="stage">He wanted to feel happy for the farmer, but the cold sensation remained in his memory. Whatever he had touched beneath the earth had not felt like a natural part of the field.</p>
+<p class="stage">It had felt as though the land itself were being wounded.</p>
+<p class="stage">Lina helped him stand.</p>
+<p class="dialogue"><strong>LINA:</strong> “We should return to the village. You need to rest, and I want to make sure you&#x27;re not hurt.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;m all right.”</p>
+<p class="dialogue"><strong>LINA:</strong> “You nearly fell over. You can argue with me after you&#x27;ve eaten something.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “That sounds like something Father would say.”</p>
+<p class="stage">The words escaped before he could stop them.</p>
+<p class="stage">Lina&#x27;s expression softened.</p>
+<p class="dialogue"><strong>LINA:</strong> “Then perhaps he was a wise man.”</p>
+<p class="stage">Aurel looked towards the distant hills.</p>
+<p class="dialogue"><strong>AUREL:</strong> “He was.”</p>
+<p class="stage">For a moment, neither of them spoke.</p>
+<p class="stage">Then Davin straightened and wiped the soil from his hands.</p>
+<p class="dialogue"><strong>DAVIN:</strong> “I&#x27;ll tell no one what happened here until you&#x27;ve had time to rest. People are already talking about what you did in the marketplace. You don&#x27;t need the whole village following you around.”</p>
+<p class="dialogue"><strong>LINA:</strong> “That&#x27;s sensible. But we should tell Warden Halden that something unusual may be happening beneath your field. If the problem is spreading, other farms could be affected.”</p>
+<p class="dialogue"><strong>DAVIN:</strong> “I&#x27;ll speak to him myself.”</p>
+<p class="stage">They began walking back towards Greyford.</p>
+<p class="stage">Aurel glanced over his shoulder at the small patch of green surrounded by dying crops.</p>
+<p class="stage">He had healed the plants, but he had also felt something beneath the earth—something that seemed to be consuming the life around it.</p>
+<p class="stage">He remembered the ancient symbols beneath the shrine.</p>
+<p class="stage">He remembered the dark power that had awakened on the night his Father died.</p>
+<p class="stage">And he wondered whether his ability to heal nature was somehow connected to the thing that was killing it.</p>
+<p class="stage">Far beyond the field, hidden among the rocks on the eastern hillside, a hooded figure watched the three travellers return towards the village.</p>
+<p class="stage">The Shadow Legion scout had followed them from Greyford. He had seen the green light, the boy&#x27;s sudden collapse, and the patch of restored crops.</p>
+<p class="stage">He reached beneath his cloak and removed the black token he had carried earlier.</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “The boy can restore life, but the power is unstable. Something in the earth resisted him.”</p>
+<p class="stage">The token darkened in his palm.</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “If the Dark Lord is right, the boy&#x27;s awakening may be opening a path to something even the Legion cannot control.”</p>
+<p class="stage">He slipped the token away and began the journey towards a narrow passage through the hills.</p>
+<p class="stage">Behind him, the restored plants swayed gently in the afternoon breeze.</p>
+<p class="stage">Beneath their roots, deep in the darkness, something stirred.</p>
+<h3>END OF SCENE 5</h3>
+<h3>SCENE 6 — THE BOY IN THE MARKET</h3>
+<p class="stage">The afternoon sun was beginning to soften when Aurel, Lina, and Davin returned to Greyford.</p>
+<p class="stage">The village was busier than before. Merchants had filled the square with colourful fabrics, baskets of fruit, dried herbs, tools, pottery, and freshly baked bread. Children ran between the stalls while adults argued over prices.</p>
+<p class="stage">For a few moments, Aurel simply walked and watched.</p>
+<p class="stage">No burning houses.</p>
+<p class="stage">No soldiers.</p>
+<p class="stage">No screams.</p>
+<p class="stage">Just people living their ordinary lives.</p>
+<p class="stage">It felt strange.</p>
+<p class="stage">It almost felt peaceful.</p>
+<p class="dialogue"><strong>LINA:</strong> “You&#x27;re quiet.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;m just looking.”</p>
+<p class="dialogue"><strong>LINA:</strong> “At what?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Everything.”</p>
+<p class="stage">Lina smiled.</p>
+<p class="dialogue"><strong>LINA:</strong> “You really haven&#x27;t seen much outside the mountains, have you?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “No.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Then take your time. You don&#x27;t have to understand the whole world in one day.”</p>
+<p class="stage">Aurel nodded.</p>
+<p class="stage">As they entered the marketplace, the smell of freshly baked bread reached him.</p>
+<p class="stage">His stomach immediately growled.</p>
+<p class="stage">Lina looked at him.</p>
+<p class="dialogue"><strong>LINA:</strong> “I thought you said you weren&#x27;t hungry.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I didn&#x27;t say that.”</p>
+<p class="dialogue"><strong>LINA:</strong> “You didn&#x27;t have to.”</p>
+<p class="stage">She laughed and led him towards a small bakery.</p>
+<p class="stage">The bakery belonged to a cheerful woman named Nara, a short, round-faced woman with flour covering her cheeks and arms. She was carrying a tray of warm bread when Lina approached.</p>
+<p class="dialogue"><strong>NARA:</strong> “Lina! You&#x27;re back already? I thought you were helping Maro unload his goods.”</p>
+<p class="dialogue"><strong>LINA:</strong> “I was, but we had a little problem. This is Aurel. He&#x27;s travelling with us.”</p>
+<p class="stage">Nara looked at Aurel, then at the dusty clothes he wore.</p>
+<p class="dialogue"><strong>NARA:</strong> “Ah. You&#x27;re the boy everyone is talking about.”</p>
+<p class="stage">Aurel immediately became uncomfortable.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Everyone?”</p>
+<p class="dialogue"><strong>NARA:</strong> “Half the marketplace, at least. By sunset, the other half will probably have invented a much more interesting story.”</p>
+<p class="dialogue"><strong>LINA:</strong> “What have they been saying?”</p>
+<p class="stage">Nara placed the bread on her counter.</p>
+<p class="dialogue"><strong>NARA:</strong> “According to one customer, the boy can command every plant in Greyford. Another says he brought a dead tree back to life with a single look. Someone else claimed he is an ancient spirit disguised as a child.”</p>
+<p class="stage">Aurel stared at her.</p>
+<p class="dialogue"><strong>AUREL:</strong> “An ancient spirit?”</p>
+<p class="dialogue"><strong>NARA:</strong> “Don&#x27;t worry. That was Old Beren&#x27;s customer. He believes everything he doesn&#x27;t understand is either a ghost or a bad business decision.”</p>
+<p class="stage">Lina laughed.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;m not a spirit.”</p>
+<p class="dialogue"><strong>NARA:</strong> “I know, dear.”</p>
+<p class="stage">She picked up a warm piece of bread and handed it to him.</p>
+<p class="dialogue"><strong>NARA:</strong> “Here. Eat before the rumours convince everyone you&#x27;re also capable of surviving without food.”</p>
+<p class="stage">Aurel accepted it.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Thank you.”</p>
+<p class="dialogue"><strong>NARA:</strong> “You&#x27;re welcome.”</p>
+<p class="stage">He took a bite.</p>
+<p class="stage">The bread was warm and soft.</p>
+<p class="stage">For a brief moment, Aurel closed his eyes.</p>
+<p class="stage">His Father had always liked fresh bread.</p>
+<p class="stage">He remembered one particular morning when his Father had returned from the village with a loaf. Aurel had tried to eat half of it before they reached home.</p>
+<p class="stage">His Father had pretended to be angry.</p>
+<p class="stage">The memory made Aurel smile.</p>
+<p class="dialogue"><strong>LINA:</strong> “Better?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “A little.”</p>
+<p class="stage">Nara noticed the smile.</p>
+<p class="dialogue"><strong>NARA:</strong> “There. That&#x27;s much better than looking like someone stole your entire childhood.”</p>
+<p class="stage">Aurel&#x27;s smile faded slightly.</p>
+<p class="stage">Nara immediately realised her words had touched something painful.</p>
+<p class="dialogue"><strong>NARA:</strong> “I&#x27;m sorry. I didn&#x27;t mean—”</p>
+<p class="dialogue"><strong>AUREL:</strong> “It&#x27;s okay.”</p>
+<p class="stage">Before the moment became too heavy, a loud voice came from across the square.</p>
+<p class="dialogue"><strong>MARO:</strong> “Aurel!”</p>
+<p class="stage">Aurel turned.</p>
+<p class="stage">Maro was standing beside his repaired cart, holding a cooking pot above his head like a trophy. Bako stood beside him with his arms folded, looking thoroughly unimpressed.</p>
+<p class="dialogue"><strong>MARO:</strong> “Come and witness history! I have successfully sold the largest cooking pot in the entire village!”</p>
+<p class="dialogue"><strong>BAKO:</strong> “You sold it for less than you paid for it.”</p>
+<p class="dialogue"><strong>MARO:</strong> “That is not important.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “It is literally the most important part of selling something.”</p>
+<p class="dialogue"><strong>MARO:</strong> “You have no appreciation for business.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “And you have no appreciation for mathematics.”</p>
+<p class="stage">Aurel laughed.</p>
+<p class="stage">The sound surprised even him.</p>
+<p class="stage">Maro pointed at him triumphantly.</p>
+<p class="dialogue"><strong>MARO:</strong> “There! You see? I have made the boy laugh again. Clearly, I am a man of great importance.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “You are a man of great noise.”</p>
+<p class="dialogue"><strong>MARO:</strong> “Noise is memorable.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “Unfortunately.”</p>
+<p class="stage">Lina shook her head.</p>
+<p class="dialogue"><strong>LINA:</strong> “You two have been arguing all afternoon.”</p>
+<p class="dialogue"><strong>MARO:</strong> “We are not arguing. We are discussing important matters.”</p>
+<p class="dialogue"><strong>BAKO:</strong> “He has been losing an argument with me for three hours.”</p>
+<p class="dialogue"><strong>MARO:</strong> “That is simply your interpretation.”</p>
+<p class="stage">Aurel smiled as they continued bickering.</p>
+<p class="stage">For the first time since leaving the settlement, he felt something he had almost forgotten.</p>
+<p class="stage">Normal.</p>
+<p class="stage">Not safe.</p>
+<p class="stage">Not completely.</p>
+<p class="stage">But normal.</p>
+<p class="stage">A group of children ran past him, chasing a wooden wheel.</p>
+<p class="dialogue"><strong>CHILD:</strong> “Move! We&#x27;re racing!”</p>
+<p class="stage">The wheel struck a stone, jumped into the air, and rolled directly towards Aurel.</p>
+<p class="stage">He caught it before it hit a fruit stall.</p>
+<p class="stage">The children stopped.</p>
+<p class="dialogue"><strong>CHILD:</strong> “You caught it!”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I think it was trying to escape.”</p>
+<p class="dialogue"><strong>SECOND CHILD:</strong> “Can you throw it?”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Probably.”</p>
+<p class="dialogue"><strong>THIRD CHILD:</strong> “Then you&#x27;re racing with us!”</p>
+<p class="dialogue"><strong>AUREL:</strong> “What?”</p>
+<p class="stage">Before he could object, the children grabbed his arm and pulled him towards the open part of the square.</p>
+<p class="dialogue"><strong>LINA:</strong> “Aurel!”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I&#x27;ll be back!”</p>
+<p class="stage">Lina laughed as she watched him run after the children.</p>
+<p class="stage">For the next few minutes, Aurel forgot about the shrine.</p>
+<p class="stage">He forgot about the Shadow Legion.</p>
+<p class="stage">He forgot about the mysterious power beneath Davin&#x27;s field.</p>
+<p class="stage">He simply ran.</p>
+<p class="stage">The children raced wooden wheels across the square, shouting and laughing. Aurel was faster than they expected, but one of the younger boys tripped and fell.</p>
+<p class="stage">Aurel immediately stopped.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Are you hurt?”</p>
+<p class="dialogue"><strong>CHILD:</strong> “My knee.”</p>
+<p class="stage">Aurel knelt beside him.</p>
+<p class="stage">There was a small scrape on the boy&#x27;s knee.</p>
+<p class="stage">Aurel reached out instinctively.</p>
+<p class="stage">Then he stopped.</p>
+<p class="stage">The memory of the green light returned.</p>
+<p class="stage">He looked at his hand.</p>
+<p class="stage">He remembered the dying tree.</p>
+<p class="stage">He remembered Davin&#x27;s field.</p>
+<p class="stage">He remembered the cold presence beneath the soil.</p>
+<p class="stage">His hand slowly lowered.</p>
+<p class="dialogue"><strong>AUREL:</strong> “We should clean it first.”</p>
+<p class="stage">The boy nodded.</p>
+<p class="stage">Aurel helped him stand.</p>
+<p class="stage">Nearby, a young woman selling herbs had been watching the scene.</p>
+<p class="stage">Her name was Sella, a quiet village healer with dark braided hair and a small leather pouch filled with medicinal leaves. She approached the boy and examined his knee.</p>
+<p class="dialogue"><strong>SELLA:</strong> “It&#x27;s only a scrape. Come with me. I&#x27;ll clean it.”</p>
+<p class="stage">The boy followed her.</p>
+<p class="stage">Sella glanced at Aurel.</p>
+<p class="dialogue"><strong>SELLA:</strong> “You were going to heal him, weren&#x27;t you?”</p>
+<p class="stage">Aurel stiffened.</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t know.”</p>
+<p class="dialogue"><strong>SELLA:</strong> “You looked at your hand before you touched him.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I was afraid.”</p>
+<p class="dialogue"><strong>SELLA:</strong> “Of hurting him?”</p>
+<p class="stage">Aurel nodded.</p>
+<p class="stage">Sella gave him a thoughtful look.</p>
+<p class="dialogue"><strong>SELLA:</strong> “That&#x27;s a good fear to have.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “Why?”</p>
+<p class="dialogue"><strong>SELLA:</strong> “Because people who possess power without fearing what they might do with it are usually the ones who cause the most damage.”</p>
+<p class="stage">She turned towards the injured child.</p>
+<p class="dialogue"><strong>SELLA:</strong> “Power isn&#x27;t dangerous simply because it is powerful. It becomes dangerous when the person using it stops caring about what happens to others.”</p>
+<p class="stage">Aurel watched her disappear into the crowd.</p>
+<p class="stage">Her words stayed with him.</p>
+<p class="stage">Across the square, Lina had heard enough to understand what had happened.</p>
+<p class="dialogue"><strong>LINA:</strong> “She isn&#x27;t wrong.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “I don&#x27;t want to hurt anyone.”</p>
+<p class="dialogue"><strong>LINA:</strong> “Then don&#x27;t let fear make you believe you are dangerous before you understand yourself.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “What if I become dangerous anyway?”</p>
+<p class="dialogue"><strong>LINA:</strong> “Then you learn. You make mistakes. You take responsibility. And you choose what kind of person you want to be.”</p>
+<p class="stage">Aurel looked at her.</p>
+<p class="dialogue"><strong>AUREL:</strong> “How do you know so much?”</p>
+<p class="stage">Lina paused.</p>
+<p class="stage">For the briefest moment, something unreadable crossed her face.</p>
+<p class="dialogue"><strong>LINA:</strong> “I&#x27;ve lived long enough to make mistakes.”</p>
+<p class="dialogue"><strong>AUREL:</strong> “That&#x27;s not an answer.”</p>
+<p class="dialogue"><strong>LINA:</strong> “It&#x27;s the answer you&#x27;re getting.”</p>
+<p class="stage">Aurel smiled faintly.</p>
+<p class="stage">But Lina&#x27;s expression had changed.</p>
+<p class="stage">She looked towards the road leading out of Greyford.</p>
+<p class="stage">Something about the boy&#x27;s power had disturbed her too.</p>
+<p>**---</p>
+<p class="stage">Far from the marketplace, beneath an abandoned stone structure outside the village, the Shadow Legion scout entered a narrow underground chamber.</p>
+<p class="stage">Three other figures waited there.</p>
+<p class="stage">The first was a tall warrior wearing dark armour beneath a long black cloak. A scar crossed one side of his face, and a curved blade hung from his belt.</p>
+<p class="stage">His name was Varek.</p>
+<p class="stage">The second was a thin woman named Nyra, dressed in a dark hooded robe. Several small metal charms hung from her belt, each carrying a different symbol.</p>
+<p class="stage">The third was a younger soldier named Kaine, who stood near the entrance with his arms folded.</p>
+<p class="stage">The scout dropped to one knee.</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “I have confirmed the boy&#x27;s location.”</p>
+<p class="dialogue"><strong>VAREK:</strong> “Where?”</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “Greyford.”</p>
+<p class="stage">Varek&#x27;s eyes narrowed.</p>
+<p class="dialogue"><strong>VAREK:</strong> “And the boy?”</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “Alive.”</p>
+<p class="dialogue"><strong>KAINE:</strong> “Then why are we still standing here?”</p>
+<p class="dialogue"><strong>NYRA:</strong> “Because rushing after him without understanding what he can do would be foolish.”</p>
+<p class="stage">Kaine scoffed.</p>
+<p class="dialogue"><strong>KAINE:</strong> “He&#x27;s twelve.”</p>
+<p class="dialogue"><strong>NYRA:</strong> “And he awakened an ability capable of restoring dead vegetation.”</p>
+<p class="dialogue"><strong>VAREK:</strong> “What else did you see?”</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “He touched the earth and restored part of a dying field. But something resisted him.”</p>
+<p class="stage">Nyra&#x27;s expression changed.</p>
+<p class="dialogue"><strong>NYRA:</strong> “Something resisted?”</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “Yes. I felt a disturbance beneath the ground after the boy stopped.”</p>
+<p class="stage">Varek turned towards Nyra.</p>
+<p class="dialogue"><strong>VAREK:</strong> “Could it be connected?”</p>
+<p class="dialogue"><strong>NYRA:</strong> “Possibly.”</p>
+<p class="dialogue"><strong>KAINE:</strong> “Connected to what?”</p>
+<p class="stage">Nyra did not answer immediately.</p>
+<p class="stage">She reached into her robe and removed a small piece of black stone.</p>
+<p class="stage">Four faint symbols were carved into its surface.</p>
+<p class="stage">The same four symbols that had once been hidden beneath the ancient shrine.</p>
+<p class="dialogue"><strong>NYRA:</strong> “To the thing our master has been searching for.”</p>
+<p class="stage">The room fell silent.</p>
+<p class="dialogue"><strong>VAREK:</strong> “Then we cannot wait.”</p>
+<p class="dialogue"><strong>NYRA:</strong> “No. But we cannot kill the boy.”</p>
+<p class="dialogue"><strong>KAINE:</strong> “Why not?”</p>
+<p class="dialogue"><strong>NYRA:</strong> “Because the Dark Lord gave one command.”</p>
+<p class="stage">She looked directly at him.</p>
+<p class="dialogue"><strong>NYRA:</strong> “The boy must be brought to him alive.”</p>
+<p class="stage">The scout lowered his head.</p>
+<p class="dialogue"><strong>SHADOW LEGION SCOUT:</strong> “And if the boy resists?”</p>
+<p class="stage">Varek&#x27;s hand rested on his sword.</p>
+<p class="dialogue"><strong>VAREK:</strong> “Then break everything around him.”</p>
+<p class="stage">Nyra looked at the four symbols on the black stone.</p>
+<p class="dialogue"><strong>NYRA:</strong> “But do not break the boy.”</p>
+<p>**---</p>
+<p class="stage">Back in Greyford, the sun began sinking towards the hills.</p>
+<p class="stage">Aurel stood near the edge of the market, watching the evening light spread across the village.</p>
+<p class="stage">He had eaten.</p>
+<p class="stage">He had laughed.</p>
+<p class="stage">He had met strangers who treated him with kindness.</p>
+<p class="stage">For the first time since the destruction of his home, he had experienced something that felt almost like peace.</p>
+<p class="stage">But deep inside him, he knew the peace would not last.</p>
+<p class="stage">He looked at his hands.</p>
+<p class="dialogue"><strong>AUREL:</strong> “What are you?”</p>
+<p class="stage">The question was meant for himself.</p>
+<p class="stage">But somewhere beneath the earth, something seemed to hear him.</p>
+<p class="stage">Far away, beyond the village, a faint tremor passed through the ground.</p>
+<p class="stage">Aurel felt it.</p>
+<p class="stage">He turned towards the hills.</p>
+<p class="dialogue"><strong>AUREL:</strong> “That feeling again…”</p>
+<p class="stage">Lina noticed his expression.</p>
+<p class="dialogue"><strong>LINA:</strong> “What is it?”</p>
+<p class="stage">Aurel stared towards the distant mountains.</p>
+<p class="dialogue"><strong>AUREL:</strong> “Something is coming.”</p>
+<p class="stage">Neither of them saw the shadow standing on a distant rooftop.</p>
+<p class="stage">But the shadow saw them.</p>
+<p class="stage">And it was getting closer.</p>
+<h3>END OF SCENE 6</h3>
+<section class="cta"><h2>READ MORE FROM YOUNG PRINCE</h2><p>Continue exploring original stories, manga, drama, and creative projects on the official Young Prince website.</p><a href="https://youngprincejp.github.io/">Visit Young Prince Website</a><a href="./primordia-chapter-1.html" style="background:transparent;color:var(--text);border:1px solid var(--line)">Read Chapter 1</a></section>
+</main><footer>PRIMORDIA — THE FIRST ELEMENT · A Young Prince original</footer>
+</body></html>
