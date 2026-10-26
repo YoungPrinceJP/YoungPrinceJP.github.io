@@ -1008,7 +1008,7 @@ saveKaelHistory();
     messages.scrollTop = messages.scrollHeight;
 }
         
-LoadKaelHistory();
+loadKaelHistory();
         
       document.getElementById('kaelSend').addEventListener('click', sendMessage);
       document.getElementById('kaelInput').addEventListener('keydown', function (event) { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); } });
