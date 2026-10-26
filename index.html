@@ -887,6 +887,28 @@
       <div class="kael-title"><strong>Kael AI</strong><span>Young Prince assistant</span></div>
       <button class="kael-close" id="kaelClose" type="button" aria-label="Close chat">×</button>
     </div>
+      
+<div id="kaelAccountArea" style="padding: 10px 14px; border-bottom: 1px solid #ddd;">
+    <div id="kaelSignedOut">
+        <p style="margin: 0 0 8px;">Sign in to save and recover your Kael chats across devices.</p>
+        <input id="kaelEmail" type="email" placeholder="Your email address" autocomplete="email"
+            style="width: 100%; box-sizing: border-box; padding: 10px; margin-bottom: 8px;">
+        <input id="kaelPassword" type="password" placeholder="Password" autocomplete="current-password"
+            style="width: 100%; box-sizing: border-box; padding: 10px; margin-bottom: 8px;">
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="kaelSignIn" type="button">Sign in</button>
+            <button id="kaelSignUp" type="button">Create account</button>
+        </div>
+    </div>
+
+    <div id="kaelSignedIn" style="display: none;">
+        <span id="kaelAccountEmail"></span>
+        <button id="kaelSignOut" type="button" style="margin-left: 8px;">Sign out</button>
+    </div>
+
+    <p id="kaelAuthStatus" role="status" aria-live="polite" style="margin: 8px 0 0;"></p>
+</div>
+
     <div class="kael-messages" id="kaelMessages"><div class="kael-message bot">Hello, creator. I’m Kael, your AI companion at Young Prince. Send me a message, and let's create something extraordinary.</div></div>
     <div class="kael-input-area"><textarea class="kael-input" id="kaelInput" rows="1" placeholder="Write a message…" aria-label="Message to Kael"></textarea><button class="kael-send" id="kaelSend" type="button">Send</button></div>
   </section>
