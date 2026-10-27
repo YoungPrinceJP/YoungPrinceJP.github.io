@@ -1060,6 +1060,115 @@ loadKaelHistory();
           }
       });
     })();
-  </script>
+<script>
+/* KAEL ACCOUNT BUTTONS */
+document.addEventListener("DOMContentLoaded", () => {
+    const status = document.getElementById("kaelAuthStatus");
+    const signedOut = document.getElementById("kaelSignedOut");
+    const signedIn = document.getElementById("kaelSignedIn");
+    const accountEmail = document.getElementById("kaelAccountEmail");
+
+    function showStatus(message) {
+        if (status) status.textContent = message;
+    }
+
+    async function updateAccountUI() {
+        const { data, error } = await kaelSupabase.auth.getSession();
+
+        if (error) {
+            showStatus(error.message);
+            return;
+        }
+
+        const user = data.session?.user;
+
+        if (user) {
+            signedOut.style.display = "none";
+            signedIn.style.display = "block";
+            accountEmail.textContent = user.email || "Signed in";
+        } else {
+            signedOut.style.display = "block";
+            signedIn.style.display = "none";
+            accountEmail.textContent = "";
+        }
+    }
+
+    document.getElementById("kaelSignUp").addEventListener("click", async () => {
+        const email = document.getElementById("kaelEmail").value.trim();
+        const password = document.getElementById("kaelPassword").value;
+
+        if (!email || !password) {
+            showStatus("Enter your email address and password.");
+            return;
+        }
+
+        showStatus("Creating your account...");
+
+        const { data, error } = await kaelSupabase.auth.signUp({
+            email,
+            password
+        });
+
+        if (error) {
+            showStatus(error.message);
+            return;
+        }
+
+        if (data.session) {
+            showStatus("Account created successfully.");
+        } else {
+            showStatus("Check your email to confirm your account, then sign in.");
+        }
+
+        await updateAccountUI();
+    });
+
+    document.getElementById("kaelSignIn").addEventListener("click", async () => {
+        const email = document.getElementById("kaelEmail").value.trim();
+        const password = document.getElementById("kaelPassword").value;
+
+        if (!email || !password) {
+            showStatus("Enter your email address and password.");
+            return;
+        }
+
+        showStatus("Signing in...");
+
+        const { error } = await kaelSupabase.auth.signInWithPassword({
+            email,
+            password
+        });
+
+        if (error) {
+            showStatus(error.message);
+            return;
+        }
+
+        showStatus("Signed in successfully.");
+        await updateAccountUI();
+    });
+
+    document.getElementById("kaelSignOut").addEventListener("click", async () => {
+        showStatus("Signing out...");
+
+        const { error } = await kaelSupabase.auth.signOut();
+
+        if (error) {
+            showStatus(error.message);
+            return;
+        }
+
+        showStatus("Signed out. You can still chat with Kael.");
+        await updateAccountUI();
+    });
+
+    kaelSupabase.auth.onAuthStateChange(() => {
+        updateAccountUI();
+    });
+
+    updateAccountUI();
+});
+</script>
+
 </body>
 </html>
