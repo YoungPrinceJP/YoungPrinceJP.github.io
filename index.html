@@ -781,7 +781,8 @@
     display: none;
 }
 
- nav a.account-button {
+ 
+nav a.account-button {
     display: inline-block;
     color: #4d4655;
     background: transparent;
@@ -799,6 +800,12 @@ nav a.account-button:hover {
     color: #7b3f98;
     background: transparent;
 }
+
+/* Hide any duplicate Account link outside the main navigation */
+.header > a.account-button {
+    display: none !important;
+}
+
 </style>
 <!-- Supabase client for Kael cloud chat -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
