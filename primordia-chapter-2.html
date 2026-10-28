@@ -216,9 +216,45 @@ footer strong{color:#f1d36b}
   .line{font-size:16px}
 }
 
+
+/* READING PROGRESS */
+.reading-progress{
+  position:fixed;top:0;left:0;width:100%;height:4px;
+  z-index:1200;background:rgba(7,39,28,.22);
+  pointer-events:none;
+}
+.reading-progress-fill{
+  display:block;width:0;height:100%;
+  background:linear-gradient(90deg,#e3c65d,#f4d778);
+  transition:width .08s linear;
+}
+#reading-progress-text{
+  color:#526a59;font:700 12px Arial,sans-serif;
+  white-space:nowrap;
+}
+.scene-nav a[aria-current="location"]{
+  background:#0c3b29;color:#f4d778;border-color:#0c3b29;
+  box-shadow:0 2px 8px rgba(12,59,41,.18);
+}
+.scene-nav a:focus-visible,
+.navlinks a:focus-visible,
+.final a:focus-visible{
+  outline:3px solid #e3c65d;outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reading-progress-fill{transition:none}
+}
+
 </style>
 </head>
 <body>
+
+<div class="reading-progress" role="progressbar" aria-label="Chapter reading progress"
+     aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+  <span class="reading-progress-fill" id="reading-progress-fill"></span>
+</div>
+
 <header class="topbar">
   <div class="nav">
     <a href="index.html" class="logo">YOUNG PRINCE</a>
@@ -244,6 +280,7 @@ footer strong{color:#f1d36b}
   <div class="chapterbar-inner">
     <strong>CHAPTER 2 — INTO THE UNKNOWN</strong>
     <span>Scenes 1–12 • Complete Chapter</span>
+    <span id="reading-progress-text" aria-live="polite">0% read</span>
   </div>
 </div>
 
@@ -2314,7 +2351,7 @@ footer strong{color:#f1d36b}
 <section class="final">
   <h2>THE JOURNEY HAS ONLY BEGUN.</h2>
   <p>Aurel has escaped the ruins of his old life, but the truth about his power and the forces searching for him remains hidden. Continue following his journey in PRIMORDIA.</p>
-  <p style="margin-top:28px"><a href="primordia-chapter-1.html" style="display:inline-block;padding:12px 20px;border:1px solid #e8c95e;border-radius:30px;color:#f4d778;font:700 13px Arial,sans-serif;margin:6px">← Read Chapter 1</a> <a href="https://youngprincejp.github.io/" style="display:inline-block;padding:12px 20px;background:#f4d778;border-radius:30px;color:#102f24;font:700 13px Arial,sans-serif;margin:6px">Young Prince Home</a></p>
+  <p style="margin-top:28px"><a href="primordia-chapter-1.html" style="display:inline-block;padding:12px 20px;border:1px solid #e8c95e;border-radius:30px;color:#f4d778;font:700 13px Arial,sans-serif;margin:6px">← Read Chapter 1</a> <a href="primordia.html" style="display:inline-block;padding:12px 20px;border:1px solid #e8c95e;border-radius:30px;color:#f4d778;font:700 13px Arial,sans-serif;margin:6px">← Back to Primordia</a> <a href="https://youngprincejp.github.io/" style="display:inline-block;padding:12px 20px;background:#f4d778;border-radius:30px;color:#102f24;font:700 13px Arial,sans-serif;margin:6px">Young Prince Home</a></p>
 </section>
 
 <footer>
@@ -2322,5 +2359,59 @@ footer strong{color:#f1d36b}
   <p>PRIMORDIA • Original Manga</p>
   <p>© 2026 Young Prince. All Rights Reserved.</p>
 </footer>
+
+<script>
+(function () {
+  const progressBar = document.querySelector('.reading-progress');
+  const progressFill = document.getElementById('reading-progress-fill');
+  const progressText = document.getElementById('reading-progress-text');
+  const sceneLinks = Array.from(document.querySelectorAll('.scene-nav a[href^="#scene"]'));
+  const sceneTargets = sceneLinks
+    .map(link => document.getElementById(link.getAttribute('href').slice(1)))
+    .filter(Boolean);
+
+  if (!progressBar || !progressFill) return;
+
+  let scheduled = false;
+
+  function updateReadingUI() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = scrollable > 0
+      ? Math.max(0, Math.min(100, Math.round((window.scrollY / scrollable) * 100)))
+      : 100;
+
+    progressFill.style.width = percent + '%';
+    progressBar.setAttribute('aria-valuenow', String(percent));
+    if (progressText) progressText.textContent = percent + '% read';
+
+    let activeTarget = null;
+    for (const target of sceneTargets) {
+      if (target.getBoundingClientRect().top <= 170) activeTarget = target;
+      else break;
+    }
+
+    sceneLinks.forEach(link => {
+      const isActive = activeTarget &&
+        link.getAttribute('href') === '#' + activeTarget.id;
+      if (isActive) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+
+    scheduled = false;
+  }
+
+  function scheduleUpdate() {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(updateReadingUI);
+  }
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('load', updateReadingUI);
+  updateReadingUI();
+})();
+</script>
+
 </body>
 </html>
