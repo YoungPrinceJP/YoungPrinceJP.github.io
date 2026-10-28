@@ -134,8 +134,13 @@ a{text-decoration:none;color:inherit}
 .story{
   max-width:900px;margin:auto;padding:60px 20px 100px;
 }
+/* Keep every scene heading visible below the sticky navigation when linked. */
+#scene1,#scene2,#scene3,#scene4,#scene5,#scene6,
+#scene7,#scene8,#scene9,#scene10,#scene11,#scene12{
+  scroll-margin-top:125px;
+}
 .scene{
-  scroll-margin-top:120px;
+  scroll-margin-top:125px;
   margin-bottom:70px;
   background:rgba(255,255,255,.92);
   border:1px solid #cbdcc9;
@@ -245,6 +250,36 @@ footer strong{color:#f1d36b}
   html{scroll-behavior:auto}
   .reading-progress-fill{transition:none}
 }
+
+
+/* PREVIOUS / NEXT SCENE CONTROLS */
+body{padding-bottom:82px}
+.scene-stepper{
+  position:fixed;left:50%;bottom:12px;transform:translateX(-50%);
+  z-index:1100;width:min(620px,calc(100% - 24px));
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;
+  padding:10px 12px;border:1px solid rgba(227,198,93,.65);border-radius:16px;
+  background:rgba(6,32,24,.96);box-shadow:0 8px 28px rgba(0,0,0,.22);
+  backdrop-filter:blur(8px);color:#f4d778;font-family:Arial,sans-serif;
+}
+.scene-stepper a{
+  display:inline-flex;align-items:center;justify-content:center;min-height:40px;
+  padding:8px 12px;border:1px solid #b99738;border-radius:10px;
+  color:#f4d778;text-decoration:none;font-size:13px;font-weight:700;
+}
+.scene-stepper a:last-child{justify-self:end}
+.scene-stepper a:first-child{justify-self:start}
+.scene-stepper a[aria-disabled="true"]{opacity:.38;pointer-events:none}
+.scene-stepper-label{font-size:11px;font-weight:700;text-align:center;white-space:nowrap;color:#d9e8dc}
+.scene-stepper-label strong{display:block;color:#f4d778;font-size:12px;margin-bottom:3px}
+.scene-stepper a:focus-visible{outline:3px solid #e3c65d;outline-offset:3px}
+@media(max-width:430px){
+  .scene-stepper{gap:6px;padding:8px}
+  .scene-stepper a{padding:8px 9px;font-size:12px}
+  .scene-stepper-label{font-size:10px}
+  .scene-stepper-label strong{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.scene-stepper{backdrop-filter:none}}
 
 </style>
 </head>
@@ -2354,6 +2389,13 @@ footer strong{color:#f1d36b}
   <p style="margin-top:28px"><a href="primordia-chapter-1.html" style="display:inline-block;padding:12px 20px;border:1px solid #e8c95e;border-radius:30px;color:#f4d778;font:700 13px Arial,sans-serif;margin:6px">← Read Chapter 1</a> <a href="primordia.html" style="display:inline-block;padding:12px 20px;border:1px solid #e8c95e;border-radius:30px;color:#f4d778;font:700 13px Arial,sans-serif;margin:6px">← Back to Primordia</a> <a href="https://youngprincejp.github.io/" style="display:inline-block;padding:12px 20px;background:#f4d778;border-radius:30px;color:#102f24;font:700 13px Arial,sans-serif;margin:6px">Young Prince Home</a></p>
 </section>
 
+
+<nav class="scene-stepper" aria-label="Previous and next scene">
+  <a id="previous-scene" href="#scene1" aria-disabled="true" tabindex="-1">← Previous</a>
+  <div class="scene-stepper-label" aria-live="polite"><strong id="scene-stepper-current">Scene 1 of 12</strong><span>Move through the chapter</span></div>
+  <a id="next-scene" href="#scene2">Next →</a>
+</nav>
+
 <footer>
   <p><strong>YOUNG PRINCE</strong></p>
   <p>PRIMORDIA • Original Manga</p>
@@ -2384,7 +2426,9 @@ footer strong{color:#f1d36b}
     progressBar.setAttribute('aria-valuenow', String(percent));
     if (progressText) progressText.textContent = percent + '% read';
 
-    let activeTarget = null;
+    // Scene 1 remains the active scene until its heading reaches the reading line.
+    // This also keeps Previous/Next correct before the reader scrolls past the hero.
+    let activeTarget = sceneTargets[0] || null;
     for (const target of sceneTargets) {
       if (target.getBoundingClientRect().top <= 170) activeTarget = target;
       else break;
@@ -2397,6 +2441,34 @@ footer strong{color:#f1d36b}
       else link.removeAttribute('aria-current');
     });
 
+    const previousLink = document.getElementById('previous-scene');
+    const nextLink = document.getElementById('next-scene');
+    const stepperCurrent = document.getElementById('scene-stepper-current');
+    if (activeTarget && previousLink && nextLink) {
+      const activeIndex = sceneTargets.indexOf(activeTarget);
+      const previousTarget = sceneTargets[activeIndex - 1];
+      const nextTarget = sceneTargets[activeIndex + 1];
+      if (stepperCurrent) stepperCurrent.textContent = 'Scene ' + (activeIndex + 1) + ' of ' + sceneTargets.length;
+      if (previousTarget) {
+        previousLink.href = '#' + previousTarget.id;
+        previousLink.removeAttribute('aria-disabled');
+        previousLink.removeAttribute('tabindex');
+      } else {
+        previousLink.href = '#scene1';
+        previousLink.setAttribute('aria-disabled', 'true');
+        previousLink.tabIndex = -1;
+      }
+      if (nextTarget) {
+        nextLink.href = '#' + nextTarget.id;
+        nextLink.removeAttribute('aria-disabled');
+        nextLink.removeAttribute('tabindex');
+      } else {
+        nextLink.href = '#scene12';
+        nextLink.setAttribute('aria-disabled', 'true');
+        nextLink.tabIndex = -1;
+      }
+    }
+
     scheduled = false;
   }
 
@@ -2408,6 +2480,7 @@ footer strong{color:#f1d36b}
 
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('hashchange', scheduleUpdate);
   window.addEventListener('load', updateReadingUI);
   updateReadingUI();
 })();
