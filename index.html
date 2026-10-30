@@ -807,19 +807,7 @@ nav a.account-button:hover {
 }
 
 </style>
-<!-- Supabase client for Kael cloud chat -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
 
-<script>
-    const KAEL_SUPABASE_URL = 'https://wozsearymbmkdpztvcph.supabase.co';
-    const KAEL_SUPABASE_KEY = 'sb_publishable_Ky0molmowEN1gTYxdA04lQ_4V604UTj';
-
-    const kaelSupabase = window.supabase.createClient(
-        KAEL_SUPABASE_URL,
-        KAEL_SUPABASE_KEY
-    );
-</script>
 
 
 </head>
@@ -915,28 +903,7 @@ nav a.account-button:hover {
       <button class="kael-close" id="kaelClose" type="button" aria-label="Close chat">×</button>
     </div>
       
-<div id="kaelAccountArea" style="padding: 10px 14px; border-bottom: 1px solid #ddd;">
-    <div id="kaelSignedOut">
-        <p style="margin: 0 0 8px;">Sign in to save and recover your Kael chats across devices.</p>
-        <input id="kaelEmail" type="email" placeholder="Your email address" autocomplete="email"
-            style="width: 100%; box-sizing: border-box; padding: 10px; margin-bottom: 8px;">
-        <input id="kaelPassword" type="password" placeholder="Password" autocomplete="current-password"
-            style="width: 100%; box-sizing: border-box; padding: 10px; margin-bottom: 8px;">
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button id="kaelSignIn" type="button">Sign in</button>
-            <button id="kaelSignUp" type="button">Create account</button>
-        </div>
-    </div>
-
-    <div id="kaelSignedIn" style="display: none;">
-        <span id="kaelAccountEmail"></span>
-        <button id="kaelSignOut" type="button" style="margin-left: 8px;">Sign out</button>
-    </div>
-
-    <p id="kaelAuthStatus" role="status" aria-live="polite" style="margin: 8px 0 0;"></p>
-</div>
-
-    <div class="kael-messages" id="kaelMessages"><div class="kael-message bot">Hello, creator. I’m Kael, your AI companion at Young Prince. Send me a message, and let's create something extraordinary.</div></div>
+<div class="kael-messages" id="kaelMessages"><div class="kael-message bot">Hello, creator. I’m Kael, your AI companion at Young Prince. Send me a message, and let's create something extraordinary.</div></div>
     <div class="kael-input-area"><textarea class="kael-input" id="kaelInput" rows="1" placeholder="Write a message…" aria-label="Message to Kael"></textarea><button class="kael-send" id="kaelSend" type="button">Send</button></div>
   </section>
 
@@ -1089,116 +1056,7 @@ loadKaelHistory();
  
 })();
 </script>
-<script>
-/* KAEL ACCOUNT BUTTONS */
-   
-document.addEventListener("DOMContentLoaded", () => {
-    const status = document.getElementById("kaelAuthStatus");
-    const signedOut = document.getElementById("kaelSignedOut");
-    const signedIn = document.getElementById("kaelSignedIn");
-    const accountEmail = document.getElementById("kaelAccountEmail");
 
-    function showStatus(message) {
-        if (status) status.textContent = message;
-    }
-
-    async function updateAccountUI() {
-        const { data, error } = await kaelSupabase.auth.getSession();
-
-        if (error) {
-            showStatus(error.message);
-            return;
-        }
-
-        const user = data.session?.user;
-
-        if (user) {
-            signedOut.style.display = "none";
-            signedIn.style.display = "block";
-            accountEmail.textContent = user.email || "Signed in";
-        } else {
-            signedOut.style.display = "block";
-            signedIn.style.display = "none";
-            accountEmail.textContent = "";
-        }
-    }
-
-    document.getElementById("kaelSignUp").addEventListener("click", async () => {
-        const email = document.getElementById("kaelEmail").value.trim();
-        const password = document.getElementById("kaelPassword").value;
-
-        if (!email || !password) {
-            showStatus("Enter your email address and password.");
-            return;
-        }
-
-        showStatus("Creating your account...");
-
-        const { data, error } = await kaelSupabase.auth.signUp({
-            email,
-            password
-        });
-
-        if (error) {
-            showStatus(error.message);
-            return;
-        }
-
-        if (data.session) {
-            showStatus("Account created successfully.");
-        } else {
-            showStatus("Check your email to confirm your account, then sign in.");
-        }
-
-        await updateAccountUI();
-    });
-
-    document.getElementById("kaelSignIn").addEventListener("click", async () => {
-        const email = document.getElementById("kaelEmail").value.trim();
-        const password = document.getElementById("kaelPassword").value;
-
-        if (!email || !password) {
-            showStatus("Enter your email address and password.");
-            return;
-        }
-
-        showStatus("Signing in...");
-
-        const { error } = await kaelSupabase.auth.signInWithPassword({
-            email,
-            password
-        });
-
-        if (error) {
-            showStatus(error.message);
-            return;
-        }
-
-        showStatus("Signed in successfully.");
-        await updateAccountUI();
-    });
-
-    document.getElementById("kaelSignOut").addEventListener("click", async () => {
-        showStatus("Signing out...");
-
-        const { error } = await kaelSupabase.auth.signOut();
-
-        if (error) {
-            showStatus(error.message);
-            return;
-        }
-
-        showStatus("Signed out. You can still chat with Kael.");
-        await updateAccountUI();
-    });
-
-    kaelSupabase.auth.onAuthStateChange(() => {
-        updateAccountUI();
-    });
-
-    updateAccountUI();
-});
-</script>
 
 </body>
 </html>
