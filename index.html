@@ -806,6 +806,14 @@ nav a.account-button:hover {
     display: none !important;
 }
 
+
+/* Temporary security review: hide public Kael access without changing its code. */
+#kaelButton,
+.kael-label,
+#kaelChat {
+    display: none !important;
+}
+
 </style>
 
 
@@ -817,7 +825,6 @@ nav a.account-button:hover {
       <a class="logo" href="#home">YOUNG PRINCE</a>
       <button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
        <nav id="mainNav" aria-label="Main navigation">
-    <a class="account-button" href="account.html">👤 Account</a>
     <a href="#stories">Stories</a>
     <a href="#explore">Explore</a>
     <a href="#community">Community Uploads</a>
@@ -875,13 +882,17 @@ nav a.account-button:hover {
     <section class="section" id="community">
       <div class="section-heading">
         <h2>Community Uploads</h2>
-        <p>A space for creative contributions and shared media.</p>
+        <p>Community contributions are temporarily paused.</p>
       </div>
       <div class="community-uploads">
-        <article class="community-card"><div class="community-card-content"><div class="community-category">CREATIVE WORKS</div><h3>Share Your Creativity</h3><p>Community publishing can be connected here when the secure upload backend is ready.</p></div></article>
-        <article class="community-card"><div class="community-card-content"><div class="community-category">VIDEOS &amp; MEDIA</div><h3>Media Gallery</h3><p>Published videos, images, audio, and other approved media can appear in this section.</p></div></article>
+        <article class="community-card">
+          <div class="community-card-content">
+            <div class="community-category">TEMPORARILY UNAVAILABLE</div>
+            <h3>Community Uploads</h3>
+            <p>We're carrying out a security review. Uploads and community publishing will return when the review is complete.</p>
+          </div>
+        </article>
       </div>
-      <p class="community-error" id="communityStatus" aria-live="polite">The community section is available. Server uploads and live gallery loading require the original backend connection.</p>
     </section>
 
     <section class="section" id="about">
