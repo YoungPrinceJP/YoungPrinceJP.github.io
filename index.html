@@ -880,7 +880,8 @@ nav a.account-button:hover {
             <div class="category">Fantasy Manga</div>
             <h3>Primordia</h3>
             <p>Aurel’s journey into a world of ancient powers, forgotten mysteries, and a darkness older than the elements.</p>
-          <a class="button" href="primordia.html">Enter Primordia →</a>
+            <a class="button" href="primordia.html">Enter Primordia →</a>
+          </div>
         </article>
         <article class="story-card">
           <div class="story-cover blood-cover"><h3>BLOOD ON<br>BROAD STREET</h3></div>
@@ -1024,6 +1025,82 @@ function loadKaelHistory() {
     }
 }
 
+
+/* Restore account-linked conversations from the backend.
+   The API returns { messages: [{ role, content, created_at }] }. */
+async function loadCloudKaelHistory(accessTokenOverride) {
+    const messages = document.getElementById('kaelMessages');
+    if (!messages) return;
+
+    try {
+        let accessToken = accessTokenOverride;
+        if (!accessToken) {
+            const { data, error } = await kaelSupabase.auth.getSession();
+            if (error) throw error;
+            accessToken = data.session?.access_token;
+        }
+        if (!accessToken) return;
+
+        const response = await fetch(
+            'https://youngprincejp-github-io.onrender.com/api/kael/history',
+            {
+                method: 'GET',
+                headers: {
+                    Authorization: 'Bearer ' + accessToken
+                }
+            }
+        );
+
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+            throw new Error(result.message || 'Could not load saved Kael chats.');
+        }
+
+        if (!Array.isArray(result.messages) || result.messages.length === 0) {
+            return;
+        }
+
+        // Do not replace messages if the visitor has started a new message
+        // while the history request was still in progress.
+        if (messages.dataset.cloudHistoryLoading === 'interacted') return;
+
+        messages.replaceChildren();
+
+        const restored = [];
+        result.messages.forEach(item => {
+            if (!item || typeof item.content !== 'string') return;
+
+            const type = item.role === 'user'
+                ? 'user'
+                : item.role === 'assistant'
+                    ? 'bot'
+                    : null;
+
+            if (!type) return;
+
+            const message = document.createElement('div');
+            message.className = 'kael-message ' + type;
+            message.textContent = item.content;
+            messages.appendChild(message);
+            restored.push({ type, text: item.content });
+        });
+
+        if (restored.length) {
+            try {
+                localStorage.setItem('youngPrinceKaelHistory', JSON.stringify(restored));
+            } catch (storageError) {
+                console.warn('Could not cache restored Kael history:', storageError);
+            }
+        }
+
+        messages.scrollTop = messages.scrollHeight;
+    } catch (error) {
+        console.error('Could not load Kael cloud history:', error);
+    }
+}
+
+window.loadKaelCloudHistory = loadCloudKaelHistory;
+
 async function sendMessage() {
     const input = document.getElementById('kaelInput');
     const value = input.value.trim();
@@ -1031,6 +1108,7 @@ async function sendMessage() {
     if (!value) return;
 
     const messages = document.getElementById('kaelMessages');
+    messages.dataset.cloudHistoryLoading = 'interacted';
 
     const userMessage = document.createElement('div');
     userMessage.className = 'kael-message user';
@@ -1118,30 +1196,55 @@ loadKaelHistory();
 })();
 </script>
 <script>
-/* KAEL ACCOUNT STATUS
-   Account creation and sign-in are handled by account.html.
-   Supabase persists the same project session on this website origin. */
+/* KAEL ACCOUNT STATUS AND CLOUD HISTORY
+   Account creation and sign-in are handled by account.html. */
 document.addEventListener("DOMContentLoaded", () => {
     const accountStatus = document.getElementById("kaelAccountStatus");
     if (!accountStatus || !window.supabase) return;
 
-    async function refreshKaelAccountStatus() {
+    async function refreshKaelAccountStatus(sessionOverride) {
         try {
-            const { data, error } = await kaelSupabase.auth.getSession();
-            if (error) throw error;
+            let session = sessionOverride;
+            if (typeof sessionOverride === "undefined") {
+                const { data, error } = await kaelSupabase.auth.getSession();
+                if (error) throw error;
+                session = data.session;
+            }
 
-            const user = data.session?.user;
+            const user = session?.user;
             accountStatus.textContent = user
-                ? "Signed in as " + (user.email || "your Young Prince account") + ". Your Kael chats can be backed up."
+                ? "Signed in as " + (user.email || "your Young Prince account") + ". Your Kael chats are linked to your account."
                 : "Chat with Kael freely. Sign in to your Young Prince account to back up your chats.";
+
+            if (user && typeof window.loadKaelCloudHistory === "function") {
+                await window.loadKaelCloudHistory(session?.access_token);
+            }
         } catch (error) {
             console.warn("Could not check Kael account status:", error);
             accountStatus.textContent = "You can chat with Kael. Sign in through your Young Prince account to back up chats.";
         }
     }
 
-    kaelSupabase.auth.onAuthStateChange(() => {
-        refreshKaelAccountStatus();
+    kaelSupabase.auth.onAuthStateChange((event, session) => {
+        if (event === "SIGNED_OUT") {
+            const messages = document.getElementById("kaelMessages");
+            if (messages) {
+                messages.replaceChildren();
+                const greeting = document.createElement("div");
+                greeting.className = "kael-message bot";
+                greeting.textContent = "Hello, creator. I’m Kael, your AI companion at Young Prince. Send me a message, and let's create something extraordinary.";
+                messages.appendChild(greeting);
+                delete messages.dataset.cloudHistoryLoading;
+            }
+            try {
+                localStorage.removeItem("youngPrinceKaelHistory");
+            } catch (error) {
+                console.warn("Could not clear signed-out Kael chat cache:", error);
+            }
+        }
+        // Use the session supplied by Supabase here; avoid requesting another
+        // auth operation from inside its auth-state callback.
+        refreshKaelAccountStatus(session);
     });
 
     refreshKaelAccountStatus();
