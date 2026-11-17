@@ -313,7 +313,7 @@
         /* EXPLORE */
         .explore {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 15px;
         }
 
@@ -349,6 +349,8 @@
         .explore-card:nth-child(2) .explore-icon { background: #f8e7eb; }
         .explore-card:nth-child(3) .explore-icon { background: #e7edf8; }
         .explore-card:nth-child(4) .explore-icon { background: #f8f0d9; }
+        .explore-card:nth-child(5) .explore-icon { background: #e8e6f7; }
+        .explore-card { display: block; color: inherit; }
 
         .explore-card h3 {
             color: #241337;
@@ -906,6 +908,17 @@ nav a.account-button:hover {
         <article class="explore-card"><div class="explore-icon">🎨</div><h3>Manga &amp; Art</h3><p>Discover imagined worlds and visual storytelling.</p></article>
         <article class="explore-card"><div class="explore-icon">🎬</div><h3>Videos</h3><p>Creative video and animation projects.</p></article>
         <article class="explore-card"><div class="explore-icon">🎵</div><h3>Music &amp; Media</h3><p>More entertainment and creative releases.</p></article>
+        <a class="explore-card" href="#news-feed" aria-label="Explore News Feed"><div class="explore-icon">📰</div><h3>News Feed</h3><p>Read the latest updates and announcements.</p></a>
+      </div>
+    </section>
+
+    <section class="section" id="news-feed">
+      <div class="section-heading">
+        <h2>News Feed</h2>
+        <p>Latest updates and announcements from Young Prince.</p>
+      </div>
+      <div id="newsFeedItems" class="community-uploads" aria-live="polite">
+        <p class="upload-empty">Loading the latest news…</p>
       </div>
     </section>
 
@@ -1246,6 +1259,53 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+
+<script>
+(function () {
+  "use strict";
+  const API = "https://youngprincejp-github-io.onrender.com";
+  const container = document.getElementById("newsFeedItems");
+  if (!container) return;
+
+  function make(tag, className, value) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (value !== undefined) node.textContent = value;
+    return node;
+  }
+
+  async function loadNews() {
+    try {
+      const response = await fetch(API + "/api/media?category=" + encodeURIComponent("News Feed"));
+      if (!response.ok) throw new Error("News feed unavailable");
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+      container.replaceChildren();
+      if (!items.length) {
+        container.appendChild(make("p", "upload-empty", "No news has been published yet. Check back soon."));
+        return;
+      }
+      items.forEach(item => {
+        const card = make("article", "community-card");
+        const body = make("div", "community-card-content");
+        body.appendChild(make("h3", "", item.title || "Young Prince Update"));
+        if (item.description) body.appendChild(make("p", "", item.description));
+        if (item.publishedAt) body.appendChild(make("small", "", new Date(item.publishedAt).toLocaleDateString()));
+        const link = make("a", "button", "Open attachment");
+        link.href = API + "/api/media/" + encodeURIComponent(item.id) + "/file";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        body.appendChild(link);
+        card.appendChild(body);
+        container.appendChild(card);
+      });
+    } catch (_) {
+      container.replaceChildren(make("p", "upload-empty", "The news feed could not load right now. Please try again later."));
+    }
+  }
+  loadNews();
+})();
+</script>
 
 </body>
 </html>
