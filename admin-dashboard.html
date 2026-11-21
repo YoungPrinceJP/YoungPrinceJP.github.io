@@ -954,7 +954,13 @@ function escapeHtml(
 
 refreshButton.addEventListener(
     "click",
-    loadUploads
+    async function() {
+
+        await loadUploads();
+
+        await loadOwnerPublications();
+
+    }
 );
 
 thumbnailButton.addEventListener(
