@@ -1001,8 +1001,7 @@ const response = await fetch(
   const body = make("div", "community-card-content");
           body.appendChild(make("h3", "", item.title || "Young Prince Update"));
           if (item.description) body.appendChild(make("p", "", item.description));
-        const published = item.reviewedAt || item.uploadedAt;
-
+const published = item.publishedAt || item.reviewedAt || item.uploadedAt;
 if (published) {
   const date = new Date(published);
   if (!Number.isNaN(date.getTime())) {
