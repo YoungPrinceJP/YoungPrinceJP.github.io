@@ -834,7 +834,16 @@ nav a.account-button:hover {
 <form id="communityUploadForm" class="upload-form" enctype="multipart/form-data">
 <div class="upload-field"><label for="communityUploaderName">Your name</label><input id="communityUploaderName" name="name" type="text" maxlength="120" autocomplete="name" required></div>
 <div class="upload-field"><label for="communityUploadTitle">Title</label><input id="communityUploadTitle" name="title" type="text" maxlength="200" required></div>
-<div class="upload-field"><label for="communityUploadCategory">Category</label><select id="communityUploadCategory" name="category" required><option value="">Choose a category</option><option value="Art">Art &amp; Illustration</option><option value="Writing">Stories &amp; Writing</option><option value="Video">Video</option><option value="Audio">Audio &amp; Music</option><option value="Photography">Photography</option><option value="Other">Other</option></select></div>
+<div class="upload-field"><label for="communityUploadCategory">Category</label><select id="communityUploadCategory" name="category" required>
+  <option value="">Choose a category</option>
+  <option value="Art">Art &amp; Illustration</option>
+  <option value="Writing">Stories &amp; Writing</option>
+  <option value="Video">Video</option>
+  <option value="Audio">Audio &amp; Music</option>
+  <option value="Photography">Photography</option>
+  <option value="News Feed">News Feed &amp; Announcements</option>
+  <option value="Other">Other</option>
+</select>
 <div class="upload-field"><label for="communityUploadFile">Choose a file</label><input id="communityUploadFile" name="file" type="file" required accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm,video/quicktime,audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"></div>
 <div class="upload-field full"><label for="communityUploadDescription">Description (optional)</label><textarea id="communityUploadDescription" name="description" rows="3" maxlength="2000" placeholder="Tell visitors a little about your work."></textarea></div>
 <div class="upload-field full"><button class="button upload-submit" id="communityUploadSubmit" type="submit">Submit for review</button></div>
