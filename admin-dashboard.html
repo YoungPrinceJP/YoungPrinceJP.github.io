@@ -330,80 +330,88 @@
         to the Young Prince website.
     </p>
 
-    <form
-        id="ownerPublishForm"
-        class="owner-form"
-    >
+   <form
+    id="ownerPublishForm"
+    class="owner-form"
+>
 
-        <div>
-            <label for="ownerTitle">
-                Publication Title
-            </label>
+    <div>
+        <label for="ownerTitle">
+            Publication Title (Optional)
+        </label>
 
-            <input
-                type="text"
-                id="ownerTitle"
-                name="title"
-                maxlength="200"
-                placeholder="Enter publication title"
-                required
-            >
-        </div>
+        <input
+            type="text"
+            id="ownerTitle"
+            name="title"
+            maxlength="200"
+            placeholder="Give your post a title..."
+        >
+    </div>
 
-        <div>
-            <label for="ownerCategory">
-                Category
-            </label>
+    <div>
+        <label for="ownerCategory">
+            Category
+        </label>
 
-            <select
-                id="ownerCategory"
-                name="category"
-                required
-            >
-                <option value="">Select category</option>
-                <option value="Original Stories">Original Stories</option>
-                <option value="Manga & Art">Manga & Art</option>
-                <option value="Videos">Videos</option>
-                <option value="Music & Media">Music & Media</option>
-                <option value="News Feed">News Feed</option>
-            </select>
-        </div>
+        <select
+            id="ownerCategory"
+            name="category"
+            required
+        >
+            <option value="">Select category</option>
+            <option value="Original Stories">Original Stories</option>
+            <option value="Manga & Art">Manga & Art</option>
+            <option value="Videos">Videos</option>
+            <option value="Music & Media">Music & Media</option>
+            <option value="News Feed">News Feed</option>
+        </select>
+    </div>
 
-        <div>
-            <label for="ownerDescription">
-                Description
-            </label>
+    <div class="post-composer">
 
-            <textarea
-                id="ownerDescription"
-                name="description"
-                maxlength="5000"
-                placeholder="Describe your publication..."
-            ></textarea>
-        </div>
+        <textarea
+            id="ownerDescription"
+            name="description"
+            maxlength="5000"
+            placeholder="What's on your mind? Write your post here..."
+        ></textarea>
 
-        <div>
+        <div class="composer-attachment">
+
             <label for="ownerFile">
-                Select File
+                + Add photo, video or file
             </label>
 
             <input
                 type="file"
                 id="ownerFile"
                 name="file"
-                required
+                accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
             >
+
+            <span id="ownerFileName">
+                No attachment selected
+            </span>
+
         </div>
 
-        <button
-            type="submit"
-            class="publish-button"
-            id="ownerPublishButton"
+        <img
+            id="ownerFilePreview"
+            alt="Attachment preview"
         >
-            Publish Content
-        </button>
 
-    </form>
+    </div>
+
+    <button
+        type="submit"
+        class="publish-button"
+        id="ownerPublishButton"
+    >
+        Publish Post
+    </button>
+
+</form>
 
     <div id="ownerMessage"></div>
 
