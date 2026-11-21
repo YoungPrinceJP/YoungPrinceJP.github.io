@@ -1095,7 +1095,21 @@ ownerPublishForm.addEventListener(
 
         const formData =
             new FormData(ownerPublishForm);
+        
+const postText =
+    formData.get("description").trim();
 
+const selectedFile =
+    ownerFileInput.files[0];
+
+if (!postText && !selectedFile) {
+
+    ownerMessage.textContent =
+        "Please write something or attach a file.";
+
+    return;
+}
+        
         ownerPublishButton.disabled = true;
 
         ownerPublishButton.textContent =
