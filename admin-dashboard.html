@@ -1058,8 +1058,31 @@ const ownerPublishButton =
 const ownerMessage =
     document.getElementById("ownerMessage");
 
-const ownerPublicationsContainer =
-    document.getElementById("ownerPublications");
+const ownerFileInput =
+    document.getElementById("ownerFile");
+
+const ownerFileName =
+    document.getElementById("ownerFileName");
+
+const ownerFilePreview =
+    document.getElementById("ownerFilePreview");
+
+ownerFileInput.addEventListener("change", function() {
+
+    const file = ownerFileInput.files[0];
+
+    ownerFileName.textContent =
+        file ? file.name : "No attachment selected";
+
+    ownerFilePreview.style.display = "none";
+    ownerFilePreview.removeAttribute("src");
+
+    if (file && file.type.startsWith("image/")) {
+        ownerFilePreview.src = URL.createObjectURL(file);
+        ownerFilePreview.style.display = "block";
+    }
+
+});
 
 
 /* PUBLISH CONTENT */
