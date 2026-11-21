@@ -176,6 +176,82 @@
                 flex: 1;
             }
         }
+   /* =========================
+   OWNER PUBLICATIONS
+========================= */
+
+.owner-section {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.owner-section h2 {
+    margin-top: 0;
+}
+
+.owner-form {
+    display: grid;
+    gap: 14px;
+}
+
+.owner-form input,
+.owner-form textarea,
+.owner-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.owner-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.owner-form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.publish-button {
+    background: #fff;
+    color: #111;
+}
+
+.owner-publications {
+    display: grid;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.owner-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.owner-card h3 {
+    margin-top: 0;
+}
+
+.owner-card p {
+    color: #bbb;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.owner-card .status {
+    background: #234d32;
+}
     </style>
 </head>
 
@@ -187,7 +263,104 @@
 </header>
 
 <main class="container">
+<!-- OWNER PUBLICATIONS -->
 
+<section class="owner-section">
+
+    <h2>Publish Your Content</h2>
+
+    <p>
+        Upload and publish your own content directly
+        to the Young Prince website.
+    </p>
+
+    <form
+        id="ownerPublishForm"
+        class="owner-form"
+    >
+
+        <div>
+            <label for="ownerTitle">
+                Publication Title
+            </label>
+
+            <input
+                type="text"
+                id="ownerTitle"
+                name="title"
+                maxlength="200"
+                placeholder="Enter publication title"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="ownerCategory">
+                Category
+            </label>
+
+            <select
+                id="ownerCategory"
+                name="category"
+                required
+            >
+                <option value="">Select category</option>
+                <option value="Original Stories">Original Stories</option>
+                <option value="Manga & Art">Manga & Art</option>
+                <option value="Videos">Videos</option>
+                <option value="Music & Media">Music & Media</option>
+                <option value="News Feed">News Feed</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="ownerDescription">
+                Description
+            </label>
+
+            <textarea
+                id="ownerDescription"
+                name="description"
+                maxlength="5000"
+                placeholder="Describe your publication..."
+            ></textarea>
+        </div>
+
+        <div>
+            <label for="ownerFile">
+                Select File
+            </label>
+
+            <input
+                type="file"
+                id="ownerFile"
+                name="file"
+                required
+            >
+        </div>
+
+        <button
+            type="submit"
+            class="publish-button"
+            id="ownerPublishButton"
+        >
+            Publish Content
+        </button>
+
+    </form>
+
+    <div id="ownerMessage"></div>
+
+    <h2>My Publications</h2>
+
+    <div
+        id="ownerPublications"
+        class="owner-publications"
+    ></div>
+
+</section>
+
+<!-- END OWNER PUBLICATIONS -->
     <div class="top-bar">
 
         <h2>Submitted Creations</h2>
@@ -802,8 +975,321 @@ logoutButton.addEventListener(
 
     }
 );
+/* =========================
+   OWNER PUBLICATION FUNCTIONS
+========================= */
+
+const ownerPublishForm =
+    document.getElementById("ownerPublishForm");
+
+const ownerPublishButton =
+    document.getElementById("ownerPublishButton");
+
+const ownerMessage =
+    document.getElementById("ownerMessage");
+
+const ownerPublicationsContainer =
+    document.getElementById("ownerPublications");
 
 
+/* PUBLISH CONTENT */
+
+ownerPublishForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+        const formData =
+            new FormData(ownerPublishForm);
+
+        ownerPublishButton.disabled = true;
+
+        ownerPublishButton.textContent =
+            "Publishing...";
+
+        ownerMessage.textContent =
+            "Uploading your publication...";
+
+        try {
+
+            const response =
+                await fetch(
+                    API_BASE_URL + "/api/admin/media",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Authorization": "Bearer " + token
+                        },
+
+                        body: formData
+                    }
+                );
+
+            const data =
+                await response.json();
+
+            if (response.status === 401) {
+
+                sessionStorage.removeItem(
+                    "youngPrinceAdminToken"
+                );
+
+                window.location.href = "admin.html";
+
+                return;
+            }
+
+            if (!response.ok) {
+                throw new Error(
+                    data.message || "Publication failed."
+                );
+            }
+
+            ownerMessage.textContent =
+                "Publication uploaded successfully!";
+
+            ownerPublishForm.reset();
+
+            await loadOwnerPublications();
+
+        } catch (error) {
+
+            console.error(
+                "OWNER PUBLISH ERROR:",
+                error
+            );
+
+            ownerMessage.textContent =
+                error.message || "Unable to publish content.";
+
+        } finally {
+
+            ownerPublishButton.disabled = false;
+
+            ownerPublishButton.textContent =
+                "Publish Content";
+
+        }
+
+    }
+);
+    
+/* =========================
+   LOAD OWNER PUBLICATIONS
+========================= */
+
+async function loadOwnerPublications() {
+
+    ownerPublicationsContainer.innerHTML =
+        '<div class="empty">Loading your publications...</div>';
+
+    try {
+
+        const response =
+            await fetch(
+                API_BASE_URL + "/api/admin/media",
+                {
+                    headers: {
+                        "Authorization": "Bearer " + token
+                    }
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (response.status === 401) {
+
+            sessionStorage.removeItem(
+                "youngPrinceAdminToken"
+            );
+
+            window.location.href = "admin.html";
+
+            return;
+        }
+
+        if (!response.ok) {
+            throw new Error(
+                data.message || "Could not load publications."
+            );
+        }
+
+        displayOwnerPublications(
+            data.items || []
+        );
+
+    } catch (error) {
+
+        console.error(
+            "LOAD OWNER PUBLICATIONS ERROR:",
+            error
+        );
+
+        ownerPublicationsContainer.innerHTML =
+            '<div class="empty">Unable to load your publications.</div>';
+
+    }
+}
+
+
+/* DISPLAY OWNER PUBLICATIONS */
+
+function displayOwnerPublications(items) {
+
+    ownerPublicationsContainer.innerHTML = "";
+
+    if (!items.length) {
+
+        ownerPublicationsContainer.innerHTML =
+            '<div class="empty">You have not published anything yet.</div>';
+
+        return;
+    }
+
+    items.forEach(item => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "owner-card";
+
+        const title =
+            item.title || "Untitled Publication";
+
+        const category =
+            item.category || "Uncategorized";
+
+        const description =
+            item.description || "No description provided.";
+
+        const date =
+            item.publishedAt
+                ? new Date(item.publishedAt).toLocaleString()
+                : "Unknown date";
+
+        card.innerHTML = `
+
+            <span class="status">
+                Published
+            </span>
+
+            <h3>${escapeHtml(title)}</h3>
+
+            <p>
+                <strong>Category:</strong>
+                ${escapeHtml(category)}
+            </p>
+
+            <p>
+                ${escapeHtml(description)}
+            </p>
+
+            <p>
+                <strong>File:</strong>
+                ${escapeHtml(item.originalName || "Unknown file")}
+            </p>
+
+            <p>
+                <strong>Published:</strong>
+                ${escapeHtml(date)}
+            </p>
+
+            <div class="actions">
+
+                <button
+                    class="delete"
+                    type="button"
+                    onclick="deleteOwnerPublication('${encodeURIComponent(String(item.id || ""))}')"
+                >
+                    Delete Publication
+                </button>
+
+            </div>
+
+        `;
+
+        ownerPublicationsContainer.appendChild(card);
+
+    });
+
+}
+    
+/* =========================
+   DELETE OWNER PUBLICATION
+========================= */
+
+async function deleteOwnerPublication(id) {
+
+    const confirmed =
+        confirm(
+            "Delete this publication permanently?"
+        );
+
+    if (!confirmed) {
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                API_BASE_URL +
+                "/api/admin/media/" +
+                encodeURIComponent(id),
+                {
+                    method: "DELETE",
+
+                    headers: {
+                        "Authorization":
+                            "Bearer " + token
+                    }
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (response.status === 401) {
+
+            sessionStorage.removeItem(
+                "youngPrinceAdminToken"
+            );
+
+            window.location.href = "admin.html";
+
+            return;
+        }
+
+        if (!response.ok) {
+            throw new Error(
+                data.message ||
+                "Could not delete publication."
+            );
+        }
+
+        ownerMessage.textContent =
+            "Publication deleted successfully.";
+
+        await loadOwnerPublications();
+
+    } catch (error) {
+
+        console.error(
+            "DELETE OWNER PUBLICATION ERROR:",
+            error
+        );
+
+        alert(
+            error.message ||
+            "Unable to delete publication."
+        );
+
+    }
+}    
+    
 /* =========================
    START
 ========================= */
