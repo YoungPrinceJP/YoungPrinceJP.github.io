@@ -893,10 +893,13 @@ nav a.account-button:hover {
 
     async function loadNews() {
       try {
-        const response = await fetch(API + "/api/media?category=" + encodeURIComponent("News Feed"));
-        if (!response.ok) throw new Error("News feed unavailable");
+      const response = await fetch(API + "/api/uploads");
+if (!response.ok) throw new Error("News feed unavailable");
         const data = await response.json();
-        const items = Array.isArray(data.items) ? data.items : [];
+       const uploads = Array.isArray(data.uploads) ? data.uploads : [];
+const items = uploads.filter(item =>
+  String(item.category || "").trim().toLowerCase() === "news feed"
+);
         container.replaceChildren();
 
         if (!items.length) {
@@ -913,7 +916,8 @@ nav a.account-button:hover {
             body.appendChild(make("small", "", new Date(item.publishedAt).toLocaleDateString()));
           }
           const link = make("a", "button", "Open attachment");
-          link.href = API + "/api/media/" + encodeURIComponent(item.id) + "/file";
+          link.removeAttribute("href");
+link.textContent = "Attachment: " + (item.originalName || "File attached");
           link.target = "_blank";
           link.rel = "noopener noreferrer";
           body.appendChild(link);
