@@ -1208,8 +1208,7 @@ function displayOwnerPublications(items) {
                 <button
                     class="delete"
                     type="button"
-                    onclick="deleteOwnerPublication('${encodeURIComponent(String(item.id || ""))}')"
-                >
+onclick="deleteOwnerPublication('${escapeHtml(item.id || "")}')"                >
                     Delete Publication
                 </button>
 
@@ -1244,7 +1243,7 @@ async function deleteOwnerPublication(id) {
             await fetch(
                 API_BASE_URL +
                 "/api/admin/media/" +
-                encodeURIComponent(id),
+               encodeURIComponent(decodeURIComponent(id)),
                 {
                     method: "DELETE",
 
