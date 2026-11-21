@@ -893,13 +893,12 @@ nav a.account-button:hover {
 
     async function loadNews() {
       try {
-      const response = await fetch(API + "/api/uploads");
-if (!response.ok) throw new Error("News feed unavailable");
-        const data = await response.json();
-       const uploads = Array.isArray(data.uploads) ? data.uploads : [];
-const items = uploads.filter(item =>
-  String(item.category || "").trim().toLowerCase() === "news feed"
+const response = await fetch(
+  API + "/api/media?category=" + encodeURIComponent("News Feed")
 );
+          if (!response.ok) throw new Error("News feed unavailable");
+        const data = await response.json();
+   const items = Array.isArray(data.items) ? data.items : [];
         container.replaceChildren();
 
         if (!items.length) {
