@@ -214,7 +214,63 @@
     min-height: 120px;
     resize: vertical;
 }
+/* FACEBOOK-STYLE POST COMPOSER */
 
+.post-composer {
+    background: #151515;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.post-composer textarea {
+    min-height: 170px;
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.post-composer textarea:focus {
+    outline: none;
+}
+
+.composer-attachment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+    padding-top: 14px;
+}
+
+.composer-attachment label {
+    background: #292929;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.composer-attachment input {
+    display: none;
+}
+
+#ownerFileName {
+    color: #aaa;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+#ownerFilePreview {
+    display: none;
+    margin-top: 12px;
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 10px;
+    object-fit: contain;
+}
 .owner-form label {
     display: block;
     margin-bottom: 6px;
