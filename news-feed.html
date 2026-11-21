@@ -908,6 +908,17 @@ const response = await fetch(
 
         items.forEach(item => {
           const card = make("article", "community-card");
+            if (item.mimeType && item.mimeType.startsWith("image/") && item.fileUrl) {
+  const image = make("img", "community-card-image");
+  image.src = API + item.fileUrl;
+  image.alt = item.title || "Young Prince publication";
+  image.loading = "lazy";
+  image.style.width = "100%";
+  image.style.maxHeight = "420px";
+  image.style.objectFit = "cover";
+  image.style.borderRadius = "12px";
+  card.appendChild(image);
+}
           const body = make("div", "community-card-content");
           body.appendChild(make("h3", "", item.title || "Young Prince Update"));
           if (item.description) body.appendChild(make("p", "", item.description));
