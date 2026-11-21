@@ -890,7 +890,67 @@ nav a.account-button:hover {
       if (value !== undefined) node.textContent = value;
       return node;
     }
+function openCommunityImage(imageUrl, imageTitle) {
+  const viewer = make("div", "community-image-viewer");
+  const close = make("button", "community-image-close", "×");
+  const image = make("img", "community-full-image");
+  const title = make("div", "community-image-title", imageTitle);
 
+  viewer.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  `;
+
+  close.style.cssText = `
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  `;
+
+  image.src = imageUrl;
+  image.alt = imageTitle;
+  image.style.cssText = `
+    max-width: 95%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+  `;
+
+  title.style.cssText = `
+    color: white;
+    text-align: center;
+    margin-top: 12px;
+  `;
+
+  function closeViewer() {
+    viewer.remove();
+  }
+
+  close.addEventListener("click", closeViewer);
+
+  viewer.addEventListener("click", event => {
+    if (event.target === viewer) closeViewer();
+  });
+
+  viewer.append(close, image, title);
+  document.body.appendChild(viewer);
+}
     async function loadNews() {
       try {
 const response = await fetch(
@@ -906,20 +966,39 @@ const response = await fetch(
           return;
         }
 
-        items.forEach(item => {
-          const card = make("article", "community-card");
-            if (item.mimeType && item.mimeType.startsWith("image/") && item.fileUrl) {
-  const image = make("img", "community-card-image");
-  image.src = API + item.fileUrl;
-  image.alt = item.title || "Young Prince publication";
-  image.loading = "lazy";
-  image.style.width = "100%";
-  image.style.maxHeight = "420px";
-  image.style.objectFit = "cover";
-  image.style.borderRadius = "12px";
-  card.appendChild(image);
-}
-          const body = make("div", "community-card-content");
+  items.forEach(item => {
+  const card = make("article", "community-card");
+
+  if (item.mimeType && item.mimeType.startsWith("image/") && item.fileUrl) {
+    const media = make("div", "community-media");
+    const image = make("img", "", "");
+
+    image.src = API + item.fileUrl;
+    image.alt = item.title || "Young Prince publication";
+    image.loading = "lazy";
+    image.style.width = "100%";
+    image.style.maxWidth = "100%";
+    image.style.height = "260px";
+    image.style.objectFit = "contain";
+    image.style.display = "block";
+    image.style.margin = "0 auto";
+    image.style.cursor = "zoom-in";
+
+    media.style.width = "100%";
+    media.style.maxWidth = "100%";
+    media.style.height = "260px";
+    media.style.overflow = "hidden";
+    media.style.cursor = "zoom-in";
+
+    media.appendChild(image);
+    media.addEventListener("click", () => {
+      openCommunityImage(image.src, image.alt);
+    });
+
+    card.appendChild(media);
+  }
+
+  const body = make("div", "community-card-content");
           body.appendChild(make("h3", "", item.title || "Young Prince Update"));
           if (item.description) body.appendChild(make("p", "", item.description));
         const published = item.reviewedAt || item.uploadedAt;
