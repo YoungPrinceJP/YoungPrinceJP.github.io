@@ -912,15 +912,22 @@ const items = uploads.filter(item =>
           const body = make("div", "community-card-content");
           body.appendChild(make("h3", "", item.title || "Young Prince Update"));
           if (item.description) body.appendChild(make("p", "", item.description));
-          if (item.publishedAt) {
-            body.appendChild(make("small", "", new Date(item.publishedAt).toLocaleDateString()));
-          }
-          const link = make("a", "button", "Open attachment");
-          link.removeAttribute("href");
-link.textContent = "Attachment: " + (item.originalName || "File attached");
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          body.appendChild(link);
+        const published = item.reviewedAt || item.uploadedAt;
+
+if (published) {
+  const date = new Date(published);
+  if (!Number.isNaN(date.getTime())) {
+    body.appendChild(
+      make("small", "", "Published " + date.toLocaleDateString())
+    );
+  }
+}
+
+if (item.originalName) {
+  body.appendChild(
+    make("p", "community-author", "Attachment: " + item.originalName)
+  );
+}
           card.appendChild(body);
           container.appendChild(card);
         });
