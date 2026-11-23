@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos | Young Prince</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#f8f6f2;color:#17151f}
+    header{background:#fff;padding:16px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .logo{font-weight:bold;color:#241337;font-size:20px;text-decoration:none;letter-spacing:1px}
+    .logo span{color:#c79a27}
+    nav{display:flex;gap:20px;flex-wrap:wrap}
+    nav a{color:#241337;text-decoration:none;font-size:14px;font-weight:600}
+    nav a:hover{color:#7b3f98}
+    main{max-width:1050px;margin:0 auto;padding:55px 20px 80px}
+    .intro{text-align:center;margin-bottom:38px}
+    .intro .icon{font-size:48px}
+    h1{color:#241337;margin:12px 0;font-size:34px}
+    .intro p{color:#625c69;line-height:1.7;max-width:650px;margin:0 auto}
+    .content{background:#fff;border:1px solid #eee7f1;border-radius:16px;padding:35px 24px;text-align:center;box-shadow:0 8px 25px rgba(36,19,55,.05)}
+    .content h2{color:#241337;margin-top:0}
+    .content p{color:#625c69;line-height:1.7}
+    .back{display:inline-block;margin-top:15px;background:#7b3f98;color:#fff;text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:bold}
+    footer{background:#21172b;color:#eee;padding:25px 6%;text-align:center;font-size:13px}
+    footer span{color:#c79a27}
+    @media(max-width:650px){
+      header{align-items:flex-start;gap:14px;flex-direction:column}
+      nav{gap:13px}
+      nav a{font-size:13px}
+      main{padding-top:38px}
+      h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">YOUNG <span>PRINCE</span> ✦</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="stories.html">Stories</a>
+    <a href="manga-art.html">Manga & Art</a>
+    <a href="community-feed.html">Community Feed</a>
+    <a href="news-feed.html">News Feed</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="icon">🎬</div>
+    <h1>Videos</h1>
+    <p>Watch creative videos, animation projects, visual stories and entertainment from Young Prince.</p>
+  </section>
+
+  <section class="content">
+    <h2>Videos Are Coming</h2>
+    <p>This is the home for video content and animation projects. New releases will appear here.</p>
+    <a class="back" href="index.html">Back to Homepage</a>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> <span>Young Prince</span>. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
