@@ -820,7 +820,66 @@ nav a.account-button:hover {
 #community .upload-empty{grid-column:1/-1;padding:18px;border:1px dashed rgba(255,255,255,.2);border-radius:12px;opacity:.8}
 @media(max-width:600px){#community .upload-panel{padding:14px}#community .upload-form{grid-template-columns:1fr}#community .upload-field.full{grid-column:auto}}
 
-.upload-page-main{max-width:900px;margin:0 auto;padding:42px 5% 70px}.upload-page-intro{text-align:center;margin-bottom:28px}.upload-page-intro h1{color:#241337;margin-bottom:8px}.upload-page-intro p{color:#625b69}.upload-panel{background:#fff;border:1px solid #e6e0e8;border-radius:16px;padding:24px;box-shadow:0 8px 28px rgba(36,19,55,.06);margin-bottom:38px}.upload-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.upload-field{display:flex;flex-direction:column;gap:7px;min-width:0}.upload-field.full{grid-column:1/-1}.upload-field label{font-weight:600}.upload-field input,.upload-field select,.upload-field textarea{box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #d8d1dd;border-radius:9px;background:#fff;color:#17151f;font:inherit}.upload-field option{color:#111}.upload-help,.upload-item-meta{font-size:.88rem;opacity:.78}.upload-submit{justify-self:start;cursor:pointer}.upload-submit:disabled{opacity:.6;cursor:wait}.upload-status{min-height:1.4em;margin:12px 0 0}.upload-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:16px}.upload-item{min-width:0;overflow:hidden;border:1px solid #e6e0e8;border-radius:14px;background:#fff}.upload-preview{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#eee}.upload-file-preview{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:2.4rem;background:#f1edf3}.upload-item-body{padding:14px}.upload-item-body h3{margin:0 0 7px;overflow-wrap:anywhere}.upload-item-body p{margin:6px 0;overflow-wrap:anywhere}.upload-empty{grid-column:1/-1;padding:18px;border:1px dashed #d8d1dd;border-radius:12px;opacity:.8}@media(max-width:600px){.upload-panel{padding:14px}.upload-form{grid-template-columns:1fr}.upload-field.full{grid-column:auto}}</style>
+.upload-page-main{max-width:900px;margin:0 auto;padding:42px 5% 70px}.upload-page-intro{text-align:center;margin-bottom:28px}.upload-page-intro h1{color:#241337;margin-bottom:8px}.upload-page-intro p{color:#625b69}.upload-panel{background:#fff;border:1px solid #e6e0e8;border-radius:16px;padding:24px;box-shadow:0 8px 28px rgba(36,19,55,.06);margin-bottom:38px}.upload-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.upload-field{display:flex;flex-direction:column;gap:7px;min-width:0}.upload-field.full{grid-column:1/-1}.upload-field label{font-weight:600}.upload-field input,.upload-field select,.upload-field textarea{box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #d8d1dd;border-radius:9px;background:#fff;color:#17151f;font:inherit}.upload-field option{color:#111}.upload-help,.upload-item-meta{font-size:.88rem;opacity:.78}.upload-submit{justify-self:start;cursor:pointer}.upload-submit:disabled{opacity:.6;cursor:wait}.upload-status{min-height:1.4em;margin:12px 0 0}.upload-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:16px}.upload-item{min-width:0;overflow:hidden;border:1px solid #e6e0e8;border-radius:14px;background:#fff}.upload-preview{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#eee}.upload-file-preview{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:2.4rem;background:#f1edf3}.upload-item-body{padding:14px}.upload-item-body h3{margin:0 0 7px;overflow-wrap:anywhere}.upload-item-body p{margin:6px 0;overflow-wrap:anywhere}.upload-empty{grid-column:1/-1;padding:18px;border:1px dashed #d8d1dd;border-radius:12px;opacity:.8}@media(max-width:600px){.upload-panel{padding:14px}.upload-form{grid-template-columns:1fr}.upload-field.full{grid-column:auto}}/* COMMUNITY POST COMPOSER */
+
+.community-post-composer {
+    border: 1px solid #d8d1dd;
+    border-radius: 12px;
+    padding: 14px;
+    background: #faf8fb;
+}
+
+.community-post-composer textarea {
+    min-height: 160px;
+    resize: vertical;
+    border: none;
+    background: transparent;
+    padding: 12px 4px;
+    font-size: 15px;
+}
+
+.community-post-composer textarea:focus {
+    outline: none;
+}
+
+.community-attachment-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-top: 1px solid #e6e0e8;
+    padding-top: 13px;
+}
+
+.community-attachment-bar label {
+    background: #eee7f2;
+    color: #59316e;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.community-attachment-bar input[type="file"] {
+    display: none;
+}
+
+#communityFileName {
+    color: #756d79;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+#communityFilePreview {
+    display: none;
+    margin-top: 12px;
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 10px;
+    object-fit: contain;
+}</style>
+    
 </head><body>
 <header><div class="header"><a class="logo" href="index.html">YOUNG PRINCE</a><button class="mobile-menu-button" id="mobileMenuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button><nav id="mainNav" aria-label="Main navigation"><a href="index.html#stories">Stories</a><a href="index.html#explore">Explore</a><a href="community-upload.html" aria-current="page">Community Uploads</a><a href="community-feed.html">Community Feed</a><a href="index.html#about">About</a><a class="account-button" href="account.html">👤 Account</a></nav></div></header>
 <main class="upload-page-main">
@@ -831,61 +890,181 @@ nav a.account-button:hover {
 <div class="upload-panel">
 <h2>Share Your Creativity</h2>
 <p class="upload-help">Maximum file size: 7 MB. Every submission is reviewed before appearing in the Community Feed.</p>
+
 <form id="communityUploadForm" class="upload-form" enctype="multipart/form-data">
-<div class="upload-field"><label for="communityUploaderName">Your name</label><input id="communityUploaderName" name="name" type="text" maxlength="120" autocomplete="name" required></div>
-<div class="upload-field"><label for="communityUploadTitle">Title</label><input id="communityUploadTitle" name="title" type="text" maxlength="200" required></div>
-<div class="upload-field"><label for="communityUploadCategory">Category</label><select id="communityUploadCategory" name="category" required>
-  <option value="">Choose a category</option>
-  <option value="Art">Art &amp; Illustration</option>
-  <option value="Writing">Stories &amp; Writing</option>
-  <option value="Video">Video</option>
-  <option value="Audio">Audio &amp; Music</option>
-  <option value="Photography">Photography</option>
-  <option value="News Feed">News Feed &amp; Announcements</option>
-  <option value="Other">Other</option>
-</select>
-<div class="upload-field"><label for="communityUploadFile">Choose a file</label><input id="communityUploadFile" name="file" type="file" required accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm,video/quicktime,audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"></div>
-<div class="upload-field full"><label for="communityUploadDescription">Description (optional)</label><textarea id="communityUploadDescription" name="description" rows="3" maxlength="2000" placeholder="Tell visitors a little about your work."></textarea></div>
-<div class="upload-field full"><button class="button upload-submit" id="communityUploadSubmit" type="submit">Submit for review</button></div>
+
+    <div class="upload-field">
+        <label for="communityUploaderName">Your name</label>
+        <input id="communityUploaderName" name="name" type="text"
+            maxlength="120" autocomplete="name" required>
+    </div>
+
+    <div class="upload-field">
+        <label for="communityUploadTitle">Post title (optional)</label>
+        <input id="communityUploadTitle" name="title" type="text"
+            maxlength="200" placeholder="Give your post a title">
+    </div>
+
+    <div class="upload-field full">
+        <label for="communityUploadCategory">Category</label>
+        <select id="communityUploadCategory" name="category" required>
+            <option value="">Choose a category</option>
+            <option value="Art">Art &amp; Illustration</option>
+            <option value="Writing">Stories &amp; Writing</option>
+            <option value="Video">Video</option>
+            <option value="Audio">Audio &amp; Music</option>
+            <option value="Photography">Photography</option>
+            <option value="News Feed">News Feed &amp; Announcements</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="upload-field full">
+        <div class="community-post-composer">
+            <textarea id="communityUploadDescription"
+                name="description"
+                rows="5"
+                maxlength="2000"
+                placeholder="What's on your mind? Share with the Young Prince community..."></textarea>
+
+            <div class="community-attachment-bar">
+                <label for="communityUploadFile">＋ Add photo, video or file</label>
+
+                <input id="communityUploadFile"
+                    name="file"
+                    type="file"
+                    accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm,video/quicktime,audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+
+                <span id="communityFileName">No attachment selected</span>
+            </div>
+
+            <img id="communityFilePreview" alt="Attachment preview">
+        </div>
+    </div>
+
+    <div class="upload-field full">
+        <button class="button upload-submit"
+            id="communityUploadSubmit" type="submit">
+            Submit for review
+        </button>
+    </div>
+
 </form>
+
 <p class="upload-status" id="communityStatus" aria-live="polite"></p>
 </div>
 </main>
 <footer><strong>YOUNG PRINCE</strong> · Creative Stories &amp; Entertainment · © <span id="year"></span></footer>
 <script>(function(){const b=document.getElementById('mobileMenuButton'),n=document.getElementById('mainNav');b.addEventListener('click',()=>{const o=n.classList.toggle('mobile-open');document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',String(o));});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('mobile-open');document.body.classList.remove('menu-open');b.setAttribute('aria-expanded','false');}));document.getElementById('year').textContent=new Date().getFullYear();})();</script>
 <script>
+
 (function(){
   "use strict";
-  const api="https://youngprincejp-github-io.onrender.com";
-  const form=document.getElementById("communityUploadForm");
-  const input=document.getElementById("communityUploadFile");
-  const status=document.getElementById("communityStatus");
-  const submit=document.getElementById("communityUploadSubmit");
-  if(!form||!input||!status||!submit)return;
-  const max=7*1024*1024;
-  const allowed=new Set(["image/jpeg","image/png","image/gif","image/webp","video/mp4","video/webm","video/quicktime","audio/mpeg","audio/mp4","audio/wav","audio/ogg","audio/webm","application/pdf","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document","text/plain"]);
-  input.addEventListener("change",()=>{
-    const f=input.files&&input.files[0];
-    if(!f)return;
-    if(f.size>max){status.textContent="That file is larger than 7 MB. Choose a smaller file.";input.value="";}
-    else if(f.type&&!allowed.has(f.type)){status.textContent="That file type is not supported.";input.value="";}
-    else status.textContent="";
+
+  const api = "https://youngprincejp-github-io.onrender.com";
+  const form = document.getElementById("communityUploadForm");
+  const input = document.getElementById("communityUploadFile");
+  const status = document.getElementById("communityStatus");
+  const submit = document.getElementById("communityUploadSubmit");
+  const description = document.getElementById("communityUploadDescription");
+  const fileName = document.getElementById("communityFileName");
+  const filePreview = document.getElementById("communityFilePreview");
+
+  if (!form || !input || !status || !submit) return;
+
+  const max = 7 * 1024 * 1024;
+
+  const allowed = new Set([
+    "image/jpeg","image/png","image/gif","image/webp",
+    "video/mp4","video/webm","video/quicktime",
+    "audio/mpeg","audio/mp4","audio/wav","audio/ogg","audio/webm",
+    "application/pdf","application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "text/plain"
+  ]);
+
+  input.addEventListener("change", function(){
+    const f = input.files && input.files[0];
+
+    fileName.textContent = f ? f.name : "No attachment selected";
+    filePreview.style.display = "none";
+    filePreview.removeAttribute("src");
+
+    if (!f) return;
+
+    if (f.size > max) {
+      status.textContent = "That file is larger than 7 MB. Choose a smaller file.";
+      input.value = "";
+      fileName.textContent = "No attachment selected";
+      return;
+    }
+
+    if (f.type && !allowed.has(f.type)) {
+      status.textContent = "That file type is not supported.";
+      input.value = "";
+      fileName.textContent = "No attachment selected";
+      return;
+    }
+
+    status.textContent = "";
+
+    if (f.type.startsWith("image/")) {
+      filePreview.src = URL.createObjectURL(f);
+      filePreview.style.display = "block";
+    }
   });
-  form.addEventListener("submit",async e=>{
+
+  form.addEventListener("submit", async function(e){
     e.preventDefault();
-    const f=input.files&&input.files[0];
-    if(!f){status.textContent="Please choose a file.";return;}
-    if(f.size>max||(f.type&&!allowed.has(f.type))){status.textContent="Choose a supported file no larger than 7 MB.";return;}
-    submit.disabled=true;submit.textContent="Submitting…";status.textContent="Uploading your submission…";
-    try{
-      const r=await fetch(api+"/api/upload",{method:"POST",body:new FormData(form)});
-      const d=await r.json().catch(()=>({}));
-      if(!r.ok)throw Error(d.message||"Upload failed. Please try again.");
+
+    const f = input.files && input.files[0];
+    const message = description.value.trim();
+
+    if (!message && !f) {
+      status.textContent = "Please write something or attach a file.";
+      return;
+    }
+
+    if (f && (f.size > max || (f.type && !allowed.has(f.type)))) {
+      status.textContent = "Choose a supported file no larger than 7 MB.";
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = "Submitting…";
+    status.textContent = "Submitting your post for review…";
+
+    try {
+      const r = await fetch(api + "/api/upload", {
+        method: "POST",
+        body: new FormData(form)
+      });
+
+      const d = await r.json().catch(() => ({}));
+
+      if (!r.ok) {
+        throw Error(d.message || "Submission failed. Please try again.");
+      }
+
       form.reset();
-      status.textContent=d.message||"Your submission has been received and is awaiting review. Once approved, it will appear in the Community Feed.";
-    }catch(err){status.textContent=err.message||"Could not submit your file. Please try again later.";}
-    finally{submit.disabled=false;submit.textContent="Submit for review";}
+
+      fileName.textContent = "No attachment selected";
+      filePreview.style.display = "none";
+      filePreview.removeAttribute("src");
+
+      status.textContent = d.message ||
+        "Your post has been received and is awaiting review. Once approved, it will appear in the Community Feed.";
+
+    } catch(err) {
+      status.textContent = err.message ||
+        "Could not submit your post. Please try again later.";
+    } finally {
+      submit.disabled = false;
+      submit.textContent = "Submit for review";
+    }
   });
+
 })();
+
 </script>
 </body></html>
