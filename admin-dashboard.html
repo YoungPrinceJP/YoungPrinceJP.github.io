@@ -513,6 +513,36 @@
 
 <script>
 
+/* =========================
+   ADMIN SECTION NAVIGATION
+========================= */
+
+function showAdminSection(section) {
+
+    const media = document.getElementById("mediaSection");
+    const community = document.getElementById("communitySection");
+
+    media.style.display = "none";
+    community.style.display = "none";
+
+    if (section === "media") {
+        media.style.display = "block";
+    }
+
+    if (section === "community") {
+        community.style.display = "block";
+    }
+
+    if (section === "thumbnails") {
+        community.style.display = "block";
+        alert("Use Generate Thumbnails in Community Review.");
+    }
+
+    if (section === "stories") {
+        alert("Story Manager is not set up yet.");
+    }
+}
+    
 const API_BASE_URL =
     "https://youngprincejp-github-io.onrender.com";
 
