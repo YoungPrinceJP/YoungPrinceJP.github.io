@@ -848,18 +848,38 @@ nav a.account-button:hover {
   const urlFor=item=>api+"/api/uploads/"+encodeURIComponent(item.id)+"/file";
   function render(item){
     const card=el("article","upload-item");
-    const mime=String(item.mimeType||"").toLowerCase();
-    const url=urlFor(item);
-    const title=item.title||item.originalName||"Community upload";
-    let media;
-    if(mime.startsWith("image/")){
-      media=el("img","upload-preview");media.src=url;media.alt=title;media.loading="lazy";
-    }else if(mime.startsWith("video/")){
-      media=el("video","upload-preview");media.src=url;media.controls=true;media.preload="metadata";
-    }else{
-      media=el("div","upload-file-preview",mime.startsWith("audio/")?"♫":mime==="application/pdf"?"PDF":"📄");
-    }
-    card.appendChild(media);
+ 
+const mime=String(item.mimeType||"").toLowerCase();
+const url=urlFor(item);
+const title=item.title||item.originalName||"Community post";
+
+if(item.storagePath || item.storedName || item.originalName){
+  let media;
+
+  if(mime.startsWith("image/")){
+    media=el("img","upload-preview");
+    media.src=url;
+    media.alt=title;
+    media.loading="lazy";
+
+  }else if(mime.startsWith("video/")){
+    media=el("video","upload-preview");
+    media.src=url;
+    media.controls=true;
+    media.preload="metadata";
+
+  }else{
+    media=el(
+      "div",
+      "upload-file-preview",
+      mime.startsWith("audio/")?"♫":
+      mime==="application/pdf"?"PDF":"📄"
+    );
+  }
+
+  card.appendChild(media);
+}
+
     const body=el("div","upload-item-body");
     body.appendChild(el("h3","",title));
     body.appendChild(el("p","upload-item-meta",item.category||"Community"));
